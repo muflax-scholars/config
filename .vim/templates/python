@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# muflax <muflax@gmail.com>, 2009, GPL 3.0
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
+
+# cursor: 4 del

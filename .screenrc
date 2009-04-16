@@ -1,0 +1,41 @@
+setenv LC_CTYPE ja_JP.UTF-8
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+term            screen-256color
+defutf8         on
+autodetach      on
+startup_message off
+vbell           off
+defscrollback   10000
+shell           -$SHELL
+altscreen       on
+nethack         on
+zombie          ko
+
+#termcapinfo xterm*|Eterm|mlterm|rxvt 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+defhstatus "$USER@ H | #  |  t"
+hardstatus off
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+
+activity "%c activity -> %n%f %t"
+bell "%c bell -> %n%f %t^G"
+vbell_msg " *beep* "
+#caption always "%{= wk} %?%-Lw%?%{= kd} %n*%f %t %{= wk}%?%+Lw%? %{= wk}%=%{= Wk}"  
+hardstatus alwayslastline "%{= .b}[ %{B}%H %{b}][ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%-= %{b}][%{B} %l %{b}]"
+
+# remove stupid bindings, put saner ones
+
+escape "^gg"
+
+bind .
+bind ^\
+bind \\
+bind I login on
+bind O login off
+
+bind s split
+bind o focus
+bind x remove
+bind m monitor

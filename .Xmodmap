@@ -1,0 +1,7 @@
+!menu
+keycode 135 = Henkan_Mode
+
+!Lower, Raise, Mute
+keycode 122 = XF86AudioLowerVolume
+keycode 123 = XF86AudioRaiseVolume
+keycode 121 = XF86AudioMute

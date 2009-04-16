@@ -1,0 +1,20 @@
+" 1.2 (created: 2008/08/16 18:51:52)
+" Mappings
+map L <C-o>
+map H <C-i>
+map zM null
+map zR null
+map zf null
+map d <C-w>
+
+" Options
+set complete=l
+set wildoptions=auto
+set focuscontent
+set defsearch=g
+
+" Abbreviations
+
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vimperator:
