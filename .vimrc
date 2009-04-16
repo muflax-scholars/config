@@ -1,9 +1,6 @@
-"Sample .vimrc
-"hi String ctermfg=DarkMagenta
-"hi Comment ctermfg=DarkGreen
-set background=dark
-
+"colors
 set t_Co=256
+set background=dark
 colorscheme inkpot
 
 "basic options
@@ -23,7 +20,7 @@ set incsearch
 set ignorecase  
 set smartcase
 
-"tab
+"tab indent
 set tabstop=4
 set shiftwidth=4
 set expandtab
