@@ -27,7 +27,7 @@ set expandtab
 
 "virtual edit
 set virtualedit=all
-set mouse=v
+set mouse=a
 
 "wrap line, mark with +
 set lbr
