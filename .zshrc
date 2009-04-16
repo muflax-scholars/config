@@ -33,7 +33,7 @@ setopt NO_CHASE_LINKS
 setopt NO_CHASE_DOTS
 
 # PS1 and PS2
-export PS1="$(print '%{\e[0;32m%}%n/%m%{\e[0m%}') $(print '%{\e[0;36m%}%~%{\e[0m%}') # "
+export PS1="$(print '%{\e[0;32m%}%n@%m%{\e[0m%}') $(print '%{\e[0;36m%}%~%{\e[0m%}') # "
 export PS2="$(print '%{\e[0;32m%}>%{\e[0m%}')"
 
 # Vars used later on by zsh
