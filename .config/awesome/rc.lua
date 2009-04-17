@@ -8,6 +8,7 @@ require("awful")
 require("tabulous")
 require("wicked")
 require("beautiful")
+require('naughty')
 
 f = io.popen('hostname')
 hostname = f:read()
@@ -19,6 +20,12 @@ f:close()
      
 theme_path = "/home/"..username.."/.config/awesome/theme"
 beautiful.init(theme_path)
+
+naughty.config.position         = "bottom_right"
+naughty.config.font             = beautiful.font
+naughty.config.fg               = beautiful.fg_focus
+naughty.config.bg               = beautiful.bg_focus
+naughty.config.border_color     = beautiful.border_focus
 
 -- {{{ Variable definitions
 -- This is used later as the default terminal to run.

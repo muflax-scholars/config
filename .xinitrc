@@ -25,6 +25,6 @@ nitrogen --restore &
 ~/src/in/randomstuff/cycle &
 
 #xcompmgr &
-noteo &
+#noteo &
 exec dbus-launch awesome
 #exec startfluxbox
