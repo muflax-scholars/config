@@ -1,4 +1,7 @@
 #> .xsession-errors
+# machine specific configs
+source ~/.xinitrc_local
+
 #export XIM="uim-xim"
 export GTK_IM_MODULE="scim"
 export QT_IM_MODULE="scim"
@@ -20,11 +23,10 @@ xset m 3 2
 #xbindkeys
 
 nitrogen --restore &
-#xscreensaver &
 #xautolock -locker "xlock -mode mandelbrot -dpmsoff 1800 -echokeys" -time 15 &
 ~/src/in/randomstuff/cycle &
 
 #xcompmgr &
 #noteo &
-exec dbus-launch awesome
+exec dbus-launch --auto-syntax --exit-with-session awesome
 #exec startfluxbox
