@@ -43,8 +43,8 @@ map <Up> gk
 "tag browser to look up methods
 au FileType python set tags+=$HOME/.vim/tags/python.ctags
 au FileType c set tags+=$HOME/.vim/tags/c.ctags
-noremap <silent><C-L> <C-T>
-noremap <silent><C-A> <C-]>
+"noremap <silent><C-> <C-T>
+"noremap <silent><C-> <C-]>
 
 "code completion, <Nul> is Ctrl-Space
 filetype plugin on
