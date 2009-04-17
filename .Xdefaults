@@ -5,10 +5,10 @@ URxvt.preeditType:      OverTheSpot
 URxvt.jumpScroll:       true
 URxvt.skipScroll:       true
 
-URxvt*font:             xft:Terminus-12,xft:mplus_j12r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
-URxvt*boldFont:         xft:Terminus-12,xft:mplus_j12b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
-URxvt*italicFont:       xft:Terminus-12,xft:mplus_j12r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
-URxvt*bolditalicFont:   xft:Terminus-12,xft:mplus_j12b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
+URxvt*font:             xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
+URxvt*boldFont:         xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
+URxvt*italicFont:       xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
+URxvt*bolditalicFont:   xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 
 URxvt*scrollBar:        true
 URxvt*scrollstyle:      plain
