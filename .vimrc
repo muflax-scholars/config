@@ -14,6 +14,7 @@ set formatoptions=rq
 set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
 set writebackup
+set showtabline=2
 
 "search
 set incsearch
@@ -24,6 +25,7 @@ set smartcase
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
 
 "virtual edit
 set virtualedit=all
