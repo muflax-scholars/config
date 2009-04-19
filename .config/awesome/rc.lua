@@ -312,14 +312,14 @@ wicked.register(volumewidget, 'function', function (widget, args)
        --if line:find('is currently set to') ~= nil then
        if line:find('%]') ~= nil then
             pstart = line:find('[', 0, true) + 1
-            pend = line:find(']', 0, true) - 1
+            pend = line:find(']', 0, true) - 2
             v = line:sub(pstart, pend)
        end
    end
 
    f:close()
 
-   return heading('V')..": "..v
+   return heading('V')..string.format(": %3d%%", tonumber(v))
 end, interval)
 
 -- {{{ Other Widget
