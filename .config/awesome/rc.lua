@@ -575,6 +575,12 @@ key(k_m, "s", function ()
 key(k_m, "t", function ()
     awful.tag.incmwfact(0.05) end),
 
+key(k_ms, "s", function ()
+    awful.client.incwfact(-0.05, client.focus) end),
+
+key(k_ms, "t", function ()
+    awful.client.incwfact(0.05, client.focus) end),
+
 key(k_m, "d", function ()
     awful.tag.setmwfact(default_mwfact) end),  
 
