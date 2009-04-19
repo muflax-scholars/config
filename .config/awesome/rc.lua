@@ -336,16 +336,10 @@ cputextwidget = widget({
 })
 
 cputextwidget.text = spacer..heading('CPU')..': '..spacer..separator
-wicked.register(cputextwidget, 'cpu', function (widget, args) 
-    -- Add padding
-    --io.stderr:write("cpu: "..args[1].."\n")
-    if args[1] < 10 then 
-        args[1] = '  '..args[1]
-    elseif args[1] < 100 then
-        args[1] = ' '..args[1]
-    end
-
-    return spacer..heading('C')..': '..args[1]..'%'..spacer..separator end, interval) 
+wicked.register(cputextwidget, 'cpu', 
+function (widget, args) 
+    return spacer..heading('C')..string.format(": %3d%%", args[1])..spacer
+end, interval) 
 
 -- }}}
 
@@ -383,12 +377,10 @@ memtextwidget = widget({
 })
 
 memtextwidget.text = spacer..heading('M')..': '..spacer..separator
-wicked.register(memtextwidget, 'mem', function (widget, args) 
-    -- Add extra preceding zeroes when needed
-    if tonumber(args[1]) < 10 then args[1] = '0'..args[1] end
-    if tonumber(args[2]) < 100 then args[2] = '0'..args[2] end
-    if tonumber(args[3]) < 100 then args[3] = '0'..args[3] end
-    return spacer..heading('M')..': '..args[1]..'% ('..args[2]..'/'..args[3]..')'..spacer..separator end, interval)
+wicked.register(memtextwidget, 'mem', 
+function (widget, args) 
+    return spacer..heading('M')..string.format(": %4dMB (%3d%%)", tonumber(args[2]), tonumber(args[1]))..spacer 
+end, interval)
 
 -- }}}
 
