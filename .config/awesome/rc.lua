@@ -27,19 +27,14 @@ naughty.config.fg               = beautiful.fg_focus
 naughty.config.bg               = beautiful.bg_focus
 naughty.config.border_color     = beautiful.border_focus
 
--- {{{ Variable definitions
--- This is used later as the default terminal to run.
 terminal = "urxvtcd"
 dmenu = "dmenu -b -fn '-*-profont-*-r-normal-*-*-160-*-*-*-*-iso8859-*' -nb '#000000' -nf '#FFFFFF' -sb '#0066ff'"
 menu = "$(dmenu_path | "..dmenu.." -i )"
 
--- {{{ Modkeys
 modkey = "Mod4"
 shift = "Shift"
 alt = "Mod1"
 control = "Control"
--- }}}
-
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
@@ -72,7 +67,6 @@ trans_rules =
     ["evince"] = 0.8,
 }
 
--- name = {tag, context, [context, ...]} 
 tag_rules = {
     --[terminal] = {1, {"~h~"}},
     ["firefox"] = {1, "~a~"},
@@ -87,18 +81,13 @@ tag_rules = {
     ["geeqie"] = {1, "~q~"},
     ["jd"] = {1, "~u~"},
     ["xchat"] = {1, "~u~"},
---    [""] = {1, "~n~"}
 }
 
 
--- Color & Appearance definitions, we use these later to display things
 spacer = " "
 separator = " "
 default_mwfact = 0.60
 
--- {{{ Markup helper functions
--- Inline markup is a tad ugly, so use these functions
--- to dynamically create markup.
 function bg(color, text)
     return '<bg color="'..color..'" />'..text
 end
@@ -119,15 +108,7 @@ function heading(text)
     return fg(beautiful.fg_focus, bold(text))
 end
 
--- }}}
-
--- Define if we want to use titlebar on all applications
 use_titlebar = true
-
--- awesome.font_set(default_font)
---awesome.colors_set({ fg = fg_normal, bg = bg_normal })
-
--- }}}
 
 if hostname == "kira" then
     mouse_active = 1
@@ -149,7 +130,6 @@ if hostname == "kira" then
     -- mouse_toggle()
 end
 
--- {{{ Key combinations
 k_n = {}
 k_m = {modkey}
 k_ms = {modkey, shift}
@@ -161,10 +141,6 @@ k_as = {alt, shift}
 k_c = {control}
 k_cs = {control, shift}
 k_s = {shift}
-
--- }}}
-
--- {{{ tags
 
 tags = {}
 tag_names = {  {{"~h~", default_mwfact, awful.layout.suit.fair}, 
@@ -204,8 +180,6 @@ for s=1, screen.count() do
     tags_by_name[s] = ts
 end
 
--- }}}
--- {{{ Taglist
 mybuttons = {
     button(k_n, 1, awful.tag.viewonly),
     button(k_m, 1, awful.client.movetotag),
@@ -220,20 +194,21 @@ for s=1, screen.count() do
     mytaglist[s] = awful.widget.taglist.new(s, awful.widget.taglist.label.all, mybuttons)
 end
 
-
--- }}}
-
 -- refresh interval for wicked widgets
 interval = 1
 
--- {{{ Date Widget
 os.setlocale("ja_JP.UTF-8")
 datewidget = widget({
     type = "textbox",
     name = "datewidget",
     align = "right"
 })
---- }}}
+
+taskwidget = widget({
+    type = "textbox",
+    name = "taskwidget",
+    align = "right"
+})
 
 cyclewidget = widget({
     type = "textbox",
@@ -290,7 +265,6 @@ if hostname == "kira" then
 
 end
 
--- {{{ Volume Widget
 volumewidget = widget({
     type = 'textbox',
     name = 'volumewidget',
@@ -304,12 +278,10 @@ end
 
 wicked.register(volumewidget, 'function', function (widget, args)  
    local f = io.popen('amixer get '..mixer)
---   local f = io.popen("ossmix codec3.jack.int-speaker.front")
    local l = f:lines()
    local v = ''
 
    for line in l do
-       --if line:find('is currently set to') ~= nil then
        if line:find('%]') ~= nil then
             pstart = line:find('[', 0, true) + 1
             pend = line:find(']', 0, true) - 2
@@ -322,13 +294,6 @@ wicked.register(volumewidget, 'function', function (widget, args)
    return heading('V')..string.format(": %3d%%", tonumber(v))
 end, interval)
 
--- {{{ Other Widget
-spacerwidget = widget({ type = 'textbox', name = 'spacerwidget', align ='right' })
-spacerwidget.text = spacer..separator
-
--- }}}
-
--- {{{ CPU Usage Widget
 cputextwidget = widget({
     type = 'textbox',
     name = 'cputextwidget',
@@ -341,22 +306,17 @@ function (widget, args)
     return spacer..heading('C')..string.format(": %3d%%", args[1])..spacer
 end, interval) 
 
--- }}}
-
--- {{{ CPU Graph Widget
 cpugraphwidget = widget({
     type = 'graph',
     name = 'cpugraphwidget',
     align = 'right'
 })
 
-
 cpugraphwidget.height = 0.85
 cpugraphwidget.width = 45
 cpugraphwidget.bg = '#333333'
 cpugraphwidget.border_color = '#0a0a0a'
 cpugraphwidget.grow = 'left'
-
 
 cpugraphwidget:plot_properties_set('cpu', {
     fg = '#AEC6D8',
@@ -367,9 +327,6 @@ cpugraphwidget:plot_properties_set('cpu', {
 
 wicked.register(cpugraphwidget, 'cpu', '$1', interval, 'cpu')
 
--- }}}
-
--- {{{ Memory Usage Widget
 memtextwidget = widget({
     type = 'textbox',
     name = 'memtextwidget',
@@ -379,12 +336,9 @@ memtextwidget = widget({
 memtextwidget.text = spacer..heading('M')..': '..spacer..separator
 wicked.register(memtextwidget, 'mem', 
 function (widget, args) 
-    return spacer..heading('M')..string.format(": %4dMB (%3d%%)", tonumber(args[2]), tonumber(args[1]))..spacer 
+    return spacer..heading('M')..string.format(": %4dM (%3d%%)", tonumber(args[2]), tonumber(args[1]))..spacer 
 end, interval)
 
--- }}}
-
--- {{{ Memory Graph Widget
 memgraphwidget = widget({
     type = 'graph',
     name = 'memgraphwidget',
@@ -406,8 +360,6 @@ memgraphwidget:plot_properties_set('mem', {
 
 wicked.register(memgraphwidget, 'mem', '$1', interval, 'mem')
 
--- }}}
-
 mylayoutbox = {}
 for s = 1, screen.count() do
     mylayoutbox[s] = widget({ type = "imagebox", align = "left" })
@@ -417,10 +369,6 @@ for s = 1, screen.count() do
                              button(k_n, 5, function () awful.layout.inc(layouts, -1) end) })
 end
 
--- Create a systray
-mysystray = widget({ type = "systray", name = "mysystray", align = "right" })
-
--- {{{ Statusbar
 mainstatusbar = {}
 statusbar_status = {}
 
@@ -437,6 +385,7 @@ for s = 1, screen.count() do
             mytaglist[s],
             mylayoutbox[s],
             parkingwidget,
+            taskwidget,
             wifiwidget,
             batterywidget,
             cputextwidget,
@@ -468,11 +417,9 @@ for s = 1, screen.count() do
     mainstatusbar[s].screen = s
     statusbar_status[s] = 1
 end
--- }}}                         
 
+-- here be hotkeys
 
----- {{{ Application Launchers
--- Toggle music playing
 globalkeys = {
 key(k_m, "c", function () 
     awful.util.spawn("MPD_HOST=192.168.1.15 mpc toggle") end),
@@ -480,73 +427,54 @@ key(k_m, "c", function ()
 key(k_m, "x", function ()
     awful.util.spawn("scrot -e 'mv $f /home/"..username.."/pigs/Screenshots/'") end),
 
--- Launch a new terminal
 key(k_m, "z", function () 
     awful.util.spawn(terminal) end),
 
--- Mod+e: Launch the menu application set before
 key(k_m, "e", function () 
     awful.util.spawn(menu) end),
 
--- local
 key(k_m, "u", function ()
     awful.util.spawn("amixer -q set "..mixer.." 5+") end),
---    awful.util.spawn("ossmix -q codec3.jack.int-speaker.front +5") end)
 
 key(k_m, "udiaeresis", function ()
     awful.util.spawn("amixer -q set "..mixer.." 5-") end),
---    awful.util.spawn("ossmix -q codec3.jack.int-speaker.front -- -5") end)
 
--- remote
 key(k_ms, "u", function ()
     awful.util.spawn("ssh -q amon@mumm-ra 'amixer -q -c0 set Software 5+'") end),
 
 key(k_ms, "udiaeresis", function ()             
     awful.util.spawn("ssh -q amon@mumm-ra 'amixer -q -c0 set Software 5-'") end),
 
----- }}}
-
----- {{{ Client hotkeys
--- Close window
 key(k_a, "w", function ()
     client.focus:kill() end),
 
--- Focus Prev/Next window
 key(k_m, "n", function ()
     awful.client.focus.byidx(-1); if client.focus then client.focus:raise() end end),
 
 key(k_m, "r", function ()
     awful.client.focus.byidx(1); if client.focus then client.focus:raise() end end),
 
--- Swap window with the Prev/Next one
 key(k_ms, "n", function ()
     awful.client.swap.byidx(-1) end),
 
 key(k_ms, "r", function ()
     awful.client.swap.byidx(1) end),
 
--- Toggle window floating
 key(k_m, "#94", function ()
     awful.client.floating.toggle() end),
--- Mod+o (left of Z, not all keyboards have it): 
--- Make window master
+
 key(k_m, "o", function ()
     awful.client.movetoscreen(client.focus) end),
 
 key(k_ms, "o", function ()
     client.focus.fullscreen = not client.focus.fullscreen end),
 
----- }}}
-
----- {{{ Tag hotkeys
--- Switch to prev/next tag
 key(k_m, "h", function()
     awful.tag.viewprev() end),
 
 key(k_m, "g", function()
     awful.tag.viewnext() end),
 
--- Mod+{b/m}: Decrease/Increase the amount of masters
 key(k_m, "b", function ()
     awful.tag.incnmaster(-1) end),
 
@@ -558,8 +486,6 @@ key(k_mc, "b", function ()
 
 key(k_mc, "m", function ()
     awful.tag.incncol(1) end),
- 
-
 
 key(k_m, "s", function ()
     awful.tag.incmwfact(-0.05) end),
@@ -578,31 +504,20 @@ key(k_m, "d", function ()
 
 key(k_ms, "d", awful.tag.history.restore),
 
----- }}}
+key(k_ma, "r", awesome.restart),
 
----- {{{ Miscellaneous hotkeys
--- Mod+Alt+R: Restart awesome
-key(k_ma, "r", 
-    awesome.restart),
+key(k_ma, "q", awesome.quit),
 
-key(k_ma, "q",
-    awesome.quit),
-
--- Mod+{h/g}: Switch to next/previous screen
 key(k_m, "k", function ()
     awful.screen.focus(1) end),
 
 key(k_m, "f", function ()
     awful.screen.focus(-1) end),
 
--- walk through layouts
 key(k_m, "space", function () 
     awful.layout.inc(layouts, 1) end),
 key(k_ms, "space", function () 
     awful.layout.inc(layouts, -1) end),
-
-
----- }}}
 
 --- Tabulous, tab manipulation
 key(k_ms, "y", function ()
@@ -623,8 +538,7 @@ key(k_ms, "y", function ()
     end
 end),
  
-key(k_mc, "y", 
-    tabulous.untab),
+key(k_mc, "y", tabulous.untab),
  
 key(k_m, "y", function ()
    local tabbedview = tabulous.tabindex_get()
@@ -636,11 +550,12 @@ key(k_m, "y", function ()
 end),
 }
 
+-- hotkeys end here
+
 if hostname == "kira" then 
     table.insert(globalkeys, key(k_m, "p", mouse_toggle))
 end
 
----- {{{ Number keys
 keynumber = 0
 for s = 1, screen.count() do
    keynumber = math.min(9, math.max(#tags[s], keynumber));
@@ -681,11 +596,7 @@ for i = 1, keynumber do
                    end))
 end
 
----- }}}
-
 root.keys(globalkeys)
-
--- {{{ Hooks
 
 awful.hooks.focus.register(function(c)
     -- Set border to active color
@@ -693,7 +604,6 @@ awful.hooks.focus.register(function(c)
 
 end)
 
--- Hook function to execute when unfocusing a client.
 awful.hooks.unfocus.register(function(c)
     c.border_color = beautiful.border_normal
 end)
@@ -730,7 +640,7 @@ awful.hooks.manage.register(function(c, startup)
     if not startup and awful.client.focus.filter(c) then
         c.screen = mouse.screen
     end
-    -- Create border
+    
     if not c.class:lower():find("rxvt") then
         c.border_width = beautiful.border_width
     else
@@ -738,25 +648,20 @@ awful.hooks.manage.register(function(c, startup)
     end
     c.border_color = beautiful.border_focus 
 
-    -- Add mouse bindings
-    -- Mod+Button1: Move window
     c:buttons({
         button(k_m, 1, function (c) awful.mouse.client.move() end),
         button(k_n, 1, function (c) client.focus = c; c:raise() end),
         button(k_m, 3, function (c) awful.mouse.client.resize() end)
     })
 
-    -- Add a titlebar
     if use_titlebar and not c.class:lower():find('mplayer') then
         awful.titlebar.add(c, { modkey = modkey })
     end 
     
-    -- Set tag rules
     for class,rule in pairs(tag_rules) do  
         match_tag(c, class, rule)
     end  
     
-    -- Float
     c.floating_placement = "smart"
     for i, class in ipairs(floating_rules) do  
         if c.class:lower():find(class) then  
@@ -764,14 +669,12 @@ awful.hooks.manage.register(function(c, startup)
         end  
     end
 
-    -- Transparency
     for class,trans in pairs(trans_rules) do
         if c.class:lower():find(class) then
             c.opacity = trans
         end
     end
     
-    -- Focus new clients
     if c.screen == mouse.screen then
         client.focus = c
     end
@@ -783,7 +686,6 @@ awful.hooks.manage.register(function(c, startup)
         c.size_hints_honor = false
     end
     
-    -- Prevents new windows from becoming master
     awful.client.setslave(c)
 end)                 
 
@@ -802,5 +704,3 @@ awful.hooks.arrange.register(function(screen)
         if c then client.focus = c end
     end
 end)
-
--- }}}
