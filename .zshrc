@@ -142,7 +142,7 @@ bindkey '^i' expand-or-complete-prefix
 # Normal aliases
 alias ls="ls --color=always --group-directories-first"
 alias grep="grep --color=always"
-alias vi="vim"
+alias vi="vim -p"
 alias md="mkdir -p"
 alias po="popd"
 alias s="screen"
