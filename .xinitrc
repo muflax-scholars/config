@@ -11,14 +11,14 @@ export LANG="ja_JP.UTF-8"
 
 export OOO_FORCE_DESKTOP="gnome"
  
-scim -d
-setxkbmap neo2 neo
-xmodmap ~/.Xmodmap
+scim -d &
+setxkbmap neo2 neo &
+xmodmap ~/.Xmodmap &
 #numlockx on
 
 #syndaemon -i 1 &
-xset r rate 300 65
-xset m 3 2
+xset r rate 300 65 &
+xset m 3 2 &
 
 #xbindkeys
 
@@ -28,5 +28,6 @@ nitrogen --restore &
 
 #xcompmgr &
 #noteo &
+#sudo /sbin/bootchartd stop
 exec dbus-launch --auto-syntax --exit-with-session awesome
 #exec startfluxbox
