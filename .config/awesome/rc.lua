@@ -204,6 +204,30 @@ datewidget = widget({
     align = "right"
 })
 
+-- calculates time until next nap
+cycles = {{hour = 3, min = 0, core = 1},
+          {hour = 9, min = 0, core = 0},
+          {hour = 14, min = 0, core = 0},
+          {hour = 19, min = 0, core = 0},
+          {hour = 23, min = 0, core = 0}}
+
+function cycle ()
+    local now = os.date("*t")
+    local t = {hour = 0, min = 0}
+    for c=1, #cycles do
+        if cycles[c].hour > now.hour then
+            t.hour = (cycles[c].hour - now.hour) % 24 - 1
+            t.min = (cycles[c].min - now.min) % 60
+            return t
+        end
+    end
+  
+    c = 1
+    t.hour = (cycles[c].hour - now.hour) % 24 - 1
+    t.min = (cycles[c].min - now.min) % 60
+    return t
+end
+
 taskwidget = widget({
     type = "textbox",
     name = "taskwidget",
@@ -215,6 +239,20 @@ cyclewidget = widget({
     name = "cyclewidget",
     align = "right"
 })
+
+wicked.register(cyclewidget, 'function', function (widget, args)
+    local t = cycle()
+    return heading("C")..string.format(": %01d:%02d", t.hour, t.min)..separator
+end, interval)
+
+apocalypse = {yday = 355, year = 2012}
+
+wicked.register(datewidget, 'function', function (widget, args)
+    local now = os.date("*t")
+    local days = ((apocalypse.year - now.year) * 365) + (apocalypse.yday - now.yday)
+    return heading("D")..os.date(": %u, %H:%M %m/%d")..string.format(" [%d]", days)
+end, interval)
+
 
 if hostname == "kira" then
     -- used to park the mouse cursor
@@ -291,7 +329,7 @@ wicked.register(volumewidget, 'function', function (widget, args)
 
    f:close()
 
-   return heading('V')..string.format(": %3d%%", tonumber(v))
+   return heading(' V')..string.format(": %3d%%", tonumber(v))..separator
 end, interval)
 
 cputextwidget = widget({

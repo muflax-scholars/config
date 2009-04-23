@@ -24,7 +24,7 @@ xset m 3 2 &
 
 nitrogen --restore &
 #xautolock -locker "xlock -mode mandelbrot -dpmsoff 1800 -echokeys" -time 15 &
-~/src/in/randomstuff/cycle &
+#~/src/in/randomstuff/cycle &
 
 #xcompmgr &
 #noteo &
