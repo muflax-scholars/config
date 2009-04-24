@@ -245,7 +245,7 @@ wicked.register(cyclewidget, 'function', function (widget, args)
     return heading("C")..string.format(": %01d:%02d", t.hour, t.min)..separator
 end, interval)
 
-apocalypse = {yday = 355, year = 2012}
+apocalypse = {yday = 356, year = 2012}
 
 wicked.register(datewidget, 'function', function (widget, args)
     local now = os.date("*t")
