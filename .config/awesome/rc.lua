@@ -228,11 +228,11 @@ function cycle ()
     return t
 end
 
-taskwidget = widget({
-    type = "textbox",
-    name = "taskwidget",
-    align = "right"
-})
+--taskwidget = widget({
+--    type = "textbox",
+--    name = "taskwidget",
+--    align = "right"
+--})
 
 cyclewidget = widget({
     type = "textbox",
@@ -423,7 +423,7 @@ for s = 1, screen.count() do
             mytaglist[s],
             mylayoutbox[s],
             parkingwidget,
-            taskwidget,
+            --taskwidget,
             wifiwidget,
             batterywidget,
             cputextwidget,
