@@ -228,7 +228,7 @@ alias doff="D0 xset dpms force off"
 alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
           echo 'press any key to continue or press no key to wait forever' && read && \
           ~/src/in/randomstuff/lrp.py --build && yaourt -Syu --aur && sudo pacman --noconfirm -Sc"
-
+alias cdl="cd /usr/local/src/abs/local"
 
 ########################
 # local .zshrc aliases #
