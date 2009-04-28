@@ -12,8 +12,8 @@ export LANG="ja_JP.UTF-8"
 export OOO_FORCE_DESKTOP="gnome"
  
 scim -d &
-setxkbmap neo2 neo &
-xmodmap ~/.Xmodmap &
+setxkbmap neo2 neo
+xmodmap ~/.Xmodmap
 #numlockx on
 
 #syndaemon -i 1 &
