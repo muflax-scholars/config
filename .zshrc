@@ -231,6 +231,25 @@ alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
           ~/src/in/randomstuff/lrp.py --build && yaourt -Syu --aur && sudo pacman --noconfirm -Sc"
 alias cdl="cd /usr/local/src/abs/local"
 
+# LOL!!k!
+alias wtf='dmesg'
+alias ohnoes='cat /var/log/errors.log'
+alias rtfm='man'
+
+alias visible='echo'
+alias invisible='cat'
+alias moar='less'
+
+alias icanhas='mkdir'
+alias donotwant='rm'
+alias dowant='cp'
+alias gtfo='mv'
+alias hai='cd'
+
+alias nomnom='killall'
+alias cya='sudo reboot'
+alias kthxbai='sudo shutdown -h now'
+
 ########################
 # local .zshrc aliases #
 ########################
@@ -239,4 +258,4 @@ source ~/.zshrc_local
 #if [ ! $TERM = "screen" ]; then 
 #    exec screen
 #fi
-#!/bin/zsh
+
