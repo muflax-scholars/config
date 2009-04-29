@@ -201,6 +201,8 @@ function nap() {
     #xlock -mode mandelbrot -echokeys &> /dev/null 
     #purple-remote "setstatus?status=available&message=${OLDMSG[2,-2]}"
     #echo "${OLDMSG[2,-2]}"
+    amixer -q set Software 85%
+    boodler.py -o alsa computing.MultiComputing
 }
 
 function tb() {
@@ -258,4 +260,3 @@ source ~/.zshrc_local
 #if [ ! $TERM = "screen" ]; then 
 #    exec screen
 #fi
-
