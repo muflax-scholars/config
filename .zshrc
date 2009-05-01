@@ -201,6 +201,7 @@ function nap() {
     #xlock -mode mandelbrot -echokeys &> /dev/null 
     #purple-remote "setstatus?status=available&message=${OLDMSG[2,-2]}"
     #echo "${OLDMSG[2,-2]}"
+    sleep 22m
     amixer -q set Software 85%
     boodler.py -o alsa computing.MultiComputing
 }

@@ -18,7 +18,7 @@ f = io.popen('whoami')
 username = f:read()
 f:close()
      
-theme_path = "/home/"..username.."/.config/awesome/theme"
+theme_path = "/home/"..username.."/.config/awesome/theme.lua"
 beautiful.init(theme_path)
 
 naughty.config.position         = "bottom_right"
@@ -462,16 +462,16 @@ end
 
 globalkeys = {
 key(k_m, "c", function () 
-    awful.util.spawn("MPD_HOST=192.168.1.15 mpc toggle") end),
+    awful.util.spawn_with_shell("MPD_HOST=192.168.1.15 mpc toggle") end),
 
 key(k_m, "x", function ()
-    awful.util.spawn("scrot -e 'mv $f /home/"..username.."/pigs/Screenshots/'") end),
+    awful.util.spawn_with_shell("scrot -e 'mv $f /home/"..username.."/pigs/Screenshots/'") end),
 
 key(k_m, "z", function () 
     awful.util.spawn(terminal) end),
 
 key(k_m, "e", function () 
-    awful.util.spawn(menu) end),
+    awful.util.spawn_with_shell(menu) end),
 
 key(k_m, "u", function ()
     awful.util.spawn("amixer -q set "..mixer.." 5+") end),
