@@ -160,7 +160,10 @@ alias -g G='| grep'
 alias -g GP='| grep --color=auto'
  
 alias wake_totenkopf="wakeonlan 00:18:E7:16:6F:C5"
-alias wake_mummra="wakeonlan 00:14:2A:78:FA:24"
+alias wake_mummra="wakeonlan 00:12:79:DE:C7:2C"
+
+alias mish="ssh totenkopf@ming"
+alias mush="ssh amon@mumm-ra"
 
 function ss() {purple-remote 'setstatus?status=offline' DN; sudo /usr/local/sbin/suspend $*; purple-remote 'setstatus?status=available' DN}
 
