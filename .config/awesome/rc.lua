@@ -21,11 +21,12 @@ f:close()
 theme_path = "/home/"..username.."/.config/awesome/theme.lua"
 beautiful.init(theme_path)
 
-naughty.config.position         = "bottom_right"
-naughty.config.font             = beautiful.font
-naughty.config.fg               = beautiful.fg_focus
-naughty.config.bg               = beautiful.bg_focus
-naughty.config.border_color     = beautiful.border_focus
+naughty.config.presets["normal"].position     = "bottom_right"
+naughty.config.presets["normal"].font         = "profont 16" or beautiful.font
+naughty.config.presets["normal"].height        = 24
+naughty.config.presets["normal"].fg           = beautiful.fg_urgent
+naughty.config.presets["normal"].bg           = beautiful.bg_urgent
+naughty.config.presets["normal"].border_color = beautiful.border_normal
 
 terminal = "urxvtcd"
 dmenu = "dmenu -b -fn '-*-profont-*-r-normal-*-*-160-*-*-*-*-iso8859-*' -nb '#000000' -nf '#FFFFFF' -sb '#0066ff'"
@@ -87,26 +88,6 @@ tag_rules = {
 spacer = " "
 separator = " "
 default_mwfact = 0.60
-
-function bg(color, text)
-    return '<bg color="'..color..'" />'..text
-end
-
-function fg(color, text)
-    return '<span color="'..color..'">'..text..'</span>'
-end
-                     
-function font(font, text)
-    return '<span font_desc="'..font..'">'..text..'</span>'
-end
-
-function bold(text)
-    return '<b>'..text..'</b>'
-end
-
-function heading(text)
-    return fg(beautiful.fg_focus, bold(text))
-end
 
 use_titlebar = true
 
@@ -244,7 +225,7 @@ cyclewidget = widget({
 
 wicked.register(cyclewidget, 'function', function (widget, args)
     local t = cycle()
-    return heading("C")..string.format(": %01d:%02d", t.hour, t.min)..separator
+    return string.format("C: %01d:%02d", t.hour, t.min)..separator
 end, interval)
 
 apocalypse = {yday = 356, year = 2012}
@@ -252,7 +233,7 @@ apocalypse = {yday = 356, year = 2012}
 wicked.register(datewidget, 'function', function (widget, args)
     local now = os.date("*t")
     local days = ((apocalypse.year - now.year) * 365) + (apocalypse.yday - now.yday)
-    return heading("D")..os.date(": %u, %H:%M %m/%d")..string.format(" [%d]", days)
+    return os.date("D: %u, %H:%M %m/%d")..string.format(" [%d]", days)
 end, interval)
 
 
@@ -276,7 +257,7 @@ if hostname == "kira" then
         local f = io.open("/sys/class/net/wlan0/wireless/link")
         local wifiStrength = f:read()
         f:close()
-        return heading("W")..": "..wifiStrength.."%"..separator
+        return "W: "..wifiStrength.."%"..separator
     end, interval)  
 
     batterywidget = widget({
@@ -300,7 +281,7 @@ if hostname == "kira" then
 
         f:close()
 
-        return heading('B')..": "..v
+        return "B: "..v
     end, interval)  
 
 end
@@ -331,7 +312,7 @@ wicked.register(volumewidget, 'function', function (widget, args)
 
    f:close()
 
-   return heading(' V')..string.format(": %3d%%", tonumber(v))..separator
+   return string.format("V: %3d%%", tonumber(v))..separator
 end, interval)
 
 cputextwidget = widget({
@@ -340,10 +321,10 @@ cputextwidget = widget({
     align = 'right'
 })
 
-cputextwidget.text = spacer..heading('CPU')..': '..spacer..separator
+cputextwidget.text = spacer..'CPU: '..spacer..separator
 wicked.register(cputextwidget, 'cpu', 
 function (widget, args) 
-    return spacer..heading('C')..string.format(": %3d%%", args[1])..spacer
+    return spacer..string.format("C: %3d%%", args[1])..spacer
 end, interval) 
 
 cpugraphwidget = widget({
@@ -373,10 +354,10 @@ memtextwidget = widget({
     align = 'right'
 })
 
-memtextwidget.text = spacer..heading('M')..': '..spacer..separator
+memtextwidget.text = spacer..'M: '..spacer..separator
 wicked.register(memtextwidget, 'mem', 
 function (widget, args) 
-    return spacer..heading('M')..string.format(": %4dM (%3d%%)", tonumber(args[2]), tonumber(args[1]))..spacer 
+    return spacer..string.format("M: %4dM (%3d%%)", tonumber(args[2]), tonumber(args[1]))..spacer 
 end, interval)
 
 memgraphwidget = widget({

@@ -19,9 +19,7 @@ hardstatus off
 #hardstatus alwayslastline
 #hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
 
-activity "%c activity -> %n%f %t"
-bell "%c bell -> %n%f %t^G"
-vbell_msg " *beep* "
+bell_msg " *ring* -> %n"
 #caption always "%{= wk} %?%-Lw%?%{= kd} %n*%f %t %{= wk}%?%+Lw%? %{= wk}%=%{= Wk}"  
 hardstatus alwayslastline "%{= .b}[ %{B}%H %{b}][ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%-= %{b}][%{B} %l %{b}]"
 

@@ -5,6 +5,8 @@ URxvt.preeditType:      OverTheSpot
 URxvt.jumpScroll:       true
 URxvt.skipScroll:       true
 
+URxvt.urgentOnBell:     true 
+
 URxvt*font:             xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 URxvt*boldFont:         xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 URxvt*italicFont:       xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
