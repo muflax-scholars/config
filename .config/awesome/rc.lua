@@ -197,7 +197,7 @@ function cycle ()
     local t = {hour = 0, min = 0}
     for c=1, #cycles do
         if cycles[c].hour > now.hour then
-            diff = (cycles[c].hour*60 + cycles[c].min) - (now.hour*60 + now.min)
+            diff = ((cycles[c].hour*60 + cycles[c].min) - (now.hour*60 + now.min)) % 1440
             t.hour = diff / 60
             t.min = diff % 60
             return t
@@ -205,7 +205,7 @@ function cycle ()
     end
   
     c = 1
-    diff = (cycles[c].hour*60 + cycles[c].min) - (now.hour*60 + now.min)
+    diff = ((cycles[c].hour*60 + cycles[c].min) - (now.hour*60 + now.min)) % 1440
     t.hour = diff / 60
     t.min = diff % 60
     return t
