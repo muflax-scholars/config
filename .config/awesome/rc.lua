@@ -312,7 +312,7 @@ wicked.register(volumewidget, 'function', function (widget, args)
 
    f:close()
 
-   return string.format("V: %3d%%", tonumber(v))..separator
+   return string.format(" V: %3d%%", tonumber(v))..separator
 end, interval)
 
 cputextwidget = widget({
