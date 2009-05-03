@@ -33,7 +33,7 @@ bind \\
 bind I login on
 bind O login off
 
-bind s split
 bind o focus
 bind x remove
 bind m monitor
+bind s silence
