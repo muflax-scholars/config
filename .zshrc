@@ -40,8 +40,6 @@ export PS2="$(print '%{\e[0;32m%}>%{\e[0m%}')"
 # Vars used later on by zsh
 export EDITOR="vim"
 export VISUIAL="vim"
-export BROWSER="firefox"
-export IMAGEVIEWER="gqview"
 
 # universal options
 
@@ -149,6 +147,7 @@ alias po="popd"
 alias s="screen"
 alias less="less -iF" 
 alias mc="mc -x"
+alias weechat="weechat-curses"
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
