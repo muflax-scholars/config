@@ -147,11 +147,7 @@ alias po="popd"
 alias s="screen"
 alias less="less -iF" 
 alias mc="mc -x"
-<<<<<<< HEAD:.zshrc
 alias weechat="weechat-curses"
-=======
-alias weechat="weechat-ncurses"
->>>>>>> 047784aadaefbb87924d791d00554b7b65c27f22:.zshrc
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
