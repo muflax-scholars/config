@@ -187,6 +187,7 @@ datewidget = widget({
 
 -- calculates time until next nap
 cycles = {{hour = 3, min = 0, core = 1},
+          {hour = 5, min = 0, core = 0},
           {hour = 9, min = 0, core = 0},
           {hour = 14, min = 0, core = 0},
           {hour = 19, min = 0, core = 0},
