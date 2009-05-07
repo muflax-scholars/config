@@ -191,19 +191,15 @@ alias ewine="wine explorer /desktop=foo,1024x768"
 alias newine="nice wine explorer /desktop=foo,1024x768"
 
 function nap() {
-    #ssh amon@mumm-ra 'DISPLAY=:0.0 xlock -mode mandelbrot -nolock &> /dev/null &'
     ssh amon@mumm-ra 'DISPLAY=:0.0 xset dpms force off' DN
     mpc --no-status pause
     echo "お休みなさい。。。"
-    #OLDMSG=$(purple-send PurpleSavedstatusGetMessage int32:$(purple-send PurpleSavedstatusGetCurrent | grep int32 | awk '{ print $2 }') | grep string | cut -c 11-)
-    #purple-remote "setstatus?status=away&message=\"-.- .oO(zzzZZZzzz)\""
     DISPLAY=:0.0 xset dpms force off
-    #xlock -mode mandelbrot -echokeys &> /dev/null 
-    #purple-remote "setstatus?status=available&message=${OLDMSG[2,-2]}"
-    #echo "${OLDMSG[2,-2]}"
-    sleep 22m
-    amixer -q set Software 85%
-    boodler.py -o alsa computing.MultiComputing
+    sleep 22m && {
+        echo "(^オ^)(^ハ^)(^ヨ^)(^ウ^)(^ー^)"
+        amixer -q set Software 85%
+        boodler.py -o alsa com.eblong.zarf.computing/MultiComputing DN
+    }
 }
 
 function tb() {
