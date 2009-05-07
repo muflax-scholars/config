@@ -43,8 +43,6 @@ export VISUIAL="vim"
 
 # universal options
 
-export BOODLER_SOUND_PATH="/opt/boodler-snd"
-export BOODLER_EFFECTS_PATH="/opt/boodler-snd/effects"
 export MPD_HOST="192.168.1.15"
 export MOZ_DISABLE_PANGO="1"
 export MBOX="/dev/null"
