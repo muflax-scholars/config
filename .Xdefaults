@@ -12,7 +12,7 @@ URxvt*boldFont:         xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazan
 URxvt*italicFont:       xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 URxvt*bolditalicFont:   xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 
-URxvt*scrollBar:        true
+UaaaRxvt*scrollBar:        true
 URxvt*scrollstyle:      plain
 URxvt*scrollBar_right:  true
 URxvt*scrollTtyKeypress: true
@@ -39,7 +39,7 @@ URxvt*saveLines:        10000
 *color1:     rgb:a8/00/00
 *color2:     rgb:00/a8/00
 *color3:     rgb:a8/54/00
-*color4:     rgb:00/00/a8
+*color4:     rgb:36/73/b5
 *color5:     rgb:a8/00/a8
 *color6:     rgb:00/a8/a8
 *color7:     rgb:a8/a8/a8
@@ -47,7 +47,7 @@ URxvt*saveLines:        10000
 *color9:     rgb:f8/54/50
 *color10:    rgb:50/fc/50
 *color11:    rgb:f8/fc/50
-*color12:    rgb:50/54/f8
+*color12:    rgb:1b/85/d6
 *color13:    rgb:f8/54/f8
 *color14:    rgb:50/fc/f8
 *color15:    rgb:f8/fc/f8
