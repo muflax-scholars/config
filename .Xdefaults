@@ -12,7 +12,7 @@ URxvt*boldFont:         xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazan
 URxvt*italicFont:       xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 URxvt*bolditalicFont:   xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 
-UaaaRxvt*scrollBar:        true
+URxvt*scrollBar:        true
 URxvt*scrollstyle:      plain
 URxvt*scrollBar_right:  true
 URxvt*scrollTtyKeypress: true
