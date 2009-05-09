@@ -449,7 +449,7 @@ key(k_m, "c", function ()
 key(k_m, "x", function ()
     awful.util.spawn_with_shell("scrot -e 'mv $f /home/"..username.."/pigs/Screenshots/'") end),
 
-key(k_m, "z", function () 
+key(k_m, "p", function () 
     awful.util.spawn(terminal) end),
 
 key(k_m, "e", function () 
@@ -572,11 +572,10 @@ key(k_m, "y", function ()
 end),
 }
 
--- hotkeys end here
-
 if hostname == "kira" then 
-    table.insert(globalkeys, key(k_m, "p", mouse_toggle))
+    table.insert(globalkeys, key(k_m, "adiaeresis", mouse_toggle))
 end
+
 
 keynumber = 0
 for s = 1, screen.count() do
@@ -619,6 +618,8 @@ for i = 1, keynumber do
 end
 
 root.keys(globalkeys)
+
+-- hotkeys end here
 
 awful.hooks.focus.register(function(c)
     -- Set border to active color
