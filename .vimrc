@@ -13,7 +13,7 @@ set textwidth=80
 set formatoptions=rq
 set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
-"set writebackup
+set nowritebackup
 set showtabline=2
 
 "search
