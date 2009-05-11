@@ -186,12 +186,12 @@ datewidget = widget({
 })
 
 -- calculates time until next nap
-cycles = {{hour = 3, min = 0, core = 1},
-          {hour = 5, min = 0, core = 0},
+cycles = {{hour = 1, min = 0, core = 0},
+          {hour = 4, min = 0, core = 1},
           {hour = 9, min = 0, core = 0},
           {hour = 14, min = 0, core = 0},
-          {hour = 19, min = 0, core = 0},
-          {hour = 23, min = 0, core = 0}}
+          {hour = 18, min = 0, core = 0},
+          {hour = 22, min = 0, core = 0}}
 
 function cycle ()
     local now = os.date("*t")
