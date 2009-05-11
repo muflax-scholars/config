@@ -13,7 +13,7 @@ set textwidth=80
 set formatoptions=rq
 set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
-set nowritebackup
+set nobackup
 set showtabline=2
 
 "search
@@ -29,7 +29,7 @@ set smarttab
 
 "virtual edit
 set virtualedit=all
-set mouse=a
+set mouse=v
 
 "wrap line, mark with +
 set lbr
