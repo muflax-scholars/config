@@ -15,7 +15,7 @@ URxvt.skipScroll:       true
 URxvt.urgentOnBell:     true 
 
 !URxvt*font:             xft:Terminus-10,mplus_j12r,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
-URxvt*font:             -misc-fixed-medium-r-normal-*-14-*
+URxvt*font:             -misc-fixed-medium-r-normal-*-14-*,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false                         
 !no bold fonts - fucks up more than it solves
 !URxvt*boldFont:         xft:Terminus-10,mplus_j12r,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 
