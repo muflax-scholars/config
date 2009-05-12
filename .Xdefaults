@@ -1,16 +1,22 @@
 Xcursor.theme: Neutral
 Xcursor.size: 16
 
+Xft.dpi:        96
+!Xft.antialias:  false
+!Xft.rgba:       rgb
+!Xft.hinting:    true
+!Xft.hintstyle:  hintfull
+
+
 URxvt.preeditType:      OverTheSpot
 URxvt.jumpScroll:       true
 URxvt.skipScroll:       true
 
 URxvt.urgentOnBell:     true 
 
-URxvt*font:             xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
-URxvt*boldFont:         xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
-URxvt*italicFont:       xft:Terminus-10,xft:mplus_j10r:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
-URxvt*bolditalicFont:   xft:Terminus-10,xft:mplus_j10b:antialias=false,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
+URxvt*font:             xft:Terminus-10,mplus_j12r,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
+!no bold fonts - fucks up more than it solves
+URxvt*boldFont:         xft:Terminus-10,mplus_j12r,xft:Sazanami Gothic:antialias=false,xft:Code2000:antialias=false
 
 URxvt*scrollBar:        true
 URxvt*scrollstyle:      plain
@@ -30,6 +36,7 @@ URxvt*foreground:   #FFFFFF
 URxvt*inheritPixmap:    true
 URxvt*shading:          14
 !URxvt*tintColor:       #191919
+URxvt*perl-ext-common:  default,matcher
 URxvt*urlLauncher:      /usr/bin/firefox
 URxvt*matcher.button:   1
 URxvt*saveLines:        10000
