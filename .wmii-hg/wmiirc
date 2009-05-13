@@ -1,5 +1,6 @@
 #!/bin/dash -f
-# Configure wmii
+cowsay "wmii starting on  ${DISPLAY} at $(date +%H:%M:%S)..."
+
 wmiiscript=wmiirc # For wmii.sh
 . wmii.sh
 
@@ -15,10 +16,10 @@ noticetimeout=5
 noticebar=/rbar/!notice
 
 # Colors tuples: "<text> <background> <border>"
-WMII_NORMCOLORS='#000000 #c1c48b #81654f'
-WMII_FOCUSCOLORS='#000000 #81654f #000000'
+WMII_NORMCOLORS='#ffffff #000000 #000055'
+WMII_FOCUSCOLORS='#ffffff #3465a4 #3465a4'
 
-WMII_BACKGROUND='#333333'
+WMII_BACKGROUND='#000000'
 WMII_FONT='-*-gothic-medium-*-12-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
@@ -208,7 +209,6 @@ wmiir write /ctl <<!
 	grabmod $MODKEY
 	border 1
 !
-#xsetroot -solid "$WMII_BACKGROUND" &
 nitrogen --restore &
 
 export WMII_FONT WMII_TERM
