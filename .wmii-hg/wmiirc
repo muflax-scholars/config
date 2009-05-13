@@ -151,11 +151,11 @@ events() {
 		wmiir xwrite /tag/sel/ctl colmode sel stack+max
 	Key $MODKEY-a
 		action $(wi_actions | wimenu -h "${hist}.actions" -n $histnum) &
-	Key $MODKEY-p
+	Key $MODKEY-e
 		eval wmiir setsid "$(wimenu -h "${hist}.progs" -n $histnum <$progsfile)" &
 	Key $MODKEY-t
 		wmiir xwrite /ctl view $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
-	Key $MODKEY-Return
+	Key $MODKEY-p
 		eval wmiir setsid $WMII_TERM &
 	Key $MODKEY-Shift-space
 		wmiir xwrite /tag/sel/ctl send sel toggle
