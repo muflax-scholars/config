@@ -6,7 +6,6 @@ wmiiscript=wmiirc # For wmii.sh
 
 # Configuration Variables
 
-
 # Bars
 noticetimeout=5
 noticebar=/rbar/!notice
@@ -60,7 +59,7 @@ cycle() {
 }   
 
 status() {
-    st_uptime=$(uptime | 's/.*://; s/,//g')
+    st_uptime=$(uptime | sed -e 's/.*://; s/,//g')
     st_date=$(date)
     st_cycle=$(cycle)
     statusbar=("$st_uptime" "$st_cycle" "$st_date")
@@ -236,7 +235,7 @@ wmiir write /ctl <<EOF
 	normcolors $WMII_NORMCOLORS
 	grabmod $MODKEY
 	border 1
-    colmode default-max
+    colmode default
 EOF
 # background
 nitrogen --restore &
