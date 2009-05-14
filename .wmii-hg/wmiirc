@@ -38,7 +38,11 @@ EOF
 
 # Status Bar Info
 status() {
-	echo -n $(uptime | sed 's/.*://; s/,//g') '|' $(date)
+    st_uptime=$(uptime | 's/.*://; s/,//g')
+    st_date=$(date)
+    
+    statusbar=(st_uptime st_date)
+    echo -n ${(j: | :)statusbar}
 }
 
 local_events() { true;}
