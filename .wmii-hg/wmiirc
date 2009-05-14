@@ -72,8 +72,9 @@ cycle() {
         fi
     done
      
-    [[ $first == 1 ]] && $c=1           
-    diff=$(((($cycles[$c]*60) - ($hour*60 + $min)) % 1440))
+    [[ $first == 1 ]] && c=1           
+    diff=$(((($cycles[$c]*60) - ($hour*60 + $min)) ))
+    [[ $diff < 0 ]] && diff=$(( 1440 + $diff ))
     printf "C: %d時%02d分" $(($diff/60)) $(($diff%60))
     return 0
 }                    
