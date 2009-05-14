@@ -253,9 +253,9 @@ events() {
     	action $(wi_actions | wimenu -h "${hist}.actions" -n $histnum) &
     Key $MODKEY-e
     	eval wmiir setsid "$(wimenu -h "${hist}.progs" -n $histnum <$progsfile)" &
-    Key $MODKEY-d
+    Key $MODKEY-Shift-h
     	wmiir xwrite /ctl view $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
-    Key $MODKEY-Shift-d
+    Key $MODKEY-Shift-g
     	wmiir xwrite "/client/$(wmiir read /client/sel/ctl)/tags" $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
     Key $MODKEY-p
     	eval wmiir setsid $WMII_TERM &
