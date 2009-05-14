@@ -1,4 +1,5 @@
 #!/bin/zsh -y
+export LANG="ja_JP.UTF-8"
 cowsay "wmii starting on  ${DISPLAY} at $(date +%H:%M:%S)..."
 
 wmiiscript=wmiirc # For wmii.sh
@@ -27,12 +28,12 @@ histnum=5000
 # Column Rules
 wmiir write /colrules <<EOF
 /gimp/ -> 17+83+41
-/.*/ -> 50+50 # Golden Ratio
+/.*/ -> 50+50
 EOF
 
 # Tagging Rules
 wmiir write /tagrules <<EOF
-/MPlayer|VLC/ -> ~
+/MPlayer/ -> ~
 EOF
 
 # Status Bar Info
@@ -62,7 +63,8 @@ status() {
     st_uptime=$(uptime | sed -e 's/.*://; s/,//g')
     st_date=$(date)
     st_cycle=$(cycle)
-    statusbar=("$st_uptime" "$st_cycle" "$st_date")
+    st_apoc="[$(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))]" 
+    statusbar=("$st_uptime" "$st_cycle" "$st_date" "$st_apoc")
     echo -n ${(j: | :)statusbar}
 }
 
