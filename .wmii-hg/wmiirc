@@ -1,4 +1,4 @@
-#!/bin/dash -f
+#!/bin/zsh -y
 cowsay "wmii starting on  ${DISPLAY} at $(date +%H:%M:%S)..."
 
 wmiiscript=wmiirc # For wmii.sh
@@ -32,7 +32,7 @@ histnum=5000
 # Column Rules
 wmiir write /colrules <<!
 /gimp/ -> 17+83+41
-/.*/ -> 62+38 # Golden Ratio
+/.*/ -> 50+50 # Golden Ratio
 !
 
 # Tagging Rules
@@ -234,4 +234,3 @@ do
 done
 
 wi_eventloop
-
