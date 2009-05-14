@@ -66,6 +66,10 @@ status() {
     # current load
     st_uptime="L: $(uptime | sed -e 's/.*://; s/,//g')"
     
+    # memory usage
+    mem=(${$(free -m | grep "Mem:")[2,7]})
+    st_mem=$(printf "M: %04d(-%04d)/%04d" $mem[2] $mem[6] $mem[1])
+
     # current date
     st_date="D: $(h=$(($(date "+%y")+12)); date "+%A, 平成${h}年%m月%d日 %H時%M分%S秒")"
     
@@ -93,7 +97,7 @@ status() {
 
         statusbar+=("$st_wifi" "$st_battery")
     fi
-    statusbar+=("$st_uptime" "$st_volume" "$st_cycle" "$st_date" "$st_apoc")
+    statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_cycle" "$st_date" "$st_apoc")
     echo -n ${(j: | :)statusbar}
 }
 
