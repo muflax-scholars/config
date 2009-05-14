@@ -61,14 +61,39 @@ cycle() {
 }   
 
 status() {
+    statusbar=()
+
+    # current load
     st_uptime="L: $(uptime | sed -e 's/.*://; s/,//g')"
+    
+    # current date
     st_date="D: $(h=$(($(date "+%y")+12)); date "+%A, 平成${h}年%m月%d日 %H時%M分%S秒")"
+    
+    # rest time of current cycle
     st_cycle=$(cycle)
+    
+    # days until apocalypse
     st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
-    if [[ $hostname == "kira" ]] then
-        st_wifi="W: $(cat /sys/class/net/wlan0/wireless/link)%"
+    
+    # volume
+    if [[ $hostname == "mumm-ra" ]] then
+        mixer="Software"
+    else
+        mixer="Master"
     fi
-    statusbar=("$st_uptime" "$st_cycle" "$st_date" "$st_apoc")
+    st_volume="V: $(amixer get $mixer | grep -e "\[[0-9]\+%\]" | head -n 1 | sed -e "s/.*\[\([0-9]\+%\)\].*/\1/")"
+    
+    # laptop specific
+    if [[ $hostname == "kira" ]] then
+        # wifi strength
+        st_wifi="W: $(cat /sys/class/net/wlan0/wireless/link)%"
+        
+        # battery status
+        st_battery="B: $(acpi)"
+
+        statusbar+=("$st_wifi" "$st_battery")
+    fi
+    statusbar+=("$st_uptime" "$st_volume" "$st_cycle" "$st_date" "$st_apoc")
     echo -n ${(j: | :)statusbar}
 }
 
