@@ -37,11 +37,33 @@ wmiir write /tagrules <<EOF
 EOF
 
 # Status Bar Info
+#TODO: support minutes
+cycles=(1 4 9 14 18 22)
+
+cycle() {
+    hour=$(date "+%H")
+    min=$(date "+%M")
+    first=1
+    
+    for c in $(seq 1 ${#cycles}) 
+    do  
+        if [[ $cycles[$c] -gt $hour ]] then
+            first=0
+            break
+        fi
+    done
+     
+    [[ $first == 1 ]] && $c=1           
+    diff=$(((($cycles[$c]*60) - ($hour*60 + $min)) % 1440))
+    printf "%02d:%02d" $(($diff/60)) $(($diff%60))
+    return 0
+}   
+
 status() {
     st_uptime=$(uptime | 's/.*://; s/,//g')
     st_date=$(date)
-    
-    statusbar=(st_uptime st_date)
+    st_cycle=$(cycle)
+    statusbar=("$st_uptime" "$st_cycle" "$st_date")
     echo -n ${(j: | :)statusbar}
 }
 
