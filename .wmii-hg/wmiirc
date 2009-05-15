@@ -51,6 +51,7 @@ EOF
 wmiir write /tagrules <<EOF
 /MPlayer/ -> ~
 /Wine/ -> ~
+/Evince/ -> 
 EOF
 
 # Status Bar Info
