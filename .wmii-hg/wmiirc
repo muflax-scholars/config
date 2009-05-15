@@ -279,7 +279,7 @@ events() {
     	eval wmiir setsid $WMII_TERM &
     Key $MODKEY-f
     	wmiir xwrite /client/sel/ctl Fullscreen toggle
-    Key $MODKEY-Shift-w
+    Key $MODKEY-w
     	wmiir xwrite /client/sel/ctl kill
     Key $MODKEY-$LEFT
     	wmiir xwrite /tag/sel/ctl select left
