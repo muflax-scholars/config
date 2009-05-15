@@ -22,7 +22,7 @@ xset m 3 2
 #xcompmgr &
 
 until {
-    #DISPLAY=:0.1 exec dbus-launch --auto-syntax --exit-with-session wmii &
+    DISPLAY=:0.1 exec dbus-launch --auto-syntax --exit-with-session wmii &
     DISPLAY=:0.0 exec dbus-launch --auto-syntax --exit-with-session wmii &
     DISPLAY=:0.0 exec urxvtcd &
     wait
