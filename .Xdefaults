@@ -20,7 +20,7 @@ URxvt*font:             7x14
 !no bold fonts - fucks up more than it solves
 URxvt*boldFont:
 URxvt*italicFont:
-URxvt*boldItaicFont:
+URxvt*boldItalicFont:
 
 URxvt*scrollBar:        true
 URxvt*scrollstyle:      plain
