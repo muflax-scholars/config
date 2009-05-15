@@ -301,9 +301,9 @@ events() {
     	wmiir xwrite /tag/sel/ctl send sel down
     Key $MODKEY-Shift-$UP
     	wmiir xwrite /tag/sel/ctl send sel up
-    Key $MODKEY-h
-        wmiir xwrite /ctl view "$(read_tags | next_tag)"
     Key $MODKEY-g
+        wmiir xwrite /ctl view "$(read_tags | next_tag)"
+    Key $MODKEY-h
         wmiir xwrite /ctl view "$(read_tags | tac | next_tag)"
     Key $MODKEY-u
         amixer -q set $mixer 5+
