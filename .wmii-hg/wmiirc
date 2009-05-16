@@ -124,9 +124,6 @@ status() {
 
         statusbar+=("$st_wifi" "$st_battery")
     fi
-
-        statusbar+=("$st_wifi" "$st_battery")
-    fi
     statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_cycle" "$st_date" "$st_apoc")
     echo -n ${(j: | :)statusbar}
 }
@@ -306,6 +303,8 @@ events() {
         amixer -q set $mixer 5-
     Key $MODKEY-c
         MPD_HOST=192.168.1.15 mpc --no-status toggle
+    Key $MODKEY-o
+        scrot -s -e "echo %f | xclip -selection c"
 EOF
     for i in 0 1 2 3 4 5 6 7 8 9; do
         sed 's/^\ \ \ \ //' <<EOF
