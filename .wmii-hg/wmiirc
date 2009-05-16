@@ -22,15 +22,13 @@ WMII_FONT='-*-gothic-medium-*-12-*'
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_TERM="urxvtcd"
 
+# wimenu can suck my dick
+WMII_DMENU="dmenu -b -i -fn ${WMII_FONT} -nb #000000 -nf #FFFFFF -sb #0066ff"
+
 # WM Configuration
 
 # background
 nitrogen --restore &
-
-
-# Menu history
-hist="$(wmiir namespace)/history"
-histnum=5000
 
 # Column Rules
 wmiir write /colrules <<EOF
@@ -262,13 +260,13 @@ events() {
     Key $MODKEY-l
         wmiir xwrite /tag/sel/ctl colmode sel stack+max
     Key $MODKEY-a
-        action $(wi_actions | wimenu -h "${hist}.actions" -n $histnum) &
+        action $(wi_actions | $WMII_DMENU) &
     Key $MODKEY-e
-        eval wmiir setsid "$(wimenu -h "${hist}.progs" -n $histnum <$progsfile)" &
+        eval wmiir setsid "$(dmenu_path | $WMII_DMENU)" &
     Key $MODKEY-Shift-h
-        wmiir xwrite /ctl view $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
+        wmiir xwrite /ctl view $(wi_tags | $WMII_DMENU) &
     Key $MODKEY-Shift-g
-        wmiir xwrite "/client/$(wmiir read /client/sel/ctl)/tags" $(wi_tags | wimenu -h "${hist}.tags" -n 50) &
+        wmiir xwrite "/client/$(wmiir read /client/sel/ctl)/tags" $(wi_tags | $WMII_DMENU) &
     Key $MODKEY-p
         eval wmiir setsid $WMII_TERM &
     Key $MODKEY-f
