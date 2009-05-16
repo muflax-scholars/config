@@ -23,16 +23,7 @@ set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_TERM="urxvtcd"
 
 # WM Configuration
-MODKEY=Mod4
 
-wmiir write /ctl <<EOF
-font $WMII_FONT
-focuscolors $WMII_FOCUSCOLORS
-normcolors $WMII_NORMCOLORS
-grabmod $MODKEY
-border 1
-colmode stack-max
-EOF
 # background
 nitrogen --restore &
 
@@ -51,7 +42,6 @@ EOF
 wmiir write /tagrules <<EOF
 /MPlayer/ -> ~
 /Wine/ -> ~
-/Evince/ -> 
 EOF
 
 # Status Bar Info
@@ -162,13 +152,14 @@ next_tag() {
 }
 
 # Event processing, including key handling
+MODKEY=Mod4
 UP=n
 DOWN=r
 LEFT=s
 RIGHT=t
 
 events() {
-    sed 's/^\ \ \ \ //' <<'EOF'
+    cat <<'EOF'
     # Events
     Event CreateTag
     	echo "$WMII_NORMCOLORS" "$@" | wmiir create "/lbar/$@"
@@ -313,7 +304,7 @@ events() {
         MPD_HOST=192.168.1.15 mpc --no-status toggle
 EOF
     for i in 0 1 2 3 4 5 6 7 8 9; do
-    	sed 's/^\ \ \ \ //' <<EOF
+    	cat <<'EOF'
     Key $MODKEY-$i
     	wmiir xwrite /ctl view "$i"
     Key $MODKEY-Shift-$i
@@ -322,10 +313,19 @@ EOF
     done
 }
 wi_events <<EOF
-$(events)
+$(events | sed 's/[\ ]*//')
 $(local_events)
 EOF
 unset events local_events
+
+wmiir write /ctl <<EOF
+font $WMII_FONT
+focuscolors $WMII_FOCUSCOLORS
+normcolors $WMII_NORMCOLORS
+grabmod $MODKEY
+border 1
+colmode stack-max
+EOF
 
 export WMII_FONT WMII_TERM
 export WMII_FOCUSCOLORS WMII_SELCOLORS WMII_NORMCOLORS
