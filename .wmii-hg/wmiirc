@@ -249,8 +249,8 @@ events() {
     #        wmiir xwrite /keys $MODKEY-Control-t
     #        wmiir xwrite /ctl grabmod Mod3;;
     #    esac       
-    #Key $MODKEY-space
-    #    wmiir xwrite /tag/sel/ctl select toggle
+    Key $MODKEY-Shift-space
+        wmiir xwrite /tag/sel/ctl select toggle
     Key $MODKEY-space
         wmiir xwrite /tag/sel/ctl send sel toggle
     Key $MODKEY-x
@@ -266,7 +266,7 @@ events() {
     Key $MODKEY-Shift-h
         wmiir xwrite /ctl view $(wi_tags | $WMII_DMENU) &
     Key $MODKEY-Shift-g
-        wmiir xwrite "/client/$(wmiir read /client/sel/ctl)/tags" $(wi_tags | $WMII_DMENU) &
+        wmiir xwrite "/client/$(wmiir read /client/sel/ctl | grep '^0x')/tags" $(wi_tags | $WMII_DMENU) &
     Key $MODKEY-p
         eval wmiir setsid $WMII_TERM &
     Key $MODKEY-f
