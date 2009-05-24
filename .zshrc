@@ -189,7 +189,6 @@ alias p="/usr/bin/python3"
 alias p2="/usr/bin/python"
 alias p3="/usr/bin/python3"
 
-function maim() { for x in $*; do gcc -O2 -g -Wall -Werror "${x}" -o "$(basename "$x" .c)"; done; }
 alias burnburnBURN="rm -f *.class; javac *.java"
 
 alias tor="curlftpfs -o uid=`id -u` -o gid=`id -g`  192.168.1.102/torrent /mnt/network/torrent-ftp/"
