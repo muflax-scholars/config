@@ -233,7 +233,8 @@ function watch() {
 alias mmv="noglob zmv -W"
 
 alias don="D0 xset dpms force on"
-alias doff="D0 xset dpms force off"
+# stupid hack...
+alias doff="D0 xset dpms force off; sleep 1"
 
 alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
           echo 'press any key to continue or press no key to wait forever' && read && \
