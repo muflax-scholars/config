@@ -193,7 +193,8 @@ alias burnburnBURN="rm -f *.class; javac *.java"
 
 alias tor="curlftpfs -o uid=`id -u` -o gid=`id -g`  192.168.1.102/torrent /mnt/network/torrent-ftp/"
 alias nor="fusermount -u /mnt/network/torrent-ftp"
-
+alias tos="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,gid=1000,uid=1000"
+alias nos="sudo umount.cifs /mnt/network/torrent-samba"
 alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/torrents/ && rm ~/*.torrent" 
 
 alias ewine="wine explorer /desktop=foo,1024x768"
