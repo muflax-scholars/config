@@ -84,3 +84,7 @@ noremap <s-tab> gT
 
 "Jesus saves
 cabbr jesus write
+
+"mutt
+au BufRead /tmp/mutt-* set tw=72
+
