@@ -40,13 +40,14 @@ EOF
 wmiir write /tagrules <<EOF
 /MPlayer/ -> ~
 /Wine/ -> ~
+/CRONOMETER/ -> ~
 EOF
 
 # Status Bar Info
 
 # cycle calculations
 #TODO: support minutes
-cycles=(1 14 20)
+cycles=(4 9 14 20)
 
 cycle() {
     hour=$(date "+%H")
