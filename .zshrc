@@ -206,20 +206,10 @@ function nap() {
     echo "お休みなさい。。。"
     DISPLAY=:0.0 xset dpms force off
     sleep 22m && {
-        echo "(^オ^)(^ハ^)(^ヨ^)(^ウ^)(^ー^)"
+        echo "Time for some Anki!"
         amixer -q set Software 85%
         boodler.py -o alsa com.eblong.zarf.computing/MultiComputing DN
     }
-}
-
-function tb() {
-    for t in $(seq $1 -1 1)
-    do
-        echo "残り${t}分。。。"
-        sleep 1m
-    done
-    echo "＼(^o^)／やった〓！！！"
-    mplayer ~/.timeboxing > /dev/null
 }
 
 function watch() {
