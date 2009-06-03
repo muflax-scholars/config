@@ -171,6 +171,7 @@ alias xclip="xclip -selection clipboard"
 alias cal="cal -m -3"
 
 alias t="noglob todo.sh -d ~/.todo.cfg"
+alias g="noglob todo.sh -d ~/.todo-goals.cfg"
 alias weight="~/src/in/status/status.py -w"
 alias fu="~/src/in/status/status.py -f"
 
