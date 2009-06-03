@@ -282,10 +282,6 @@ events() {
         wmiir xwrite /tag/sel/ctl select down
     Key $MODKEY-$UP
         wmiir xwrite /tag/sel/ctl select up
-    #Key $MODKEY-Control-$DOWN
-    #    wmiir xwrite /tag/sel/ctl select down stack
-    #Key $MODKEY-Control-$UP
-    #    wmiir xwrite /tag/sel/ctl select up stack
     Key $MODKEY-Shift-$LEFT
         wmiir xwrite /tag/sel/ctl send sel left
     Key $MODKEY-Shift-$RIGHT
@@ -294,6 +290,15 @@ events() {
         wmiir xwrite /tag/sel/ctl send sel down
     Key $MODKEY-Shift-$UP
         wmiir xwrite /tag/sel/ctl send sel up
+    # resize
+    Key $MODKEY-Control-$LEFT
+        wmiir xwrite /tag/sel/ctl grow sel sel left
+    Key $MODKEY-Control-$RIGHT
+        wmiir xwrite /tag/sel/ctl grow sel sel right -1
+    Key $MODKEY-Control-$UP
+        wmiir xwrite /tag/sel/ctl grow sel sel up
+    Key $MODKEY-Control-$DOWN
+        wmiir xwrite /tag/sel/ctl grow sel sel down -1
     Key $MODKEY-g
         wmiir xwrite /ctl view "$(read_tags | next_tag)"
     Key $MODKEY-h
