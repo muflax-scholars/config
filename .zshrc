@@ -204,7 +204,12 @@ function nap() {
     mpc --no-status pause
     echo "お休みなさい。。。"
     DISPLAY=:0.0 xset dpms force off
-    sleep 22m && {
+    
+    if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
+        sleep ${1}m
+    else 
+        sleep 22m
+    fi && {
         echo "Time for some Anki!"
         amixer -q set Software 85%
         boodler.py -o alsa com.eblong.zarf.computing/MultiComputing DN
@@ -212,7 +217,7 @@ function nap() {
 }
 
 function watch() {
-    if [[ $# -ge 2 && $1 == [[:digit:]] ]] then 
+    if [[ $# -ge 2 && $1 == [[:digit:]]## ]] then 
         while (clear); do $*[2,$#]; sleep $1; done;
     else 
         while (clear); do $*; sleep 1; done;
