@@ -144,7 +144,7 @@ alias md="mkdir -p"
 alias po="popd"
 alias s="screen"
 alias less="less -iF" 
-alias mc="mc -x"
+alias mc="mc -x -d"
 alias weechat="weechat-curses"
 
 alias -g DN='&> /dev/null'
@@ -199,11 +199,15 @@ alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/torrents/ && 
 alias ewine="wine explorer /desktop=foo,1024x768"
 alias newine="nice wine explorer /desktop=foo,1024x768"
 
+alias don="D0 xset dpms force on"
+# stupid hack...
+alias doff="D0 xset dpms force off; sleep 1"
+
 function nap() {
     ssh amon@mumm-ra 'DISPLAY=:0.0 xset dpms force off' DN
     mpc --no-status pause
     echo "お休みなさい。。。"
-    DISPLAY=:0.0 xset dpms force off
+    doff
     
     if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
         sleep ${1}m
@@ -214,6 +218,7 @@ function nap() {
         amixer -q set Software 85%
         boodler.py -o alsa com.eblong.zarf.computing/MultiComputing DN
     }
+    don
 }
 
 function watch() {
@@ -225,10 +230,6 @@ function watch() {
 }
 
 alias mmv="noglob zmv -W"
-
-alias don="D0 xset dpms force on"
-# stupid hack...
-alias doff="D0 xset dpms force off; sleep 1"
 
 alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
           echo 'press any key to continue or press no key to wait forever' && read && \
