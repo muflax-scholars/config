@@ -42,9 +42,8 @@ export EDITOR="vim"
 export VISUIAL="vim"
 
 # universal options
-
 export MPD_HOST="192.168.1.15"
-export MOZ_DISABLE_PANGO="1"
+#export MOZ_DISABLE_PANGO="1"
 export MBOX="/dev/null"
 export PYTHONDOCS="/usr/share/doc/python/html/"
 
@@ -216,9 +215,9 @@ function nap() {
     fi && {
         echo "Time for some Anki!"
         amixer -q set Software 85%
+        don
         boodler.py -o alsa com.eblong.zarf.computing/MultiComputing DN
     }
-    don
 }
 
 function watch() {
