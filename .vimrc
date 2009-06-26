@@ -15,6 +15,7 @@ set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
 set nobackup
 set showtabline=2
+syntax on
 
 "search
 set incsearch
