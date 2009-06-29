@@ -185,7 +185,7 @@ function ww() {
 
 alias vr='mencoder "mf://*.jpg" -mf fps=5 -o $(date +%Y-%m-%d).mp4 -ovc lavc -lavcopts vcodec=mpeg4 -vf scale=500 && ln -fs $(date +%Y-%m-%d).mp4 latest.mp4 && rm *.jpg'
 
-alias p="/usr/bin/python3"
+alias p="/usr/bin/perl"
 alias p2="/usr/bin/python"
 alias p3="/usr/bin/python3"
 
