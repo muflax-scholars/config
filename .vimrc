@@ -4,9 +4,8 @@ set background=dark
 colorscheme inkpot
 
 "basic options
+syntax on
 set nocompatible
-set backspace=indent,eol,start
-set autoindent
 set history=100
 set ruler
 set textwidth=80
@@ -15,18 +14,21 @@ set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
 set nobackup
 set showtabline=2
-syntax on
 
 "search
 set incsearch
 set ignorecase  
 set smartcase
+set hlsearch
 
-"tab indent
+"indenting
+set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+set backspace=indent,eol,start
+filetype plugin indent on
 
 "virtual edit
 set virtualedit=all
