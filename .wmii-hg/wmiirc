@@ -20,7 +20,7 @@ WMII_BACKGROUND='#000000'
 WMII_FONT='-*-gothic-medium-*-12-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
-WMII_TERM="urxvtcd"
+WMII_TERM="urxvt"
 
 # wimenu can suck my dick
 WMII_DMENU="dmenu -b -i -fn ${WMII_FONT} -nb #000000 -nf #FFFFFF -sb #0066ff"
