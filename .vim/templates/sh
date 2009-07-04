@@ -1,3 +1,6 @@
 #!/bin/zsh
+# Copyright muflax <muflax@gmail.com>, 2009
+# License: GNU GPL 3 <http://www.gnu.org/copyleft/gpl.html>
 
-# cursor: 2 del
+
+# cursor: 4 del
