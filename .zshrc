@@ -220,14 +220,6 @@ function nap() {
     }
 }
 
-function watch() {
-    if [[ $# -ge 2 && $1 == [[:digit:]]## ]] then 
-        while (clear); do $*[2,$#]; sleep $1; done;
-    else 
-        while (clear); do $*; sleep 1; done;
-    fi
-}
-
 alias mmv="noglob zmv -W"
 
 alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
