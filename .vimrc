@@ -14,6 +14,7 @@ set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
 set nobackup
 set showtabline=2
+set showmatch
 
 "search
 set incsearch
@@ -68,6 +69,8 @@ inoremap <Nul> <C-x><C-o>
 nnoremap <space> za
 vnoremap <space> zf
 au FileType c set foldmethod=syntax
+au FileType cpp set foldmethod=syntax
+au FileType perl set foldmethod=syntax
 
 "buffer switching with <f1>, <f2>
 noremap <f1> :bprev<CR>
@@ -88,6 +91,8 @@ noremap <s-tab> gT
 "Jesus saves
 cabbr jesus write
 
-"mutt
-au BufRead /tmp/mutt-* set tw=72
-
+"perl stuff
+let perl_include_pod = 1
+let perl_extended_vars = 1
+let perl_fold = 1
+"let perl_fold_blocks
