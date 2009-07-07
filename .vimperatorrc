@@ -1,20 +1,28 @@
-" 1.2 (created: 2008/08/16 18:51:52)
-" Mappings
+"2.1 (created: 2009/05/21 13:13:06)
+
 map L <C-o>
 map H <C-i>
 map zM null
 map zR null
 map zf null
 map d <C-w>
-
-" Options
+nmap L <C-o>
+nmap H <C-i>
+nmap zM null
+nmap zR null
+nmap zf null
+nmap d <C-w>
 set complete=l
-set wildoptions=auto
+set defsearch=gj
 set focuscontent
-set defsearch=g
-
-" Abbreviations
-
-source! ~/.vimperatorrc.local
+set runtimepath=/home/amon/.vimperator
+set wildoptions=auto
+vmap L <C-o>
+vmap H <C-i>
+vmap zM null
+vmap zR null
+vmap zf null
+vmap d <C-w>
+source! /home/amon/.vimperatorrc.local
 
 " vim: set ft=vimperator:
