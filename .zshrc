@@ -3,8 +3,8 @@
 ###################
 
 export HISTFILE=~/.zsh_history
-export HISTSIZE=3000
-export SAVEHIST=3000
+export HISTSIZE=2000
+export SAVEHIST=2000
 
 autoload -U compinit zmv 
 compinit
