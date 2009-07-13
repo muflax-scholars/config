@@ -47,7 +47,7 @@ EOF
 
 # cycle calculations
 #TODO: support minutes
-cycles=(4 9 14 20)
+cycles=(9 20)
 
 cycle() {
     hour=$(date "+%H")
