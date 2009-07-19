@@ -68,6 +68,7 @@
 /IMEngine/Anthy/PredictKey = Tab,ISO_Left_Tab
 /IMEngine/Anthy/PredictOnInput = true
 /IMEngine/Anthy/ReconvertKey = 
+/IMEngine/Anthy/RomajiPseudoAsciiBlankBehavior = true
 /IMEngine/Anthy/RomajiThemeFile = 
 /IMEngine/Anthy/SelectCandidates10Key = 0
 /IMEngine/Anthy/SelectCandidates1Key = 1
@@ -125,4 +126,4 @@
 /Panel/Gtk/ToolBar/ShowPropertyLabel = true
 /Panel/Gtk/ToolBar/ShowSetupIcon = true
 /Panel/Gtk/ToolBar/ShowStickIcon = false
-/UpdateTimeStamp = 1242667224:948682
+/UpdateTimeStamp = 1247541965:433519

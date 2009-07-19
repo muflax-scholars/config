@@ -145,6 +145,7 @@ alias s="screen"
 alias less="less -iF" 
 alias mc="mc -x -d"
 alias weechat="weechat-curses"
+alias diff="colordiff"
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
