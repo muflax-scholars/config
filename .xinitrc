@@ -12,7 +12,7 @@ export LANG="ja_JP.UTF8"
 export OOO_FORCE_DESKTOP="gnome"
  
 scim -d
-setxkbmap de neo
+setxkbmap saneo
 xmodmap ~/.Xmodmap
 
 xset r rate 300 65
