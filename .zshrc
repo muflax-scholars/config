@@ -232,7 +232,7 @@ alias cdl="cd /usr/local/src/abs/local"
 
 # LOL!!k!
 alias wtf='dmesg'
-alias ohnoes='cat /var/log/errors.log'
+alias ohnoes='sudo cat /var/log/errors.log'
 alias rtfm='man'
 
 alias visible='echo'

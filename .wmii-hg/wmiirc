@@ -81,7 +81,7 @@ cpu_hogs() {
 }
 
 if [[ $hostname == "mumm-ra" ]] then
-    mixer="Software"
+    mixer="vmix1-outvol"
 else
     mixer="Master"
 fi
@@ -110,7 +110,8 @@ status() {
     st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
     
     # volume
-    st_volume="V: $(amixer get $mixer | grep -e "\[[0-9]\+%\]" | head -n 1 | sed -e "s/.*\[\([0-9]\+%\)\].*/\1/")"
+    #st_volume="V: $(amixer get $mixer | grep -e "\[[0-9]\+%\]" | head -n 1 | sed -e "s/.*\[\([0-9]\+%\)\].*/\1/")"
+    st_volume="V: $(ossmix $mixer | sed -e "s/.*set to \([0-9.]\+\).*/\1db/")"
     
     # expanding widgets are always left
     statusbar+=("$st_ps")
@@ -304,13 +305,13 @@ events() {
     Key $MODKEY-h
         wmiir xwrite /ctl view "$(read_tags | tac | next_tag)"
     Key $MODKEY-u
-        amixer -q set $mixer 5+
+        ossmix $mixer -q -- +1
     Key $MODKEY-udiaeresis
-        amixer -q set $mixer 5-
+        ossmix $mixer -q -- -1
     Key $MODKEY-Shift-u
-        ssh amon@mumm-ra -- amixer -q set Software 5+
+        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- +1
     Key $MODKEY-Shift-udiaeresis
-        ssh amon@mumm-ra -- amixer -q set Software 5-
+        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- -1
     Key $MODKEY-c
         MPD_HOST=192.168.1.15 mpc --no-status toggle
     Key $MODKEY-o

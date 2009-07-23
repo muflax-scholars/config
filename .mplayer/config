@@ -8,7 +8,7 @@ stop-xscreensaver="yes"
 vo="xv"
 xy=400
 fs="yes"
-ao="alsa"
+ao="oss:/dev/dsp0"
 mc=0
 
 noautosub=1
