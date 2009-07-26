@@ -216,10 +216,9 @@ function nap() {
     else 
         sleep 22m
     fi && {
-        echo "Time for some Anki!"
-        amixer -q set Software 85%
-        don
-        boodler.py -o alsa com.eblong.zarf.computing/MultiComputing DN
+        echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
+        ossmix -q vmix1-outvol 22
+        boodler.py -o oss com.eblong.zarf.computing/MultiComputing DN
     }
 }
 
