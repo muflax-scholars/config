@@ -244,7 +244,7 @@ alias dowant='cp'
 alias gtfo='mv'
 alias hai='cd'
 
-alias nomnom='killall'
+alias nomnomnom='killall'
 alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
 
