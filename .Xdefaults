@@ -1,11 +1,11 @@
 Xcursor.theme: Neutral
 Xcursor.size: 16
 
-Xft.dpi:        96
+Xft.dpi:        95
 !Xft.antialias:  false
 !Xft.rgba:       rgb
-!Xft.hinting:    true
-!Xft.hintstyle:  hintfull
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
 
 
 URxvt.preeditType:      OverTheSpot
