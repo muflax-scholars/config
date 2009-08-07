@@ -206,6 +206,16 @@ alias don="D0 xset dpms force on"
 alias doff="D0 xset dpms force off; sleep 1"
 
 function nap() {
+    # check last nap time and make sure it is at least 3 hours ago
+    if [[ -e /tmp/last_nap ]] then
+        LAST_NAP=$(cat /tmp/last_nap)
+        if [[ $(( $(date "+%s") - $LAST_NAP )) -lt 10800 ]] then
+            echo "Anti-Snooze warning! Nap forbidden."
+            ossmix -q vmix1-outvol 22
+            boodler.py -o oss com.eblong.zarf.computing/MultiComputing DN
+            return
+        fi
+    fi
     ssh amon@mumm-ra 'DISPLAY=:0.0 xset dpms force off' DN
     mpc --no-status pause
     echo "お休みなさい。。。"
@@ -216,6 +226,8 @@ function nap() {
     else 
         sleep 22m
     fi && {
+        # remember last nap time
+        date "+%s" > /tmp/last_nap
         echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
         ossmix -q vmix1-outvol 22
         boodler.py -o oss com.eblong.zarf.computing/MultiComputing DN
