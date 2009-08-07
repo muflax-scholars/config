@@ -41,6 +41,7 @@ wmiir write /tagrules <<EOF
 /MPlayer/ -> ~
 /Wine/ -> ~
 /CRONOMETER/ -> ~
+/gimp/ -> ~
 EOF
 
 # Status Bar Info
