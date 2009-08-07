@@ -221,13 +221,14 @@ function nap() {
     echo "お休みなさい。。。"
     doff
     
+    # remember last nap time
+    date "+%s" > /tmp/last_nap
+    
     if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
         sleep ${1}m
     else 
         sleep 22m
     fi && {
-        # remember last nap time
-        date "+%s" > /tmp/last_nap
         echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
         ossmix -q vmix1-outvol 22
         boodler.py -o oss com.eblong.zarf.computing/MultiComputing DN
