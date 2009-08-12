@@ -316,7 +316,7 @@ events() {
     Key $MODKEY-c
         MPD_HOST=192.168.1.15 mpc --no-status toggle
     Key $MODKEY-o
-        scrot -s -e "echo %f | xclip -selection c"
+        $HOME/src/in/randomstuff/selection
     # yes, these are hardcoded positions - so what?
     Key $MODKEY-Control-0
         DISPLAY=:0.0 swarp 840 525

@@ -1,6 +1,6 @@
 " ==Vimperator_Color_Scheme==
 " name: default
-" ==Defult_Colorscheme_Settings==
+" ==Default_Colorscheme_Settings==
 hi Bell					border: 0 none; background-color: black;
 hi Boolean				color: red;
 hi CmdLine				font-family: monospace; padding: 1px;
