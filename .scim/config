@@ -1,5 +1,5 @@
 /DefaultIMEngineFactory/en_US = 065d7b20-dda2-47fb-8f94-3306d9a25e56
-/DefaultIMEngineFactory/ja_JP = 065d7b20-dda2-47fb-8f94-3306d9a25e56
+/DefaultIMEngineFactory/ja_JP = 11cb2711-6225-49ca-bde4-472d2ca8aaef
 /DefaultIMEngineFactory/~other = 065d7b20-dda2-47fb-8f94-3306d9a25e56
 /FrontEnd/ChangeFactoryGlobally = false
 /FrontEnd/IMOpenedByDefault = false
@@ -11,6 +11,16 @@
 /FrontEnd/X11/Dynamic = false
 /FrontEnd/X11/OnTheSpot = true
 /FrontEnd/X11/ServerName = SCIM
+/Helper/InputPad/CurrentGroup = 0
+/Helper/InputPad/CurrentTable = 0
+/Helper/InputPad/EnableRepeat = true
+/Helper/InputPad/MainWindowXPos = 0
+/Helper/InputPad/MainWindowYPos = 15
+/Helper/InputPad/PreviewDelay = 1000
+/Helper/InputPad/PreviewSize = 80
+/Helper/InputPad/RepeatDelay = 600
+/Helper/InputPad/RepeatFrequency = 15
+/Helper/InputPad/ShowPreview = true
 /Hotkeys/FrontEnd/NextFactory = Shift+Henkan
 /Hotkeys/FrontEnd/Off = 
 /Hotkeys/FrontEnd/On = 
@@ -92,6 +102,17 @@
 /IMEngine/Anthy/SymbolStyle = Japanese
 /IMEngine/Anthy/TypingMethod = Romaji
 /IMEngine/Anthy/WideLatinModeKey = 
+/IMEngine/Chewing/AddPhraseForward = false
+/IMEngine/Chewing/AutoShiftCursor = true
+/IMEngine/Chewing/ChiEngKey = Shift+Shift_L+KeyRelease
+/IMEngine/Chewing/ChiEngMode = Chi
+/IMEngine/Chewing/EscCleanAllBuffer = true
+/IMEngine/Chewing/KeyboardType = KB_DEFAULT
+/IMEngine/Chewing/PhraseChoiceRearward = true
+/IMEngine/Chewing/SelectionKeys = 1234567890
+/IMEngine/Chewing/SelectionKeysNum = 10
+/IMEngine/Chewing/SpaceAsSelection = true
+/IMEngine/Chewing/TriggerKey = Control+space
 /IMEngine/RawCode/Locales = default
 /IMEngine/Table/AddPhraseKey = Control+a,Control+equal
 /IMEngine/Table/DeletePhraseKey = Control+d,Control+minus
@@ -99,7 +120,7 @@
 /IMEngine/Table/FullWidthPunctKey = Control+period
 /IMEngine/Table/LongPhraseFirst = false
 /IMEngine/Table/ModeSwitchKey = Alt+Shift_L+KeyRelease,Alt+Shift_R+KeyRelease,Shift+Shift_L+KeyRelease,Shift+Shift_R+KeyRelease
-/IMEngine/Table/ShowKeyHint = false
+/IMEngine/Table/ShowKeyHint = true
 /IMEngine/Table/ShowPrompt = false
 /IMEngine/Table/UserPhraseFirst = false
 /IMEngine/Table/UserTableBinary = false
@@ -126,4 +147,4 @@
 /Panel/Gtk/ToolBar/ShowPropertyLabel = true
 /Panel/Gtk/ToolBar/ShowSetupIcon = true
 /Panel/Gtk/ToolBar/ShowStickIcon = false
-/UpdateTimeStamp = 1248316991:972976
+/UpdateTimeStamp = 1250243906:36347
