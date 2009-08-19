@@ -188,7 +188,7 @@ function ww() {
 
 alias vr='mencoder "mf://*.jpg" -mf fps=5 -o $(date +%Y-%m-%d).mp4 -ovc lavc -lavcopts vcodec=mpeg4 -vf scale=500 && ln -fs $(date +%Y-%m-%d).mp4 latest.mp4 && rm *.jpg'
 
-alias p="/usr/bin/perl"
+alias p="/usr/bin/python3"
 alias p2="/usr/bin/python"
 alias p3="/usr/bin/python3"
 
@@ -227,7 +227,7 @@ function nap() {
     if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
         sleep ${1}m
     else 
-        sleep 22m
+        sleep 25m
     fi && {
         echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
         ossmix -q vmix1-outvol 22
