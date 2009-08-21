@@ -15,7 +15,8 @@ URxvt.skipScroll:       true
 URxvt.urgentOnBell:     true 
 
 !diversity is for the weak
-URxvt*font:             7x14
+!URxvt*font:             7x14
+URxvt*font:              7x14,xft:freefont:antialias=false
 
 !no bold fonts - fucks up more than it solves
 URxvt*boldFont:
