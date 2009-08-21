@@ -233,6 +233,17 @@ function nap() {
         ossmix -q vmix1-outvol 22
         boodler.py -o oss com.eblong.zarf.computing/MultiComputing DN
     }
+}  
+
+function tb() {
+    for t in $(seq $1 -1 1)
+    do
+        echo "残り${t}分。。。"
+        sleep 1m
+    done
+    echo "＼(^o^)／やった〓！！！"
+    date
+    mplayer ~/.timeboxing > /dev/null
 }
 
 alias mmv="noglob zmv -W"
