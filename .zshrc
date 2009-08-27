@@ -243,7 +243,14 @@ function tb() {
     done
     echo "＼(^o^)／やった〓！！！"
     date
+    ~/.wmii-hg/alarm.sh "(^o^) やった〓！！！"  
     mplayer ~/.timeboxing > /dev/null
+}
+
+function COL() {
+    if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
+        awk "{ print \$$1 }" $*[2,-1]
+    fi
 }
 
 alias mmv="noglob zmv -W"
