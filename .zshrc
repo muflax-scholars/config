@@ -33,9 +33,26 @@ setopt NEO
 setopt NO_CHASE_LINKS
 setopt NO_CHASE_DOTS
 
-# PS1 and PS2
-export PS1="$(print '%{\e[0;32m%}%n@%m%{\e[0m%}') $(print '%{\e[0;36m%}%~%{\e[0m%}') # "
-export PS2="$(print '%{\e[0;32m%}>%{\e[0m%}')"
+# let's make an awesome prompt
+autoload colors
+if [[ "${terminfo[colors]}" -ge 8 ]] then
+    colors
+fi
+
+local op="%{$fg[green]%}[%{$reset_color%}"
+local cp="%{$fg[green]%}]%{$reset_color%}"
+local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
+local path_p="${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
+local user_host="${op}%{$fg[cyan]%}%n@%m%{$reset_color%}${cp}"
+local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3 ($?%)%{$reset_color%})${cp}"
+if [ $(uname -m) = "i686" ]; then
+    local arch="${op}(i686)${cp}"
+fi
+
+PROMPT="%{$fg_bold[black]%}╽%{$reset_color%}${date} ${path_p} ${user_host} ${arch}
+%{$fg_bold[black]%}╿%{$reset_color%}${smiley} # "
+local cur_cmd="${op}%_${cp}"
+PROMPT2="${cur_cmd}> "
 
 # Vars used later on by zsh
 export EDITOR="vim"
