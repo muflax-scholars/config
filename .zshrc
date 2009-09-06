@@ -259,7 +259,6 @@ function tb() {
         sleep 1m
     done
     echo "＼(^o^)／やった〓！！！"
-    date
     ~/.wmii-hg/alarm.sh "(^o^) やった〓！！！"  
     mplayer ~/.timeboxing > /dev/null
 }
