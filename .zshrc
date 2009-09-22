@@ -67,9 +67,11 @@ export PYTHONDOCS="/usr/share/doc/python/html/"
 case "${TERM}" in
     linux)
         export LANG=C
+        export LC_COLLACTE=C
         ;;
     *)
         export LANG=ja_JP.UTF-8
+        export LC_COLLACTE=en_US.UTF-8
         ;;
 esac
 
@@ -163,6 +165,7 @@ alias less="less -iF"
 alias mc="mc -x -d"
 alias weechat="weechat-curses"
 alias diff="colordiff"
+alias rename="/usr/bin/perlbin/vendor/rename"
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
@@ -191,8 +194,8 @@ alias t="noglob todo.sh -d ~/.todo.cfg"
 alias g="noglob todo.sh -d ~/.todo-goals.cfg"
 alias weight="~/src/in/status/status.py -w"
 
-alias omoi="~/src/in/omoikane/omoi"
-alias kane="~/src/in/omoikane/kane"
+alias ashuku="~/src/in/ashuku/ashuku"
+alias a="ashuku add"
 
 function ww() {
     pushd ~/txt/whatworks && 
@@ -226,10 +229,11 @@ function nap() {
     # check last nap time and make sure it is at least 3 hours ago
     if [[ -e /tmp/last_nap ]] then
         LAST_NAP=$(cat /tmp/last_nap)
-        if [[ $(( $(date "+%s") - $LAST_NAP )) -lt 10800 ]] then
+        if [[ $(( $(date "+%s") - $LAST_NAP )) -lt $(( 3*60*60 )) ]] then
             echo "Anti-Snooze warning! Nap forbidden."
             ossmix -q vmix1-outvol 22
-            boodler.py -o oss com.eblong.zarf.computing/MultiComputing DN
+            ~/.wakeup.sh
+            slock
             return
         fi
     fi
