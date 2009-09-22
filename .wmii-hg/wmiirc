@@ -84,7 +84,7 @@ cpu_hogs() {
 if [[ $hostname == "mumm-ra" ]] then
     mixer="vmix1-outvol"
 else
-    mixer="Master"
+    mixer="vmix0-outvol"
 fi
 
 # the status bar
