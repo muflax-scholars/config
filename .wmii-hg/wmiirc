@@ -257,9 +257,9 @@ events() {
     Key $MODKEY-space
         wmiir xwrite /tag/sel/ctl send sel toggle
     Key $MODKEY-x
-        wmiir xwrite /tag/sel/ctl colmode sel default-max
-    Key $MODKEY-v
         wmiir xwrite /tag/sel/ctl colmode sel stack-max
+    Key $MODKEY-v
+        wmiir xwrite /tag/sel/ctl colmode sel default-max
     Key $MODKEY-l
         wmiir xwrite /tag/sel/ctl colmode sel stack+max
     Key $MODKEY-a
