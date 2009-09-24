@@ -225,6 +225,21 @@ alias don="D0 xset dpms force on"
 # stupid hack...
 alias doff="D0 xset dpms force off; sleep 1"
 
+function go() {
+    TIC=$(date "+%s")
+    echo "真っ直ぐゴー!!"
+    read -s
+    TOC=$(date "+%s")
+    TIME=$(( ($TOC - $TIC) / 60 ))
+    if [[ $TIME -gt 0 ]] then
+        if [[ $# -ge 1 ]] then
+            ashuku add "$1" "${TIME}m"
+        else
+            echo "時間：${TIME}分"
+        fi
+    fi
+}
+
 function nap() {
     # check last nap time and make sure it is at least 3 hours ago
     if [[ -e /tmp/last_nap ]] then
