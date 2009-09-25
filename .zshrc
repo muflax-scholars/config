@@ -71,7 +71,7 @@ case "${TERM}" in
         ;;
     *)
         export LANG=ja_JP.UTF-8
-        export LC_COLLACTE=en_US.UTF-8
+        export LC_COLLATE=en_US.UTF-8
         ;;
 esac
 
