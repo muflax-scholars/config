@@ -8,12 +8,20 @@ syntax on
 set nocompatible
 set history=100
 set ruler
-set textwidth=80
-set formatoptions=rq
 set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
 set nobackup
 set showtabline=2
+
+"line length
+set textwidth=80
+"t wrap text
+"c and comments,
+"r comment leader on <Enter>,
+"q allow gq,
+"n numbered lists,
+"m break multi-byte
+set formatoptions=tcrqnm
 
 "search
 set incsearch
