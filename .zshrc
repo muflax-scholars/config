@@ -166,6 +166,7 @@ alias mc="mc -x -d"
 alias weechat="weechat-curses"
 alias diff="colordiff"
 alias rename="/usr/bin/perlbin/vendor/rename"
+alias makepkg="makepkg --skipinteg"
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
