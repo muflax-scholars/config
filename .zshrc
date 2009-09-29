@@ -160,13 +160,13 @@ alias grep="grep --color=always"
 alias vi="vim -p"
 alias md="mkdir -p"
 alias po="popd"
-alias s="screen"
 alias less="less -iF" 
 alias mc="mc -x -d"
 alias weechat="weechat-curses"
 alias diff="colordiff"
 alias rename="/usr/bin/perlbin/vendor/rename"
 alias makepkg="makepkg --skipinteg"
+alias aria2c="aria2c -c --summary-interval=0"
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
@@ -197,6 +197,7 @@ alias weight="~/src/in/status/status.py -w"
 
 alias ashuku="~/src/in/ashuku/ashuku"
 alias a="ashuku add"
+alias s="ashuku show -Mg -Zn -自慰 -油"
 
 function ww() {
     pushd ~/txt/whatworks && 
