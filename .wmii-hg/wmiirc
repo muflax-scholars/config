@@ -229,19 +229,6 @@ events() {
     # Actions
     Action quit
         wmiir xwrite /ctl quit
-    Action exec
-        wmiir xwrite /ctl exec "$@"
-    Action rehash
-        proglist $PATH >$progsfile
-    Action status
-        set +xv
-        if wmiir remove /rbar/status 2>/dev/null; then
-            sleep 2
-        fi
-        echo "$WMII_NORMCOLORS" | wmiir create /rbar/status
-        while status | wmiir write /rbar/status; do
-            sleep 1
-        done
     # Key Bindings
     #Key $MODKEY-Control-t
     #    case $(wmiir read /keys | wc -l | tr -d ' \t\n') in
@@ -278,11 +265,19 @@ events() {
         wmiir xwrite /client/sel/ctl kill
     Key $MODKEY-$LEFT
         wmiir xwrite /tag/sel/ctl select left
-    Key $MODKEY-$RIGHT
+    Key $MODKEY-Left
+        wmiir xwrite /tag/sel/ctl select left
+    Key $MODKEY-$Right
+        wmiir xwrite /tag/sel/ctl select right
+    Key $MODKEY-Right
         wmiir xwrite /tag/sel/ctl select right
     Key $MODKEY-$DOWN
         wmiir xwrite /tag/sel/ctl select down
+    Key $MODKEY-Down
+        wmiir xwrite /tag/sel/ctl select down
     Key $MODKEY-$UP
+        wmiir xwrite /tag/sel/ctl select up
+    Key $MODKEY-Up
         wmiir xwrite /tag/sel/ctl select up
     Key $MODKEY-Shift-$LEFT
         wmiir xwrite /tag/sel/ctl send sel left
@@ -305,16 +300,16 @@ events() {
         wmiir xwrite /ctl view "$(read_tags | next_tag)"
     Key $MODKEY-h
         wmiir xwrite /ctl view "$(read_tags | tac | next_tag)"
-    Key $MODKEY-u
-        ossmix $mixer -q -- +1
-    Key $MODKEY-udiaeresis
-        ossmix $mixer -q -- -1
-    Key $MODKEY-Shift-u
-        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- +1
-    Key $MODKEY-Shift-udiaeresis
-        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- -1
+    Key Shift-XF86AudioLowerVolume
+        ossmix $mixer -q -- +1 &
+    Key XF86AudioLowerVolume
+        ossmix $mixer -q -- -1 &
+    Key $MODKEY-Shift-XF86AudioLowerVolume
+        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- +1 &
+    Key $MODKEY-XF86AudioLowerVolume
+        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- -1 &
     Key $MODKEY-c
-        MPD_HOST=192.168.1.15 mpc --no-status toggle
+        MPD_HOST=192.168.1.15 mpc --no-status toggle &
     Key $MODKEY-o
         $HOME/src/in/randomstuff/selection
     # yes, these are hardcoded positions - so what?
