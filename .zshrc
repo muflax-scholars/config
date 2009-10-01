@@ -29,29 +29,49 @@ setopt NOHUP
 setopt EXTENDEDGLOB
 setopt NEO
 setopt INTERACTIVECOMMENTS
+setopt PROMPT_SUBST
 
 setopt NO_CHASE_LINKS
 setopt NO_CHASE_DOTS
 
-# let's make an awesome prompt
+################################
+# let's make an awesome prompt #
+################################
 autoload colors
 if [[ "${terminfo[colors]}" -ge 8 ]] then
     colors
 fi
+autoload -Uz vcs_info
 
+# brackets
 local op="%{$fg[green]%}[%{$reset_color%}"
 local cp="%{$fg[green]%}]%{$reset_color%}"
-local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
-local path_p="${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
-local user_host="${op}%{$fg[cyan]%}%n@%m%{$reset_color%}${cp}"
-local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3 ($?%)%{$reset_color%})${cp}"
-if [ $(uname -m) = "i686" ]; then
-    local arch="${op}(i686)${cp}"
-fi
 
-PROMPT="%{$fg_bold[black]%}╽%{$reset_color%}${date} ${path_p} ${user_host} ${arch}
-%{$fg_bold[black]%}╿%{$reset_color%}${smiley} # "
+# vcs config
+zstyle ':vcs_info:*' enable git
+# changes are slow, so it's on trial
+local vcs_action="(%a)" # e.g. (rebase-i)
+local vcs_branch="%b%u%c" # e.g. master(*)(s)
+zstyle ':vcs_info:*:prompt:*' check-for-changes true
+zstyle ':vcs_info:*:prompt:*' unstagedstr '(*)'  # display [u] if there are unstaged changes
+zstyle ':vcs_info:*:prompt:*' stagedstr '(s)'    # display [s] if there are staged changes
+zstyle ':vcs_info:*:prompt:*' actionformats " ${op}%{$fg[cyan]%}${vcs_branch}${vcs_action}%{$reset_color%}${cp}"
+zstyle ':vcs_info:*:prompt:*' formats " ${op}%{$fg[cyan]%}${vcs_branch}%{$reset_color%}${cp}"
+zstyle ':vcs_info:*:prompt:*' nvcsformats ""
+
+# every option takes care of their own leading space
+local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
+local user_host=" ${op}%{$fg[cyan]%}%n@%m%{$reset_color%}${cp}"
+if [ $(uname -m) = "i686" ]; then
+    local arch=" ${op}(i686)${cp}"
+fi
+local path_p=" ${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
+local vcs='$vcs_info_msg_0_'
+local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3 ($?%)%{$reset_color%})${cp}"
 local cur_cmd="${op}%_${cp}"
+
+PROMPT="%{$fg_bold[black]%}╽%{$reset_color%}${date}${path_p}${vcs}${user_host}${arch}
+%{$fg_bold[black]%}╿%{$reset_color%}${smiley} # "
 PROMPT2="${cur_cmd}> "
 
 # Vars used later on by zsh
@@ -101,6 +121,7 @@ function title() {
 # precmd is called just before the prompt is printed
 function precmd() {
   title "zsh" "$USER@%m"
+  vcs_info 'prompt'
 }
 
 ##############
