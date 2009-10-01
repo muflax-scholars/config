@@ -107,11 +107,6 @@ function precmd() {
   title "zsh" "$USER@%m"
 }
 
-# preexec is called just before any command line is executed
-function preexec() {
-  title "$1" "$USER@%m"
-}
-
 ##############
 # Completion #
 ##############
