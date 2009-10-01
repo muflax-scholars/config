@@ -229,6 +229,15 @@ events() {
     # Actions
     Action quit
         wmiir xwrite /ctl quit
+    Action status
+        set +xv
+        if wmiir remove /rbar/status 2>/dev/null; then
+            sleep 2
+        fi
+        echo "$WMII_NORMCOLORS" | wmiir create /rbar/status
+        while status | wmiir write /rbar/status; do
+            sleep 1
+        done
     # Key Bindings
     #Key $MODKEY-Control-t
     #    case $(wmiir read /keys | wc -l | tr -d ' \t\n') in
@@ -267,7 +276,7 @@ events() {
         wmiir xwrite /tag/sel/ctl select left
     Key $MODKEY-Left
         wmiir xwrite /tag/sel/ctl select left
-    Key $MODKEY-$Right
+    Key $MODKEY-$RIGHT
         wmiir xwrite /tag/sel/ctl select right
     Key $MODKEY-Right
         wmiir xwrite /tag/sel/ctl select right
