@@ -9,19 +9,18 @@ export SAVEHIST=2000
 autoload -U compinit zmv 
 compinit
 
-setopt autopushd pushdminus pushdsilent pushdtohome
-#setopt cdablevars
-#setopt ignoreeof
-setopt interactivecomments
-#setopt noclobber
+setopt AUTOPUSHD 
+setopt PUSHDMINUS
+setopt PUSHDSILENT
+setopt PUSHDTOHOME
+
 
 setopt NOBANGHIST
 setopt HIST_REDUCE_BLANKS
-#setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_VERIFY
-#setopt SHARE_HISTORY
+setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
@@ -29,6 +28,7 @@ setopt SH_WORD_SPLIT
 setopt NOHUP
 setopt EXTENDEDGLOB
 setopt NEO
+setopt INTERACTIVECOMMENTS
 
 setopt NO_CHASE_LINKS
 setopt NO_CHASE_DOTS
@@ -60,9 +60,6 @@ export VISUIAL="vim"
 
 # universal options
 export MPD_HOST="192.168.1.15"
-#export MOZ_DISABLE_PANGO="1"
-export MBOX="/dev/null"
-export PYTHONDOCS="/usr/share/doc/python/html/"
 
 case "${TERM}" in
     linux)
@@ -75,7 +72,6 @@ case "${TERM}" in
         ;;
 esac
 
-#really necessary?
 LS_COLORS='no=00:fi=00:di=00;36:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:';
 export LS_COLORS
 
@@ -114,7 +110,7 @@ function precmd() {
 # allow approximate
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*:approximate:*' max-errors 2 numeric
 
 # ignore completion for non-existant functions
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -131,7 +127,6 @@ zstyle ':completion:*:cd:*' special-dirs ..
 
 # use a cache
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
 
 ################
 # Key bindings #
@@ -142,8 +137,6 @@ bindkey '[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
 bindkey '^[[5~' beginning-of-history
 bindkey '^[[6~' end-of-history
-# completion in the middle of a line
-bindkey '^i' expand-or-complete-prefix
 
 ###########
 # aliases #
@@ -152,8 +145,8 @@ bindkey '^i' expand-or-complete-prefix
 # Normal aliases
 alias ls="ls --color=always --group-directories-first"
 alias grep="grep --color=always"
+alias ngrep="grep --color=none"
 alias vi="vim -p"
-alias md="mkdir -p"
 alias po="popd"
 alias less="less -iF" 
 alias mc="mc -x -d"
@@ -178,32 +171,15 @@ alias wake_mummra="wakeonlan 00:12:79:DE:C7:2C"
 alias mish="ssh totenkopf@ming"
 alias mush="ssh amon@mumm-ra"
 
-function ss() {purple-remote 'setstatus?status=offline' DN; sudo /usr/local/sbin/suspend $*; purple-remote 'setstatus?status=available' DN}
-
-alias lock="D0 xlock -mode mandelbrot -dpmsoff 3600 -echokeys DN"
-
-alias xclip="xclip -selection clipboard"
+function ss() {sudo /usr/local/sbin/suspend $*}
 
 alias cal="cal -m -3"
 
 alias t="noglob todo.sh -d ~/.todo.cfg"
-alias g="noglob todo.sh -d ~/.todo-goals.cfg"
-alias weight="~/src/in/status/status.py -w"
 
 alias ashuku="~/src/in/ashuku/ashuku"
 alias a="ashuku add"
 alias s="ashuku show -Mg -Zn -自慰 -油"
-
-function ww() {
-    pushd ~/txt/whatworks && 
-    ikiwiki --setup ~/.ikiwiki/whatworks.setup &&
-    git add . && 
-    git commit -a -m "$@" &&
-    git push &&
-    popd
-}
-
-alias vr='mencoder "mf://*.jpg" -mf fps=5 -o $(date +%Y-%m-%d).mp4 -ovc lavc -lavcopts vcodec=mpeg4 -vf scale=500 && ln -fs $(date +%Y-%m-%d).mp4 latest.mp4 && rm *.jpg'
 
 alias p="/usr/bin/python3"
 alias p2="/usr/bin/python"
@@ -279,12 +255,6 @@ function tb() {
     mplayer ~/.timeboxing > /dev/null
 }
 
-function COL() {
-    if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
-        awk "{ print \$$1 }" $*[2,-1]
-    fi
-}
-
 alias mmv="noglob zmv -W"
 
 alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
@@ -311,11 +281,16 @@ alias nomnomnom='killall'
 alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
 
-########################
-# local .zshrc aliases #
-########################
-source ~/.zshrc_local
+# mplayer
+for i in $(seq 5) 
+do
+    a=""
+    for j in $(seq $i) 
+    do
+        a="${a}a"
+    done
+    alias "m${a}f"="mplayer -af volume=$(( 5 * $i ))"
+done
 
-#if [ ! $TERM = "screen" ]; then 
-#    exec screen
-#fi
+# local .zshrc aliases #
+source ~/.zshrc_local
