@@ -176,6 +176,7 @@ alias diff="colordiff"
 alias rename="/usr/bin/perlbin/vendor/rename"
 alias makepkg="makepkg --skipinteg"
 alias aria2c="aria2c -c --summary-interval=0"
+alias mashpodder="~/src/out/mashpodder/mashpodder.sh"
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
