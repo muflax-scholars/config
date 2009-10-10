@@ -284,6 +284,8 @@ alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
           ~/src/in/randomstuff/lrp.py --build && yaourt -Syu --aur && sudo pacman --noconfirm -Sc"
 alias cdl="cd /usr/local/src/abs/local"
 
+alias muba="rsync -avP --del --exclude lost+found ~/音楽/ /mnt/surfqueen_ongaku/"
+
 # LOL!!k!
 alias wtf='dmesg'
 alias ohnoes='sudo cat /var/log/errors.log'
