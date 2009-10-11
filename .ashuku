@@ -29,6 +29,10 @@ attributes:
         alias: nihongo
         type: cumulative
         unit: time
+    フランス語:
+        alias: furansugo
+        type: cumulative
+        unit: time
     programming:
         type: cumulative
         unit: time
