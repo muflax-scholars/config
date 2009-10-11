@@ -1,0 +1,68 @@
+---
+# Each attribute must be of one of the following types:
+# - qualitative (range from -2 to +2)
+# - quantitive
+# - cumulative (like quantitive, but all daily values are added up)
+#
+# All quantitive types also take the optional property "unit". When given, it
+# will also be optional for input, so that "ashuku add weight 78" and
+# "ashuku add weight 78kg" are identical.
+# The value "time" is used for the format XhYmZs, as in 3h20m10s. When no unit
+# is given, then minutes are assumed.
+#
+# You can also specify an alias via "alias". The normal name will be used for
+# the output, but it may be inconvenient to type.
+
+attributes:
+    幸福:
+        alias: koufuku
+        type: qualitative
+    睡眠:
+        alias: suimin
+        type: cumulative
+        unit: time
+    体重:
+        alias: taijuu
+        type: quantitative
+        unit: kg
+    日本語:
+        alias: nihongo
+        type: cumulative
+        unit: time
+    programming:
+        type: cumulative
+        unit: time
+    勉強:
+        alias: benkyou
+        type: cumulative
+        unit: time
+    Mg:
+        alias: mg
+        type: cumulative
+        unit: mg
+    Zn:
+        alias: zn
+        type: cumulative
+        unit: mg
+    自慰:
+        alias: jii
+        type: cumulative
+        optional: True
+    油:
+        alias: abura
+        type: cumulative
+        unit: tsp
+        optional: True
+    DXM:
+        alias: dex
+        type: cumulative
+        unit: caps
+        optional: True
+
+settings:
+    path: ~/txt/ashuku.txt
+    empty cell: なし
+    hour: 時
+    min: 分
+    sec: 秒
+...

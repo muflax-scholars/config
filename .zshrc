@@ -201,7 +201,7 @@ alias t="noglob todo.sh -d ~/.todo.cfg"
 
 alias ashuku="~/src/in/ashuku/ashuku"
 alias a="ashuku add"
-alias s="ashuku show -Mg -Zn -自慰 -油"
+alias s="ashuku show -Mg -Zn -自慰 -油 -DXM"
 
 alias p="/usr/bin/python3"
 alias p2="/usr/bin/python"
