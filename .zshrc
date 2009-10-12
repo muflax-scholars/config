@@ -201,7 +201,13 @@ alias t="noglob todo.sh -d ~/.todo.cfg"
 
 alias ashuku="~/src/in/ashuku/ashuku"
 alias a="ashuku add"
-alias s="ashuku show -Mg -Zn -自慰 -油 -DXM"
+function s() {
+    if [[ $# -ge 1 ]] then
+        ashuku show $*
+    else
+        ashuku show -Mg -Zn -自慰 -油 -DXM
+    fi
+}
 
 alias p="/usr/bin/python3"
 alias p2="/usr/bin/python"
