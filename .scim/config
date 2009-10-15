@@ -1,10 +1,10 @@
 /DefaultIMEngineFactory/en_US = 065d7b20-dda2-47fb-8f94-3306d9a25e56
-/DefaultIMEngineFactory/ja_JP = 065d7b20-dda2-47fb-8f94-3306d9a25e56
+/DefaultIMEngineFactory/ja_JP = IMEngine-M17N-t-latn-pre
 /DefaultIMEngineFactory/~other = 065d7b20-dda2-47fb-8f94-3306d9a25e56
 /FrontEnd/ChangeFactoryGlobally = false
 /FrontEnd/IMOpenedByDefault = false
 /FrontEnd/OnTheSpot = true
-/FrontEnd/SharedInputMethod = false
+/FrontEnd/SharedInputMethod = true
 /FrontEnd/Socket/ConfigReadOnly = false
 /FrontEnd/Socket/MaxClients = 512
 /FrontEnd/X11/BrokenWchar = true
@@ -152,4 +152,4 @@
 /Panel/Gtk/ToolBar/ShowPropertyLabel = true
 /Panel/Gtk/ToolBar/ShowSetupIcon = true
 /Panel/Gtk/ToolBar/ShowStickIcon = false
-/UpdateTimeStamp = 1255318970:275609
+/UpdateTimeStamp = 1255510308:355848
