@@ -6,11 +6,11 @@ hi Boolean				color: red;
 hi CmdLine				font-family: monospace; padding: 1px;
 hi CmdOutput				white-space: pre;
 hi CompDesc				color: gray; width: 50%;
-hi CompGroup	
+"hi CompGroup	
 hi CompGroup:not(:first-of-type)	margin-top: .5em;
 hi CompIcon				width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
 hi CompIcon>img				max-width: 16px; max-height: 16px; vertical-align: middle;
-hi CompItem				
+"hi CompItem				
 hi CompItem>*				padding: 0 .5ex;
 hi CompItem[selected]			background: yellow;
 hi CompLess				text-align: center; height: 0; line-height: .5ex; padding-top: 1ex;
@@ -51,11 +51,11 @@ hi StatusLine				color: black; background: #E8E8E8;
 hi StatusLineBroken			color: black; background: #FF6060; /* light-red */
 hi StatusLineSecure			color: black; background: #B0FF00; /* light-green */
 hi String				color: green;
-hi TabClose				
-hi TabIcon				
+"hi TabClose				
+"hi TabIcon				
 hi TabIconNumber			font-weight: normal; color: black; text-align: center; text-shadow: black -1px 0 1px, black 0 1px 1px, black 1px 0 1px, black 0 -1px 1px;
 hi TabNumber				font-weight: bold; margin: 0; padding-right: .3ex;
-hi TabText				
+"hi TabText				
 hi Tag					color: blue;
 hi Title				color: magenta; background: white; font-weight: bold;
 hi URL					text-decoration: none; color: green; background: inherit;
