@@ -84,11 +84,9 @@ export MPD_HOST="192.168.1.15"
 case "${TERM}" in
     linux)
         export LANG=C
-        export LC_COLLACTE=C
         ;;
     *)
         export LANG=ja_JP.UTF-8
-        export LC_COLLATE=ja_JP.UTF-8
         ;;
 esac
 
