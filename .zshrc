@@ -216,6 +216,18 @@ alias burnburnBURN="rm -f *.class; javac *.java"
 alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,gid=1000,uid=1000"
 alias nor="sudo umount.cifs /mnt/network/torrent-samba"
 alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/torrents/ && rm ~/*.torrent" 
+function tomo() {
+    I=0
+    LIST=($(transmission-remote ming -l | ngrep -P '^\s*\d+\s*100%' | ngrep -o -P '^\s*\d+'))
+    for x in $LIST
+    do 
+        transmission-remote ming -t $x --move /home/totenkopf/torrent/done/ > /dev/null
+        if [ $? -eq 0 ]; then
+            I=$(( $I + 1 ))
+        fi
+    done
+    echo "${I}/${#LIST} moved."
+}
 
 alias ewine="wine explorer /desktop=foo,1024x768"
 alias newine="nice wine explorer /desktop=foo,1024x768"

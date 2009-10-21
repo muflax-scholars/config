@@ -121,7 +121,7 @@
 /IMEngine/RawCode/Locales = default
 /IMEngine/Table/AddPhraseKey = Control+a,Control+equal
 /IMEngine/Table/DeletePhraseKey = Control+d,Control+minus
-/IMEngine/Table/FullWidthLetterKey = Shift+space
+/IMEngine/Table/FullWidthLetterKey = 
 /IMEngine/Table/FullWidthPunctKey = Control+period
 /IMEngine/Table/LongPhraseFirst = false
 /IMEngine/Table/ModeSwitchKey = Alt+KeyRelease+Shift_L,Alt+KeyRelease+Shift_R
@@ -152,4 +152,4 @@
 /Panel/Gtk/ToolBar/ShowPropertyLabel = true
 /Panel/Gtk/ToolBar/ShowSetupIcon = true
 /Panel/Gtk/ToolBar/ShowStickIcon = false
-/UpdateTimeStamp = 1256035947:135343
+/UpdateTimeStamp = 1256057925:971623
