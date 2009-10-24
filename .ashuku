@@ -62,6 +62,10 @@ attributes:
         type: cumulative
         unit: caps
         optional: True
+    Hypericum:
+        alias: johanniskraut
+        type: cumulative
+        unit: mg
 
 settings:
     path: ~/txt/ashuku.txt

@@ -203,7 +203,7 @@ function s() {
     if [[ $# -ge 1 ]] then
         ashuku show $*
     else
-        ashuku show -Mg -Zn -自慰 -油 -DXM
+        ashuku show -Mg -Zn -自慰 -油 -DXM -Hypericum
     fi
 }
 
