@@ -27,7 +27,6 @@ setopt EXTENDED_HISTORY
 setopt SH_WORD_SPLIT
 setopt NOHUP
 setopt EXTENDEDGLOB
-setopt NEO
 setopt INTERACTIVECOMMENTS
 setopt PROMPT_SUBST
 
@@ -187,10 +186,10 @@ alias -g G='| grep'
 alias -g GP='| grep --color=auto'
  
 alias wake_totenkopf="wakeonlan 00:18:E7:16:6F:C5"
-alias wake_mummra="wakeonlan 00:12:79:DE:C7:2C"
+alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
 
 alias mish="ssh totenkopf@ming"
-alias mush="ssh amon@mumm-ra"
+alias azash="ssh amon@azathoth"
 
 function ss() {sudo /usr/local/sbin/suspend $*}
 

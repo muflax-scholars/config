@@ -81,7 +81,7 @@ cpu_hogs() {
                            
 }
 
-if [[ $hostname == "mumm-ra" ]] then
+if [[ $hostname == "azathoth" ]] then
     mixer="vmix1-outvol"
 else
     mixer="vmix0-outvol"
@@ -314,9 +314,9 @@ events() {
     Key XF86AudioLowerVolume
         ossmix $mixer -q -- -1 &
     Key $MODKEY-Shift-XF86AudioLowerVolume
-        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- +1 &
+        ssh amon@azathoth -- ossmix vmix1-outvol -q -- +1 &
     Key $MODKEY-XF86AudioLowerVolume
-        ssh amon@mumm-ra -- ossmix vmix1-outvol -q -- -1 &
+        ssh amon@azathoth -- ossmix vmix1-outvol -q -- -1 &
     Key $MODKEY-c
         MPD_HOST=192.168.1.15 mpc --no-status toggle &
     Key $MODKEY-o
