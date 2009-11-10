@@ -18,13 +18,12 @@ xmodmap ~/.Xmodmap
 xset r rate 300 65
 xset m 3 2
 
-sh ~/.fehbg &
 #xcompmgr &
 
 until {
 #    DISPLAY=:0.1 exec dbus-launch --auto-syntax --exit-with-session wmii &
     DISPLAY=:0.0 exec dbus-launch --auto-syntax --exit-with-session wmii &
-    DISPLAY=:0.0 exec urxvtc &
+    DISPLAY=:0.0 exec urxvt &
     wait
 } do
     true

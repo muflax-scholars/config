@@ -15,8 +15,7 @@ URxvt.skipScroll:       true
 URxvt.urgentOnBell:     true 
 
 !diversity is for the weak
-!URxvt*font:             7x14
-URxvt*font:              7x14,xft:freefont:antialias=false
+URxvt*font:    7x14
 
 !no bold fonts - fucks up more than it solves
 URxvt*boldFont:
@@ -63,5 +62,3 @@ URxvt*saveLines:        10000
 *color13:    rgb:f8/54/f8
 *color14:    rgb:50/fc/f8
 *color15:    rgb:f8/fc/f8
-
-kterm*openIm: True

@@ -134,7 +134,7 @@
 /Panel/Gtk/Color/NormalBackground = #F7F3F7
 /Panel/Gtk/Color/NormalText = black
 /Panel/Gtk/DefaultSticked = false
-/Panel/Gtk/Font = IPA モナー 明朝 14
+/Panel/Gtk/Font = Gothic 12
 /Panel/Gtk/LookupTableEmbedded = true
 /Panel/Gtk/LookupTableVertical = true
 /Panel/Gtk/ShowStatusBox = false
@@ -152,4 +152,4 @@
 /Panel/Gtk/ToolBar/ShowPropertyLabel = true
 /Panel/Gtk/ToolBar/ShowSetupIcon = true
 /Panel/Gtk/ToolBar/ShowStickIcon = false
-/UpdateTimeStamp = 1257564661:727112
+/UpdateTimeStamp = 1257843385:18622

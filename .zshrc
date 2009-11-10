@@ -144,7 +144,7 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 zstyle ':completion:*:cd:*' special-dirs ..
 
 # use a cache
-zstyle ':completion:*' use-cache on
+#zstyle ':completion:*' use-cache on
 
 ################
 # Key bindings #
@@ -195,7 +195,7 @@ function ss() {sudo /usr/local/sbin/suspend $*}
 
 alias cal="cal -m -3"
 
-alias t="noglob todo.sh -d ~/.todo.cfg"
+alias t="noglob ~/src/out/todo.txt-cli/todo.sh -d ~/.todo.cfg"
 
 alias ashuku="~/src/in/ashuku/ashuku"
 alias a="ashuku add"
@@ -278,7 +278,7 @@ function nap() {
     fi && {
         echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
         ossmix -q vmix1-outvol 22
-        boodler.py -o oss com.eblong.zarf.computing/MultiComputing DN
+        ~/.wakeup.sh
     }
 }  
 
