@@ -175,6 +175,8 @@ alias rename="/usr/bin/perlbin/vendor/rename"
 alias makepkg="makepkg --skipinteg"
 alias aria2c="aria2c -c --summary-interval=0"
 alias mashpodder="~/src/out/mashpodder/mashpodder.sh"
+alias mkdir="mkdir -p"
+alias cal="cal -m -3"
 
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
@@ -191,9 +193,7 @@ alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
 alias mish="ssh totenkopf@ming"
 alias azash="ssh amon@azathoth"
 
-function ss() {sudo /usr/local/sbin/suspend $*}
-
-alias cal="cal -m -3"
+alias ss="sudo /usr/local/sbin/suspend"
 
 alias t="noglob ~/src/out/todo.txt-cli/todo.sh -d ~/.todo.cfg"
 
@@ -295,9 +295,6 @@ function tb() {
 
 alias mmv="noglob zmv -W"
 
-alias up="abs && sudo pacman -Sy && ~/src/in/randomstuff/lrp.py && \
-          echo 'press any key to continue or press no key to wait forever' && read && \
-          ~/src/in/randomstuff/lrp.py --build && yaourt -Syu --aur && sudo pacman --noconfirm -Sc"
 alias cdl="cd /usr/local/src/abs/local"
 
 alias muba="rsync -avP --del --exclude lost+found ~/音楽/ /mnt/surfqueen_ongaku/"
