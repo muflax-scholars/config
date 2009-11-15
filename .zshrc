@@ -215,6 +215,7 @@ alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
 
 alias mish="ssh totenkopf@ming"
 alias azash="ssh amon@azathoth"
+alias nyash="ssh amon@nyarlathotep"
 
 alias ss="sudo /usr/local/sbin/suspend"
 
