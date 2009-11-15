@@ -17,14 +17,6 @@ attributes:
     幸福:
         alias: koufuku
         type: qualitative
-    睡眠:
-        alias: suimin
-        type: cumulative
-        unit: time
-    体重:
-        alias: taijuu
-        type: quantitative
-        unit: kg
     日本語:
         alias: nihongo
         type: cumulative
@@ -40,32 +32,6 @@ attributes:
         alias: benkyou
         type: cumulative
         unit: time
-    Mg:
-        alias: mg
-        type: cumulative
-        unit: mg
-    Zn:
-        alias: zn
-        type: cumulative
-        unit: mg
-    自慰:
-        alias: jii
-        type: cumulative
-        optional: True
-    油:
-        alias: abura
-        type: cumulative
-        unit: tsp
-        optional: True
-    DXM:
-        alias: dex
-        type: cumulative
-        unit: caps
-        optional: True
-    Hypericum:
-        alias: johanniskraut
-        type: cumulative
-        unit: mg
 
 settings:
     path: ~/txt/ashuku.txt
