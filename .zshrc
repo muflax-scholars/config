@@ -283,11 +283,22 @@ function nap() {
 }  
 
 function tb() {
+    if [[ $# -eq 0 ]] then
+        exit 1
+    fi
+
     for t in $(seq $1 -1 1)
     do
         echo "残り${t}分。。。"
         sleep 1m
     done
+    
+    if [[ $# -ge 2 ]] then
+        ashuku add "$2" "${2}m"
+    else
+        echo "時間：${1}分"
+    fi
+    
     echo "＼(^o^)／やった〓！！！"
     ~/.wmii-hg/alarm.sh "(^o^) やった〓！！！"  
     mplayer ~/.timeboxing > /dev/null
