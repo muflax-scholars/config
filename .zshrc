@@ -1,10 +1,11 @@
-###################        
-# Options for zsh #
-###################
+###########        
+# Options #
+###########
 
+# zsh
 export HISTFILE=~/.zsh_history
-export HISTSIZE=4000
-export SAVEHIST=4000
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 autoload -U compinit zmv 
 compinit
@@ -13,7 +14,6 @@ setopt AUTOPUSHD
 setopt PUSHDMINUS
 setopt PUSHDSILENT
 setopt PUSHDTOHOME
-
 
 setopt NOBANGHIST
 setopt HIST_REDUCE_BLANKS
@@ -32,6 +32,23 @@ setopt PROMPT_SUBST
 
 setopt NO_CHASE_LINKS
 setopt NO_CHASE_DOTS
+
+# non-zsh
+export EDITOR="vim"
+export VISUIAL="vim"
+export MPD_HOST="192.168.1.15"
+
+case "${TERM}" in
+    linux)
+        export LANG=C
+        ;;
+    *)
+        export LANG=ja_JP.UTF-8
+        ;;
+esac
+
+LS_COLORS='no=00:fi=00:di=00;36:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:';
+export LS_COLORS
 
 ################################
 # let's make an awesome prompt #
@@ -59,38 +76,44 @@ zstyle ':vcs_info:*:prompt:*' formats " ${op}%{$fg[cyan]%}${vcs_branch}%{$reset_
 zstyle ':vcs_info:*:prompt:*' nvcsformats ""
 
 # every option takes care of their own leading space
+
+# current date
 local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
-local user_host=" ${op}%{$fg[cyan]%}%n@%m%{$reset_color%}${cp}"
+
+# current user, with warning if root
+if [ $(whoami) = "root" ]; then
+    local user="%{$fg[red]%}%n%{$reset_color%}"
+else
+    local user="%{$fg[cyan]%}%n%{$reset_color%}"
+fi
+
+# current host, with warning if ssh
+if [ -z "$SSH_CONNECTION" ]; then
+    local host="%{$fg[cyan]%}%m%{$reset_color%}"
+else
+    local host="%{$fg[red]%}%m%{$reset_color%}"
+fi
+
+local user_host=" ${op}${user}%{$fg[cyan]%}@%{$reset_color%}${host}${cp}"
+
+# warning if not 64bit
 if [ $(uname -m) = "i686" ]; then
     local arch=" ${op}(i686)${cp}"
 fi
+# current path
 local path_p=" ${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
+
+# current VCS status
 local vcs='$vcs_info_msg_0_'
+# smiley based on return status
 local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3 ($?%)%{$reset_color%})${cp}"
+# last command, used in PS2
 local cur_cmd="${op}%_${cp}"
 
 PROMPT="%{$fg_bold[black]%}╽%{$reset_color%}${date}${path_p}${vcs}${user_host}${arch}
 %{$fg_bold[black]%}╿%{$reset_color%}${smiley} # "
 PROMPT2="${cur_cmd}> "
 
-# Vars used later on by zsh
-export EDITOR="vim"
-export VISUIAL="vim"
-
-# universal options
-export MPD_HOST="192.168.1.15"
-
-case "${TERM}" in
-    linux)
-        export LANG=C
-        ;;
-    *)
-        export LANG=ja_JP.UTF-8
-        ;;
-esac
-
-LS_COLORS='no=00:fi=00:di=00;36:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:';
-export LS_COLORS
 
 ##########################################################################
 #                             title handling                             #
