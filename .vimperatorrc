@@ -1,4 +1,4 @@
-"2.1 (created: 2009/05/21 13:13:06)
+"2.2 (created: 2009/10/28 19:04:27)
 
 map L <C-o>
 map H <C-i>
@@ -12,18 +12,21 @@ nmap zM null
 nmap zR null
 nmap zf null
 nmap d <C-w>
-set complete=l
+set complete=sbl
 set defsearch=g
 set focuscontent
 set runtimepath=/home/amon/.vimperator
 set wildoptions=auto
+style! -name=statusbar chrome://* <<EOF
+#status-bar statusbarpanel { padding: 0 1px !important; }
+statusbarpanel > * { margin: 0 !important; padding: 0 !important; }
+EOF
 vmap L <C-o>
 vmap H <C-i>
 vmap zM null
 vmap zR null
 vmap zf null
 vmap d <C-w>
-colorscheme color
 source! /home/amon/.vimperatorrc.local
 
 " vim: set ft=vimperator:
