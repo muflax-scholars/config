@@ -32,6 +32,10 @@ attributes:
         alias: benkyou
         type: cumulative
         unit: time
+    読める:
+        alias: yomeru
+        type: cumulative
+        unit: time
 
 settings:
     path: ~/txt/ashuku.txt

@@ -227,7 +227,7 @@ function s() {
     if [[ $# -ge 1 ]] then
         ashuku show $*
     else
-        ashuku show フランス語 日本語 幸福 programming 勉強
+        ashuku show フランス語 日本語 幸福 programming 勉強 読める
     fi
 }
 
