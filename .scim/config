@@ -1,5 +1,5 @@
 /DefaultIMEngineFactory/en_US = 065d7b20-dda2-47fb-8f94-3306d9a25e56
-/DefaultIMEngineFactory/ja_JP = 065d7b20-dda2-47fb-8f94-3306d9a25e56
+/DefaultIMEngineFactory/ja_JP = 60616881-7f93-4cfe-8edc-dcce548cfee8
 /DefaultIMEngineFactory/~other = 065d7b20-dda2-47fb-8f94-3306d9a25e56
 /FrontEnd/ChangeFactoryGlobally = false
 /FrontEnd/IMOpenedByDefault = false
@@ -152,4 +152,4 @@
 /Panel/Gtk/ToolBar/ShowPropertyLabel = true
 /Panel/Gtk/ToolBar/ShowSetupIcon = true
 /Panel/Gtk/ToolBar/ShowStickIcon = false
-/UpdateTimeStamp = 1258289872:492424
+/UpdateTimeStamp = 1258457190:227697
