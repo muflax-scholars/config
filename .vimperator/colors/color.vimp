@@ -1,11 +1,6 @@
-"hi Hint      font-family: gothic; font-size: 12px; font-weight: normal; color: lightyellow; background-color: #fff; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 5px;
- 
-"hi HintElem    background-color: #000;    color: #a3a3a3;
-"hi HintActive    background-color: #000;  color: white;
- 
 hi StatusLine     color: #000;  background: #fff;  font-family: gothic; font-weight: normal; font-size: 12pt;
 
-hi CmdLine  font-family: gothic; font-size: 12px; padding: 1px; color: #000
+hi CmdLine  font-family: gothic; font-size: 12px; padding: 1px; color: #000; background: #fff
 
 hi Normal     color: #000;  background: #fff;  font-family: gothic; font-size: 12pt;
 hi InfoMsg    color: #000;  background: #fff;  font-family: gothic; font-size: 12pt;
@@ -21,9 +16,6 @@ hi Tag      color: CornflowerBlue;
 hi CompTitle    color: #000;    background: #fff;  font-family: gothic; font-weight: bold;
 hi CompItem[selected]  font-family: gothic; color: #000;  background: #ccc;
 hi CompDesc    font-family: gothic; color: #000;
-"hi Gradient     height: 1px; margin-bottom: -1px; margin-top -1px; background-color: #fff;
-"hi GradientRight  background-color: #fff;
-"hi GradientLeft   background-color: #000
  
 hi Title    font-family: gothic; color: black;
 hi Indicator    font-family: gothic; color: DodgerBlue;

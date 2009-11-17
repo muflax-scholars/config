@@ -27,6 +27,7 @@ vmap zM null
 vmap zR null
 vmap zf null
 vmap d <C-w>
+colorscheme color
 source! /home/amon/.vimperatorrc.local
 
 " vim: set ft=vimperator:
