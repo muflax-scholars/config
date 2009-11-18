@@ -118,7 +118,7 @@ status() {
     statusbar+=("$st_ps")
 
     # laptop specific
-    if [[ $hostname == "kira" ]] then
+    if [[ $hostname == "nyarlathotep" ]] then
         # wifi strength
         st_wifi="W: $(cat /sys/class/net/wlan0/wireless/link)%"
         
