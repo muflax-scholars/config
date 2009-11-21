@@ -41,7 +41,7 @@ URxvt*inheritPixmap:    true
 URxvt*shading:          14
 !URxvt*tintColor:       #191919
 URxvt*perl-ext-common:  default,matcher
-URxvt*urlLauncher:      /usr/bin/firefox
+URxvt*urlLauncher:      /usr/local/bin/firefox
 URxvt*matcher.button:   1
 URxvt*saveLines:        10000
 
