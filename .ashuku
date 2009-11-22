@@ -21,21 +21,30 @@ attributes:
         alias: nihongo
         type: cumulative
         unit: time
+        min: 1h
+        max: 1h10m
     フランス語:
         alias: furansugo
         type: cumulative
         unit: time
+        min: 30m
+        max: 1h
     programming:
         type: cumulative
         unit: time
+        min: 1h
+        max: 1h20m
     勉強:
         alias: benkyou
         type: cumulative
         unit: time
+        min: 1h
+        max: 1h10m
     読める:
         alias: yomeru
         type: cumulative
         unit: time
+        min: 30m
 
 settings:
     path: ~/txt/ashuku.txt
