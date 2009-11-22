@@ -308,6 +308,20 @@ function nap() {
     }
 }  
 
+function ipt() {
+    S=$(/etc/init.d/iptables status | ngrep -oP "(start|stop)")
+    case $S in
+        stop)
+            echo "shields up! go to red alert!"
+            sudo /etc/init.d/iptables start
+        ;;
+        start)
+            echo "lower your shields and surrender your ships!"
+            sudo /etc/init.d/iptables stop
+        ;;
+    esac
+}
+
 alias mmv="noglob zmv -W"
 
 alias cdl="cd /usr/local/portage/local"
