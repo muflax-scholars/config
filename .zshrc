@@ -217,7 +217,7 @@ alias mish="ssh totenkopf@ming"
 alias azash="ssh amon@azathoth"
 alias nyash="ssh amon@nyarlathotep"
 
-alias ss="sudo /usr/local/sbin/suspend"
+alias ss="sudo ~/src/in/randomstuff/suspend"
 
 alias t="noglob ~/src/out/todo.txt-cli/todo.sh -d ~/.todo.cfg"
 
