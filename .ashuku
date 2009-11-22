@@ -52,4 +52,8 @@ settings:
     hour: 時
     min: 分
     sec: 秒
+
+    color_min: light_red
+    color_max: light_blue
+    color_none: light_black
 ...
