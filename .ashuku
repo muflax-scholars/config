@@ -21,8 +21,8 @@ attributes:
         alias: nihongo
         type: cumulative
         unit: time
-        min: 1h
-        max: 1h10m
+        min: 30m
+        max: 1h
     フランス語:
         alias: furansugo
         type: cumulative
@@ -33,13 +33,12 @@ attributes:
         type: cumulative
         unit: time
         min: 1h
-        max: 1h20m
     勉強:
         alias: benkyou
         type: cumulative
         unit: time
         min: 1h
-        max: 1h10m
+        max: 1h30m
     読める:
         alias: yomeru
         type: cumulative
