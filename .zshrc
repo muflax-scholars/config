@@ -259,8 +259,7 @@ alias ewine="wine explorer /desktop=foo,1024x768"
 alias newine="nice wine explorer /desktop=foo,1024x768"
 
 alias don="D0 xset dpms force on"
-# stupid hack...
-alias doff="D0 xset dpms force off; sleep 1"
+alias doff="D0 xset dpms force off"
 
 function go() {
     TIC=$(date "+%s")
