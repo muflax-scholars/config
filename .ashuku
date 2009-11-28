@@ -44,6 +44,11 @@ attributes:
         type: cumulative
         unit: time
         min: 30m
+    コーヒー:
+        alias: coffee
+        type: cumulative
+        unit: cups
+        optional: true
 
 settings:
     path: ~/txt/ashuku.txt
