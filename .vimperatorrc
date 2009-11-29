@@ -12,7 +12,7 @@ nmap zM null
 nmap zR null
 nmap zf null
 nmap d <C-w>
-set complete=bl
+set complete=l
 set defsearch=g
 set focuscontent
 set runtimepath=/home/amon/.vimperator
