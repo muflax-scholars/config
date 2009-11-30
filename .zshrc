@@ -239,7 +239,7 @@ alias p3="/usr/bin/python3"
 
 alias burnburnBURN="rm -f *.class; javac *.java"
 
-alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,gid=1000,uid=1000"
+alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,uid=1000"
 alias nor="sudo umount.cifs /mnt/network/torrent-samba"
 alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/torrents/ && rm ~/*.torrent" 
 function tomo() {
