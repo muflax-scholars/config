@@ -204,6 +204,7 @@ alias cal="cal -m -3"
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
 alias -g D1='DISPLAY=:0.1'
+alias -g D2='DISPLAY=:0.2'
 alias -g LC='LANG=C'
 alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
