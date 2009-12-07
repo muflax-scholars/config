@@ -38,7 +38,7 @@ URxvt*background:   #000000
 !URxvt*background: rgba:0000/0000/0000/e2e2
 URxvt*foreground:   #FFFFFF
 URxvt*inheritPixmap:    true
-URxvt*shading:          14
+URxvt*shading:          6
 !URxvt*tintColor:       #191919
 URxvt*perl-ext-common:  default,matcher
 URxvt*urlLauncher:      /usr/local/bin/firefox
