@@ -109,3 +109,6 @@ let perl_fold = 1
 
 "supertab
 let g:SuperTabDefaultCompletionType = "context"
+
+"toggle paste with F3
+:set pastetoggle=<F3>
