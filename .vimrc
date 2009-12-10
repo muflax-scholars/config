@@ -16,6 +16,9 @@ set showtabline=2
 "save last 1000 jumps and global marks
 set viminfo='1000,f1 
 
+"allow increment / decrement of single chars
+set nrformats=hex,alpha
+
 "line length
 set textwidth=80
 "t wrap text
