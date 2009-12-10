@@ -13,6 +13,9 @@ set ttyfast
 set nobackup
 set showtabline=2
 
+"save last 1000 jumps and global marks
+set viminfo='1000,f1 
+
 "line length
 set textwidth=80
 "t wrap text
@@ -92,14 +95,20 @@ no <C-d> >>
 no <C-t> <<
 
 "switch tabs with Shift/Ctrl-Tab
-noremap <tab> gt
-noremap <s-tab> gT
+"noremap <tab> gt
+"noremap <s-tab> gT
 
 "Jesus saves
 cabbr jesus write
+
+"faster writing
+map WW :w<CR>
 
 "perl stuff
 let perl_include_pod = 1
 let perl_extended_vars = 1
 let perl_fold = 1
 "let perl_fold_blocks
+
+"supertab
+let g:SuperTabDefaultCompletionType = "context"
