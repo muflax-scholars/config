@@ -355,7 +355,7 @@ do
     do
         a="${a}a"
     done
-    alias "m${a}f"="mplayer -af volume=$(( 5 * $i ))"
+    alias "m${a}f"="D0 mplayer -af volume=$(( 5 * $i ))"
 done
 
 # local .zshrc aliases #
