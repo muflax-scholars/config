@@ -22,7 +22,7 @@ xset m 3 2
 
 DISPLAY=:0.0 urxvt &
 
-DISPLAY=:0.0 exec dbus-launch --auto-syntax --exit-with-session wmii
+#DISPLAY=:0.1 exec dbus-launch --auto-syntax --exit-with-session wmii &
+exec dbus-launch --auto-syntax --exit-with-session wmii
 
 #exec dbus-launch --auto-syntax --exit-with-session awesome
-#exec openbox-session
