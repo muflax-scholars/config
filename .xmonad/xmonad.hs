@@ -4,6 +4,7 @@
 -- basic imports
 import XMonad
 import Data.Monoid
+import Data.List (isPrefixOf)
 import System.Exit
 import System.IO
 import qualified XMonad.StackSet as W
@@ -11,15 +12,27 @@ import qualified Data.Map        as M
 
 -- actions
 import qualified XMonad.Actions.ConstrainedResize as Sqr
+import qualified XMonad.Actions.FlexibleResize    as FlexMouse
 import XMonad.Actions.CycleWS
+import XMonad.Actions.NoBorders
 
 -- hooks
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 
 -- layouts
 import XMonad.Layout.NoBorders
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.Tabbed
+import XMonad.Layout.Grid
+import XMonad.Layout.Reflect
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.MultiToggle.Instances
+import XMonad.Layout.WindowNavigation
+import XMonad.Layout.Named
+import qualified XMonad.Layout.Magnifier as Mag
 
 -- utils
 import XMonad.Util.Run
@@ -29,29 +42,28 @@ import XMonad.Util.Run
 ------------------
 
 -- The preferred terminal program.
-terminal'      = "urxvt"
+terminal' = "urxvt"
 
 -- Whether focus follows the mouse pointer.
-focusFollowsMouse' :: Bool
 focusFollowsMouse' = True
 
 -- Width of the window border in pixels.
-borderWidth'   = 3
+borderWidth' = 2
 
 -- modMask lets you specify which modkey you want to use.
-modMask'       = mod4Mask
+modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces'    = ["1","2","3","4","5","6","7","8","9"]
+workspaces' = ["1","2","3","4","5","6","7","8","9"]
 
 -- Pretty stuff
-font' = "-*-gothic-medium-*-12-*"
+font'               = "-*-gothic-medium-*-12-*"
 normalBorderColor'  = "#000055"
 focusedBorderColor' = "#3465a4"
 
 -- dmenu
-dmenu' = "dmenu -b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '#0066ff'"
-dmenuPath' = "exe=`dmenu_path | "++dmenu'++"` && eval \"exec $exe\""
+dmenu'     = "dmenu -b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '#0066ff'"
+dmenuPath' = "exe= `dmenu_path | "++dmenu'++"` && eval \"exec $exe\""
 
 -------------------
 -- Key bindings. --
@@ -68,14 +80,19 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_space ), sendMessage NextLayout)
     -- TODO: temporarily :)
     , ((modm,               xK_space ), setLayout $ XMonad.layoutHook conf)
-    -- Move focus to the next window
-    , ((modm,               xK_n     ), windows W.focusDown)
-    -- Move focus to the previous window
-    , ((modm,               xK_r     ), windows W.focusUp  )
-    -- Swap the focused window with the next window
-    , ((modm .|. shiftMask, xK_n     ), windows W.swapDown  )
-    -- Swap the focused window with the previous window
-    , ((modm .|. shiftMask, xK_r     ), windows W.swapUp    )
+    
+    -- focus movement
+    , ((modm,               xK_n     ), sendMessage $ Go U )
+    , ((modm,               xK_r     ), sendMessage $ Go D )
+    , ((modm,               xK_s     ), sendMessage $ Go L )
+    , ((modm,               xK_t     ), sendMessage $ Go R )
+    -- swap based on focus
+    , ((modm .|. shiftMask, xK_n     ), sendMessage $ Swap U )
+    , ((modm .|. shiftMask, xK_r     ), sendMessage $ Swap D )
+    , ((modm .|. shiftMask, xK_s     ), sendMessage $ Swap L )
+    , ((modm .|. shiftMask, xK_t     ), sendMessage $ Swap R )
+    
+    
     -- prev / next workspace
     , ((modm,               xK_h     ), moveTo Prev HiddenNonEmptyWS )
     , ((modm,               xK_g     ), moveTo Next HiddenNonEmptyWS )
@@ -88,6 +105,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 --    , ((modm .|. shiftMask, xK_h     ), sendMessage Shrink)
     -- Expand the master area
 --    , ((modm .|. shiftMask, xK_g     ), sendMessage Expand)
+    
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     -- Restart xmonad
@@ -127,7 +145,7 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-button2, Raise the window to the top of the stack
     , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
     -- mod-button3, Resize (shift keeps the ratio constant)
-    , ((modm, button3),               (\w -> focus w >> Sqr.mouseResizeWindow w False))
+    , ((modm, button3),               (\w -> focus w >> FlexMouse.mouseResizeWindow w))
     , ((modm .|. shiftMask, button3), (\w -> focus w >> Sqr.mouseResizeWindow w True ))
 
 
@@ -136,30 +154,55 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
 -------------
 -- Layouts --
 -------------
-layout' = avoidStruts $ (tiled ||| Mirror tiled ||| Full)
-  where
-     -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
+layout' = 
+    avoidStruts $            -- don't overlap docks
+    
+    windowNavigation $       -- allow navigating by direction
 
-     -- The default number of windows in the master pane
-     nmaster = 1
+    mkToggle1 NBFULL    $    -- toggles
+    mkToggle1 REFLECTX  $
+    mkToggle1 REFLECTY  $
+    mkToggle1 NOBORDERS $
+    mkToggle1 MIRROR    $
 
-     -- Default proportion of screen occupied by master pane
-     ratio   = 1/2
+    smartBorders $           -- no borders on fullscreen windows
 
-     -- Percent of screen to increment by when resizing panes
-     delta   = 3/100
+    (tiled ||| grid ||| Full)
+    where
+         -- default tiling algorithm partitions the screen into two panes
+         tiled   = named "Tall" $ ResizableTall nmaster delta ratio slaves
+
+         -- The default number of windows in the master pane
+         nmaster = 1
+
+         -- Default proportion of screen occupied by master pane
+         ratio   = 1/2
+
+         -- Percent of screen to increment by when resizing panes
+         delta   = 3/100
+
+         -- fraction to multiply the window height that would be given when
+         -- divided equally 
+         slaves  = []
+
+         grid    = Grid
 
 -----------
 -- Hooks --
 -----------
 -- Window rules
-manageHook' = composeAll [ 
-    className =? "MPlayer"        --> doFloat,
-    className =? "Wine"           --> doFloat,
-    className =? "Gimp"           --> doFloat
-    ]
-
+manageHook' = composeAll $
+        -- auto-float
+        [ className =? c --> doCenterFloat | c <- floats' ]
+        ++
+        [fmap (t `isPrefixOf`) title --> doFloat | t <- floatTitles' ]
+                                  
+    where floats' = [ "MPlayer"
+                    , "Wine"
+                    , "Gimp"
+                    ]
+          floatTitles' = []
+    
 -- Event handling
 eventHook' = mempty
 
