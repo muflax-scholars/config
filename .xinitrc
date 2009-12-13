@@ -20,8 +20,7 @@ xset m 3 2
 
 DISPLAY=:0.0 urxvt &
 
-WM="xmonad"
+WM="$HOME/.xmonad/xmonad.sh"
 #WM="wmii"
-#WM="awesome"
 
 exec dbus-launch --auto-syntax --exit-with-session $WM
