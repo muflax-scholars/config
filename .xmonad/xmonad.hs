@@ -87,6 +87,15 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         safeSpawn "ossmix" ["vmix0-outvol", "-q", "--", "-1"])
     , ((shiftMask         , 0x1008ff11), -- S-XF86AudioLowerVolume 
         safeSpawn "ossmix" ["vmix0-outvol", "-q", "--", "+1"])
+    , ((modm              , xK_c     ), 
+        spawn "MPD_HOST=192.168.1.15 mpc --no-status toggle")
+    -- yes, those are hardcoded positions... so what?
+    , ((modm              , xK_1     ), 
+        spawn "DISPLAY=:0.0 swarp 840 525")
+    , ((modm              , xK_2     ), 
+        spawn "DISPLAY=:0.1 swarp 640 512")
+    , ((modm .|. shiftMask, xK_o     ), 
+        spawn "$HOME/src/in/randomstuff/selection")
 
     ]
     ++
@@ -143,7 +152,15 @@ manageHook' = composeAll [
 eventHook' = mempty
 
 -- Status bars and logging
-logHook' = dynamicLog -- TODO: formatting
+customPP = defaultPP {
+              ppCurrent = dzenColor "" focusedBorderColor' . wrap " " " "
+            , ppVisible = dzenColor "" "" . wrap "(" ")"
+            , ppUrgent  = dzenColor "" "#ff0000" . wrap "*" "*" . dzenStrip
+            , ppWsSep   = dzenColor "" "" " "
+            --, ppOrder   = \(ws:_:_:_) -> [ws]    -- show only workspaces
+            , ppOrder   = \(ws:l:_:_) -> [ws, l] -- show workspaces and layout
+          }
+logHook' = dynamicLogWithPP $ customPP
 
 -- Startup
 startupHook' = return ()
