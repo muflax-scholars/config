@@ -10,6 +10,8 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 -- actions
+import qualified XMonad.Actions.ConstrainedResize as Sqr
+import XMonad.Actions.CycleWS
 
 -- hooks
 import XMonad.Hooks.UrgencyHook
@@ -74,10 +76,18 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_n     ), windows W.swapDown  )
     -- Swap the focused window with the previous window
     , ((modm .|. shiftMask, xK_r     ), windows W.swapUp    )
+    -- prev / next workspace
+    , ((modm,               xK_h     ), moveTo Prev HiddenNonEmptyWS )
+    , ((modm,               xK_g     ), moveTo Next HiddenNonEmptyWS )
+    -- next screen
+    , ((modm .|. shiftMask, xK_h     ), nextScreen  )
+    -- swap screens
+    , ((modm .|. shiftMask, xK_g     ), swapNextScreen  )
+
     -- Shrink the master area
-    , ((modm .|. shiftMask, xK_h     ), sendMessage Shrink)
+--    , ((modm .|. shiftMask, xK_h     ), sendMessage Shrink)
     -- Expand the master area
-    , ((modm .|. shiftMask, xK_g     ), sendMessage Expand)
+--    , ((modm .|. shiftMask, xK_g     ), sendMessage Expand)
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     -- Restart xmonad
@@ -116,9 +126,11 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     -- mod-button2, Raise the window to the top of the stack
     , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
-    -- mod-button3, Set the window to floating mode and resize by dragging
-    , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
-                                       >> windows W.shiftMaster))
+    -- mod-button3, Resize (shift keeps the ratio constant)
+    , ((modm, button3),               (\w -> focus w >> Sqr.mouseResizeWindow w False))
+    , ((modm .|. shiftMask, button3), (\w -> focus w >> Sqr.mouseResizeWindow w True ))
+
+
     ]
 
 -------------
