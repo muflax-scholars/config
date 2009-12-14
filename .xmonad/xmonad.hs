@@ -82,16 +82,24 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_space ), setLayout $ XMonad.layoutHook conf)
     
     -- focus movement
+    -- FIXME: really best idea? also, needs to wrap
     , ((modm,               xK_n     ), sendMessage $ Go U )
     , ((modm,               xK_r     ), sendMessage $ Go D )
     , ((modm,               xK_s     ), sendMessage $ Go L )
     , ((modm,               xK_t     ), sendMessage $ Go R )
     -- swap based on focus
+    -- FIXME: swap a bit more intelligently
     , ((modm .|. shiftMask, xK_n     ), sendMessage $ Swap U )
     , ((modm .|. shiftMask, xK_r     ), sendMessage $ Swap D )
     , ((modm .|. shiftMask, xK_s     ), sendMessage $ Swap L )
     , ((modm .|. shiftMask, xK_t     ), sendMessage $ Swap R )
     
+    -- toggles
+    , ((modm,               xK_f     ), sendMessage $ Toggle NBFULL )
+    , ((modm,               xK_y     ), sendMessage $ Toggle REFLECTX )
+    , ((modm .|. shiftMask, xK_y     ), sendMessage $ Toggle REFLECTY )
+    , ((modm,               xK_m     ), sendMessage $ Toggle MIRROR )
+    , ((modm,               xK_b     ), sendMessage $ Toggle NOBORDERS )
     
     -- prev / next workspace
     , ((modm,               xK_h     ), moveTo Prev HiddenNonEmptyWS )
