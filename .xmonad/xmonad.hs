@@ -107,10 +107,10 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_b     ), sendMessage $ Toggle NOBORDERS )
     
     -- prev / next workspace
-    , ((modm,               xK_h     ), moveTo Prev HiddenNonEmptyWS )
-    , ((modm,               xK_g     ), moveTo Next HiddenNonEmptyWS )
+    , ((modm,               xK_h     ), moveTo Next HiddenNonEmptyWS )
+    , ((modm .|. shiftMask, xK_h     ), moveTo Prev HiddenNonEmptyWS )
     -- next screen
-    , ((modm .|. shiftMask, xK_h     ), nextScreen  )
+    , ((modm,               xK_g     ), nextScreen  )
     -- swap screens
     , ((modm .|. shiftMask, xK_g     ), swapNextScreen  )
 
