@@ -14,6 +14,7 @@ import qualified XMonad.StackSet as W
 -- actions
 import XMonad.Actions.CycleWS
 import XMonad.Actions.NoBorders
+import XMonad.Actions.UpdateFocus
 import qualified XMonad.Actions.ConstrainedResize as Sqr
 import qualified XMonad.Actions.FlexibleResize    as FlexMouse
 
@@ -271,5 +272,7 @@ main = do
             -- hooks, layouts
             layoutHook         = layout',
             manageHook         = manageHook' <+> manageDocks,
-            logHook            = logHook'
+            logHook            = logHook',
+            startupHook        = adjustEventInput, -- mouse focus
+            handleEventHook    = focusOnMouseMove
         }
