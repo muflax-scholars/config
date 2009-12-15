@@ -33,6 +33,10 @@ setopt PROMPT_SUBST
 setopt NO_CHASE_LINKS
 setopt NO_CHASE_DOTS
 
+setopt LIST_PACKED
+setopt CORRECT
+setopt HASH_LIST_ALL
+
 # non-zsh
 export EDITOR="vim"
 export VISUIAL="vim"
@@ -151,7 +155,6 @@ function precmd() {
 # allow approximate
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 2 numeric
 
 # ignore completion for non-existant functions
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -167,7 +170,26 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 zstyle ':completion:*:cd:*' special-dirs ..
 
 # use a cache
-#zstyle ':completion:*' use-cache on
+zstyle ':completion:*' use-cache on
+
+# Case insensitivity, partial matching, substitution
+zstyle ':completion:*' matcher-list 'm:{A-Z}={a-z}' 'm:{a-z}={A-Z}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
+
+# on processes completion complete all user processes
+zstyle ':completion:*:processes' command 'ps -au$USER'
+
+# automagically escape urls
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
+# Expand partial paths
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' squeeze-slashes 'yes'
+
+# complete manual by their section
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+
 
 ################
 # Key bindings #
