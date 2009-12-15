@@ -20,6 +20,8 @@ xset m 3 2
 
 xsetroot -cursor_name left_ptr
 
+xscreensaver &
+
 DISPLAY=:0.0 urxvt &
 
 WM="$HOME/.xmonad/xmonad.sh"
