@@ -18,6 +18,8 @@ xmodmap ~/.Xmodmap
 xset r rate 300 65
 xset m 3 2
 
+xsetroot -cursor_name left_ptr
+
 DISPLAY=:0.0 urxvt &
 
 WM="$HOME/.xmonad/xmonad.sh"
