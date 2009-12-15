@@ -2,37 +2,37 @@
 -- Import --
 ------------
 -- basic imports
-import XMonad
-import Data.Monoid
 import Data.List (isPrefixOf)
+import Data.Monoid
+import Data.Ratio ((%))
 import System.Exit
 import System.IO
-import qualified XMonad.StackSet as W
+import XMonad
 import qualified Data.Map        as M
+import qualified XMonad.StackSet as W
 
 -- actions
-import qualified XMonad.Actions.ConstrainedResize as Sqr
-import qualified XMonad.Actions.FlexibleResize    as FlexMouse
 import XMonad.Actions.CycleWS
 import XMonad.Actions.NoBorders
+import qualified XMonad.Actions.ConstrainedResize as Sqr
+import qualified XMonad.Actions.FlexibleResize    as FlexMouse
 
 -- hooks
-import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.UrgencyHook
 
 -- layouts
-import XMonad.Layout.NoBorders
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.Tabbed
-import XMonad.Layout.Grid
-import XMonad.Layout.Reflect
+import XMonad.Layout.GridVariants
+import XMonad.Layout.IM
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
-import XMonad.Layout.WindowNavigation
 import XMonad.Layout.Named
-import qualified XMonad.Layout.Magnifier as Mag
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Reflect               
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.StackTile
 
 -- utils
 import XMonad.Util.Run
@@ -54,7 +54,7 @@ borderWidth' = 2
 modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces' = ["1","2","3","4","5","6","7","8","9"]
+workspaces' = map show [1..9]
 
 -- Pretty stuff
 font'               = "-*-gothic-medium-*-12-*"
@@ -76,23 +76,28 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_e     ), spawn dmenuPath')
     -- close focused window
     , ((modm,               xK_w     ), kill)
-     -- Rotate through the available layout algorithms
-    , ((modm .|. shiftMask, xK_space ), sendMessage NextLayout)
-    -- TODO: temporarily :)
-    , ((modm,               xK_space ), setLayout $ XMonad.layoutHook conf)
+    -- Rotate through the available layout algorithms
+    , ((modm,               xK_space ) , sendMessage NextLayout)
+    -- reset layouts
+    , ((modm .|. shiftMask, xK_space ) , setLayout $ XMonad.layoutHook conf)
+    -- tile again
+    , ((modm .|. controlMask, xK_space ) , withFocused $ windows . W.sink)
     
     -- focus movement
-    -- FIXME: really best idea? also, needs to wrap
-    , ((modm,               xK_n     ), sendMessage $ Go U )
-    , ((modm,               xK_r     ), sendMessage $ Go D )
-    , ((modm,               xK_s     ), sendMessage $ Go L )
-    , ((modm,               xK_t     ), sendMessage $ Go R )
+    , ((modm,               xK_n     ), windows W.focusUp )
+    , ((modm,               xK_r     ), windows W.focusDown )
+    , ((modm,               xK_s     ), windows W.focusMaster )
     -- swap based on focus
-    -- FIXME: swap a bit more intelligently
-    , ((modm .|. shiftMask, xK_n     ), sendMessage $ Swap U )
-    , ((modm .|. shiftMask, xK_r     ), sendMessage $ Swap D )
-    , ((modm .|. shiftMask, xK_s     ), sendMessage $ Swap L )
-    , ((modm .|. shiftMask, xK_t     ), sendMessage $ Swap R )
+    , ((modm .|. shiftMask, xK_n     ), windows W.swapUp )
+    , ((modm .|. shiftMask, xK_r     ), windows W.swapDown )
+    , ((modm .|. shiftMask, xK_s     ), windows W.swapMaster )
+    -- resize
+    , ((modm,               xK_t     ), sendMessage (IncMasterN 1) )
+    , ((modm .|. shiftMask, xK_t     ), sendMessage (IncMasterN (-1)) )
+    , ((modm .|. controlMask, xK_n   ), sendMessage Expand )
+    , ((modm .|. controlMask, xK_r   ), sendMessage Shrink )
+    , ((modm .|. controlMask, xK_t   ), sendMessage MirrorExpand )
+    , ((modm .|. controlMask, xK_s   ), sendMessage MirrorShrink )
     
     -- toggles
     , ((modm,               xK_f     ), sendMessage $ Toggle NBFULL )
@@ -109,29 +114,35 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- swap screens
     , ((modm .|. shiftMask, xK_g     ), swapNextScreen  )
 
-    -- Shrink the master area
---    , ((modm .|. shiftMask, xK_h     ), sendMessage Shrink)
-    -- Expand the master area
---    , ((modm .|. shiftMask, xK_g     ), sendMessage Expand)
-    
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm              , xK_q     ), 
+        spawn "xmonad --recompile; xmonad --restart")
+    
     -- Volume Control
     , ((0                 , 0x1008ff11), -- XF86AudioLowerVolume 
         safeSpawn "ossmix" ["vmix0-outvol", "-q", "--", "-1"])
     , ((shiftMask         , 0x1008ff11), -- S-XF86AudioLowerVolume 
         safeSpawn "ossmix" ["vmix0-outvol", "-q", "--", "+1"])
+    , ((modm              , 0x1008ff11), -- M-XF86AudioLowerVolume 
+        spawn "ssh amon@azathoth -- ossmix vmix0-outvol -q -- -1")
+    , ((modm .|. shiftMask, 0x1008ff11), -- M-S-XF86AudioLowerVolume 
+        spawn "ssh amon@azathoth -- ossmix vmix0-outvol -q -- +1")
+    
+    -- mpc
     , ((modm              , xK_c     ), 
         spawn "MPD_HOST=192.168.1.15 mpc --no-status toggle")
-    -- yes, those are hardcoded positions... so what?
-    , ((modm              , xK_1     ), 
-        spawn "DISPLAY=:0.0 swarp 840 525")
-    , ((modm              , xK_2     ), 
-        spawn "DISPLAY=:0.1 swarp 640 512")
+    
+    -- screenshots
     , ((modm .|. shiftMask, xK_o     ), 
         spawn "$HOME/src/in/randomstuff/selection")
+    
+    -- yes, those are hardcoded positions... so what?
+    , ((modm .|. controlMask, xK_1     ), 
+        spawn "DISPLAY=:0.1 swarp 640 512")
+    , ((modm .|. controlMask, xK_2     ), 
+        spawn "DISPLAY=:0.0 swarp 840 525")
 
     ]
     ++
@@ -162,11 +173,10 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
 -------------
 -- Layouts --
 -------------
+
 layout' = 
     avoidStruts $            -- don't overlap docks
     
-    windowNavigation $       -- allow navigating by direction
-
     mkToggle1 NBFULL    $    -- toggles
     mkToggle1 REFLECTX  $
     mkToggle1 REFLECTY  $
@@ -175,45 +185,56 @@ layout' =
 
     smartBorders $           -- no borders on fullscreen windows
 
-    (tiled ||| grid ||| Full)
+
+    (tiled ||| stack ||| grid ||| full)
     where
-         -- default tiling algorithm partitions the screen into two panes
-         tiled   = named "Tall" $ ResizableTall nmaster delta ratio slaves
+         -- normal tiling
+         tiled      = named "tile" $
+                      ResizableTall nmaster delta ratio slaves
+         -- grid for terminals or chats
+         grid       = named "grid" $
+                      withIM (1%7) (Role "buddy_list") $ 
+                      Grid (16/10)
+         -- stacked for many open windows
+         stack      = named "stack" $
+                      StackTile nmaster delta stackRatio
+         -- fullscreen
+         full       = named "full" $
+                      -- experimental gimp handling :)
+                      withIM (0.11) (Role "gimp-toolbox") $
+                      reflectHoriz $
+                      withIM (0.15) (Role "gimp-dock") $
+                      reflectHoriz $
+                      noBorders $
+                      Full
 
          -- The default number of windows in the master pane
-         nmaster = 1
-
+         nmaster    = 1
          -- Default proportion of screen occupied by master pane
-         ratio   = 1/2
-
+         ratio      = 1/2
+         -- dito when stacked
+         stackRatio = 3/4
          -- Percent of screen to increment by when resizing panes
-         delta   = 3/100
-
+         delta      = 3/100
          -- fraction to multiply the window height that would be given when
          -- divided equally 
-         slaves  = []
-
-         grid    = Grid
+         slaves     = []
 
 -----------
 -- Hooks --
 -----------
--- Window rules
+-- Window handling
 manageHook' = composeAll $
         -- auto-float
         [ className =? c --> doCenterFloat | c <- floats' ]
         ++
-        [fmap (t `isPrefixOf`) title --> doFloat | t <- floatTitles' ]
-                                  
-    where floats' = [ "MPlayer"
-                    , "Wine"
-                    , "Gimp"
-                    ]
-          floatTitles' = []
+        [ className =? "MPlayer" --> doIgnore] -- FIXME: ugly, but good enough 
+                                               --        for now...
+                                               --        this should probably
+                                               --        be a separate WS...
+    where floats'      = [ "Wine"
+                         ]
     
--- Event handling
-eventHook' = mempty
-
 -- Status bars and logging
 customPP = defaultPP {
               ppCurrent = dzenColor "" focusedBorderColor' . wrap " " " "
@@ -221,15 +242,12 @@ customPP = defaultPP {
             , ppUrgent  = dzenColor "" "#ff0000" . wrap "*" "*" . dzenStrip
             , ppWsSep   = dzenColor "" "" " "
             --, ppOrder   = \(ws:_:_:_) -> [ws]    -- show only workspaces
-            , ppOrder   = \(ws:l:_:_) -> [ws, l] -- show workspaces and layout
+            --, ppOrder   = \(ws:l:_:_) -> [ws, l] -- show workspaces and layout
           }
 logHook' = dynamicLogWithPP $ customPP
 
--- Startup
-startupHook' = return ()
-
 -- Urgency
-urgencyHook' = withUrgencyHook NoUrgencyHook -- TODO: actually handle it
+urgencyHook' = withUrgencyHook NoUrgencyHook
 
 -----------------------------------------------------
 -- Now run xmonad with all the defaults we set up. --
@@ -253,7 +271,5 @@ main = do
             -- hooks, layouts
             layoutHook         = layout',
             manageHook         = manageHook' <+> manageDocks,
-            handleEventHook    = eventHook',
-            logHook            = logHook',
-            startupHook        = startupHook'
+            logHook            = logHook'
         }
