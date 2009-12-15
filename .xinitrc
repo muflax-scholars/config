@@ -20,7 +20,7 @@ xset m 3 2
 
 xsetroot -cursor_name left_ptr
 
-xscreensaver &
+#xscreensaver &
 
 DISPLAY=:0.0 urxvt &
 
