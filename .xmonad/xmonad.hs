@@ -35,6 +35,8 @@ import XMonad.Layout.Reflect
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.StackTile
 
+import XMonad.Layout.LayoutHints
+
 -- utils
 import XMonad.Util.Run
 
@@ -49,7 +51,7 @@ terminal' = "urxvt"
 focusFollowsMouse' = True
 
 -- Width of the window border in pixels.
-borderWidth' = 2
+borderWidth' = 3
 
 -- modMask lets you specify which modkey you want to use.
 modMask' = mod4Mask
@@ -59,8 +61,8 @@ workspaces' = map show [1..9]
 
 -- Pretty stuff
 font'               = "-*-gothic-medium-*-12-*"
-normalBorderColor'  = "#000055"
-focusedBorderColor' = "#3465a4"
+normalBorderColor'  = "#000000"
+focusedBorderColor' = "#aa5500"
 
 -- dmenu
 dmenu'     = "dmenu -b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '#0066ff'"
@@ -76,7 +78,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_e     ), spawn dmenuPath')
     -- close focused window
-    , ((modm,               xK_w     ), kill)
+    , ((modm .|. shiftMask, xK_w     ), kill)
     -- Rotate through the available layout algorithms
     , ((modm,               xK_space ) , sendMessage NextLayout)
     -- reset layouts
@@ -186,14 +188,15 @@ layout' =
 
     smartBorders $           -- no borders on fullscreen windows
 
-
     (tiled ||| stack ||| grid ||| full)
     where
          -- normal tiling
          tiled      = named "tile" $
+                      layoutHintsWithPlacement( 0.5, 0.5) $
                       ResizableTall nmaster delta ratio slaves
          -- grid for terminals or chats
          grid       = named "grid" $
+                      layoutHintsWithPlacement( 0.5, 0.5) $
                       withIM (1%7) (Role "buddy_list") $ 
                       Grid (16/10)
          -- stacked for many open windows
