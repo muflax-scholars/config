@@ -347,7 +347,7 @@ alias mmv="noglob zmv -W"
 
 alias cdl="cd /usr/local/portage/local"
 
-alias muba="rsync -avP --del --exclude lost+found ~/音楽/ /mnt/surfqueen_ongaku/"
+alias muba="mpc update; rsync -avP --del --exclude lost+found ~/音楽/ /mnt/surfqueen_ongaku/"
 
 # LOL!!k!
 alias wtf='dmesg'
