@@ -287,7 +287,7 @@ function take_hostage() {
     # encrypts each argument individually, writes names and password in the
     # hostage file for further use
     for i in $(seq $#); do
-        pw=$(pwgen -1)
+        pw=$(pwgen -1 -B 16)
         target=$*[$i]
         7z -mx0 -p"$pw" a "$target.7z" "$target"
         7z -p"$pw" t "$target.7z"
