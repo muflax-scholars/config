@@ -283,6 +283,27 @@ alias newine="nice wine explorer /desktop=foo,1024x768"
 alias don="D0 xset dpms force on"
 alias doff="D0 xset dpms force off"
 
+function take_hostage() {
+    # encrypts each argument individually, writes names and password in the
+    # hostage file for further use
+    for i in $(seq $#); do
+        pw=$(pwgen -1)
+        target=$*[$i]
+        7z -mx0 -p"$pw" a "$target.7z" "$target"
+        7z -p"$pw" t "$target.7z"
+        if [ $? -eq 0 ]; then
+            cowsay "everything seems alright, please confirm deletion of $target (y|[n])"
+            read answer
+            if [[ $answer == "y" ]]; then
+                rm -rf "$target"
+                echo "$target - $pw" >> ~/hostages.txt
+            else
+                cowsay "skipping $target..."
+            fi
+        fi
+    done
+}
+
 function go() {
     TIC=$(date "+%s")
     echo "真っ直ぐゴー!!"
