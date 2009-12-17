@@ -292,14 +292,9 @@ function take_hostage() {
         7z -mx0 -p"$pw" a "$target.7z" "$target"
         7z -p"$pw" t "$target.7z"
         if [ $? -eq 0 ]; then
-            cowsay "everything seems alright, please confirm deletion of $target (y|[n])"
-            read answer
-            if [[ $answer == "y" ]]; then
-                rm -rf "$target"
-                echo "$target - $pw" >> ~/hostages.txt
-            else
-                cowsay "skipping $target..."
-            fi
+            cowsay "everything seems alright, killing $target..."
+            echo "$target - $pw" >> ~/hostages.txt
+            rm -rf "$target"
         fi
     done
 }
