@@ -2,7 +2,6 @@
 -- Import --
 ------------
 -- basic imports
-import Data.List (isPrefixOf)
 import Data.Monoid
 import Data.Ratio ((%))
 import System.Exit
@@ -27,15 +26,15 @@ import XMonad.Hooks.UrgencyHook
 -- layouts
 import XMonad.Layout.GridVariants
 import XMonad.Layout.IM
+import XMonad.Layout.LayoutHints
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.Named
 import XMonad.Layout.NoBorders
+import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect               
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.StackTile
-
-import XMonad.Layout.LayoutHints
 
 -- utils
 import XMonad.Util.Run
@@ -57,7 +56,7 @@ borderWidth' = 3
 modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces' = map show [1..9]
+workspaces' = ["1:tty", "2:toile"] ++ map show [3..8] ++ ["9:会話"]
 
 -- Pretty stuff
 font'               = "-*-gothic-medium-*-12-*"
@@ -65,7 +64,7 @@ normalBorderColor'  = "#000000"
 focusedBorderColor' = "#aa5500"
 
 -- dmenu
-dmenu'     = "dmenu -b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '#0066ff'"
+dmenu'     = "dmenu -b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '"++focusedBorderColor'++"'"
 dmenuPath' = "exe= `dmenu_path | "++dmenu'++"` && eval \"exec $exe\""
 
 -------------------
@@ -178,6 +177,7 @@ mouseBindings' (XConfig {XMonad.modMask = modm}) = M.fromList $
 -------------
 
 layout' = 
+    -- global modifiers
     avoidStruts $            -- don't overlap docks
     
     mkToggle1 NBFULL    $    -- toggles
@@ -188,22 +188,25 @@ layout' =
 
     smartBorders $           -- no borders on fullscreen windows
 
-    (tiled ||| stack ||| grid ||| full)
+    -- workspace specific
+    onWorkspace "9:会話" (grid ||| full) $
+
+    (tiled ||| grid ||| stack ||| full)
     where
          -- normal tiling
-         tiled      = named "tile" $
+         tiled      = named "瓦" $
                       layoutHintsWithPlacement( 0.5, 0.5) $
                       ResizableTall nmaster delta ratio slaves
          -- grid for terminals or chats
-         grid       = named "grid" $
+         grid       = named "格子" $
                       layoutHintsWithPlacement( 0.5, 0.5) $
                       withIM (1%7) (Role "buddy_list") $ 
                       Grid (16/10)
          -- stacked for many open windows
-         stack      = named "stack" $
+         stack      = named "皿" $
                       StackTile nmaster delta stackRatio
          -- fullscreen
-         full       = named "full" $
+         full       = named "全" $
                       -- experimental gimp handling :)
                       withIM (0.11) (Role "gimp-toolbox") $
                       reflectHoriz $
@@ -232,12 +235,15 @@ manageHook' = composeAll $
         -- auto-float
         [ className =? c --> doCenterFloat | c <- floats' ]
         ++
+        [ className =? "Pidgin"  --> doShift "9:会話"
+        , className =? "Firefox" --> doShift "2:toile"
+        ]
+        ++
         [ className =? "MPlayer" --> doIgnore] -- FIXME: ugly, but good enough 
                                                --        for now...
                                                --        this should probably
                                                --        be a separate WS...
-    where floats'      = [ "Wine"
-                         ]
+    where floats'      = [ "Wine" ]
     
 -- Status bars and logging
 customPP = defaultPP {
