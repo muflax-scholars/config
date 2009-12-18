@@ -31,7 +31,6 @@ import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.Named
 import XMonad.Layout.NoBorders
-import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect               
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.StackTile
@@ -188,32 +187,37 @@ layout' =
 
     smartBorders $           -- no borders on fullscreen windows
 
-    -- workspace specific
-    onWorkspace "9:会話" (grid ||| full) $
-
     (tiled ||| grid ||| stack ||| full)
     where
          -- normal tiling
          tiled      = named "瓦" $
-                      layoutHintsWithPlacement( 0.5, 0.5) $
+                      hinted     $
+                      pidgin     $
                       ResizableTall nmaster delta ratio slaves
          -- grid for terminals or chats
          grid       = named "格子" $
-                      layoutHintsWithPlacement( 0.5, 0.5) $
-                      withIM (1%7) (Role "buddy_list") $ 
+                      hinted       $
+                      pidgin       $
                       Grid (16/10)
          -- stacked for many open windows
          stack      = named "皿" $
                       StackTile nmaster delta stackRatio
          -- fullscreen
          full       = named "全" $
-                      -- experimental gimp handling :)
-                      withIM (0.11) (Role "gimp-toolbox") $
-                      reflectHoriz $
-                      withIM (0.15) (Role "gimp-dock") $
-                      reflectHoriz $
-                      noBorders $
+                      gimp       $
+                      noBorders  $
                       Full
+
+         -- treat buddy list dock-like
+         pidgin l   = withIM (1%7) (Role "buddy_list") l
+         -- experimental gimp handling :)
+         gimp   l   = withIM (0.11) (Role "gimp-toolbox") $
+                      reflectHoriz                        $
+                      withIM (0.15) (Role "gimp-dock")    $
+                      reflectHoriz l
+         -- take care of terminal size
+         hinted l   = layoutHintsWithPlacement( 0.5, 0.5) l
+                      
 
          -- The default number of windows in the master pane
          nmaster    = 1
