@@ -55,7 +55,7 @@ borderWidth' = 3
 modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces' = ["1:tty", "2:toile"] ++ map show [3..8] ++ ["9:会話"]
+workspaces' = ["1:tty", "2:toile"] ++ map show [3..7] ++ ["8:暗愚蛮努", "9:会話"]
 
 -- Pretty stuff
 font'               = "-*-gothic-medium-*-12-*"
@@ -218,7 +218,6 @@ layout' =
          -- take care of terminal size
          hinted l   = layoutHintsWithPlacement( 0.5, 0.5) l
                       
-
          -- The default number of windows in the master pane
          nmaster    = 1
          -- Default proportion of screen occupied by master pane
@@ -241,6 +240,7 @@ manageHook' = composeAll $
         ++
         [ className =? "Pidgin"  --> doShift "9:会話"
         , className =? "Firefox" --> doShift "2:toile"
+        , className =? "Angband" --> doShift "8:暗愚蛮努"
         ]
         ++
         [ className =? "MPlayer" --> doIgnore] -- FIXME: ugly, but good enough 
