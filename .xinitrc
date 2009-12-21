@@ -7,7 +7,7 @@ export QT_IM_MODULE="scim"
 export XMODIFIERS=@im=SCIM
 
 export LANG="ja_JP.UTF8"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
 #export LANG=C
 
 export OOO_FORCE_DESKTOP="gnome"

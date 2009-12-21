@@ -137,7 +137,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     
     -- screenshots
     , ((modm .|. shiftMask, xK_o     ), 
-        spawn "$HOME/src/in/randomstuff/selection")
+        spawn "$HOME/local/src/in/randomstuff/selection")
     
     -- yes, those are hardcoded positions... so what?
     , ((modm .|. controlMask, xK_1     ), 
