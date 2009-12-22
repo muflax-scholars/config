@@ -361,7 +361,7 @@ alias cdl="cd /usr/local/portage/local"
 
 alias muba="mpc update; rsync -avP --del --exclude lost+found ~/音楽/ /mnt/surfqueen_ongaku/"
 
-alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a"
+alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
 
 # LOL!!k!
 alias wtf='dmesg'
