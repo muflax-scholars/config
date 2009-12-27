@@ -246,7 +246,9 @@ manageHook' = composeAll $
                                                --        for now...
                                                --        this should probably
                                                --        be a separate WS...
-    where floats'      = [ "Wine" ]
+    where floats'      = [ "Wine" 
+                         , "Angband"
+                         ]
     
 -- Status bars and logging
 customPP = defaultPP {
