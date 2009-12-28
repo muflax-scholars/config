@@ -112,3 +112,9 @@ let g:SuperTabDefaultCompletionType = "context"
 
 "toggle paste with F3
 :set pastetoggle=<F3>
+
+"underline with F11 (=) / F12 (-)
+nnoremap <F11> yyp<c-v>$r=
+inoremap <F11> <Esc>yyp<c-v>$r=o
+nnoremap <F12> yyp<c-v>$r-
+inoremap <F12> <Esc>yyp<c-v>$r-o
