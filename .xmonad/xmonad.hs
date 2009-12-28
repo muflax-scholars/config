@@ -184,8 +184,6 @@ layout' =
     mkToggle1 NOBORDERS $
     mkToggle1 MIRROR    $
 
-    smartBorders $           -- no borders on fullscreen windows
-
     (tiled ||| grid ||| stack ||| full)
     where
          -- normal tiling
@@ -202,9 +200,9 @@ layout' =
          stack      = named "皿" $
                       StackTile nmaster delta stackRatio
          -- fullscreen
-         full       = named "全" $
-                      gimp       $
-                      noBorders  $
+         full       = named "全"    $
+                      gimp          $
+                      smartBorders  $
                       Full
 
          -- treat buddy list dock-like
