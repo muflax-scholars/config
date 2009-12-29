@@ -1,0 +1,96 @@
+# ignore all "normal" files/dirs, but manage all dotfiles
+/*
+!/.*
+
+# ignore host-specific files
+.FEH*
+.Xauthority
+.feh*
+.serverauth*
+.stardict
+.subversion*
+.unison*
+.xinitrc_local
+.zshrc_local
+
+# ignore secure shit :)
+.config/MusicBrainz
+.config/qtscrob.conf
+.config/transmission*
+.gnupg
+.ncftp
+.ssh
+
+# ignore caches and histories
+*.swp
+*history
+.adobe
+.anthy/last-record*
+.anthy/lock-file_default
+.cache
+.config/menus
+.dbus
+.dmenu_cache
+.dvdcss
+.fontconfig*
+.gtk-bookmarks
+.lesshst
+.local/share
+.macromedia
+.mc/filepos
+.mc/panels.ini
+.recently*
+.scim/input-pad-recently-used.pad
+.scim/user-tables
+.thumbnails
+.viminfo*
+.xmonad/xmonad*
+!.xmonad/xmonad.hs
+!.xmonad/xmonad.sh
+.zcompdump
+
+# ignore logs
+*log
+.xsession-errors
+
+# ignore stupid confs no one loves :)
+.audacity*
+.avidemux
+.chmsee
+.config/evince
+.config/gtk-2.0
+.config/midori
+.gimp*
+.gitk
+.gnome2
+.htoprc
+.java
+.kde4
+.ooo3
+.openoffice.org
+.rubyripper
+.xscreensaver
+
+# ignore alarm music
+.timeboxing
+.wakeup
+
+# ignore mail, firefox and ims, oh my!
+.claws-mail
+.jd
+.mail
+.mozilla
+.purple
+.vimperator/info
+.weechat
+
+# ignore wine (has its own backups)
+.wine*
+
+# ignore anki
+.anki
+
+# ignore savegames
+.angband
+.fceux/sav
+.snes9x/snapshots*

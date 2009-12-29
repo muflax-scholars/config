@@ -1,0 +1,14 @@
+[alias]
+    ci = commit -a
+    co = checkout
+    st = status -a
+
+[color]
+    ui = auto
+
+[user]
+    name = muflax
+    email = muflax@gmail.com
+
+[push]
+    default = matching
