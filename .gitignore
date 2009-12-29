@@ -6,6 +6,7 @@
 .FEH*
 .Xauthority
 .feh*
+.mc
 .serverauth*
 .stardict
 .subversion*
@@ -37,8 +38,6 @@
 .lesshst
 .local/share
 .macromedia
-.mc/filepos
-.mc/panels.ini
 .recently*
 .scim/input-pad-recently-used.pad
 .scim/user-tables

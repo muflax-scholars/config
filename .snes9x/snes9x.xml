@@ -3,7 +3,7 @@
  <preferences>
   <option name="full_screen_on_open" value="0"/>
   <option name="change_display_resolution" value="0"/>
-  <option name="video_mode_width" value="1680"/>
+  <option name="video_mode_width" value="2960"/>
   <option name="video_mode_height" value="1050"/>
   <option name="scale_to_fit" value="1"/>
   <option name="maintain_aspect_ratio" value="1"/>
@@ -16,8 +16,8 @@
   <option name="multithreading" value="1"/>
   <option name="last_directory" value="/mnt/manji_nintendo/Super Famicon"/>
   <option name="custom_sram_directory" value=""/>
-  <option name="window_width" value="1678"/>
-  <option name="window_height" value="1019"/>
+  <option name="window_width" value="834"/>
+  <option name="window_height" value="1031"/>
   <option name="preferences_width" value="1678"/>
   <option name="preferences_height" value="974"/>
   <option name="pause_emulation_on_switch" value="1"/>
@@ -71,16 +71,24 @@
   <option name="upanddown" value="0"/>
  </preferences>
  <controls>
+  <calibration joystick="0">
+   <axis number="0" min="-32767" max="32767" center="0"/>
+   <axis number="1" min="-32767" max="32767" center="0"/>
+   <axis number="2" min="-32767" max="32767" center="0"/>
+   <axis number="3" min="-32767" max="32767" center="0"/>
+   <axis number="4" min="-32767" max="32767" center="0"/>
+   <axis number="5" min="-32767" max="32767" center="0"/>
+  </calibration>
   <joypad number="0">
-   <binding name="Up" binding="556925442"/>
-   <binding name="Down" binding="556925443"/>
-   <binding name="Left" binding="556925440"/>
-   <binding name="Right" binding="556925441"/>
-   <binding name="Start" binding="553648135"/>
-   <binding name="Select" binding="553648134"/>
-   <binding name="A" binding="553648128"/>
-   <binding name="B" binding="553648129"/>
-   <binding name="X" binding="553648130"/>
+   <binding name="Up" binding="556925448"/>
+   <binding name="Down" binding="556925449"/>
+   <binding name="Left" binding="556925446"/>
+   <binding name="Right" binding="556925447"/>
+   <binding name="Start" binding="553648137"/>
+   <binding name="Select" binding="553648136"/>
+   <binding name="A" binding="553648129"/>
+   <binding name="B" binding="553648130"/>
+   <binding name="X" binding="553648128"/>
    <binding name="Y" binding="553648131"/>
    <binding name="L" binding="553648132"/>
    <binding name="R" binding="553648133"/>
