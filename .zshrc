@@ -240,6 +240,8 @@ alias mish="ssh totenkopf@ming"
 alias azash="ssh amon@azathoth"
 alias nyash="ssh amon@nyarlathotep"
 
+alias ss="sudo suspend"
+
 alias t="noglob todo.sh -d ~/.todo.cfg"
 
 alias a="ashuku add"
