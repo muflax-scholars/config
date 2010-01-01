@@ -3,8 +3,11 @@
 syn case match
 
 " some keywords and basic formatting
-syn keyword notes_todo TODO FIXME contained 
-hi def link notes_todo Todo
+syn match notes_keywords /#TODO/
+syn match notes_keywords /#FIXME/
+syn match notes_keywords /#DONE/
+syn match notes_keywords /#RESEARCH/
+hi def link notes_keywords Todo
 
 syn case ignore
 syn keyword notes_spoiler hindrance goal
@@ -21,7 +24,7 @@ hi def link notes_italic Underlined
 hi def link notes_bold String
 
 " comments
-syn region notes_comment start=/\/\*/ end=/\*\// contains=notes_todo
+syn region notes_comment start=/\/\*/ end=/\*\//
 hi def link notes_comment Comment
 
 " sentences starting with - or * are bullets
