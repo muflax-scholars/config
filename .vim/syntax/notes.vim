@@ -9,11 +9,6 @@ syn match notes_keywords /#DONE/
 syn match notes_keywords /#RESEARCH/
 hi def link notes_keywords Todo
 
-syn case ignore
-syn keyword notes_spoiler hindrance goal
-hi def link notes_spoiler Keyword
-syn case match
-
 syn match notes_arrows /\(-\+\|=\+\)>/
 syn match notes_arrows /<\(-\+\|=\+\)/
 hi def link notes_arrows Special
