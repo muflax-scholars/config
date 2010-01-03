@@ -93,3 +93,7 @@
 .angband
 .fceux/sav
 .snes9x/snapshots*
+
+# configs that are included, but stupid
+.scim/config
+.config/Trolltech.conf
