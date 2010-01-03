@@ -14,40 +14,83 @@
 # the output, but it may be inconvenient to type.
 
 attributes:
+    # general purpose, optional
     幸福:
         alias: koufuku
         type: qualitative
+    programming:
+        type: cumulative
+        unit: time
+        optional: true
+    コーヒー:
+        alias: coffee
+        type: cumulative
+        unit: cups
+        optional: true
+    
+    # languages
     日本語:
         alias: nihongo
         type: cumulative
         unit: time
-        min: 30m
-        max: 1h
+        min: 3h
+        max: 4h
     フランス語:
         alias: furansugo
         type: cumulative
         unit: time
-        min: 30m
-        max: 1h
-    programming:
-        type: cumulative
-        unit: time
         min: 1h
-    勉強:
+        max: 1h30m
+    勉強: # too lazy to separate all topics :)
         alias: benkyou
         type: cumulative
         unit: time
-        min: 1h
-        max: 1h30m
+        min: 1h30m
+        max: 2h
+    
+    # smarter 
     読める:
         alias: yomeru
         type: cumulative
         unit: time
         min: 30m
-    コーヒー:
-        alias: coffee
+    健康:
+        alias: kenko
         type: cumulative
-        unit: cups
+        unit: time
+        optional: true
+        max: 1h
+
+    # games
+    暗愚蛮努:
+        alias: angband
+        type: cumulative
+        unit: time
+        min: 1h
+        max: 2h
+    ぷよぷよ:
+        alias: puyo
+        type: cumulative
+        unit: time
+        min: 1h
+        max: 2h
+
+    # meditation
+    zone:
+        type: cumulative
+        unit: time
+        min: 20m
+        max: 30m
+    無心:      
+        alias: mushin
+        type: cumulative
+        unit: time
+        min: 20m
+        max: 30m
+    DXM:
+        alias: dex
+        type: cumulative
+        unit: caps
         optional: true
 
 settings:
