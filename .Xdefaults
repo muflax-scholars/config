@@ -13,6 +13,7 @@ URxvt.jumpScroll:       true
 URxvt.skipScroll:       true
 
 URxvt.urgentOnBell:     true 
+URxvt.visualBelll:      true 
 
 !diversity is for the weak
 URxvt*font:    7x14
