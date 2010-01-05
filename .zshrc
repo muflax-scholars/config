@@ -116,8 +116,8 @@ local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3 ($?%)%
 # last command, used in PS2
 local cur_cmd="${op}%_${cp}"
 
-PROMPT="%{$fg_bold[black]%}╽%{$reset_color%}${date}${path_p}${vcs}${user_host}${arch}
-%{$fg_bold[black]%}╿%{$reset_color%}${smiley} # "
+PROMPT="${date}${path_p}${vcs}${user_host}${arch}
+${smiley} # "
 PROMPT2="${cur_cmd}> "
 
 
