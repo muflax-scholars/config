@@ -207,23 +207,61 @@ bindkey '^[[6~' end-of-history
 # aliases #
 ###########
 
-# Normal aliases
-alias ls="ls --color=always --group-directories-first"
-alias grep="grep --color=always"
-alias ngrep="grep --color=none"
-alias vi="vim -p"
-alias evil="vi"
-alias po="popd"
-alias less="less -iF" 
-alias mc="mc -x -d"
-alias weechat="weechat-curses"
-alias diff="colordiff"
-alias rename="/usr/bin/perlbin/vendor/rename"
-alias makepkg="makepkg --skipinteg"
+# normal aliases
+alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
 alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
-alias mkdir="mkdir -p"
+alias burnburnBURN="rm -f *.class; javac *.java"
 alias cal="cal -m -3"
+alias cdl="cd /usr/local/portage/local"
+alias diff="colordiff"
+alias evil="vi"
+alias grep="grep --color=always"
+alias less="less -iF" 
+alias ls="ls --color=always --group-directories-first"
+alias mc="mc -x -d"
+alias mkdir="mkdir -p"
+alias mmv="noglob zmv -W"
+alias muba="mpc update; rsync -avP --del --exclude lost+found ~/音楽/ /mnt/surfqueen_ongaku/"
+alias ngrep="grep --color=none"
+alias p2="/usr/bin/python"
+alias p3="/usr/bin/python3"
+alias p="/usr/bin/python3"
+alias po="popd"
+alias rename="/usr/bin/perlbin/vendor/rename"
+alias ss="sudo ~/local/bin/suspend"
+alias t="noglob todo.sh -d ~/.todo.cfg"
+alias vi="vim -p"
+alias weechat="weechat-curses"
 
+# wake-on-lan
+alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
+alias wake_totenkopf="wakeonlan 00:18:E7:16:6F:C5"
+
+# wine
+alias ewine="wine explorer /desktop=foo,1024x768"
+alias newine="nice wine explorer /desktop=foo,1024x768"
+
+# monitors on/off
+alias don="D0 xset dpms force on"
+alias doff="D0 xset dpms force off"
+
+# mplayer
+for i in $(seq 5) 
+do
+    a=""
+    for j in $(seq $i) 
+    do
+        a="${a}a"
+    done
+    alias "m${a}f"="D0 mplayer -af volume=$(( 5 * $i ))"
+done
+
+# ssh
+alias mish="ssh totenkopf@ming"
+alias azash="ssh amon@azathoth"
+alias nyash="ssh amon@nyarlathotep"
+
+# universal aliases
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
 alias -g D1='DISPLAY=:0.1'
@@ -232,71 +270,8 @@ alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
 alias -g G='| grep'
 alias -g GP='| grep --color=auto'
- 
-alias wake_totenkopf="wakeonlan 00:18:E7:16:6F:C5"
-alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
 
-alias mish="ssh totenkopf@ming"
-alias azash="ssh amon@azathoth"
-alias nyash="ssh amon@nyarlathotep"
-
-alias ss="sudo ~/local/bin/suspend"
-
-alias t="noglob todo.sh -d ~/.todo.cfg"
-
-alias a="ashuku add"
-function s() {
-    if [[ $# -ge 1 ]] then
-        ashuku show $*
-    else
-        ashuku show -DXM -コーヒー -programming
-    fi
-}
-
-alias p="/usr/bin/python3"
-alias p2="/usr/bin/python"
-alias p3="/usr/bin/python3"
-
-alias burnburnBURN="rm -f *.class; javac *.java"
-
-alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,uid=1000"
-alias nor="sudo umount.cifs /mnt/network/torrent-samba"
-alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/torrents/ && rm ~/*.torrent" 
-function tomo() {
-    I=0
-    LIST=($(transmission-remote ming -l | ngrep -P '^\s*\d+\s*100%' | ngrep -o -P '^\s*\d+'))
-    for x in $LIST
-    do 
-        transmission-remote ming -t $x --move /home/totenkopf/torrent/done/ > /dev/null
-        if [ $? -eq 0 ]; then
-            I=$(( $I + 1 ))
-        fi
-    done
-    echo "${I}/${#LIST} moved."
-}
-
-alias ewine="wine explorer /desktop=foo,1024x768"
-alias newine="nice wine explorer /desktop=foo,1024x768"
-
-alias don="D0 xset dpms force on"
-alias doff="D0 xset dpms force off"
-
-function take_hostage() {
-    # encrypts each argument individually, writes names and password in the
-    # hostage file for further use
-    for i in $(seq $#); do
-        pw=$(pwgen -1 -B 16)
-        target=$*[$i]
-        7z -mx0 -p"$pw" a "$target.7z" "$target"
-        7z -p"$pw" t "$target.7z"
-        if [ $? -eq 0 ]; then
-            cowsay "everything seems alright, killing $target..."
-            echo "$target - $pw" >> ~/hostages.txt
-            rm -rf "$target"
-        fi
-    done
-}
-
+# functions
 function go() {
     TIC=$(date "+%s")
     echo "真っ直ぐゴー!!"
@@ -310,6 +285,20 @@ function go() {
             echo "時間：${TIME}分"
         fi
     fi
+}
+
+function ipt() {
+    S=$(/etc/init.d/iptables status | ngrep -oP "(start|stop)")
+    case $S in
+        stop)
+            echo "shields up! go to red alert!"
+            sudo /etc/init.d/iptables start
+        ;;
+        start)
+            echo "lower your shields and surrender your ships!"
+            sudo /etc/init.d/iptables stop
+        ;;
+    esac
 }
 
 function nap() {
@@ -343,57 +332,64 @@ function nap() {
     }
 }  
 
-function ipt() {
-    S=$(/etc/init.d/iptables status | ngrep -oP "(start|stop)")
-    case $S in
-        stop)
-            echo "shields up! go to red alert!"
-            sudo /etc/init.d/iptables start
-        ;;
-        start)
-            echo "lower your shields and surrender your ships!"
-            sudo /etc/init.d/iptables stop
-        ;;
-    esac
+# ashuku
+alias a="ashuku add"
+function s() {
+    if [[ $# -ge 1 ]] then
+        ashuku show $*
+    else
+        ashuku show -DXM -コーヒー -programming
+    fi
 }
 
-alias mmv="noglob zmv -W"
+function take_hostage() {
+    # encrypts each argument individually, writes names and password in the
+    # hostage file for further use
+    for i in $(seq $#); do
+        pw=$(pwgen -1 -B 16)
+        target=$*[$i]
+        7z -mx0 -p"$pw" a "$target.7z" "$target"
+        7z -p"$pw" t "$target.7z"
+        if [ $? -eq 0 ]; then
+            cowsay "everything seems alright, killing $target..."
+            echo "$target - $pw" >> ~/hostages.txt
+            rm -rf "$target"
+        fi
+    done
+}
 
-alias cdl="cd /usr/local/portage/local"
-
-alias muba="mpc update; rsync -avP --del --exclude lost+found ~/音楽/ /mnt/surfqueen_ongaku/"
-
-alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
+# torrent
+alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,uid=1000"
+alias nor="sudo umount.cifs /mnt/network/torrent-samba"
+alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/torrents/ && rm ~/*.torrent" 
+function tomo() {
+    I=0
+    LIST=($(transmission-remote ming -l | ngrep -P '^\s*\d+\s*100%' | ngrep -o -P '^\s*\d+'))
+    for x in $LIST
+    do 
+        transmission-remote ming -t $x --move /home/totenkopf/torrent/done/ > /dev/null
+        if [ $? -eq 0 ]; then
+            I=$(( $I + 1 ))
+        fi
+    done
+    echo "${I}/${#LIST} moved."
+}
 
 # LOL!!k!
-alias wtf='dmesg'
-alias ohnoes='sudo cat /var/log/errors.log'
-alias rtfm='man'
-
-alias visible='echo'
-alias invisible='cat'
-alias moar='less'
-
-alias icanhas='mkdir'
+alias cya='sudo reboot'
 alias donotwant='rm'
 alias dowant='cp'
 alias gtfo='mv'
 alias hai='cd'
-
-alias nomnomnom='killall'
-alias cya='sudo reboot'
+alias icanhas='mkdir'
+alias invisible='cat'
 alias kthxbai='sudo shutdown -h now'
+alias moar='less'
+alias nomnomnom='killall'
+alias ohnoes='sudo cat /var/log/errors.log'
+alias rtfm='man'
+alias visible='echo'
+alias wtf='dmesg'
 
-# mplayer
-for i in $(seq 5) 
-do
-    a=""
-    for j in $(seq $i) 
-    do
-        a="${a}a"
-    done
-    alias "m${a}f"="D0 mplayer -af volume=$(( 5 * $i ))"
-done
-
-# local .zshrc aliases #
+# local .zshrc aliases
 source ~/.zshrc_local
