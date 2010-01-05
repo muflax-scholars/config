@@ -76,11 +76,6 @@ attributes:
         max: 2h
 
     # meditation
-    zone:
-        type: cumulative
-        unit: time
-        min: 20m
-        max: 30m
     無心:      
         alias: mushin
         type: cumulative
