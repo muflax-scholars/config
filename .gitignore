@@ -47,6 +47,7 @@
 !.xmonad/xmonad.hs
 !.xmonad/xmonad.sh
 .zcompdump
+.icedteaplugin
 
 # ignore logs
 *log
@@ -97,3 +98,4 @@
 # configs that are included, but stupid
 .scim/config
 .config/Trolltech.conf
+.config/geeqie
