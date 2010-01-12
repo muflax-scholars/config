@@ -13,11 +13,8 @@ export PATH="$HOME/local/bin:$PATH"
 export OOO_FORCE_DESKTOP="gnome"
  
 scim -d
-setxkbmap saneo
-xmodmap ~/.Xmodmap
 
-xset r rate 300 65
-xset m 3 2
+skb.sh
 
 xsetroot -cursor_name left_ptr
 
