@@ -3,10 +3,7 @@
 syn case match
 
 " some keywords and basic formatting
-syn match notes_keywords /#TODO/
-syn match notes_keywords /#FIXME/
-syn match notes_keywords /#DONE/
-syn match notes_keywords /#RESEARCH/
+syn match notes_keywords /#[A-Z_]\+/ 
 hi def link notes_keywords Todo
 
 syn match notes_arrows /\(-\+\|=\+\)>/
