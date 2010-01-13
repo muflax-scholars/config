@@ -1,4 +1,3 @@
-#> .xsession-errors
 # machine specific configs
 source ~/.xinitrc_local
 
@@ -11,14 +10,12 @@ export PATH="$HOME/local/bin:$PATH"
 #export LANG=C
 
 export OOO_FORCE_DESKTOP="gnome"
- 
+
 scim -d
 
 skb.sh
 
 xsetroot -cursor_name left_ptr
-
-#xscreensaver &
 
 DISPLAY=:0.0 urxvt &
 
