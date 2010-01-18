@@ -246,6 +246,7 @@ manageHook' = composeAll $
                                                --        be a separate WS...
     where floats'      = [ "Wine" 
                          , "Angband"
+                         , "Gxmessage"
                          ]
     
 -- Status bars and logging
