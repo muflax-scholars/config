@@ -17,6 +17,8 @@ skb.sh
 
 xsetroot -cursor_name left_ptr
 
+remind -z -k'gxmessage -title "reminder" %s &' ~/.reminders &
+
 DISPLAY=:0.0 urxvt &
 
 WM="$HOME/.xmonad/xmonad.sh"

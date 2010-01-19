@@ -1,0 +1,17 @@
+# sleep and basic anchors
+REM AT 2:30 MSG Doing something interesting?
+REM AT 3:00 +20 DURATION 3:00 MSG Core!
+REM AT 6:05 MSG Breakfast! Eat some müsli.
+REM AT 6:10 MSG Start with something intense.
+
+REM AT 10:30 MSG Doing something interesting?
+REM AT 11:00 +20 DURATION 0:20 MSG Nap! Make some coffee!
+REM AT 11:25 MSG Start with something intense.
+
+REM AT 15:30 MSG Doing something interesting?
+REM AT 16:00 +20 DURATION 0:20 MSG Nap! Make some coffee!
+REM AT 16:25 MSG Start with something intense.
+
+REM AT 20:30 MSG Doing something interesting?
+REM AT 21:00 +20 DURATION 0:20 MSG Nap! Make some coffee!
+REM AT 21:25 MSG Start with something intense.
