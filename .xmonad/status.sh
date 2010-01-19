@@ -16,6 +16,30 @@ cpu_hogs() {
                            
 }
 
+# cycle calculations
+#TODO: support minutes
+cycles=(3 11 16 21)
+
+cycle() {
+    hour=$(date "+%H")
+    min=$(date "+%M")
+    first=1
+    
+    for c in $(seq 1 ${#cycles}) 
+    do  
+        if [[ $cycles[$c] -gt $hour ]] then
+            first=0
+            break
+        fi
+    done
+     
+    [[ $first == 1 ]] && c=1           
+    diff=$(((($cycles[$c]*60) - ($hour*60 + $min)) ))
+    [[ $diff < 0 ]] && diff=$(( 1440 + $diff ))
+    printf "C: %d時%02d分" $(($diff/60)) $(($diff%60))
+    return 0
+}                    
+
 hostname=$(hostname)
 
 status() {
@@ -36,7 +60,7 @@ status() {
     st_date="D: $(date "+%A, 平成${year}年%m月%d日 %H時%M分%S秒")"
 
     # rest time of current cycle
-    #st_cycle=$(cycle)
+    st_cycle=$(cycle)
 
     # days until apocalypse
     st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
@@ -58,7 +82,7 @@ status() {
 
         statusbar+=("$st_wifi" "$st_battery")
     fi
-    statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_date" "$st_apoc")
+    statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_cycle" "$st_date" "$st_apoc")
     echo ${(j: | :)statusbar}
 }
     
