@@ -114,8 +114,6 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- swap screens
     , ((modm .|. shiftMask, xK_g     ), swapNextScreen  )
 
-    -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     -- Restart xmonad
     , ((modm              , xK_q     ), 
         spawn "xmonad --recompile; xmonad --restart")
