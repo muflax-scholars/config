@@ -98,6 +98,9 @@ no <C-t> <<
 "Jesus saves
 cabbr jesus write
 
+"perldo is too long
+cabbr pd perldo
+
 "faster writing
 map WW :w<CR>
 
