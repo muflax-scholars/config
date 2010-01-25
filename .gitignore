@@ -23,11 +23,14 @@
 .ssh
 
 # ignore caches and histories
+!.xmonad/xmonad.hs
+!.xmonad/xmonad.sh
 *.swp
 *history
 .adobe
 .anthy/last-record*
 .anthy/lock-file_default
+.bibletime
 .cache
 .config/menus
 .dbus
@@ -35,19 +38,18 @@
 .dvdcss
 .fontconfig*
 .gtk-bookmarks
+.icedteaplugin
 .lesshst
 .local/share
 .macromedia
 .recently*
 .scim/input-pad-recently-used.pad
 .scim/user-tables
+.sword
 .thumbnails
 .viminfo*
 .xmonad/xmonad*
-!.xmonad/xmonad.hs
-!.xmonad/xmonad.sh
 .zcompdump
-.icedteaplugin
 
 # ignore logs
 *log
