@@ -10,8 +10,8 @@ syn match notes_arrows /\(-\+\|=\+\)>/
 syn match notes_arrows /<\(-\+\|=\+\)/
 hi def link notes_arrows Special
 
-syn region notes_italic start=/_/ skip=/\w_\w/ end=/_/ oneline
-syn region notes_bold start=/\*/ skip=/\w\*\w/ end=/\*/ oneline
+syn region notes_italic start=/_/ skip=/\w_\w/ end=/_/ 
+syn region notes_bold start=/\*/ skip=/\w\*\w/ end=/\*/ 
 hi def link notes_italic Underlined
 hi def link notes_bold String
 
