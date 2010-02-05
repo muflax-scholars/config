@@ -13,11 +13,11 @@ export OOO_FORCE_DESKTOP="gnome"
 
 scim -d
 
+eval "$(gpg-agent --daemon)"
+
 skb.sh
 
 xsetroot -cursor_name left_ptr
-
-remind -z -k'gxmessage -title "reminder" %s &' ~/.reminders &
 
 DISPLAY=:0.0 urxvt &
 
