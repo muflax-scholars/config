@@ -192,6 +192,8 @@ zstyle ':completion:*' squeeze-slashes 'yes'
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
 
+# always rehash not found commands
+zstyle ':acceptline:*' rehash true
 
 ################
 # Key bindings #
