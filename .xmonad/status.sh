@@ -18,7 +18,7 @@ cpu_hogs() {
 
 # cycle calculations
 #TODO: support minutes
-cycles=(3 11 16 21)
+cycles=(4 20)
 
 cycle() {
     hour=$(date "+%H")
