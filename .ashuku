@@ -14,19 +14,15 @@
 # the output, but it may be inconvenient to type.
 
 attributes:
-    # general purpose, optional
+    # general purpose
     幸福:
         alias: koufuku
         type: qualitative
     programming:
         type: cumulative
         unit: time
-        optional: true
-    コーヒー:
-        alias: coffee
-        type: cumulative
-        unit: cups
-        optional: true
+        min: 2h
+        max: 3h
     
     # languages
     日本語:
@@ -41,52 +37,36 @@ attributes:
         unit: time
         min: 1h
         max: 1h30m
+    ラテン語:
+        alias: latengo
+        type: cumulative
+        unit: time
+        min: 30m
+        max: 1h
+    
+    # studying
     勉強: # too lazy to separate all topics :)
         alias: benkyou
         type: cumulative
         unit: time
-        min: 1h30m
-        max: 2h
+        min: 2h
+        max: 3h
     
     # smarter 
     読める:
         alias: yomeru
         type: cumulative
         unit: time
-        min: 30m
-    健康:
-        alias: kenko
-        type: cumulative
-        unit: time
-        optional: true
-        max: 1h
-
-    # games
-    暗愚蛮努:
-        alias: angband
-        type: cumulative
-        unit: time
-        min: 1h
-        max: 2h
-    ぷよぷよ:
-        alias: puyo
-        type: cumulative
-        unit: time
-        min: 1h
-        max: 2h
+        min: 3h
+        max: 4h
 
     # meditation
-    無心:      
-        alias: mushin
+    座禅:      
+        alias: zazen
         type: cumulative
         unit: time
         min: 20m
         max: 30m
-    DXM:
-        alias: dex
-        type: cumulative
-        unit: caps
-        optional: true
 
 settings:
     path: ~/txt/ashuku.txt
