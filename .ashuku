@@ -38,7 +38,7 @@ attributes:
         min: 1h
         max: 1h30m
     ラテン語:
-        alias: latengo
+        alias: ratengo
         type: cumulative
         unit: time
         min: 30m
