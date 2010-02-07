@@ -210,6 +210,7 @@ bindkey '^[[6~' end-of-history
 ###########
 
 # normal aliases
+alias a="ashuku add"
 alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
 alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias burnburnBURN="rm -f *.class; javac *.java"
@@ -230,6 +231,7 @@ alias p3="/usr/bin/python3"
 alias p="/usr/bin/python3"
 alias po="popd"
 alias rename="/usr/bin/perlbin/vendor/rename"
+alias s="ashuku show"
 alias ss="sudo ~/local/bin/suspend"
 alias t="noglob todo.sh -d ~/.todo.cfg"
 alias vi="vim -p"
@@ -333,16 +335,6 @@ function nap() {
         ~/.wakeup.sh
     }
 }  
-
-# ashuku
-alias a="ashuku add"
-function s() {
-    if [[ $# -ge 1 ]] then
-        ashuku show $*
-    else
-        ashuku show -DXM -コーヒー -programming
-    fi
-}
 
 function take_hostage() {
     # encrypts each argument individually, writes names and password in the
