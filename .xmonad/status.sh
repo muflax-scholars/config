@@ -46,11 +46,12 @@ status() {
     statusbar=()
 
     # current load
-    st_uptime="L: $(uptime | sed -e 's/.*://; s/,//g')"
+    load=($(cat /proc/loadavg))
+    st_uptime="L: $load[1,3]"
 
     # memory usage
     mem=(${$(free -m | grep "Mem:")[2,7]})
-    st_mem=$(printf "M: %4d(%+5d)/%4d" $(($mem[2] - $mem[5] - $mem[6])) $mem[6] $mem[1])
+    st_mem=$(printf "M: %4d%+4d" $(($mem[2] - $mem[5] - $mem[6])) $mem[6])
 
     # processes with >= 50% cpu load
     st_ps="P: $(cpu_hogs)"
@@ -60,10 +61,10 @@ status() {
     st_date="D: $(date "+%A, 平成${year}年%m月%d日 %H時%M分%S秒")"
 
     # rest time of current cycle
-    st_cycle=$(cycle)
+    #st_cycle=$(cycle)
 
     # days until apocalypse
-    st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
+    #st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
 
     # volume
     mixer="vmix0-outvol"
@@ -82,7 +83,7 @@ status() {
 
         statusbar+=("$st_wifi" "$st_battery")
     fi
-    statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_cycle" "$st_date" "$st_apoc")
+    statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_date")
     echo ${(j: | :)statusbar}
 }
     
