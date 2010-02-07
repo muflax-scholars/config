@@ -253,8 +253,9 @@ customPP = defaultPP {
             , ppVisible = dzenColor "" "" . wrap "(" ")"
             , ppUrgent  = dzenColor "" "#ff0000" . wrap "*" "*" . dzenStrip
             , ppWsSep   = dzenColor "" "" " "
+            , ppTitle   = shorten 50
             --, ppOrder   = \(ws:l:_:_) -> [ws, l] -- show workspaces and layout
-            , ppOrder   = \(ws:l:t:_) -> [ws,l,shorten 30 t] -- show workspaces and layout
+            , ppOrder   = \(ws:l:t:_) -> [ws,l,t] -- show workspaces and layout
           }
 logHook' = dynamicLogWithPP $ customPP
 
