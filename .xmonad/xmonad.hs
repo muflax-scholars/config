@@ -30,6 +30,7 @@ import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.Named
 import XMonad.Layout.NoBorders
+import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect               
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.StackTile
@@ -181,6 +182,9 @@ layout' =
     mkToggle1 REFLECTY  $
     mkToggle1 NOBORDERS $
     mkToggle1 MIRROR    $
+
+    -- workspace specific
+    onWorkspace "1:tty" (grid ||| tiled) $
 
     (tiled ||| grid ||| stack ||| full)
     where
