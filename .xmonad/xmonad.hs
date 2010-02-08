@@ -55,7 +55,9 @@ borderWidth' = 3
 modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces' = ["1:tty", "2:toile"] ++ map show [3..7] ++ ["8:暗愚蛮努", "9:会話"]
+workspaces' = ["1:tty", "2:toile", "3:暗記"] 
+               ++ map show [4..6] 
+               ++ ["7:télé", "8:暗愚蛮努", "9:会話"]
 
 -- Pretty stuff
 font'               = "-*-gothic-medium-*-12-*"
