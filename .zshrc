@@ -106,6 +106,12 @@ local user_host=" ${op}${user}%{$fg[cyan]%}@%{$reset_color%}${host}${cp}"
 if [ $(uname -m) = "i686" ]; then
     local arch=" ${op}(i686)${cp}"
 fi
+
+# are we in an mc shell?
+if [[ $MC_SID != "" ]] then
+    local mc=" ${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
+fi
+
 # current path
 local path_p=" ${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
 
@@ -117,7 +123,7 @@ local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3 ($?%)%
 local cur_cmd="${op}%_${cp}"
 
 PROMPT="${date}${path_p}${vcs}${user_host}${arch}
-${smiley} # "
+${smiley}${mc} # "
 PROMPT2="${cur_cmd}> "
 
 
@@ -222,7 +228,7 @@ alias ew="sudo emerge -auD --reinstall changed-use world"
 alias grep="grep --color=always"
 alias less="less -iF" 
 alias ls="ls --color=always --group-directories-first"
-alias mc="mc -x -d"
+alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
 alias ngrep="grep --color=none"
