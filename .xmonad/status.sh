@@ -76,12 +76,12 @@ status() {
     # laptop specific
     if [[ $hostname == "nyarlathotep" ]] then
         # wifi strength
-        st_wifi="W: $(cat /sys/class/net/wlan0/wireless/link)%"
+        #st_wifi="W: $(cat /sys/class/net/wlan0/wireless/link)%"
         
         # battery status
         st_battery="B: ${$(acpi)[(w)3,-1]}"
 
-        statusbar+=("$st_wifi" "$st_battery")
+        statusbar+=("$st_battery")
     fi
     statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_date")
     echo ${(j: | :)statusbar}
