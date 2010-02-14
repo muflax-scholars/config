@@ -110,18 +110,18 @@
    <binding name="Sticky R" binding="0"/>
   </joypad>
   <joypad number="1">
-   <binding name="Up" binding="0"/>
-   <binding name="Down" binding="0"/>
-   <binding name="Left" binding="0"/>
-   <binding name="Right" binding="0"/>
+   <binding name="Up" binding="268500818"/>
+   <binding name="Down" binding="268500820"/>
+   <binding name="Left" binding="268500817"/>
+   <binding name="Right" binding="268500819"/>
    <binding name="Start" binding="0"/>
    <binding name="Select" binding="0"/>
-   <binding name="A" binding="0"/>
-   <binding name="B" binding="0"/>
-   <binding name="X" binding="0"/>
-   <binding name="Y" binding="0"/>
-   <binding name="L" binding="0"/>
-   <binding name="R" binding="0"/>
+   <binding name="A" binding="268500914"/>
+   <binding name="B" binding="268500917"/>
+   <binding name="X" binding="268500913"/>
+   <binding name="Y" binding="268500916"/>
+   <binding name="L" binding="268500919"/>
+   <binding name="R" binding="268500920"/>
    <binding name="Turbo A" binding="0"/>
    <binding name="Turbo B" binding="0"/>
    <binding name="Turbo X" binding="0"/>
