@@ -266,7 +266,10 @@ customPP = defaultPP {
 logHook' = dynamicLogWithPP $ customPP
 
 -- Urgency
-urgencyHook' = withUrgencyHook NoUrgencyHook
+urgencyHook' = withUrgencyHookC NoUrgencyHook urgencyConfig {
+                 suppressWhen = OnScreen
+               , remindWhen   = Dont
+               } 
 
 -----------------------------------------------------
 -- Now run xmonad with all the defaults we set up. --
