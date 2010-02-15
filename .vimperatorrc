@@ -28,6 +28,7 @@ vmap zR null
 vmap zf null
 vmap d <C-w>
 colorscheme myzenburn
+set urlseparator=
 source! /home/amon/.vimperatorrc.local
 
 " vim: set ft=vimperator:
