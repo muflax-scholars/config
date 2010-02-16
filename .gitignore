@@ -42,6 +42,8 @@
 .lesshst
 .local/share
 .macromedia
+.matplotlib
+.netx
 .recently*
 .scim/input-pad-recently-used.pad
 .scim/user-tables
@@ -59,6 +61,7 @@
 .audacity*
 .avidemux
 .chmsee
+.config/Ulduzsoft
 .config/evince
 .config/gtk-2.0
 .config/midori
@@ -67,6 +70,7 @@
 .gnome2
 .htoprc
 .java
+.kchmviewer
 .kde4
 .ooo3
 .openoffice.org
@@ -102,3 +106,4 @@
 .config/Trolltech.conf
 .config/geeqie
 .config/comix
+.snes9x/snes9x.xml
