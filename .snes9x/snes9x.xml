@@ -17,8 +17,8 @@
   <option name="multithreading" value="1"/>
   <option name="last_directory" value="/mnt/manji_nintendo/Super Famicon"/>
   <option name="custom_sram_directory" value=""/>
-  <option name="window_width" value="1674"/>
-  <option name="window_height" value="1031"/>
+  <option name="window_width" value="1274"/>
+  <option name="window_height" value="1018"/>
   <option name="preferences_width" value="1678"/>
   <option name="preferences_height" value="974"/>
   <option name="pause_emulation_on_switch" value="1"/>
@@ -75,14 +75,6 @@
   <option name="upanddown" value="0"/>
  </preferences>
  <controls>
-  <calibration joystick="0">
-   <axis number="0" min="-32767" max="32767" center="0"/>
-   <axis number="1" min="-32767" max="32767" center="0"/>
-   <axis number="2" min="-32767" max="32767" center="0"/>
-   <axis number="3" min="-32767" max="32767" center="0"/>
-   <axis number="4" min="-32767" max="32767" center="0"/>
-   <axis number="5" min="-32767" max="32767" center="0"/>
-  </calibration>
   <joypad number="0">
    <binding name="Up" binding="556925448"/>
    <binding name="Down" binding="556925449"/>
