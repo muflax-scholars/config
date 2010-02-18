@@ -228,6 +228,7 @@ alias ew="sudo emerge -auD --reinstall changed-use --changelog world"
 alias grep="grep --color=always"
 alias less="less -iF" 
 alias ls="ls --color=always --group-directories-first"
+alias m="mplayer"
 alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
@@ -273,7 +274,6 @@ alias nyash="ssh amon@nyarlathotep"
 # universal aliases
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
-alias -g D1='DISPLAY=:0.1'
 alias -g LC='LANG=C'
 alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
