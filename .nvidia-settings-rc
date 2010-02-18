@@ -2,7 +2,7 @@
 # /home/amon/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Thu Dec 17 23:28:12 2009
+# Generated on Thu Feb 18 07:51:32 2010
 #
 
 # ConfigProperties:
@@ -13,9 +13,9 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = No
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
@@ -35,15 +35,7 @@ Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
 0/FSAAAppControlled=1
 0/LogAnisoAppControlled=1
 0/OpenGLImageSettings=0
-0/RedBrightness=0.000000
-0/GreenBrightness=0.000000
-0/BlueBrightness=0.000000
-0/RedContrast=0.000000
-0/GreenContrast=0.000000
-0/BlueContrast=0.000000
-0/RedGamma=1.000000
-0/GreenGamma=1.000000
-0/BlueGamma=1.000000
+0/GammaCorrectedAALinesValue=16
 0/DigitalVibrance[DFP-0]=0
 0/DigitalVibrance[DFP-1]=0
 0/ImageSharpening[DFP-0]=0
@@ -53,34 +45,3 @@ Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
 0/XVideoTextureSyncToVBlank=1
 0/XVideoBlitterSyncToVBlank=1
 0/XVideoSyncToDisplay=65536
-1/CursorShadow=0
-1/CursorShadowAlpha=64
-1/CursorShadowRed=0
-1/CursorShadowGreen=0
-1/CursorShadowBlue=0
-1/CursorShadowXOffset=4
-1/CursorShadowYOffset=2
-1/SyncToVBlank=1
-1/LogAniso=0
-1/FSAA=0
-1/TextureSharpen=0
-1/GammaCorrectedAALines=0
-1/AllowFlipping=1
-1/FSAAAppControlled=1
-1/LogAnisoAppControlled=1
-1/OpenGLImageSettings=0
-1/RedBrightness=0.000000
-1/GreenBrightness=0.000000
-1/BlueBrightness=0.000000
-1/RedContrast=0.000000
-1/GreenContrast=0.000000
-1/BlueContrast=0.000000
-1/RedGamma=1.000000
-1/GreenGamma=1.000000
-1/BlueGamma=1.000000
-1/DigitalVibrance[DFP-0]=0
-1/ImageSharpening[DFP-0]=0
-1/GPUScaling[DFP-0]=131075
-1/XVideoTextureSyncToVBlank=1
-1/XVideoBlitterSyncToVBlank=1
-1/XVideoSyncToDisplay=65536
