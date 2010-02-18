@@ -42,6 +42,11 @@ export EDITOR="vim"
 export VISUIAL="vim"
 export MPD_HOST="192.168.1.15"
 
+export GOROOT="~/local/src/out/go-lang"
+export GOOS="linux"
+export GOARCH="amd64"
+export GOBIN="~/local/bin"
+
 case "${TERM}" in
     linux)
         export LANG=C
