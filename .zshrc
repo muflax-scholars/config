@@ -322,7 +322,7 @@ function nap() {
         if [[ $(( $(date "+%s") - $LAST_NAP )) -lt $(( 3*60*60 )) ]] then
             echo "Anti-Snooze warning! Nap forbidden."
             ossmix -q vmix0-outvol 22
-            ~/.wakeup.sh
+            wakeup.sh
             slock
             return
         fi
@@ -342,7 +342,7 @@ function nap() {
     fi && {
         echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
         ossmix -q vmix0-outvol 22
-        ~/.wakeup.sh
+        wakeup.sh
     }
 }  
 
