@@ -24,8 +24,8 @@ setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
-setopt SH_WORD_SPLIT
 setopt NOHUP
+setopt NO_BG_NICE
 setopt EXTENDEDGLOB
 setopt INTERACTIVECOMMENTS
 setopt PROMPT_SUBST
@@ -36,6 +36,10 @@ setopt NO_CHASE_DOTS
 setopt LIST_PACKED
 setopt CORRECT
 setopt HASH_LIST_ALL
+
+# with this option set you can't do "ls > foo" if foo already exists, so
+# # you have to do "rm foo; ls > foo" or in one step "ls >! foo"
+setopt NOCLOBBER
 
 # non-zsh
 export EDITOR="vim"
@@ -378,6 +382,17 @@ function tomo() {
     done
     echo "${I}/${#LIST} moved."
 }
+
+# save key presses on ../../
+rationalise-dot() {
+    if [[ $LBUFFER = *.. ]]; then
+        LBUFFER+=/..
+    else
+        LBUFFER+=.
+    fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
 
 # LOL!!k!
 alias cya='sudo reboot'
