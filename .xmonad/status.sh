@@ -71,7 +71,7 @@ status() {
     st_volume="V: $(ossmix $mixer | sed -e "s/.*set to \([0-9.]\+\).*/\1/")"
 
     # expanding widgets are always left
-    statusbar+=("$st_ps")
+    statusbar+=($st_ps)
 
     # laptop specific
     if [[ $hostname == "nyarlathotep" ]] then
@@ -81,9 +81,9 @@ status() {
         # battery status
         st_battery="B: ${$(acpi)[(w)3,-1]}"
 
-        statusbar+=("$st_battery")
+        statusbar+=($st_battery)
     fi
-    statusbar+=("$st_uptime" "$st_mem" "$st_volume" "$st_date")
+    statusbar+=($st_uptime $st_mem $st_volume $st_date)
     echo ${(j: | :)statusbar}
 }
     
