@@ -51,7 +51,7 @@ export GOOS="linux"
 export GOARCH="amd64"
 export GOBIN="$HOME/local/bin"
 
-case "${TERM}" in
+case ${TERM} in
     linux)
         export LANG=C
         ;;
@@ -69,7 +69,7 @@ export LS_COLORS
 # let's make an awesome prompt #
 ################################
 autoload colors
-if [[ "${terminfo[colors]}" -ge 8 ]] then
+if [[ ${terminfo[colors]} -ge 8 ]] then
     colors
 fi
 autoload -Uz vcs_info
@@ -103,7 +103,7 @@ else
 fi
 
 # current host, with warning if ssh
-if [ -z "$SSH_CONNECTION" ]; then
+if [ -z $SSH_CONNECTION ]; then
     local host="%{$fg[cyan]%}%m%{$reset_color%}"
 else
     local host="%{$fg[red]%}%m%{$reset_color%}"
@@ -298,7 +298,7 @@ function go() {
     TIME=$(( ($TOC - $TIC) / 60 ))
     if [[ $TIME -gt 0 ]] then
         if [[ $# -ge 1 ]] then
-            ashuku add "$1" "${TIME}m"
+            ashuku add $1 "${TIME}m"
         else
             echo "時間：${TIME}分"
         fi
