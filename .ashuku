@@ -31,19 +31,6 @@ attributes:
         unit: time
         min: 3h
         max: 4h
-    フランス語:
-        alias: furansugo
-        type: cumulative
-        unit: time
-        min: 1h
-        max: 1h30m
-    ラテン語:
-        alias: ratengo
-        type: cumulative
-        unit: time
-        min: 30m
-        max: 1h
-        optional: true
     
     # studying
     勉強: # too lazy to separate all topics :)
