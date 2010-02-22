@@ -391,8 +391,8 @@ rationalise-dot() {
         LBUFFER+=.
     fi
 }
-zle -N rationalise-dot
-bindkey . rationalise-dot
+#zle -N rationalise-dot
+#bindkey . rationalise-dot
 
 # LOL!!k!
 alias cya='sudo reboot'
