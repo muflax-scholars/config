@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <snes9x>
  <preferences>
-  <option name="full_screen_on_open" value="0"/>
+  <option name="full_screen_on_open" value="1"/>
   <option name="change_display_resolution" value="0"/>
   <option name="video_mode" value="0"/>
   <option name="video_mode_width" value="2960"/>
@@ -76,12 +76,12 @@
  </preferences>
  <controls>
   <calibration joystick="0">
-   <axis number="0" min="-32767" max="32767" center="0"/>
+   <axis number="0" min="-32767" max="32767" center="-32768"/>
    <axis number="1" min="-32767" max="32767" center="0"/>
    <axis number="2" min="-32767" max="32767" center="0"/>
    <axis number="3" min="-32767" max="32767" center="0"/>
    <axis number="4" min="-32767" max="32767" center="0"/>
-   <axis number="5" min="-32767" max="32767" center="0"/>
+   <axis number="5" min="-32767" max="32767" center="32767"/>
   </calibration>
   <joypad number="0">
    <binding name="Up" binding="556925448"/>
@@ -110,18 +110,18 @@
    <binding name="Sticky R" binding="0"/>
   </joypad>
   <joypad number="1">
-   <binding name="Up" binding="268500818"/>
-   <binding name="Down" binding="268500820"/>
-   <binding name="Left" binding="268500817"/>
-   <binding name="Right" binding="268500819"/>
+   <binding name="Up" binding="0"/>
+   <binding name="Down" binding="0"/>
+   <binding name="Left" binding="0"/>
+   <binding name="Right" binding="0"/>
    <binding name="Start" binding="0"/>
    <binding name="Select" binding="0"/>
-   <binding name="A" binding="268500914"/>
-   <binding name="B" binding="268500917"/>
-   <binding name="X" binding="268500913"/>
-   <binding name="Y" binding="268500916"/>
-   <binding name="L" binding="268500919"/>
-   <binding name="R" binding="268500920"/>
+   <binding name="A" binding="0"/>
+   <binding name="B" binding="0"/>
+   <binding name="X" binding="0"/>
+   <binding name="Y" binding="0"/>
+   <binding name="L" binding="0"/>
+   <binding name="R" binding="0"/>
    <binding name="Turbo A" binding="0"/>
    <binding name="Turbo B" binding="0"/>
    <binding name="Turbo X" binding="0"/>
@@ -345,15 +345,15 @@
   </joypad>
   <binding name="GTK_open_rom" binding="0"/>
   <binding name="EmuTurbo" binding="0"/>
-  <binding name="ToggleEmuTurbo" binding="0"/>
+  <binding name="ToggleEmuTurbo" binding="268500894"/>
   <binding name="GTK_pause" binding="553648138"/>
-  <binding name="DecFrameRate" binding="0"/>
-  <binding name="IncFrameRate" binding="0"/>
-  <binding name="DecFrameTime" binding="0"/>
-  <binding name="IncFrameTime" binding="0"/>
+  <binding name="DecFrameRate" binding="268500822"/>
+  <binding name="IncFrameRate" binding="268500821"/>
+  <binding name="DecFrameTime" binding="268500823"/>
+  <binding name="IncFrameTime" binding="268500816"/>
   <binding name="Reset" binding="0"/>
   <binding name="SoftReset" binding="0"/>
-  <binding name="GTK_quit" binding="0"/>
+  <binding name="GTK_quit" binding="285212785"/>
   <binding name="ToggleBG0" binding="0"/>
   <binding name="ToggleBG1" binding="0"/>
   <binding name="ToggleBG2" binding="0"/>
