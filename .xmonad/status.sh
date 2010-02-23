@@ -10,7 +10,7 @@ cpu_hogs() {
     ps -eo pcpu,ucmd --sort -pcpu | tail -n +2 | while read proc
     do
         if [[ $proc[(w)1] -ge 30.0 ]] then
-            echo -n "$proc[(w)1] ${${proc[(w)2]}[1,10]} "
+            echo -n " $proc[(w)1] ${${proc[(w)2]}[1,10]}"
         fi
     done
                            
@@ -54,7 +54,7 @@ status() {
     st_mem=$(printf "M: %4d%+4d" $(($mem[2] - $mem[5] - $mem[6])) $mem[6])
 
     # processes with >= 50% cpu load
-    st_ps="P: $(cpu_hogs)"
+    st_ps="P:$(cpu_hogs)"
 
     # current date
     year=$(($(date "+%y") + 12))
