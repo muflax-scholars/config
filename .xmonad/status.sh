@@ -5,12 +5,12 @@
 # Shows some nice status bar. The left side reads input from a pipe
 
 
-# processes with >= 50% cpu load
+# processes with >= 30% cpu load
 cpu_hogs() {
     ps -eo pcpu,ucmd --sort -pcpu | tail -n +2 | while read proc
     do
-        if [[ $proc[(w)1] -ge 50.0 ]] then
-            echo $proc[(w)1] ${${proc[(w)2]}[1,10]}
+        if [[ $proc[(w)1] -ge 30.0 ]] then
+            echo -n "$proc[(w)1] ${${proc[(w)2]}[1,10]} "
         fi
     done
                            
