@@ -16,7 +16,7 @@ URxvt.urgentOnBell:      true
 URxvt.visualBelll:       true 
 
 !diversity is for the weak
-URxvt*font:              7x14
+URxvt*font:              -efont-fixed-medium-r-normal--14*
 
 !no bold fonts - fucks up more than it solves
 URxvt*boldFont:
