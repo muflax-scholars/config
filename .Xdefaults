@@ -1,53 +1,49 @@
-Xcursor.theme: Neutral
-Xcursor.size: 16
+Xcursor.theme:           Neutral
+Xcursor.size:            16
 
-Xft.dpi:        96
-!Xft.antialias:  false
-!Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintfull
+Xft.dpi:                 96
+!Xft.antialias:          false
+!Xft.rgba:               rgb
+Xft.hinting:             true
+Xft.hintstyle:           hintfull
 
 
-URxvt.preeditType:      OverTheSpot
-URxvt.jumpScroll:       true
-URxvt.skipScroll:       true
+URxvt.preeditType:       OverTheSpot
+URxvt.jumpScroll:        true
+URxvt.skipScroll:        true
 
-URxvt.urgentOnBell:     true 
-URxvt.visualBelll:      true 
+URxvt.urgentOnBell:      true 
+URxvt.visualBelll:       true 
 
 !diversity is for the weak
-URxvt*font:    7x14
+URxvt*font:              7x14
 
 !no bold fonts - fucks up more than it solves
 URxvt*boldFont:
 URxvt*italicFont:
 URxvt*boldItalicFont:
 
-URxvt*scrollBar:        true
-URxvt*scrollstyle:      plain
-URxvt*scrollBar_right:  true
+URxvt*scrollBar:         true
+URxvt*scrollstyle:       plain
+URxvt*scrollBar_right:   true
 URxvt*scrollTtyKeypress: true
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyOutput:  false
+URxvt*scrollWithBuffer:  true
+URxvt*scrollTtyOutput:   false
 
 !URxvt*internalBorder:   1
 !URxvt*borderColor:      black
 
-URxvt*background:   #000000
-!URxvt*transparaent: True
-!URxvt*depth: 32
-!URxvt*background: rgba:0000/0000/0000/e2e2
-URxvt*foreground:   #FFFFFF
-URxvt*inheritPixmap:    true
-URxvt*shading:          50
-!URxvt*tintColor:       #191919
-URxvt*perl-ext-common:  default,matcher
-URxvt*urlLauncher:      /usr/local/bin/firefox
-URxvt*matcher.button:   1
-URxvt*saveLines:        10000
-URxvt.termName:         rxvt-unicode
+URxvt*background:        #000000
+URxvt*foreground:        #FFFFFF
+URxvt*inheritPixmap:     true
+URxvt*shading:           50
+URxvt*perl-ext-common:   default,matcher
+URxvt*urlLauncher:       /home/amon/local/bin/firefox
+URxvt*matcher.button:    1
+URxvt*saveLines:         10000
+URxvt.termName:          rxvt-unicode
 
 !way more readable blue
-*color4:     rgb:36/73/b5
-*color12:    rgb:1b/85/d6
+*color4:                 rgb:36/73/b5
+*color12:                rgb:1b/85/d6
 
