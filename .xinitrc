@@ -19,8 +19,6 @@ skb.sh
 
 xsetroot -cursor_name left_ptr
 
-DISPLAY=:0.0 redshift -l 49.35:8.15 -t 5500:3400 -m vidmode -v &
-
 DISPLAY=:0.0 urxvt &
 
 WM="$HOME/.xmonad/xmonad.sh"
