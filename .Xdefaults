@@ -36,7 +36,8 @@ URxvt*scrollTtyOutput:   false
 URxvt*background:        #000000
 URxvt*foreground:        #FFFFFF
 URxvt*inheritPixmap:     true
-URxvt*shading:           50
+URxvt*shading:           30
+URxvt*fading:            20
 URxvt*perl-ext-common:   default,matcher
 URxvt*urlLauncher:       /home/amon/local/bin/firefox
 URxvt*matcher.button:    1
