@@ -13,6 +13,7 @@
 .unison*
 .xinitrc_local
 .zshrc_local
+.config/nitrogen
 
 # ignore secure shit :)
 .config/MusicBrainz
