@@ -252,6 +252,10 @@ alias t="noglob todo.sh -d ~/.todo.cfg"
 alias vi="vim -p"
 alias weechat="weechat-curses"
 
+# a bit of security
+alias cp="cp -i"
+alias mv="mv -i"
+
 # wake-on-lan
 alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
 alias wake_totenkopf="wakeonlan 00:18:E7:16:6F:C5"
