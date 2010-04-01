@@ -21,7 +21,7 @@ attributes:
     programming:
         type: cumulative
         unit: time
-        min: 2h
+        min: 1h30m
         max: 3h
     
     # languages
@@ -30,14 +30,14 @@ attributes:
         type: cumulative
         unit: time
         min: 3h
-        max: 4h
+        max: 5h
     
     # studying
     勉強: # too lazy to separate all topics :)
         alias: benkyou
         type: cumulative
         unit: time
-        min: 2h
+        min: 1h
         max: 3h
     
     # smarter 
@@ -45,7 +45,7 @@ attributes:
         alias: yomeru
         type: cumulative
         unit: time
-        min: 3h
+        min: 2h
         max: 4h
 
     # meditation
@@ -54,7 +54,7 @@ attributes:
         type: cumulative
         unit: time
         min: 20m
-        max: 30m
+        max: 1h
 
 settings:
     path: ~/txt/ashuku.txt
