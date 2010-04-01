@@ -225,43 +225,63 @@ bindkey '^[[6~' end-of-history
 ###########
 
 # normal aliases
-alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
-alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
-alias burnburnBURN="rm -f *.class; javac *.java"
-alias cal="cal -m -3"
-alias cdl="cd /usr/local/portage/local"
-alias diff="colordiff"
-alias evil="vi"
-alias ew="sudo emerge -auD --reinstall changed-use world"
-alias grep="grep --color=always"
-alias less="less -iF" 
-alias ls="ls --color=always --group-directories-first"
-alias m="mplayer"
-alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
-alias mkdir="mkdir -p"
-alias mmv="noglob zmv -W"
-alias ngrep="grep --color=none"
-alias p2="/usr/bin/python"
-alias p3="/usr/bin/python3"
-alias p="/usr/bin/python3"
-alias po="popd"
-alias ss="sudo ~/local/bin/suspend"
-alias vi="vim -p"
-alias weechat="weechat-curses"
+    alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
+    alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
+    alias burnburnBURN="rm -f *.class; javac *.java"
+    alias cal="cal -m -3"
+    alias cdl="cd /usr/local/portage/local"
+    alias diff="colordiff"
+    alias evil="vi"
+    alias ew="sudo emerge -auD --reinstall changed-use world"
+    alias grep="grep --color=always"
+    alias less="less -iF" 
+    alias ls="ls --color=always --group-directories-first"
+    alias m="mplayer"
+    alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
+    alias mkdir="mkdir -p"
+    alias mmv="noglob zmv -W"
+    alias ngrep="grep --color=none"
+    alias p2="/usr/bin/python"
+    alias p3="/usr/bin/python3"
+    alias p="/usr/bin/python3"
+    alias po="popd"
+    alias ss="sudo ~/local/bin/suspend"
+    alias vi="vim -p"
+    alias weechat="weechat-curses"
+
+# universal aliases
+alias -g DN='&> /dev/null'
+alias -g D0='DISPLAY=:0.0'
+alias -g LC='LANG=C'
+alias -g LJ='LANG=ja_JP.UTF-8'
+alias -g L='| less'
+alias -g G='| grep'
+alias -g GP='| grep --color=auto'
 
 # GTD
-alias a="ashuku add"
-alias s="ashuku show"
+    alias a="ashuku add"
+    alias s="ashuku show"
 
-alias t="noglob todo.sh -d ~/.todo.cfg"
-alias ta="t add"
-alias now="noglob todo.sh -d ~/.todo-today.cfg"
-alias n="noglob todo.sh -d ~/.todo-today.cfg ls; a"
-alias na="now add"
+    # full todo list
+    alias t="noglob todo.sh -d ~/.todo.cfg"
+    alias ta="t add"
+    alias td="t do"
+    alias tl="t ls"
 
-alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
-alias ideas="idea ls"
-alias ia="idea add"
+    # only what is relevant today
+    alias now="noglob todo.sh -d ~/.todo-today.cfg"
+    alias n="now ls; a"
+    alias nl="now ls"
+    alias na="now add"
+    alias nd="now do"
+
+    # idea file
+    alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
+    alias ideas="idea ls"
+    alias i="idea"
+    alias ia="idea add"
+    alias id="idea do"
+    alias il="idea ls"
 
 # a bit of security
 alias cp="cp -i"
@@ -294,15 +314,6 @@ done
 alias mish="ssh totenkopf@ming"
 alias azash="ssh amon@azathoth"
 alias nyash="ssh amon@nyarlathotep"
-
-# universal aliases
-alias -g DN='&> /dev/null'
-alias -g D0='DISPLAY=:0.0'
-alias -g LC='LANG=C'
-alias -g LJ='LANG=ja_JP.UTF-8'
-alias -g L='| less'
-alias -g G='| grep'
-alias -g GP='| grep --color=auto'
 
 # functions
 function go() {
