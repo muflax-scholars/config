@@ -1,0 +1,45 @@
+#!/bin/zsh
+setopt RE_MATCH_PCRE
+
+action=$1
+shift
+
+[ "$action" = "usage" ] && {
+  echo "  Customized archive:"
+  echo "    do line"
+  echo "      If a line contains !n, it is automatically rescheduled in n days."
+  echo ""
+  exit
+}
+
+die()
+{
+    echo "$*"
+    exit 1
+}
+    
+errmsg="usage: $TODO_SH do ITEM#"
+do_entries=()
+for item in $(echo $* | tr ',' ' ')
+do 
+    [ -z "$item" ] && die "$errmsg"
+    [[ "$item" =~ "\d+" ]] || die "$item: not a number"
+
+    todo=$(sed "$item!d" "$TODO_FILE")
+    [ -z "$todo" ] && die "$item: No such todo."
+    if [[ "$todo" =~ "(^!\d+\s+|\s+!\d+($|\s+))" ]]; then
+        if [ $TODOTXT_PRESERVE_LINE_NUMBERS = 0 ]; then
+            # delete line (changes line numbers)
+            sed -i.bak -e $item"s/^.*//" -e '/./!d' "$TODO_FILE"
+        else
+            # leave blank line behind (preserves line numbers)
+            sed -i.bak -e $item"s/^.*//" "$TODO_FILE"
+        fi
+        "$TODO_SH" command add $(~/local/src/in/gtd/recur <<< "$todo")
+    else
+        do_entries+=$item
+    fi
+done
+
+# call back to the main script
+[[ ${#do_entries} -gt 0 ]] && "$TODO_SH" command do "$do_entries"

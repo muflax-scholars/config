@@ -225,7 +225,6 @@ bindkey '^[[6~' end-of-history
 ###########
 
 # normal aliases
-alias a="ashuku add"
 alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
 alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias burnburnBURN="rm -f *.class; javac *.java"
@@ -246,11 +245,23 @@ alias p2="/usr/bin/python"
 alias p3="/usr/bin/python3"
 alias p="/usr/bin/python3"
 alias po="popd"
-alias s="ashuku show"
 alias ss="sudo ~/local/bin/suspend"
-alias t="noglob todo.sh -d ~/.todo.cfg"
 alias vi="vim -p"
 alias weechat="weechat-curses"
+
+# GTD
+alias a="ashuku add"
+alias s="ashuku show"
+
+alias t="noglob todo.sh -d ~/.todo.cfg"
+alias ta="t add"
+alias now="noglob todo.sh -d ~/.todo-today.cfg"
+alias n="noglob todo.sh -d ~/.todo-today.cfg ls; a"
+alias na="now add"
+
+alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
+alias ideas="idea ls"
+alias ia="idea add"
 
 # a bit of security
 alias cp="cp -i"

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+action=$1
+shift
+
+[ "$action" = "usage" ] && {
+  echo "  Customized add:"
+  echo "    add (+1)   entry"
+  echo "    add (mon)  entry"
+  echo "    add (23)   entry"
+  echo "    add (4/23) entry"
+  echo "      add an item, converting date syntax"
+  exit
+}
+
+# call back to the main script to add
+"$TODO_SH" command add $(~/local/src/in/gtd/parse_date <<< "$@")
