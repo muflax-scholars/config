@@ -27,7 +27,7 @@ do
 
     todo=$(sed "$item!d" "$TODO_FILE")
     [ -z "$todo" ] && die "$item: No such todo."
-    if [[ "$todo" =~ "(^!\d+\s+|\s+!\d+($|\s+))" ]]; then
+    if perl -e "if ('$todo' =~ / (^!|\s*!) \d+ (\s+|$) /x) { exit 0} else { exit 1}"; then
         if [ $TODOTXT_PRESERVE_LINE_NUMBERS = 0 ]; then
             # delete line (changes line numbers)
             sed -i.bak -e $item"s/^.*//" -e '/./!d' "$TODO_FILE"
