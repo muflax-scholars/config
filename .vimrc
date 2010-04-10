@@ -73,6 +73,7 @@ inoremap <Nul> <C-x><C-o>
 "folding, set foldlevel to something high to circumvent starting with closed
 "folds
 "set foldmethod=indent
+set foldlevel=1
 nnoremap <space> za
 vnoremap <space> zf
 au FileType c set foldmethod=syntax
