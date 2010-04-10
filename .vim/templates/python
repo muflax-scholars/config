@@ -6,5 +6,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
-# cursor: 5 
+# cursor: 5 del
