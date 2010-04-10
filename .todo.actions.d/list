@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+action=$1
+[[ $# -gt 0 ]] && shift
+
+[ "$action" = "usage" ] && {
+  echo "  Customized archive:"
+  echo "    list | ls"
+  echo "      Archives before showing anything."
+  echo ""
+  exit
+}
+
+TODOTXT_VERBOSE=0 "$TODO_SH" command archive
+"$TODO_SH" command ls $@
