@@ -49,12 +49,12 @@ attributes:
         max: 4h
 
     # meditation
-    座禅:      
-        alias: zazen
-        type: cumulative
-        unit: time
-        min: 20m
-        max: 1h
+    #座禅:      
+    #    alias: zazen
+    #    type: cumulative
+    #    unit: time
+    #    min: 20m
+    #    max: 1h
 
 settings:
     path: ~/txt/ashuku.txt
