@@ -244,6 +244,8 @@ bindkey '^[[6~' end-of-history
     alias p3="/usr/bin/python3"
     alias p="/usr/bin/python3"
     alias po="popd"
+    alias sc="screen"
+    alias sr="screen -RD"
     alias ss="sudo ~/local/bin/suspend"
     alias vi="vim -p"
     alias weechat="weechat-curses"
