@@ -18,11 +18,13 @@ attributes:
     幸福:
         alias: koufuku
         type: qualitative
+
     programming:
         type: cumulative
         unit: time
-        min: 1h30m
-        max: 3h
+        min: 5h
+        max: 7h
+        optional: true
     
     # languages
     日本語:
@@ -31,30 +33,34 @@ attributes:
         unit: time
         min: 3h
         max: 5h
+        optional: true
     
     # studying
     勉強: # too lazy to separate all topics :)
         alias: benkyou
         type: cumulative
         unit: time
-        min: 1h
-        max: 3h
+        min: 3h
+        max: 5h
+        optional: true
     
     # smarter 
     読める:
         alias: yomeru
         type: cumulative
         unit: time
-        min: 2h
-        max: 4h
+        min: 5h
+        max: 7h
+        optional: true
 
     # meditation
-    #座禅:      
-    #    alias: zazen
-    #    type: cumulative
-    #    unit: time
-    #    min: 20m
-    #    max: 1h
+    座禅:      
+        alias: zazen
+        type: cumulative
+        unit: time
+        min: 3h
+        max: 5h
+        optional: true
 
 settings:
     path: ~/txt/ashuku.txt
