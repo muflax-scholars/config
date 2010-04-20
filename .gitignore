@@ -51,6 +51,7 @@
 .sword
 .thumbnails
 .viminfo*
+.vim/yankring*
 .xmonad/xmonad*
 .zcompdump
 
