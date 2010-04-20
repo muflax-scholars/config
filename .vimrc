@@ -119,10 +119,6 @@ let g:VEConf_filePanelSortType = 1
 no <C-d> >>
 no <C-t> <<
 
-"switch tabs with Shift/Ctrl-Tab
-"noremap <tab> gt
-"noremap <s-tab> gT
-
 "Jesus saves
 cabbr jesus write
 
