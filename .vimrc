@@ -96,7 +96,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-inoremap <Nul> <C-x><C-o>
+map <Nul> <C-]>
 set completeopt=menuone,longest
 
 "folding, set foldlevel to something high to circumvent starting with closed
