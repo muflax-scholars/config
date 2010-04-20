@@ -12,6 +12,7 @@ set fileencodings=ucs-bom,utf8,euc-jp,shift-jis,default,latin1
 set ttyfast
 set nobackup
 set showtabline=2
+set hidden
 
 "save last 1000 jumps and global marks
 set viminfo='1000,f1 
