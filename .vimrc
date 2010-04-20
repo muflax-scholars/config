@@ -40,6 +40,11 @@ function s:ToggleYesNo()
 endfunc
 nnoremap gy :call <SID>ToggleYesNo()<CR>
 
+"yankring
+let g:yankring_min_element_length = 2
+let g:yankring_max_display = 70
+let g:yankring_manage_numbered_reg = 1
+
 "line length
 set textwidth=80
 "t wrap text
