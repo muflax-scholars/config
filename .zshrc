@@ -235,7 +235,6 @@ bindkey '^[[6~' end-of-history
     alias grep="grep --color=always"
     alias less="less -iF" 
     alias ls="ls --color=always --group-directories-first"
-    alias m="mplayer"
     alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
     alias mkdir="mkdir -p"
     alias mmv="noglob zmv -W"
@@ -288,6 +287,10 @@ alias -g GP='| grep --color=auto'
 alias cp="cp -i"
 alias mv="mv -i"
 
+# mplayer
+alias l="mw -l"
+alias r="mw -r"
+
 # wake-on-lan
 alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
 alias wake_totenkopf="wakeonlan 00:18:E7:16:6F:C5"
@@ -299,17 +302,6 @@ alias newine="nice wine explorer /desktop=foo,1024x768"
 # monitors on/off
 alias don="D0 xset dpms force on"
 alias doff="D0 xset dpms force off"
-
-# mplayer
-for i in $(seq 5) 
-do
-    a=""
-    for j in $(seq $i) 
-    do
-        a="${a}a"
-    done
-    alias "m${a}f"="D0 mplayer -af volume=$(( 5 * $i ))"
-done
 
 # ssh
 alias mish="ssh totenkopf@ming"
