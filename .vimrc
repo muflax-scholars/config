@@ -15,6 +15,12 @@ set showtabline=2
 set hidden
 set scrolloff=3
 set switchbuf=useopen
+set lbr
+set number
+set numberwidth=2
+
+"yeah, it's bloat...
+set spell
 
 "save last 1000 jumps and global marks
 set viminfo='1000,f1 
@@ -78,10 +84,6 @@ filetype plugin indent on
 "virtual edit
 set virtualedit=all
 set mouse=v
-
-"wrap line, mark with +
-set lbr
-set showbreak=+
 
 "disable highlighting
 map <F5> :set hls!<bar>set hls?<CR>
