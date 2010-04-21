@@ -14,6 +14,7 @@ set nobackup
 set showtabline=2
 set hidden
 set scrolloff=3
+set switchbuf=useopen
 
 "save last 1000 jumps and global marks
 set viminfo='1000,f1 
