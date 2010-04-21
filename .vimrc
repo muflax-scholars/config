@@ -118,6 +118,8 @@ au FileType perl set foldmethod=syntax
 "buffer switching with <f1>, <f2>
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR> 
+"go to last buffer used
+noremap <Leader>; <C-^>
 
 "vim-explorer
 let g:VEConf_showHiddenFiles = 0
