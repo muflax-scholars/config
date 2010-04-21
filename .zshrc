@@ -246,7 +246,7 @@ bindkey '^[[6~' end-of-history
     alias sc="screen"
     alias sr="screen -RD"
     alias ss="sudo ~/local/bin/suspend"
-    alias vi="vim -p"
+    alias vi="vim"
     alias weechat="weechat-curses"
 
 # universal aliases
