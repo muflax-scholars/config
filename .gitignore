@@ -33,6 +33,7 @@
 .anthy/lock-file_default
 .bibletime
 .cache
+.cola
 .config/menus
 .dbus
 .dmenu_cache
@@ -50,9 +51,9 @@
 .scim/user-tables
 .sword
 .thumbnails
-.viminfo*
-.vimfuzzy*
 .vim/yankring*
+.vimfuzzy*
+.viminfo*
 .xmonad/xmonad*
 .zcompdump
 
@@ -71,11 +72,12 @@
 .gimp*
 .gitk
 .gnome2
+.gnumericrc
 .htoprc
 .java
 .kchmviewer
-.links
 .kde4
+.links
 .mono
 .ooo3
 .openoffice.org
