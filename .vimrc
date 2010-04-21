@@ -13,6 +13,7 @@ set ttyfast
 set nobackup
 set showtabline=2
 set hidden
+set scrolloff=3
 
 "save last 1000 jumps and global marks
 set viminfo='1000,f1 
@@ -44,8 +45,9 @@ nnoremap gy :call <SID>ToggleYesNo()<CR>
 "yankring
 let g:yankring_min_element_length = 2
 let g:yankring_max_display = 70
-let g:yankring_manage_numbered_reg = 1
+let g:yankring_manage_numbered_reg = 0
 let g:yankring_history_dir = '$HOME/.vim/'
+set cpoptions+=y
 
 "line length
 set textwidth=80
@@ -99,6 +101,10 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 map <Nul> <C-]>
 set completeopt=menuone,longest
 
+"wildmode
+set wildmode=longest,full
+set wildmenu
+
 "folding, set foldlevel to something high to circumvent starting with closed
 "folds
 "set foldmethod=indent
@@ -147,3 +153,11 @@ nnoremap <F11> yyp<c-v>$r=
 inoremap <F11> <Esc>yyp<c-v>$r=o
 nnoremap <F12> yyp<c-v>$r-
 inoremap <F12> <Esc>yyp<c-v>$r-o
+
+"fuzzy finder
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;tmp/**"
+let g:fuzzy_ceiling = 100000
+let g:fuzzy_matching_limit = 50
+map <Leader>o :FuzzyFinderTextMate<CR>
+map <Leader>f :FuzzyFinderFile<CR>
+map <Leader>b :FuzzyFinderBuffer<CR>
