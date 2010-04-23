@@ -339,24 +339,9 @@ function ipt() {
 }
 
 function nap() {
-    # check last nap time and make sure it is at least 3 hours ago
-    if [[ -e /tmp/last_nap ]] then
-        LAST_NAP=$(cat /tmp/last_nap)
-        if [[ $(( $(date "+%s") - $LAST_NAP )) -lt $(( 3*60*60 )) ]] then
-            echo "Anti-Snooze warning! Nap forbidden."
-            ossmix -q vmix0-outvol 22
-            wakeup.sh
-            slock
-            return
-        fi
-    fi
-    ssh amon@mumm-ra 'DISPLAY=:0.0 xset dpms force off' DN
     mpc --no-status pause
     echo "お休みなさい。。。"
     doff
-    
-    # remember last nap time
-    date "+%s" > /tmp/last_nap
     
     if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
         sleep ${1}m
@@ -364,7 +349,6 @@ function nap() {
         sleep 25m
     fi && {
         echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
-        ossmix -q vmix0-outvol 22
         wakeup.sh
     }
 }  
