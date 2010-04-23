@@ -341,11 +341,14 @@ function ipt() {
 function nap() {
     mpc --no-status pause
     echo "お休みなさい。。。"
-    doff
-    
-    if [[ $# -ge 1 && $1 == [[:digit:]]## ]] then 
-        sleep ${1}m
+    if [[ $# -ge 1 ]] then 
+        TIME=$(( ($(date -d "$*" +%s) - $(date +%s)) / 60 ))
+        echo "going down for $TIME minutes..."
+        read
+        doff
+        sleep ${TIME}m
     else 
+        doff
         sleep 25m
     fi && {
         echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
