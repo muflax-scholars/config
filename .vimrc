@@ -17,7 +17,7 @@ set scrolloff=3
 set switchbuf=useopen
 set lbr
 set number
-set numberwidth=2
+set numberwidth=3
 
 "yeah, it's bloat...
 set spell
