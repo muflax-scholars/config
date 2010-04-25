@@ -52,6 +52,7 @@
 .sword
 .thumbnails
 .vim/yankring*
+.vim/spell/*.add*
 .vimfuzzy*
 .viminfo*
 .xmonad/xmonad*
