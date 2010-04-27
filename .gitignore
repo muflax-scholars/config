@@ -35,6 +35,7 @@
 .cache
 .cola
 .config/menus
+.darcs
 .dbus
 .dmenu_cache
 .dvdcss
