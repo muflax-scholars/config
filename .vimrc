@@ -19,9 +19,6 @@ set lbr
 set number
 set numberwidth=3
 
-"yeah, it's bloat...
-set spell
-
 "save last 1000 jumps and global marks
 set viminfo='1000,f1 
 
