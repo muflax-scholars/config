@@ -63,8 +63,9 @@ set textwidth=80
 "r comment leader on <Enter>,
 "q allow gq,
 "n numbered lists,
-"m break multi-byte
-set formatoptions=tcrqnm
+"m break multi-byte,
+"a auto-format
+set formatoptions=tcrqnma
 
 "search
 set incsearch
