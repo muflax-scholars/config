@@ -62,7 +62,7 @@ set textwidth=80
 "n numbered lists,
 "m break multi-byte,
 "a auto-format
-set formatoptions=tcrqnma
+set formatoptions=tcrqnm
 
 "search
 set incsearch
