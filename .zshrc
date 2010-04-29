@@ -288,6 +288,7 @@ alias cp="cp -i"
 alias mv="mv -i"
 
 # mplayer
+alias m="mw"
 alias l="mw -l"
 alias r="mw -r"
 
