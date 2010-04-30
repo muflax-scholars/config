@@ -231,7 +231,7 @@ bindkey '^[[6~' end-of-history
     alias cdl="cd /usr/local/portage/local"
     alias diff="colordiff"
     alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
-    alias ew="sudo emerge -auD --reinstall changed-use world"
+    alias ew="sudo emerge -auD --reinstall changed-use --with-bdeps y world"
     alias grep="grep --color=always"
     alias less="less -iF" 
     alias ls="ls --color=always --group-directories-first"
