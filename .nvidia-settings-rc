@@ -2,7 +2,7 @@
 # /home/amon/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Thu Feb 18 07:51:32 2010
+# Generated on Fri Apr 30 01:46:40 2010
 #
 
 # ConfigProperties:
@@ -13,9 +13,9 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = No
-Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
 
 # Attributes:
 
@@ -29,13 +29,22 @@ Timer = Thermal_Monitor_(GPU_0),Yes,1000
 0/SyncToVBlank=1
 0/LogAniso=0
 0/FSAA=0
-0/TextureSharpen=1
+0/TextureSharpen=0
 0/GammaCorrectedAALines=0
 0/AllowFlipping=1
 0/FSAAAppControlled=1
 0/LogAnisoAppControlled=1
-0/OpenGLImageSettings=0
+0/OpenGLImageSettings=3
 0/GammaCorrectedAALinesValue=16
+0/RedBrightness=0.000000
+0/GreenBrightness=0.000000
+0/BlueBrightness=0.000000
+0/RedContrast=0.000000
+0/GreenContrast=0.000000
+0/BlueContrast=0.000000
+0/RedGamma=1.000000
+0/GreenGamma=1.000000
+0/BlueGamma=1.000000
 0/DigitalVibrance[DFP-0]=0
 0/DigitalVibrance[DFP-1]=0
 0/ImageSharpening[DFP-0]=0
