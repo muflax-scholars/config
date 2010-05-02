@@ -19,6 +19,10 @@ hi def link notes_bold String
 syn region notes_comment start=/\/\*/ end=/\*\//
 hi def link notes_comment Comment
 
+" code blocks
+syn region notes_code start=/^\s*[~]\+\( {.*}\)\?$/ end=/\v^\s*[~]+\s*$/
+hi def link notes_code Comment  
+
 " sentences starting with - or * are bullets
 syn match notes_bullet /^\s*- /
 syn match notes_bullet /^\s*\* /
