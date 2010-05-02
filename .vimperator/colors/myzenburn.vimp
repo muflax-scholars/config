@@ -3,7 +3,7 @@
 " ==MyZenburn_Colorscheme_Settings==
 hi Bell                 border: 0 none; background-color: black;
 hi Boolean              color: #CC9393;
-hi CmdLine              font-family: gothic; padding: 1px; font-size: 10pt; font-family: gothic; font-weight: normal; padding: 0px 3px;
+hi CmdLine              font-family: Droid Sans Mono Slashed; padding: 1px; font-size: 10pt; font-family: Droid Sans Mono Slashed; font-weight: normal; padding: 0px 3px;
 
 hi CmdOutput            white-space: pre;
 hi CompDesc             color: #d0d0d0; width: 50%;font-size: 10pt;
@@ -18,7 +18,7 @@ hi CompLess::after      content: "\2303" /* Unicode up arrowhead */
 hi CompMore             text-align: center; height: .5ex; line-height: .5ex; margin-bottom: -.5ex;
 hi CompMore::after      content: "\2304" /* Unicode down arrowhead */
 hi CompMsg              font-style: italic; margin-left: 16px;
-hi CompResult           width: 45%; overflow: hidden;font-size: 10pt; font-family: gothic; font-weight: normal;
+hi CompResult           width: 45%; overflow: hidden;font-size: 10pt; font-family: Droid Sans Mono Slashed; font-weight: normal;
 hi CompTitle            color: #87af87; background: #242421; font-weight: bold;
 hi CompTitle>*          padding: 0 .5ex;
 hi ErrorMsg             color: #242421; background: #CC9393; font-weight: bold;
@@ -42,7 +42,7 @@ hi Object               color: maroon;
 hi Preview              color: gray;
 hi Question             color: #9ECE9E; background: #242421; font-weight: bold;
 hi Search               font-size: inherit; padding: 0; color: #385F38; background-color: #F8F893; padding: 0;
-hi StatusLine           color: #afaf87; background: #3a3a3a; font-size: 10pt; font-family: gothic; font-weight: bold; padding: 0px 3px;
+hi StatusLine           color: #afaf87; background: #3a3a3a; font-size: 10pt; font-family: Droid Sans Mono Slashed; font-weight: bold; padding: 0px 3px;
 hi StatusLineBroken     color: #af8787; background: #3a3a3a;
 hi StatusLineSecure     color: #87af87; background: #3a3a3a;
 hi String               color: #9ECE9E;

@@ -2,10 +2,10 @@ Xcursor.theme:           Neutral
 Xcursor.size:            16
 
 Xft.dpi:                 96
-!Xft.antialias:          false
-!Xft.rgba:               rgb
+Xft.antialias:           true
+Xft.rgba:                rgb
 Xft.hinting:             true
-Xft.hintstyle:           hintfull
+Xft.hintstyle:           hintslight
 
 
 URxvt.preeditType:       OverTheSpot
@@ -16,7 +16,7 @@ URxvt.urgentOnBell:      true
 URxvt.visualBelll:       true 
 
 !diversity is for the weak
-URxvt*font:              -efont-fixed-medium-r-normal--14*
+URxvt*font:              -efont-fixed-medium-r-normal--12*
 
 !no bold fonts - fucks up more than it solves
 URxvt*boldFont:

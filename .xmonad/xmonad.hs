@@ -210,7 +210,7 @@ layout' =
                       Full
 
          -- treat buddy list dock-like
-         pidgin l   = withIM (1%7) (Role "buddy_list") l
+         pidgin l   = withIM (1%8) (Role "buddy_list") l
          -- experimental gimp handling :)
          gimp   l   = withIM (0.11) (Role "gimp-toolbox") $
                       reflectHoriz                        $
