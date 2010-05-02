@@ -60,7 +60,7 @@ workspaces' = ["1:tty", "2:toile", "3:暗記"]
                ++ ["7:télé", "8:暗愚蛮努", "9:会話"]
 
 -- Pretty stuff
-font'               = "-*-gothic-medium-*-12-*"
+font'               = "-mplus-gothic-medium-r*12"
 normalBorderColor'  = "#000000"
 focusedBorderColor' = "#aa5500"
 

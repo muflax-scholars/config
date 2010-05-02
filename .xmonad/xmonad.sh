@@ -9,7 +9,7 @@ HOSTNAME=$(hostname)
 
 FG="#ffffff"
 BG="#000000"
-FN="-*-gothic-medium-*-12-*"
+FN="-mplus-gothic-medium-r-*-12-*"
 E="sigusr1=raise;sigusr2=lower"
 H="13"
 
