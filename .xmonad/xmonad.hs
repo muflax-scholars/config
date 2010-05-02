@@ -188,7 +188,7 @@ layout' =
     -- workspace specific
     onWorkspace "1:tty" (grid ||| tiled) $
 
-    (tiled ||| grid ||| stack ||| full)
+    (grid ||| tiled ||| stack ||| full)
     where
          -- normal tiling
          tiled      = named "瓦" $
