@@ -199,7 +199,7 @@ layout' =
          grid       = named "格子" $
                       hinted       $
                       pidgin       $
-                      Grid (16/10)
+                      Grid (3/2)
          -- stacked for many open windows
          stack      = named "皿" $
                       StackTile nmaster delta stackRatio
