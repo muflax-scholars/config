@@ -81,7 +81,7 @@ filetype plugin indent on
 
 "virtual edit
 set virtualedit=all
-set mouse=v
+set mouse=a
 
 "disable highlighting
 map <F5> :set hls!<bar>set hls?<CR>
