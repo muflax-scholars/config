@@ -116,9 +116,11 @@ au FileType c set foldmethod=syntax
 au FileType cpp set foldmethod=syntax
 au FileType perl set foldmethod=syntax
 
-"buffer switching with <f1>, <f2>
+"buffer switching with <f1>, <f2> and \h, \g
 noremap <f1> :bprev<CR>
 noremap <f2> :bnext<CR> 
+noremap <Leader>h :bprev<CR>
+noremap <Leader>g :bnext<CR> 
 "go to last buffer used
 map <Leader>; <C-^>
 map <Leader>_ <C-W>w
