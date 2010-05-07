@@ -232,7 +232,7 @@ bindkey '^[[6~' end-of-history
     alias diff="colordiff"
     alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
     alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
-    alias grep="grep --color=always"
+    alias grep="grep --color=always -P"
     alias less="less -iF" 
     alias ls="ls --color=always --group-directories-first"
     alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
