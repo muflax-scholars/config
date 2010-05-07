@@ -67,7 +67,7 @@ status() {
     #st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
 
     # volume
-    mixer="PCM"
+    mixer="Master"
     st_volume="V: $(amixer get $mixer | grep -oP '\d+%' | tail -1)"
 
     # expanding widgets are always left
