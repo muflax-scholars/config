@@ -67,8 +67,8 @@ status() {
     #st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
 
     # volume
-    mixer="vmix0-outvol"
-    st_volume="V: $(ossmix $mixer | sed -e "s/.*set to \([0-9.]\+\).*/\1/")"
+    mixer="PCM"
+    st_volume="V: $(amixer get $mixer | grep -oP '\d+%' | tail -1)"
 
     # expanding widgets are always left
     statusbar+=($st_ps)

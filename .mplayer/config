@@ -8,7 +8,7 @@ stop-xscreensaver="yes"
 vo="xv"
 xy=400
 fs="yes"
-ao="oss"
+ao="alsa"
 mc=0
 nojoystick="yes"
 

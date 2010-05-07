@@ -123,13 +123,13 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     
     -- Volume Control
     , ((0                 , 0x1008ff11), -- XF86AudioLowerVolume 
-        safeSpawn "ossmix" ["vmix0-outvol", "-q", "--", "-1"])
+        safeSpawn "amixer" ["set", "PCM", "-q", "5-"])
     , ((shiftMask         , 0x1008ff11), -- S-XF86AudioLowerVolume 
-        safeSpawn "ossmix" ["vmix0-outvol", "-q", "--", "+1"])
+        safeSpawn "amixer" ["set", "PCM", "-q", "5+"])
     , ((modm              , 0x1008ff11), -- M-XF86AudioLowerVolume 
-        spawn "ssh amon@azathoth -- ossmix vmix0-outvol -q -- -1")
+        spawn "ssh amon@azathoth -- amixer set PCM -q 5-")
     , ((modm .|. shiftMask, 0x1008ff11), -- M-S-XF86AudioLowerVolume 
-        spawn "ssh amon@azathoth -- ossmix vmix0-outvol -q -- +1")
+        spawn "ssh amon@azathoth -- amixer set PCM -q 5+")
     
     -- mpc
     , ((modm              , xK_c     ), 
