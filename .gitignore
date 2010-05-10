@@ -48,6 +48,7 @@
 .matplotlib
 .netx
 .recently*
+.ri19
 .scim/input-pad-recently-used.pad
 .scim/user-tables
 .sword
@@ -64,11 +65,12 @@
 .xsession-errors
 
 # ignore stupid confs no one loves :)
+.AbiSuite
 .audacity*
 .avidemux
 .chmsee
 .config/Ulduzsoft
-.config/evince
+.config/enchant
 .config/gtk-2.0
 .config/midori
 .gimp*
@@ -87,6 +89,7 @@
 .rubyripper
 .sweeprc
 .xscreensaver
+.wxMaxima
 
 # ignore alarm music
 .timeboxing

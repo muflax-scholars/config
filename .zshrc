@@ -245,7 +245,6 @@ bindkey '^[[6~' end-of-history
     alias po="popd"
     alias sc="screen"
     alias sr="screen -RD"
-    alias ss="sudo ~/local/bin/suspend"
     alias vi="vim"
     alias weechat="weechat-curses"
 
@@ -282,6 +281,13 @@ alias -g GP='| grep --color=auto'
     alias ia="idea add"
     alias id="idea do"
     alias il="idea ls"
+    
+# suspend-to-ram
+function ss() {
+    purple-remote 'setstatus?status=offline'
+    sudo ~/local/bin/suspend
+    purple-remote 'setstatus?status=available'
+}
 
 # a bit of security
 alias cp="cp -i"
