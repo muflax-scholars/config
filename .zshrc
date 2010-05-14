@@ -37,7 +37,7 @@ setopt CORRECT
 setopt HASH_LIST_ALL
 
 # with this option set you can't do "ls > foo" if foo already exists, so
-# # you have to do "rm foo; ls > foo" or in one step "ls >! foo"
+# you have to do "rm foo; ls > foo" or in one step "ls >! foo"
 setopt NOCLOBBER
 
 # non-zsh
@@ -246,7 +246,6 @@ bindkey '^[[6~' end-of-history
     alias sc="screen"
     alias sr="screen -RD"
     alias vi="vim"
-    alias weechat="weechat-curses"
 
 # universal aliases
 alias -g DN='&> /dev/null'
