@@ -288,6 +288,15 @@ function ss() {
     purple-remote 'setstatus?status=available'
 }
 
+# download arte+7 files
+function mimi() {
+    for mms in ~/A7*.wmv; do
+        url=$(ngrep -o 'mms://[^"]+' $mms)
+        mimms -r $url ~/映画/arte/${url:t:r}.wmv
+        rm $mms
+    done
+}
+
 # a bit of security
 alias cp="cp -i"
 alias mv="mv -i"
