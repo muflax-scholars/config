@@ -284,7 +284,7 @@ alias -g GP='| grep --color=auto'
 # suspend-to-ram
 function ss() {
     purple-remote 'setstatus?status=offline'
-    sudo ~/local/bin/suspend
+    sudo ~/local/bin/suspend $*
     purple-remote 'setstatus?status=available'
 }
 
