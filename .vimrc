@@ -1,7 +1,8 @@
 "colors
-set t_Co=256
-set background=dark
-colorscheme inkpot
+if &t_Co >= 256
+    set background=dark
+    colorscheme inkpot
+endif
 
 "basic options
 syntax on

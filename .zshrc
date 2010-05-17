@@ -64,6 +64,10 @@ case ${TERM} in
         ;;
 esac
 
+if [[ $TERM == "rxvt-unicode" && -f /usr/share/terminfo/r/rxvt-unicode256 ]]; then
+    export TERM="rxvt-unicode256"
+fi
+
 export PATH="$HOME/local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 
