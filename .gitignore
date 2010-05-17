@@ -32,6 +32,7 @@
 .anthy/last-record*
 .anthy/lock-file_default
 .bibletime
+.brainworkshop/stats.txt
 .cache
 .cola
 .config/menus
@@ -69,6 +70,7 @@
 .audacity*
 .avidemux
 .chmsee
+.config/Google
 .config/Ulduzsoft
 .config/enchant
 .config/gtk-2.0
