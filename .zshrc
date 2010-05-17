@@ -49,6 +49,7 @@ export GOROOT="$HOME/local/go"
 export GOOS="linux"
 export GOARCH="amd64"
 export GOBIN="$HOME/local/go/bin"
+export PATH="$GOBIN:$PATH"
 
 export GEM_HOME="$HOME/local/gems/"
 

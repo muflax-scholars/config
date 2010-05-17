@@ -41,6 +41,7 @@
 .dmenu_cache
 .dvdcss
 .fontconfig*
+.gem
 .gtk-bookmarks
 .icedteaplugin
 .lesshst
