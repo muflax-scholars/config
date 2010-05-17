@@ -45,12 +45,14 @@ export EDITOR="vim"
 export VISUIAL="vim"
 export MPD_HOST="192.168.1.15"
 
+# go
 export GOROOT="$HOME/local/go"
 export GOOS="linux"
 export GOARCH="amd64"
 export GOBIN="$HOME/local/go/bin"
 export PATH="$GOBIN:$PATH"
 
+# ruby
 export GEM_HOME="$HOME/local/gems/"
 
 case ${TERM} in
