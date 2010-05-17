@@ -250,6 +250,7 @@ alias vi="vim"
 
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
+alias co="./configure"
 alias p2="/usr/bin/python"
 alias p3="/usr/bin/python3"
 alias p="/usr/bin/python3"
