@@ -229,28 +229,40 @@ bindkey '^[[6~' end-of-history
 ###########
 
 # normal aliases
-    alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
-    alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
-    alias burnburnBURN="rm -f *.class; javac *.java"
-    alias cal="cal -m -3"
-    alias cdl="cd /usr/local/portage/local"
-    alias diff="colordiff"
-    alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
-    alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
-    alias grep="grep --color=always -P"
-    alias less="less -iF" 
-    alias ls="ls --color=always --group-directories-first"
-    alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
-    alias mkdir="mkdir -p"
-    alias mmv="noglob zmv -W"
-    alias ngrep="grep --color=none"
-    alias p2="/usr/bin/python"
-    alias p3="/usr/bin/python3"
-    alias p="/usr/bin/python3"
-    alias po="popd"
-    alias sc="screen"
-    alias sr="screen -RD"
-    alias vi="vim"
+alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
+alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
+alias cal="cal -m -3"
+alias cdl="cd /usr/local/portage/local"
+alias diff="colordiff"
+alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
+alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
+alias grep="grep --color=always -P"
+alias less="less -iF" 
+alias ls="ls --color=always --group-directories-first"
+alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
+alias mkdir="mkdir -p"
+alias mmv="noglob zmv -W"
+alias ngrep="grep --color=none"
+alias po="popd"
+alias sc="screen"
+alias sr="screen -RD"
+alias vi="vim"
+
+# programming
+alias burnburnBURN="rm -f *.class; javac *.java"
+alias p2="/usr/bin/python"
+alias p3="/usr/bin/python3"
+alias p="/usr/bin/python3"
+alias pe="/usr/bin/perl"
+alias ru="/usr/bin/ruby"
+
+# optimized local compiles
+function om() {
+    CFLAGS='-O2 -pipe -march=nocona' 
+    CXXFLAGS=$CFLAGS 
+    LDFLAGS='-Wl,-O1 -Wl,--sort-common -Wl,--hash-style=gnu -Wl,--as-needed'  
+    make -j3 $*
+}
 
 # universal aliases
 alias -g DN='&> /dev/null'
