@@ -248,6 +248,8 @@ manageHook' = composeAll $
                                                --        for now...
                                                --        this should probably
                                                --        be a separate WS...
+        ++
+        [ isFullscreen --> doFullFloat ]
     where floats'      = [ "Wine" 
                          , "Angband"
                          , "Gxmessage"
