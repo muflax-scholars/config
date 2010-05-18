@@ -273,6 +273,7 @@ function om() {
 # universal aliases
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
+alias -g D1='DISPLAY=:0.1'
 alias -g LC='LANG=C'
 alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
@@ -325,8 +326,8 @@ alias cp="cp -i"
 alias mv="mv -i"
 
 # mplayer
-alias m="mw"
 alias l="mw -l"
+alias m="mw -m"
 alias r="mw -r"
 
 # wake-on-lan

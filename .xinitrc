@@ -13,6 +13,8 @@ export OOO_FORCE_DESKTOP="gnome"
 
 scim -d
 
+DISPLAY=:0.0 xcompmgr -C -I 0.08 -O 0.08 -f &
+
 eval "$(gpg-agent --daemon)"
 
 skb.sh
