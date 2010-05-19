@@ -104,6 +104,13 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 map <Nul> <C-]>
 set completeopt=menuone,longest
 
+"automatically make scripts executable
+function! FileExecutable (fname)
+    execute "silent! ! test -x" a:fname
+    return v:shell_error
+endfunction
+au BufWritePost *.sh,*.py,*.rb if FileExecutable("%:p") | silent !chmod a+x <afile> | endif
+
 "wildmode
 set wildmode=longest,full
 set wildmenu
