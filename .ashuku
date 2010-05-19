@@ -22,8 +22,14 @@ attributes:
     programming:
         type: cumulative
         unit: time
-        min: 5h
-        max: 7h
+        min: 1h
+        optional: true
+
+    暗記:
+        alias: anki
+        type: cumulative
+        unit: time
+        min: 1h
         optional: true
     
     # languages
@@ -31,8 +37,14 @@ attributes:
         alias: nihongo
         type: cumulative
         unit: time
-        min: 3h
-        max: 5h
+        min: 1h
+        optional: true
+    
+    français:
+        alias: furansugo
+        type: cumulative
+        unit: time
+        min: 1h
         optional: true
     
     # studying
@@ -40,8 +52,7 @@ attributes:
         alias: benkyou
         type: cumulative
         unit: time
-        min: 3h
-        max: 5h
+        min: 1h
         optional: true
     
     # smarter 
@@ -49,8 +60,7 @@ attributes:
         alias: yomeru
         type: cumulative
         unit: time
-        min: 5h
-        max: 7h
+        min: 1h
         optional: true
 
     # meditation
@@ -58,8 +68,7 @@ attributes:
         alias: zazen
         type: cumulative
         unit: time
-        min: 3h
-        max: 5h
+        min: 1h
         optional: true
 
 settings:
