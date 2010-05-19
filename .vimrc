@@ -103,6 +103,7 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
 map <Nul> <C-]>
 set completeopt=menuone,longest
+compiler ruby
 
 "automatically make scripts executable
 function! FileExecutable (fname)
