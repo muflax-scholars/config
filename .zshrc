@@ -238,16 +238,16 @@ alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
 alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias cal="cal -m -3"
 alias cdl="cd /usr/local/portage/local"
+alias cgrep="grep --color=always"
 alias diff="colordiff"
 alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
 alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
-alias grep="grep --color=always -P"
+alias grep="grep --color=auto -P"
 alias less="less -iF" 
 alias ls="ls --color=always --group-directories-first"
 alias mc=". /usr/libexec/mc/mc-wrapper.sh -x -d"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
-alias ngrep="grep --color=none"
 alias po="popd"
 alias sc="screen"
 alias sr="screen -RD"
@@ -278,7 +278,7 @@ alias -g LC='LANG=C'
 alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
 alias -g G='| grep'
-alias -g GP='| grep --color=auto'
+alias -g GC='| grep --color=always'
 
 # GTD
     alias a="ashuku add"
@@ -315,7 +315,7 @@ function ss() {
 # download arte+7 files
 function mimi() {
     for mms in ~/A7*.wmv; do
-        url=$(ngrep -o 'mms://[^"]+' $mms)
+        url=$(grep -o 'mms://[^"]+' $mms)
         mimms -r $url ~/映画/arte/${url:t:r}.wmv
         rm $mms
     done
@@ -364,7 +364,7 @@ function go() {
 }
 
 function ipt() {
-    S=$(/etc/init.d/iptables status | ngrep -oP "(start|stop)")
+    S=$(/etc/init.d/iptables status | grep -oP "(start|stop)")
     case $S in
         stop)
             echo "shields up! go to red alert!"
@@ -415,18 +415,6 @@ function take_hostage() {
 alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,uid=1000,gid=1006"
 alias nor="sudo umount.cifs /mnt/network/torrent-samba"
 alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/.torrents/ && rm ~/*.torrent" 
-function tomo() {
-    I=0
-    LIST=($(transmission-remote ming -l | ngrep -P '^\s*\d+\s*100%' | ngrep -o -P '^\s*\d+'))
-    for x in $LIST
-    do 
-        transmission-remote ming -t $x --move /home/totenkopf/torrent/done/ > /dev/null
-        if [ $? -eq 0 ]; then
-            I=$(( $I + 1 ))
-        fi
-    done
-    echo "${I}/${#LIST} moved."
-}
 
 # save key presses on ../../
 rationalise-dot() {
