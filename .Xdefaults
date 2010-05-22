@@ -33,11 +33,11 @@ URxvt*scrollTtyOutput:   false
 !URxvt*internalBorder:   1
 !URxvt*borderColor:      black
 
-URxvt*background:        rgba:0000/0000/0000/bbbb
+URxvt*background:        #000000
 URxvt*foreground:        #FFFFFF
-URxvt:transparent:       true
+URxvt*transparent:       true
 URxvt*fading:            30
-URxvt*depth:             32
+URxvt*shading:           20
 URxvt*perl-ext-common:   default,matcher
 URxvt*urlLauncher:       /home/amon/local/bin/firefox
 URxvt*matcher.button:    1

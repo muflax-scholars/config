@@ -13,8 +13,6 @@ export OOO_FORCE_DESKTOP="gnome"
 
 scim -d
 
-DISPLAY=:0.0 xcompmgr -C -I 0.08 -O 0.08 -f &
-
 eval "$(gpg-agent --daemon)"
 
 skb.sh
@@ -24,6 +22,5 @@ xsetroot -cursor_name left_ptr
 DISPLAY=:0.0 urxvt &
 
 WM="$HOME/.xmonad/xmonad.sh"
-#WM="wmii"
 
 exec dbus-launch --auto-syntax --exit-with-session $WM
