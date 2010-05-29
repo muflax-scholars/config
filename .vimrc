@@ -29,17 +29,17 @@ set nrformats=hex,alpha
 "toggle yes/no & co.
 function s:ToggleYesNo()
   let w=expand("<cword>")
-  if     w=="yes"    | let w="no"
-  elseif w=="no"     | let w="yes"
-  elseif w=="on"     | let w="off"
-  elseif w=="off"    | let w="on"
-  elseif w=="manual" | let w="auto"
-  elseif w=="auto"   | let w="manual"
-  elseif w=="true"   | let w="false"
-  elseif w=="false"  | let w="true"
-  elseif w=="True"   | let w="False"
-  elseif w=="False"  | let w="True"
-  else               | let w=""
+  if     w==#"yes"    | let w="no"
+  elseif w==#"no"     | let w="yes"
+  elseif w==#"on"     | let w="off"
+  elseif w==#"off"    | let w="on"
+  elseif w==#"manual" | let w="auto"
+  elseif w==#"auto"   | let w="manual"
+  elseif w==#"true"   | let w="false"
+  elseif w==#"false"  | let w="true"
+  elseif w==#"True"   | let w="False"
+  elseif w==#"False"  | let w="True"
+  else                | let w=""
   endif
   if w!=""
     exec "normal! \"_ciw\<C-R>=w\<CR>\<Esc>b"
