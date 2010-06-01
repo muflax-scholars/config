@@ -250,6 +250,7 @@ alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
 alias po="popd"
 alias sc="screen"
+alias spec="spec --color --diff"
 alias sr="screen -RD"
 alias vi="vim"
 

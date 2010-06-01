@@ -49,6 +49,17 @@ snippet ifm
 	if __name__ == '__main__':
 		${1:main()}
 
+# optparse
+snippet optp
+	parser = optparse.OptionParser(${1})
+	${2}
+	opt, args = parser.parse_args()
+
+snippet addo
+	parser.add_option("-${1:f}", "--${2:force}", dest="${3:force}",
+				      help="${4:force}"${5})
+	${6}
+
 # Unit testing
 snippet ifu
 	if __name__ == '__main__':
@@ -71,14 +82,3 @@ snippet ar
 snippet ass
 	self.assertTrue(${1:expected})
 	${3}
-
-# optparse
-snippet optp
-	parser = optparse.OptionParser(${1})
-	${2}
-	opt, args = parser.parse_args()
-
-snippet addo
-	parser.add_option("-${1:f}", "--${2:force}", dest="${3:force}",
-				      help="${4:force}"${5})
-	${6}

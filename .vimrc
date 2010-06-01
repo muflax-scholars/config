@@ -73,8 +73,8 @@ set hlsearch
 
 "indenting
 set autoindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set smarttab
 set backspace=indent,eol,start
@@ -110,7 +110,7 @@ function! FileExecutable (fname)
     execute "silent! ! test -x" a:fname
     return v:shell_error
 endfunction
-au BufWritePost *.sh,*.py,*.rb if FileExecutable("%:p") | silent !chmod a+x <afile> | endif
+au BufWritePost *.sh if FileExecutable("%:p") | silent !chmod a+x <afile> | endif
 
 "wildmode
 set wildmode=longest,full
@@ -119,12 +119,13 @@ set wildmenu
 "folding, set foldlevel to something high to circumvent starting with closed
 "folds
 "set foldmethod=indent
-set foldlevel=1
+set foldlevel=20
 nnoremap <space> za
 vnoremap <space> zf
 au FileType c set foldmethod=syntax
 au FileType cpp set foldmethod=syntax
 au FileType perl set foldmethod=syntax
+au FileType ruby set foldmethod=syntax
 
 "buffer switching with <f1>, <f2> and \h, \g
 noremap <f1> :bprev<CR>

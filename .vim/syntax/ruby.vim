@@ -295,6 +295,11 @@ syn match rubyKeywordAsMethod "\%(\%(\.\@<!\.\)\|::\)\_s*\%(public\|require\|rai
 " __END__ Directive
 syn region rubyData matchgroup=rubyDataDirective start="^__END__$" end="\%$" fold
 
+if expand('%') =~# '_spec\.rb$'
+  syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject
+endif
+
+hi def link rubyRspec			Function
 hi def link rubyClass			rubyDefine
 hi def link rubyModule			rubyDefine
 hi def link rubyMethodExceptional	rubyDefine

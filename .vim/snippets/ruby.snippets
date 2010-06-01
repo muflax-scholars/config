@@ -1,7 +1,6 @@
 # #!/usr/bin/ruby
 snippet #!
 	#!/usr/bin/ruby
-
 # New Block
 snippet =b
 	=begin rdoc
@@ -11,7 +10,6 @@ snippet y
 	:yields: ${1:arguments}
 snippet rb
 	#!/usr/bin/env ruby -w
-
 snippet req
 	require "${1}"${2}
 snippet #
@@ -28,6 +26,10 @@ snippet when
 		${2}
 snippet def
 	def ${1:method_name}
+		${2}
+	end
+snippet defi
+	def initialize(${1:args})
 		${2}
 	end
 snippet if
@@ -63,7 +65,6 @@ snippet mod module .. end
 	module ${1:`substitute(Filename(), '^.', '\u&', '')`}
 		${2}
 	end
-
 # attr_reader
 snippet r
 	attr_reader :${1:attr_names}
@@ -73,7 +74,6 @@ snippet w
 # attr_accessor
 snippet rw
 	attr_accessor :${1:attr_names}
-
 # include Enumerable
 snippet enum
 	include Enumerable
@@ -99,12 +99,10 @@ snippet app
 	if __FILE__ == $PROGRAM_NAME
 		${1}
 	end
-
 snippet zip
 	zip(${1:enums}) { |${2:row}| ${3} }
-
 # loops
-snippet downto
+snippet down
 	downto(${1:0}) { |${2:i}| ${3} }
 snippet step
 	step(${1:2}) { |${2:n}| ${3} }
@@ -115,7 +113,7 @@ snippet upto
 snippet loop
 	loop { ${1} }
 snippet each
-	each { |${1:e}| ${2} }
+	each { |${1:x}| ${2} }
 snippet eab
 	each_byte { |${1:byte}| ${2} }
 snippet eac
@@ -133,37 +131,37 @@ snippet eas
 snippet eav
 	each_value { |${1:val}| ${2} }
 snippet eawi
-	each_with_index { |${1:e}, ${2:i}| ${3} }
+	each_with_index { |${1:x}, ${2:i}| ${3} }
 snippet reve
-	reverse_each { |${1:e}| ${2} }
+	reverse_each { |${1:x}| ${2} }
 snippet inj
 	inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
 snippet map
-	map { |${1:e}| ${2} }
+	map { |${1:x}| ${2} }
 snippet mapwi
-	enum_with_index.map { |${1:e}, ${2:i}| ${3} }
+	enum_with_index.map { |${1:x}, ${2:i}| ${3} }
 snippet sort
 	sort { |a, b| ${1} }
 snippet sorb
-	sort_by { |${1:e}| ${2} }
-snippet ran
+	sort_by { |${1:x}| ${2} }
+snippet rand
 	sort_by { rand }
 snippet all
-	all? { |${1:e}| ${2} }
+	all? { |${1:x}| ${2} }
 snippet any
-	any? { |${1:e}| ${2} }
+	any? { |${1:x}| ${2} }
 snippet cl
-	classify { |${1:e}| ${2} }
+	classify { |${1:x}| ${2} }
 snippet col
-	collect { |${1:e}| ${2} }
+	collect { |${1:x}| ${2} }
 snippet det
-	detect { |${1:e}| ${2} }
+	detect { |${1:x}| ${2} }
 snippet fet
 	fetch(${1:name}) { |${2:key}| ${3} }
 snippet find
-	find { |${1:e}| ${2} }
+	find { |${1:x}| ${2} }
 snippet fina
-	find_all { |${1:e}| ${2} }
+	find_all { |${1:x}| ${2} }
 snippet grep
 	grep(${1:/pattern/}) { |${2:match}| ${3} }
 snippet sub
@@ -175,11 +173,11 @@ snippet max
 snippet min
 	min { |a, b|, ${1} }
 snippet par
-	partition { |${1:e}|, ${2} }
+	partition { |${1:x}|, ${2} }
 snippet rej
-	reject { |${1:e}|, ${2} }
+	reject { |${1:x}|, ${2} }
 snippet sel
-	select { |${1:e}|, ${2} }
+	select { |${1:x}|, ${2} }
 snippet lam
 	lambda { |${1:args}| ${2} }
 snippet do
@@ -195,6 +193,11 @@ snippet unif
 	ARGF.each_line${1} do |${2:line}|
 		${3}
 	end
+# relative paths in a portable way
+snippet relpa
+	File.join(File.dirname(__FILE__), "${1:../whatever}")${2}
+snippet relq
+	require File.join(File.dirname(__FILE__), "${1:../whatever}")${2}
 # option_parse {}
 snippet optp
 	require "optparse"
@@ -207,4 +210,49 @@ snippet opt
 	opts.on( "-${1:o}", "--${2:long-option-name}", ${3:String},
 	         "${4:Option description.}") do |${5:opt}|
 		${6}
+	end
+# testing
+snippet des
+	describe "${1:description}" do
+		${2}
+	end
+snippet desc
+	describe ${1:class} do
+		${2}
+	end
+snippet descd
+	describe ${1:class} "${2:description}" do
+		${3}
+	end
+snippet it
+	it "should ${1:desc}" do
+		${2}
+	end
+snippet itsh
+	it "should ${1:desc}" do
+		${2:model}.should ${3}
+	end
+snippet itshn
+	it "should not ${1:desc}" do
+		${2:model}.should_not ${3}
+	end
+snippet itshb
+	it "should be ${1:desc}" do
+		${2:model}.should be_${3:empty}
+	end
+snippet itshnb
+	it "should not be ${1:desc}" do
+		${2:model}.should_not be_${3:empty}
+	end
+snippet con
+	context "${1:when}" do
+		${2}
+	end
+snippet bef
+	before(:${1:each}) do
+		${2}
+	end
+snippet aft
+	after(:${1:each}) do
+		${2}
 	end
