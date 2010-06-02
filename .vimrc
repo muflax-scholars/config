@@ -102,6 +102,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
 map <Nul> <C-]>
+map <C-Space> <C-]>
 set completeopt=menuone,longest
 compiler ruby
 
