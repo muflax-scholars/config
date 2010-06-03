@@ -67,6 +67,7 @@ focusedBorderColor' = "#aa5500"
 -- dmenu
 dmenu'     = "dmenu -b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '"++focusedBorderColor'++"'"
 dmenuPath' = "exe= `dmenu_path | "++dmenu'++"` && eval \"exec $exe\""
+dmenuQuick' = "exe= `cat $HOME/.programs | "++dmenu'++"` && eval \"exec $exe\""
 
 -------------------
 -- Key bindings. --
@@ -76,7 +77,8 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_p     ), spawn $ XMonad.terminal conf)
     -- launch dmenu
-    , ((modm,               xK_e     ), spawn dmenuPath')
+    , ((modm,               xK_e     ), spawn dmenuQuick')
+    , ((modm,               xK_o     ), spawn dmenuPath')
     -- close focused window
     , ((modm .|. shiftMask, xK_w     ), kill)
     -- Rotate through the available layout algorithms
