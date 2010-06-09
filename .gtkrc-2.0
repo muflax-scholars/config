@@ -1,5 +1,5 @@
 # -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/share/themes/MurrinaFancyCandy/gtk-2.0/gtkrc"
+include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
 
 style "user-font" {
 	font_name = "Gothic 9"
@@ -9,7 +9,7 @@ widget_class "*" style "user-font"
 
 gtk-font-name="Gothic 9"
 
-gtk-theme-name  = "MurrinaFancyCandy"
+gtk-theme-name  = "Clearlooks"
 
 include "/home/amon/.gtkrc.mine"
 
