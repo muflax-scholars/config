@@ -284,8 +284,8 @@ alias -g G='| grep'
 alias -g GC='| grep --color=always'
 
 # GTD
-    alias a="ashuku add"
-    alias s="ashuku show"
+    alias a="shindai add"
+    alias s="shindai"
 
     # full todo list
     alias t="noglob todo.sh -d ~/.todo.cfg"
@@ -349,22 +349,6 @@ alias doff="D0 xset dpms force off"
 alias mish="ssh totenkopf@ming"
 alias azash="ssh amon@azathoth"
 alias nyash="ssh amon@nyarlathotep"
-
-# functions
-function go() {
-    TIC=$(date "+%s")
-    echo "真っ直ぐゴー!!"
-    read -s
-    TOC=$(date "+%s")
-    TIME=$(( ($TOC - $TIC) / 60 ))
-    if [[ $TIME -gt 0 ]] then
-        if [[ $# -ge 1 ]] then
-            ashuku add $1 "${TIME}m"
-        else
-            echo "時間：${TIME}分"
-        fi
-    fi
-}
 
 function ipt() {
     S=$(/etc/init.d/iptables status | grep -oP "(start|stop)")
