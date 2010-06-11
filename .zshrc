@@ -285,6 +285,7 @@ alias -g GC='| grep --color=always'
 
 # GTD
     alias a="shindai add"
+    alias g="shindai grind"
     alias s="shindai"
 
     # full todo list
