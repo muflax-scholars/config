@@ -308,7 +308,7 @@ alias -g GC='| grep --color=always'
     alias ia="idea add"
     alias id="idea do"
     alias il="idea ls"
-    
+
 # suspend-to-ram
 function ss() {
     purple-remote 'setstatus?status=offline'

@@ -20,6 +20,7 @@ die()
     
 errmsg="usage: $TODO_SH do ITEM#"
 do_entries=()
+reward=0
 for item in $(echo $* | tr ',' ' ')
 do 
     [ -z "$item" ] && die "$errmsg"
@@ -38,8 +39,14 @@ do
         "$TODO_SH" command add $(~/local/src/in/gtd/recur <<< "$todo")
     else
         do_entries+=$item
+        if [[ $(( $RANDOM % 5 )) -eq 0 ]] then
+            reward=1
+        fi
     fi
 done
 
+if [[ $jackpot -ge 1 ]] then
+    echo "Well done! Take a reward!"
+fi
 # call back to the main script
 [[ ${#do_entries} -gt 0 ]] && "$TODO_SH" command do "$do_entries"
