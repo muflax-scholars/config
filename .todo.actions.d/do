@@ -45,7 +45,7 @@ do
     fi
 done
 
-if [[ $jackpot -ge 1 ]] then
+if [[ $reward -ge 1 ]] then
     echo "Well done! Take a reward!"
 fi
 # call back to the main script
