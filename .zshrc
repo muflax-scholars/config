@@ -296,7 +296,7 @@ alias -g GC='| grep --color=always'
     alias ta="t add"
     alias td="t do"
     alias tl="t ls"
-    alias tr="t rm"
+    alias trm="t rm"
 
     # only what is relevant today
     alias now="noglob todo.sh -d ~/.todo-today.cfg"
@@ -304,7 +304,7 @@ alias -g GC='| grep --color=always'
     alias nl="now ls"
     alias na="now add"
     alias nd="now do"
-    alias nr="now rm"
+    alias nrm="now rm"
 
     # idea file
     alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
@@ -313,7 +313,7 @@ alias -g GC='| grep --color=always'
     alias ia="idea add"
     alias id="idea do"
     alias il="idea ls"
-    alias ir="idea rm"
+    alias irm="idea rm"
 
 # suspend-to-ram
 function ss() {
