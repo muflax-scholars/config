@@ -39,7 +39,7 @@ do
         "$TODO_SH" command add $(~/local/src/in/gtd/recur <<< "$todo")
     else
         do_entries+=$item
-        if [[ $(( $RANDOM % 5 )) -eq 0 ]] then
+        if [[ $(( $RANDOM % 3 )) -eq 0 ]] then
             reward=1
         fi
     fi

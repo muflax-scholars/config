@@ -53,7 +53,7 @@
 .ri19
 .scim/input-pad-recently-used.pad
 .scim/user-tables
-.shindai
+.shindai/log*
 .sword
 .thumbnails
 .vim/yankring*

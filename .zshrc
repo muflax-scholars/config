@@ -284,22 +284,27 @@ alias -g G='| grep'
 alias -g GC='| grep --color=always'
 
 # GTD
-    alias a="shindai add"
-    alias g="shindai grind"
+    alias as="ashuku"
+    alias a="ashuku add"
+
+    alias c="shindai challenge"
     alias s="shindai"
+    alias sk="shindai skill"
 
     # full todo list
     alias t="noglob todo.sh -d ~/.todo.cfg"
     alias ta="t add"
     alias td="t do"
     alias tl="t ls"
+    alias tr="t rm"
 
     # only what is relevant today
     alias now="noglob todo.sh -d ~/.todo-today.cfg"
-    alias n="shindai; echo "TODO:"; TODOTXT_VERBOSE=0 now ls"
+    alias n="shindai; echo "TODO:"; TODOTXT_VERBOSE=0 now ls; ashuku add"
     alias nl="now ls"
     alias na="now add"
     alias nd="now do"
+    alias nr="now rm"
 
     # idea file
     alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
@@ -308,6 +313,7 @@ alias -g GC='| grep --color=always'
     alias ia="idea add"
     alias id="idea do"
     alias il="idea ls"
+    alias ir="idea rm"
 
 # suspend-to-ram
 function ss() {

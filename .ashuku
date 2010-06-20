@@ -14,62 +14,33 @@
 # the output, but it may be inconvenient to type.
 
 attributes:
-    # general purpose
     幸福:
-        alias: koufuku
+        alias: mood
         type: qualitative
 
-    programming:
-        type: cumulative
-        unit: time
-        min: 1h
-        optional: true
+    動機付け:
+        type: qualitative
+        alias: motivation
 
-    暗記:
-        alias: anki
-        type: cumulative
-        unit: time
-        min: 1h
-        optional: true
-    
-    # languages
-    日本語:
-        alias: nihongo
-        type: cumulative
-        unit: time
-        min: 1h
-        optional: true
-    
-    français:
-        alias: furansugo
-        type: cumulative
-        unit: time
-        min: 1h
-        optional: true
-    
-    # studying
-    勉強: # too lazy to separate all topics :)
-        alias: benkyou
-        type: cumulative
-        unit: time
-        min: 1h
-        optional: true
-    
-    # smarter 
-    読める:
-        alias: yomeru
-        type: cumulative
-        unit: time
-        min: 1h
-        optional: true
+    睡眠:
+        alias: sleep
+        type: qualitative
 
-    # meditation
-    座禅:      
-        alias: zazen
+    Hype:
+        alias: johanniskraut
         type: cumulative
-        unit: time
-        min: 1h
-        optional: true
+        min: 3
+        max: 3
+
+    亜鉛:
+        alias: zinc
+        type: cumulative
+        min: 2
+        max: 2
+
+    Tyro:
+        alias: tyrosine
+        type: cumulative
 
 settings:
     path: ~/txt/ashuku.txt
