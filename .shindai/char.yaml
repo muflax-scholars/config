@@ -20,6 +20,9 @@ skills:
     reading French 1m:
         target: 1500
 
+    weight:
+        target: 70
+
 challenges:
     100 books in 2010:
         from: 2010/01/01
