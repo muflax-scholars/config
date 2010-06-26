@@ -53,6 +53,7 @@
 .ri19
 .scim/input-pad-recently-used.pad
 .scim/user-tables
+.session
 .shindai/log*
 .sword
 .thumbnails
