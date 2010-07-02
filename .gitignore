@@ -78,6 +78,7 @@
 .config/enchant
 .config/gtk-2.0
 .config/midori
+.ebview
 .gimp*
 .gitk
 .gnome2
