@@ -1,0 +1,113 @@
+
+[video-player]
+repeat=false
+display=true
+display-translated-subtitle=false
+automatically-open-video=true
+audio-sink=autoaudiosink
+video-sink=xvimagesink
+font-desc=Sans 26
+shaded-background=true
+force-aspect-ratio=true
+
+[waveform]
+scrolling-with-player=true
+scrolling-with-selection=true
+respect-timing=true
+display=false
+
+[extension-manager]
+Preferences=enable
+Text Correction=enable
+Plain Text=enable
+Type Writer=enable
+Edit Cell=enable
+Remove Subtitle=enable
+Find And Replace=enable
+Extend Length=enable
+Sort Subtitles=enable
+Apply Translation=enable
+Keyboard Shortcuts=enable
+Spell Checking=enable
+Duplicate Subtitle=enable
+Join Document=enable
+Time Mode Management=enable
+Move After Preceding Subtitle=enable
+Style Editor=enable
+View Manager=enable
+Split Document=enable
+Split Subtitle=enable
+Waveform Management=enable
+About=enable
+Combine Subtitles=enable
+Scale Subtitles=enable
+Selection=enable
+Error Checking=enable
+Document Management=enable
+Timing From Player=enable
+Keyframes Management=enable
+Insert Subtitle=enable
+Italicize=enable
+Video Player Management=enable
+External Video Player=enable
+Command=enable
+Change Framerate=enable
+Dialoguize=enable
+Reverse Text And Translation=enable
+Adjust Time=enable
+Move Subtitles=enable
+SubRip=enable
+Adobe Encore DVD (NTSC)=enable
+MicroDVD=enable
+MPL2=enable
+MPsub=enable
+Advanced Sub Station Alpha=enable
+SubViewer2=enable
+Sub Station Alpha=enable
+BITC (Burnt-in timecode)=enable
+Adobe Encore DVD (PAL)=enable
+Timed Text Authoring Format 1.0=enable
+Subtitle Editor Project=enable
+
+[find-and-replace]
+column-text=true
+column-translation=true
+ignore-case=false
+used-regular-expression=false
+
+[view-manager]
+Simple=number;start;end;duration;text
+Advanced=number;start;end;duration;style;name;text
+Translation=number;text;translation
+Timing=number;start;end;duration;cps;text
+
+[interface]
+used-autosave=false
+use-dynamic-keyboard-shortcuts=true
+maximize-window=false
+max-undo=20
+ask-to-save-on-exit=false
+
+[encodings]
+encodings=ISO-8859-15;UTF-8
+used-auto-detected=true
+default=UTF-8
+
+[document]
+format=SubRip
+newline=Unix
+
+[subtitle-view]
+property-alignment-center=false
+show-character-per-line=true
+columns-displayed=number;start;end;duration;text
+enable-rubberband-selection=false
+do-not-disable-actions-during-editing=false
+used-ctrl-enter-to-confirm-change=false
+
+[dialog-last-folder]
+dialog-open-document=file:///home/amon/set/subs
+dialog-open-video=file:///home/amon/%E6%98%A0%E7%94%BB/set
+
+[spell-checker]
+lang=en_GB
