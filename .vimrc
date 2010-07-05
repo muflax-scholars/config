@@ -153,6 +153,7 @@ cabbr pd perldo
 
 "faster writing
 map WW :w<CR>
+map WA :wa<CR>
 
 "perl stuff
 let perl_include_pod = 1
