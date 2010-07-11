@@ -29,18 +29,18 @@ attributes:
     Hype:
         alias: johanniskraut
         type: cumulative
-        min: 3
+        min: 2
         max: 3
 
     亜鉛:
         alias: zinc
         type: cumulative
-        min: 2
         max: 2
 
     Tyro:
         alias: tyrosine
         type: cumulative
+        min: 900
 
 settings:
     path: ~/txt/ashuku.txt
