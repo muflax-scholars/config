@@ -1,27 +1,5 @@
 --- 
 skills: 
-    KogSys 5m:
-        target: 60
-    EZS 5m:
-        target: 60
-    DB 5m:
-        target: 60
-    Rechnernetze 5m:
-        target: 60
-    RS 5m:
-        target: 60
-
-    reading English 1m:
-        target: 1500
-    reading German 1m:
-        target: 1500
-    reading Japanese 1m:
-        target: 1000
-    reading French 1m:
-        target: 1500
-
-    weight:
-        target: 70
 
 challenges:
     100 books in 2010:
@@ -29,9 +7,3 @@ challenges:
         until: 2010/12/31
         start: 46
         goal: 100
-
-    Project Euler:
-        from: 2010/06/20
-        until: 2010/12/31
-        start: 70
-        goal: 300
