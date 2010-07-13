@@ -44,32 +44,24 @@ snippet if
 	if (${1:/* condition */}) {
 		${2:/* code */}
 	}
-snippet el
+snippet els
 	else {
 		${1}
 	}
-# Tertiary conditional
-snippet t
-	${1:/* condition */} ? ${2:a} : ${3:b}
 # Do While Loop
 snippet do
 	do {
 		${2:/* code */}
 	} while (${1:/* condition */});
 # While Loop
-snippet wh
+snippet whi
 	while (${1:/* condition */}) {
 		${2:/* code */}
 	}
 # For Loop
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	for (${1:i = 0}; ${2:i < count}; ${3:i++}) {
 		${4:/* code */}
-	}
-# Custom For Loop
-snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
-		${5:/* code */}
 	}
 # Function
 snippet fun
@@ -82,11 +74,11 @@ snippet fund
 	${1:void} ${2:function_name}(${3});
 	${4}
 # Typedef
-snippet td
+snippet typ
 	typedef ${1:int} ${2:MyCustomType};
 	${3}
 # Struct
-snippet st
+snippet str
 	struct ${1:`Filename('$1_t', 'name')`} {
 		${2:/* data */}
 	}${3: /* optional variable list */};
@@ -103,15 +95,5 @@ snippet tde
 		${1:/* data */}
 	} ${2:foo};
 	${3}
-# printf
-# unfortunately this version isn't as nice as TextMates's, given the lack of a
-# dynamic `...`
-snippet pr
-	printf("${1:%s}\n"${2});${3}
-# fprintf (again, this isn't as nice as TextMate's version, but it works)
-snippet fpr
-	fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
-snippet .
-	[${1}]${2}
-snippet un
+snippet uns
 	unsigned
