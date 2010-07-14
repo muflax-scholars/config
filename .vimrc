@@ -18,7 +18,7 @@ set scrolloff=3
 set switchbuf=useopen
 set lbr
 set number
-set numberwidth=3
+set numberwidth=4
 
 "save last 1000 jumps and global marks
 set viminfo='1000,f1 
