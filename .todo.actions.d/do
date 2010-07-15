@@ -23,11 +23,25 @@ do_entries=()
 reward=0
 for item in $(echo $* | tr ',' ' ')
 do 
+    # check that item is valid
     [ -z "$item" ] && die "$errmsg"
     [[ "$item" =~ "\d+" ]] || die "$item: not a number"
 
+    # ...and has a todo
     todo=$(sed "$item!d" "$TODO_FILE")
     [ -z "$todo" ] && die "$item: No such todo."
+        
+    # grant a reward
+    if [[ $(( $RANDOM % 3 )) -eq 0 ]] then
+        reward=1
+    fi
+
+    # if there are marble points associated with it, pass them to shindai
+    if perl -e "if ('$todo' =~ / (^\[|\s*\[) \d+m? \] (\s+|$) /x) { exit 0} else { exit 1}"; then
+        ~/local/src/in/gtd/add_marbles <<< "$todo"
+    fi
+
+    # handle recurring events
     if perl -e "if ('$todo' =~ / (^!|\s*!) \d+ (\s+|$) /x) { exit 0} else { exit 1}"; then
         if [ $TODOTXT_PRESERVE_LINE_NUMBERS = 0 ]; then
             # delete line (changes line numbers)
@@ -39,14 +53,11 @@ do
         "$TODO_SH" command add $(~/local/src/in/gtd/recur <<< "$todo")
     else
         do_entries+=$item
-        if [[ $(( $RANDOM % 3 )) -eq 0 ]] then
-            reward=1
-        fi
     fi
 done
 
 if [[ $reward -ge 1 ]] then
-    echo "Well done! Take a reward!"
+    echo "Well done! Take another marble!"
 fi
 # call back to the main script
 [[ ${#do_entries} -gt 0 ]] && "$TODO_SH" command do "$do_entries"
