@@ -37,6 +37,12 @@ attributes:
         type: cumulative
         max: 2
 
+    Vit. D3:
+        alias: d3
+        type: cumulative
+        min: 5
+        max: 10
+
     Tyro:
         alias: tyrosine
         type: cumulative
