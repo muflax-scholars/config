@@ -33,7 +33,7 @@ do
         
     # grant a reward
     if [[ $(( $RANDOM % 3 )) -eq 0 ]] then
-        reward=1
+        reward=$(( $reward + 1 ))
     fi
 
     # if there are marble points associated with it, pass them to shindai
@@ -57,7 +57,7 @@ do
 done
 
 if [[ $reward -ge 1 ]] then
-    echo "Well done! Take another marble!"
+    shindai points $reward 'additional rewards from todo.txt'
 fi
 # call back to the main script
 [[ ${#do_entries} -gt 0 ]] && "$TODO_SH" command do "$do_entries"
