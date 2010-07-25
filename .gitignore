@@ -4,17 +4,18 @@
 
 # ignore host-specific files
 .FEH*
+.VirtualBox
 .Xauthority
+.config/nitrogen
 .feh*
 .mc
+.mplayer
 .serverauth*
 .stardict
 .subversion*
 .unison*
 .xinitrc_local
 .zshrc_local
-.config/nitrogen
-.mplayer
 
 # ignore secure shit :)
 .config/MusicBrainz
