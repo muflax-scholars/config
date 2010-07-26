@@ -243,7 +243,7 @@ manageHook' = composeAll $
         ++
         [ className =? "Pidgin"  --> doShift "9:会話"
         , className =? "Firefox" --> doShift "2:toile"
-        , className =? "claws-mail" --> doShift "2:toile"
+        , className =? "Claws-mail" --> doShift "2:toile"
         , className =? "jd-Main" --> doShift "7:télé"
         , className =? "Anki" --> doShift "3:暗記"
         ]
