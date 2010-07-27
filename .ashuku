@@ -29,12 +29,13 @@ attributes:
     Hype:
         alias: johanniskraut
         type: cumulative
-        min: 2
+        min: 3
         max: 3
 
     亜鉛:
         alias: zinc
         type: cumulative
+        min: 1
         max: 2
 
     Vit. D3:
