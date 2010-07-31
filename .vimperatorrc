@@ -12,7 +12,7 @@ nmap zM null
 nmap zR null
 nmap zf null
 nmap d <C-w>
-set complete=l
+set complete=bl
 set defsearch=g
 set focuscontent
 set runtimepath=/home/amon/.vimperator
@@ -29,6 +29,7 @@ vmap zf null
 vmap d <C-w>
 colorscheme myzenburn
 set urlseparator=
+set hintmatching=custom
 source! /home/amon/.vimperatorrc.local
 
 " vim: set ft=vimperator:
