@@ -409,17 +409,6 @@ alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o
 alias nor="sudo umount.cifs /mnt/network/torrent-samba"
 alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/.torrents/ && rm ~/*.torrent" 
 
-# save key presses on ../../
-rationalise-dot() {
-    if [[ $LBUFFER = *.. ]]; then
-        LBUFFER+=/..
-    else
-        LBUFFER+=.
-    fi
-}
-#zle -N rationalise-dot
-#bindkey . rationalise-dot
-
 # LOL!!k!
 alias cya='sudo reboot'
 alias donotwant='rm'
