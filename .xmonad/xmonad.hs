@@ -4,8 +4,6 @@
 -- basic imports
 import Data.Monoid
 import Data.Ratio ((%))
-import System.Exit
-import System.IO
 import XMonad
 import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
@@ -243,7 +241,7 @@ manageHook' = composeAll $
         ++
         [ className =? "Pidgin"  --> doShift "9:会話"
         , className =? "Firefox" --> doShift "2:toile"
-        , className =? "Claws-mail" --> doShift "2:toile"
+        , className =? "claws-mail" --> doShift "2:toile"
         , className =? "jd-Main" --> doShift "7:télé"
         , className =? "Anki" --> doShift "3:暗記"
         ]
@@ -255,7 +253,6 @@ manageHook' = composeAll $
         ++
         [ isFullscreen --> doFullFloat ]
     where floats'      = [ "Wine" 
-                         , "Angband"
                          , "Gxmessage"
                          ]
     
@@ -266,10 +263,10 @@ customPP = defaultPP {
             , ppUrgent  = dzenColor "" "#ff0000" . wrap "*" "*" . dzenStrip
             , ppWsSep   = dzenColor "" "" " "
             , ppTitle   = shorten 50
-            --, ppOrder   = \(ws:l:_:_) -> [ws, l] -- show workspaces and layout
             , ppOrder   = \(ws:l:t:_) -> [ws,l,t] -- show workspaces and layout
           }
-logHook' = dynamicLogWithPP $ customPP
+
+logHook' = dynamicLogWithPP customPP
 
 -- Urgency
 urgencyHook' = withUrgencyHookC NoUrgencyHook urgencyConfig {
@@ -281,7 +278,6 @@ urgencyHook' = withUrgencyHookC NoUrgencyHook urgencyConfig {
 -- Now run xmonad with all the defaults we set up. --
 -----------------------------------------------------
 main = do
-        --xmproc <- spawnPipe "xmobar" -- start xmobar
         xmonad $ urgencyHook' $ defaultConfig {
             -- simple stuff
             terminal           = terminal',
@@ -300,6 +296,4 @@ main = do
             layoutHook         = layout',
             manageHook         = manageHook' <+> manageDocks,
             logHook            = logHook'
-            --startupHook        = adjustEventInput, -- mouse focus
-            --handleEventHook    = focusOnMouseMove
         }
