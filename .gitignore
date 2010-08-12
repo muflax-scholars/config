@@ -14,8 +14,7 @@
 .stardict
 .subversion*
 .unison*
-.xinitrc_local
-.zshrc_local
+.*_local
 
 # ignore secure shit :)
 .config/MusicBrainz

@@ -1,0 +1,6 @@
+DISPLAY=:0.0 redshift -l 49.35:8.15 -t 6500:3500 -m vidmode &
+DISPLAY=:0.1 redshift -l 49.35:8.15 -t 6500:3500 -m vidmode &
+
+DISPLAY=:0.1 nitrogen --restore &
+sleep 4 #wtf?
+DISPLAY=:0.0 nitrogen --restore &
