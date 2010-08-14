@@ -234,7 +234,6 @@ bindkey '^[[6~' end-of-history
 ###########
 
 # normal aliases
-alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a -m"
 alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias cal="cal -m -3"
 alias cdl="cd /usr/local/portage/local"
@@ -254,6 +253,7 @@ alias po="popd"
 alias sc="screen"
 alias sr="screen -RD"
 alias vi="vim"
+alias alock="alock -auth pam"
 
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
