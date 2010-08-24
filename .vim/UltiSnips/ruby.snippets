@@ -1,0 +1,640 @@
+# #!/usr/bin/ruby
+snippet #!
+#!/usr/bin/ruby${1:19} -w
+endsnippet
+
+# New Block
+snippet =b
+=begin ${1:rdoc}
+    ${2}
+=end
+endsnippet
+
+# require
+snippet req
+require "${1}"
+endsnippet
+
+# case
+snippet case
+case ${1:object}
+when ${2:condition}
+    ${3}
+end
+endsnippet
+
+snippet when
+when ${1:condition}
+    ${2}
+endsnippet
+
+# The smart def and smart class snippets use a global option called
+# "g:ultisnips_comment_style" which, if set to "doxygen" will use doxygen
+# style comments in docstrings.
+# Note: stolen from the python snippets :)
+
+global !p
+def get_args(arglist, snip):
+    args = [arg.split('=')[0].strip() for arg in arglist.split(',') if arg]
+    args = [arg for arg in args if arg]
+    return args
+endglobal
+
+# def
+snippet def "def" b
+def ${1:method_name}(${2:args})
+    ${0}
+end
+endsnippet
+
+# def initialize
+snippet defi "def" b
+def initialize(${1:args})`!p
+args = get_args(t[1], snip)
+
+snip >> 1
+for arg in args:
+    snip += "@%s = %s" % (arg, arg)
+`
+$0
+end
+endsnippet
+
+##############
+# conditions #
+##############
+
+# if
+snippet if
+if ${1:condition}
+    ${2}
+end
+endsnippet
+
+# if else
+snippet ife
+if ${1:condition}
+    ${2}
+else
+    ${3}
+end
+endsnippet
+
+# elsif
+snippet elsif
+elsif ${1:condition}
+    ${2}
+endsnippet
+
+# unless
+snippet unl
+unless ${1:condition}
+    ${2}
+end
+endsnippet
+
+#########
+# loops #
+#########
+
+# while
+snippet whi
+while ${1:condition}
+    ${2}
+end
+endsnippet
+
+# until
+snippet unt
+until ${1:condition}
+    ${2}
+end
+endsnippet
+
+#########
+# class #
+#########
+
+# class
+snippet cla "class .. end" b
+class ${1:`!p snip.rv = snip.basename.title()`}
+    ${2}
+end
+endsnippet
+
+# module
+snippet mod "module .. end" b
+module ${1:`!p snip.rv = snip.basename.title()`}
+    ${2}
+end
+endsnippet
+
+# attr_reader
+snippet r
+attr_reader :${1:attr_names}
+endsnippet
+
+# attr_writer
+snippet w
+attr_writer :${1:attr_names}
+endsnippet
+
+# attr_accessor
+snippet rw
+attr_accessor :${1:attr_names}
+endsnippet
+
+# include Enumerable
+snippet enum
+include Enumerable
+
+def each(&block)
+    ${1}
+end
+endsnippet
+
+# include Comparable
+snippet comp
+include Comparable
+
+def <=>(other)
+    ${1}
+end
+endsnippet
+
+# def method_missing
+snippet defmm
+def method_missing(meth, *args, &blk)
+    ${1}
+end
+endsnippet
+
+# alias
+snippet ali
+alias_method :${1:new_name}, :${2:old_name}
+endsnippet
+
+########
+# each #
+########
+
+# zip
+snippet zip
+zip(${1:enums}) do |${2:row}| 
+    ${3}
+end
+endsnippet
+
+snippet zipb
+zip(${1:enums}) {|${2:row}| ${3} }
+endsnippet
+
+# down
+snippet down
+downto(${1:0}) do |${2:i}| 
+    ${3} 
+end
+endsnippet
+
+snippet downb
+downto(${1:0}) {|${2:i}| ${3} }
+endsnippet
+
+# step
+snippet step
+step(${1:2}) do |${2:n}| 
+    ${3}
+end
+endsnippet
+
+snippet stepb
+step(${1:2}) {|${2:i}| ${3} }
+endsnippet
+
+# times
+snippet times
+times do |${1:n}| 
+    ${2}
+end
+endsnippet
+
+snippet timesb
+times {|${1:n}| ${2} }
+endsnippet
+
+# upto
+snippet upto
+upto(${1:limit}) do |${2:n}| 
+    ${3}
+end
+endsnippet
+
+snippet uptob
+upto(${1:limit}) { |${2:n}| ${3} }
+endsnippet
+
+# loop
+snippet loop
+loop do 
+    ${1}
+end
+endsnippet
+
+# each
+snippet each
+each do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet eachb 
+each {|${1:x}| $2 }
+endsnippet
+
+# each_byte
+snippet eab
+each_byte do |${1:byte}| 
+    ${2}
+end
+endsnippet
+
+snippet eabb
+each_byte {|${1:byte}| ${2} }
+endsnippet
+
+# each_char
+snippet eac
+each_char do |${1:chr}| 
+    ${2}
+end
+
+snippet eacb
+each_char {|${1:chr}| ${2} }
+endsnippet
+
+# each_index
+snippet eai
+each_index do |${1:i}| 
+    ${2}
+end
+endsnippet
+
+snippet eaib
+each_index {|${1:i}| ${2} }
+endsnippet
+
+# each_key
+snippet eak
+each_key do |${1:key}| 
+    ${2}
+end
+endsnippet
+
+snippet eakb
+each_key {|${1:key}| ${2} }
+endsnippet
+
+# each_line
+snippet eal
+each_line do |${1:line}| 
+    ${2}
+end
+endsnippet
+
+snippet ealb
+each_line {|${1:line}| ${2} }
+endsnippet
+
+# each_pair
+snippet eap
+each_pair do |${1:name}, ${2:val}|
+    ${3}
+end
+
+snippet eapb
+each_pair {|${1:name}, ${2:val} ${3} }
+endsnippet
+
+# each_slice
+snippet eas
+each_slice(${1:2}) do |${2:group}| 
+    ${3}
+end
+endsnippet
+
+snippet easb
+each_slice(${1:2}) {|${2:group}| ${3} }
+endsnippet
+
+# each_value
+snippet eav
+each_value do |${1:val}| 
+    ${2}
+end
+endsnippet
+
+snippet eavb
+each_value {|${1:val}| ${2} }
+endsnippet
+
+# each_with_index
+snippet eawi
+each_with_index do |${1:x}, ${2:i}| 
+    ${3}
+end
+endsnippet
+
+snippet eawib
+each_with_index {|${1:x}, ${2:i}| ${3} }
+endsnippet
+
+# reverse_each
+snippet rev
+reverse_each do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet revb
+reverse_each {|${1:x}| ${2} }
+endsnippet
+
+# inject
+snippet inj
+inject(${1:init}) do |${2:t}, ${3:var}| 
+    ${4}
+end
+endsnippet
+
+snippet injb
+inject(${1:init}) {|${2:t}, ${3:var}| ${4} }
+endsnippet
+
+# map
+snippet map
+map do |${1:x}| 
+    ${2} 
+end
+endsnippet
+
+snippet mapb
+map {|${1:x}| ${2} }
+endsnippet
+
+# sort
+snippet sort
+sort do |a, b| 
+    ${1}
+end
+
+snippet sortb
+sort {|a, b| ${1} }
+endsnippet
+
+# sort_by
+snippet sob
+sort_by do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet sobb
+sort_by {|${1:x}| ${2} }
+endsnippet
+
+# randomize
+snippet rand
+sort_by { rand }
+endsnippet
+
+# all
+snippet all
+all? do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet allb
+all? {|${1:x}| ${2} }
+endsnippet
+
+# any
+snippet any
+any? do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet anyb
+any? {|${1:x}| ${2} }
+endsnippet
+
+# fetch
+snippet fet
+fetch(${1:name}) do |${2:key}| 
+    ${3}
+end
+endsnippet
+
+snippet fetb
+fetch(${1:name}) {|${2:key}| ${3} }
+endsnippet
+
+# find
+snippet find
+find do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet find
+find {|${1:x}| ${2} }
+endsnippet
+
+# find_all
+snippet fina
+find_all do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet finab
+find_all {|${1:x}| ${2} }
+endsnippet
+
+#grep
+snippet grep
+grep(${1:/pattern/}) do |${2:match}|
+    ${3}
+end
+endsnippet
+
+snippet grepb
+grep(${1:/pattern/}) {|${2:match}| ${3} }
+endsnippet
+
+# (g)sub
+snippet sub
+${1:g}sub(${2:/pattern/}) do |${3:match}|
+    ${4} 
+end
+endsnippet
+
+snippet subb
+${1:g}sub(${2:/pattern/}) {|${3:match}| ${4} }
+endsnippet
+
+# scan
+snippet scan
+scan(${1:/pattern/}) do |${2:match}| 
+    ${3}
+end
+endsnippet
+
+snippet scanb
+scan(${1:/pattern/}) { |${2:match}| ${3} }
+endsnippet
+
+# max
+snippet max
+max do |a, b| 
+    ${1}
+end
+endsnippet
+
+snippet maxb
+max {|a, b| ${1} }
+endsnippet
+
+# min
+snippet min
+min do |a, b| 
+    ${1}
+end
+endsnippet
+
+snippet minb
+min {|a, b| ${1} }
+endsnippet
+
+# partition
+snippet par
+partition do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet parb
+partition {|${1:x}| ${2} }
+endsnippet
+
+# reject
+snippet rej
+reject do |${1:x}| 
+    ${2}
+end
+endsnippet
+
+snippet rejb
+reject {|${1:x}| ${2} }
+endsnippet
+
+# select
+snippet sel
+select do |${1:x}| 
+    ${2}
+end
+
+snippet selb
+select {|${1:x}| ${2} }
+endsnippet
+
+# lambda
+snippet lam
+lambda do |${1:args}| 
+    ${2}
+end
+
+snippet lamd
+lambda {|${1:args}| ${2} }
+endsnippet
+
+snippet do
+do |${1:variable}|
+    ${2}
+end
+endsnippet
+
+# relative paths in a portable way
+snippet relpa
+File.join(File.dirname(__FILE__), "${1:../whatever}")${2}
+endsnippet
+
+snippet relq
+require File.join(File.dirname(__FILE__), "${1:../whatever}")${2}
+endsnippet
+
+# testing
+snippet des
+describe "${1:description}" do
+    ${2}
+end
+endsnippet
+
+snippet desc
+describe ${1:class} do
+    ${2}
+end
+endsnippet
+
+snippet descd
+describe ${1:class} "${2:description}" do
+    ${3}
+end
+endsnippet
+
+snippet it
+it "should ${1:desc}" do
+    ${2}
+end
+endsnippet
+
+snippet itsh
+it "should ${1:desc}" do
+    ${2:model}.should ${3}
+end
+snippet itshn
+it "should not ${1:desc}" do
+    ${2:model}.should_not ${3}
+end
+endsnippet
+
+snippet itshb
+it "should be ${1:desc}" do
+    ${2:model}.should be_${3:empty}
+end
+endsnippet
+
+snippet itshnb
+it "should not be ${1:desc}" do
+    ${2:model}.should_not be_${3:empty}
+end
+endsnippet
+
+snippet con
+context "${1:when}" do
+    ${2}
+end
+endsnippet
+
+snippet bef
+before(:${1:each}) do
+    ${2}
+end
+endsnippet
+
+snippet aft
+after(:${1:each}) do
+    ${2}
+end
+endsnippet

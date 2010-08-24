@@ -164,6 +164,13 @@ let perl_fold = 1
 "supertab
 let g:SuperTabDefaultCompletionType = "context"
 
+"UltiSnips
+"jump triggers are different from tab so as to not conflict with tab completion
+"within a snipper
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<S-Right>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Left>"
+
 "toggle paste with F3
 :set pastetoggle=<F3>
 
