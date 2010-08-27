@@ -1,6 +1,6 @@
 # main()
 snippet main
-int main (int argc, const char *argv[])
+int main (int argc, char * const argv[])
 {
 	$0
 	return 0;
@@ -13,7 +13,7 @@ snippet inc
 endsnippet
 
 snippet incf
-#include "${1:`!p snip.rv = snip.basename + '.h'`}"
+#include "${1:`!p snip.rv = snip.basename`.h}"
 endsnippet
 
 # define
