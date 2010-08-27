@@ -1,10 +1,5 @@
-!menu
-!keycode 135 = Henkan_Mode
-
-!Lower, Raise, Mute
-!keycode 122 = XF86AudioLowerVolume
-!keycode 123 = XF86AudioRaiseVolume
-!keycode 121 = XF86AudioMute
-
 !invert left and right side
 !pointer = 3 2 1 4 5 6 7 9 8
+
+!back and forward are inverted
+pointer = 1 2 3 5 4 6 7 9 8
