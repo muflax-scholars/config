@@ -56,8 +56,8 @@ do
     fi
 done
 
-if [[ $reward -ge 1 ]] then
-    shindai points $reward 'additional rewards from todo.txt'
-fi
+#if [[ $reward -ge 1 ]] then
+    #shindai points $reward 'additional rewards from todo.txt'
+#fi
 # call back to the main script
 [[ ${#do_entries} -gt 0 ]] && "$TODO_SH" command do "$do_entries"
