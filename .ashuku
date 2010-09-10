@@ -35,7 +35,7 @@ attributes:
     亜鉛:
         alias: zinc
         type: cumulative
-        min: 1
+        min: 2
         max: 2
 
     Vit. D3:
