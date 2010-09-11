@@ -237,11 +237,9 @@ bindkey '^[[6~' end-of-history
 alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax -- -a"
 alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias cal="cal -m -3"
-alias cdl="cd /usr/local/portage/local"
 alias cgrep="grep --color=always"
 alias diff="colordiff"
 alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
-alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
 alias gi="gvim"
 alias grep="grep --color=auto -P"
 alias gvi="gvim"
@@ -255,6 +253,11 @@ alias sc="screen"
 alias sr="screen -RD"
 alias vi="vim"
 alias alock="alock -auth pam"
+
+# portage
+alias cdl="cd /usr/local/portage/local"
+alias dew="sudo FEATURES=distcc emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
+alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
 
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
