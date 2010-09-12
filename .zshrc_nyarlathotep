@@ -5,11 +5,11 @@ alias ur='unison kira-repo'
 function dipa() {
     # update in both directions
     # aza -> nya
-    sudo rsync -avP azathoth:/var/cache/distfiles/ /var/cache/distfiles
-    sudo rsync -avP azathoth:/var/cache/packages/  /var/cache/packages
+    sudo rsync -uavP azathoth:/var/cache/distfiles/ /var/cache/distfiles
+    sudo rsync -uavP azathoth:/var/cache/packages/  /var/cache/packages
     # nya -> aza
-    sudo rsync -avP /var/cache/distfiles/ azathoth:/var/cache/distfiles
-    sudo rsync -avP /var/cache/packages/  azathoth:/var/cache/packages
+    sudo rsync -uavP /var/cache/distfiles/ azathoth:/var/cache/distfiles
+    sudo rsync -uavP /var/cache/packages/  azathoth:/var/cache/packages
 }
 
 function up() {
