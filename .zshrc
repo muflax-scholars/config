@@ -267,6 +267,7 @@ alias p3="/usr/bin/python3"
 alias p="/usr/bin/python3"
 alias pe="/usr/bin/perl"
 alias ru="/usr/bin/ruby"
+alias b="/usr/bin/irb"
 
 # optimized local compiles
 function om() {
