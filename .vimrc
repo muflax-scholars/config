@@ -84,6 +84,8 @@ filetype plugin indent on
 set virtualedit=all
 set mouse=a
 
+"clear search
+map <F4> :let @/ = ""<CR>
 "disable highlighting
 map <F5> :set hls!<bar>set hls?<CR>
 
