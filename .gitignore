@@ -132,3 +132,6 @@
 .config/geeqie
 .config/comix
 .snes9x/snes9x.xml
+
+# ignore ashuku and similar stuff
+.ashuku
