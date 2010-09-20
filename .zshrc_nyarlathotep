@@ -1,6 +1,7 @@
 alias unison="unison -log=false -auto"
 alias un='unison kira -times; unison kira-anki -times'
 alias ur='unison kira-repo'
+alias uep='unison kira-portage -times'
 
 function dipa() {
     # update in both directions
@@ -14,7 +15,7 @@ function dipa() {
 
 function up() {
     ur
-    sudo rsync -avP rsync://azathoth/gentoo-config /etc/portage
+    uep
     rsync -avP --delete rsync://azathoth/gentoo-layman /var/lib/layman/
     dipa
     sudo emerge --sync
