@@ -8,7 +8,7 @@ function cowon() {
     rsync -avP --delete-before --exclude lost+found ~/音/朗読/ /mnt/disk/音楽/
 }
 
-alias up="sudo emerge --sync; layman -S; eix-update"
+alias up="sudo emerge --sync &; layman -S &; wait; eix-update"
 
 # timeboxing with pororo #TODO should combine this with tb
 alias pol="D1 pororo -s 1280 1024"
