@@ -1,7 +1,7 @@
 alias unison="unison -log=false -auto"
 alias un='unison kira -times; unison kira-anki -times'
 alias ur='unison kira-repo'
-alias uep='unison kira-portage -times'
+alias uep='sudo unison kira-portage -times -log=false -auto'
 
 function dipa() {
     # update in both directions
