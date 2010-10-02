@@ -205,17 +205,11 @@ layout' =
                       StackTile nmaster delta stackRatio
          -- fullscreen
          full       = named "全"    $
-                      gimp          $
                       smartBorders  $
                       Full
 
          -- treat buddy list dock-like
          pidgin l   = withIM (1%8) (Role "buddy_list") l
-         -- experimental gimp handling :)
-         gimp   l   = withIM (0.11) (Role "gimp-toolbox") $
-                      reflectHoriz                        $
-                      withIM (0.15) (Role "gimp-dock")    $
-                      reflectHoriz l
          -- take care of terminal size
          hinted l   = layoutHintsWithPlacement( 0.5, 0.5) l
                       
@@ -254,6 +248,7 @@ manageHook' = composeAll $
         [ isFullscreen --> doFullFloat ]
     where floats'      = [ "Wine" 
                          , "Gxmessage"
+                         , "Gimp"
                          ]
     
 -- Status bars and logging
