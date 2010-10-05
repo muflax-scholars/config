@@ -65,7 +65,7 @@ endsnippet
 ##############
 
 # if
-snippet if
+snippet if "if" w
 if ${1:condition}
     ${2}
 end
@@ -87,7 +87,7 @@ elsif ${1:condition}
 endsnippet
 
 # unless
-snippet unl
+snippet unl "unless" w
 unless ${1:condition}
     ${2}
 end
@@ -98,14 +98,14 @@ endsnippet
 #########
 
 # while
-snippet whi
+snippet whi "while" w
 while ${1:condition}
     ${2}
 end
 endsnippet
 
 # until
-snippet unt
+snippet unt "until" w
 until ${1:condition}
     ${2}
 end
@@ -179,379 +179,379 @@ endsnippet
 ########
 
 # zip
-snippet zip
-zip(${1:enums}) do |${2:row}| 
+snippet zip "zip" w
+zip(${1:enums}) do |${2:row}|
     ${3}
 end
 endsnippet
 
-snippet zipb
+snippet zipb "zipb" w
 zip(${1:enums}) {|${2:row}| ${3} }
 endsnippet
 
 # down
-snippet down
-downto(${1:0}) do |${2:i}| 
-    ${3} 
+snippet down "down" w
+downto(${1:0}) do |${2:i}|
+    ${3}
 end
 endsnippet
 
-snippet downb
+snippet downb "downb" w
 downto(${1:0}) {|${2:i}| ${3} }
 endsnippet
 
 # step
-snippet step
-step(${1:2}) do |${2:n}| 
+snippet step "step" w
+step(${1:2}) do |${2:n}|
     ${3}
 end
 endsnippet
 
-snippet stepb
+snippet stepb "stepb" w
 step(${1:2}) {|${2:i}| ${3} }
 endsnippet
 
 # times
-snippet times
-times do |${1:n}| 
+snippet times "times" w
+times do |${1:n}|
     ${2}
 end
 endsnippet
 
-snippet timesb
+snippet timesb "timesb" w
 times {|${1:n}| ${2} }
 endsnippet
 
 # upto
-snippet upto
-upto(${1:limit}) do |${2:n}| 
+snippet upto "upto" w
+upto(${1:limit}) do |${2:n}|
     ${3}
 end
 endsnippet
 
-snippet uptob
+snippet uptob "uptob" w
 upto(${1:limit}) { |${2:n}| ${3} }
 endsnippet
 
 # loop
-snippet loop
-loop do 
+snippet loop "loop" w
+loop do
     ${1}
 end
 endsnippet
 
 # each
-snippet each
-each do |${1:x}| 
+snippet each "each" w
+each do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet eachb 
+snippet eachb "eachb" w
 each {|${1:x}| $2 }
 endsnippet
 
 # each_byte
-snippet eab
-each_byte do |${1:byte}| 
+snippet eab "eab" w
+each_byte do |${1:byte}|
     ${2}
 end
 endsnippet
 
-snippet eabb
+snippet eabb "eabb" w
 each_byte {|${1:byte}| ${2} }
 endsnippet
 
 # each_char
-snippet eac
-each_char do |${1:chr}| 
+snippet eac "eac" w
+each_char do |${1:chr}|
     ${2}
 end
 
-snippet eacb
+snippet eacb "eacb" w
 each_char {|${1:chr}| ${2} }
 endsnippet
 
 # each_index
-snippet eai
-each_index do |${1:i}| 
+snippet eai "eai" w
+each_index do |${1:i}|
     ${2}
 end
 endsnippet
 
-snippet eaib
+snippet eaib "eaib" w
 each_index {|${1:i}| ${2} }
 endsnippet
 
 # each_key
-snippet eak
-each_key do |${1:key}| 
+snippet eak "eak" w
+each_key do |${1:key}|
     ${2}
 end
 endsnippet
 
-snippet eakb
+snippet eakb "eakb" w
 each_key {|${1:key}| ${2} }
 endsnippet
 
 # each_line
-snippet eal
-each_line do |${1:line}| 
+snippet eal "eal" w
+each_line do |${1:line}|
     ${2}
 end
 endsnippet
 
-snippet ealb
+snippet ealb "ealb" w
 each_line {|${1:line}| ${2} }
 endsnippet
 
 # each_pair
-snippet eap
+snippet eap "eap" w
 each_pair do |${1:name}, ${2:val}|
     ${3}
 end
 
-snippet eapb
+snippet eapb "eapb" w
 each_pair {|${1:name}, ${2:val} ${3} }
 endsnippet
 
 # each_slice
-snippet eas
-each_slice(${1:2}) do |${2:group}| 
+snippet eas "eas" w
+each_slice(${1:2}) do |${2:group}|
     ${3}
 end
 endsnippet
 
-snippet easb
+snippet easb "easb" w
 each_slice(${1:2}) {|${2:group}| ${3} }
 endsnippet
 
 # each_value
-snippet eav
-each_value do |${1:val}| 
+snippet eav "eav" w
+each_value do |${1:val}|
     ${2}
 end
 endsnippet
 
-snippet eavb
+snippet eavb "eavb" w
 each_value {|${1:val}| ${2} }
 endsnippet
 
 # each_with_index
-snippet eawi
-each_with_index do |${1:x}, ${2:i}| 
+snippet eawi "eawi" w
+each_with_index do |${1:x}, ${2:i}|
     ${3}
 end
 endsnippet
 
-snippet eawib
+snippet eawib "eawib" w
 each_with_index {|${1:x}, ${2:i}| ${3} }
 endsnippet
 
 # reverse_each
-snippet rev
-reverse_each do |${1:x}| 
+snippet rev "rev" w
+reverse_each do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet revb
+snippet revb "revb" w
 reverse_each {|${1:x}| ${2} }
 endsnippet
 
 # inject
-snippet inj
-inject(${1:init}) do |${2:t}, ${3:var}| 
+snippet inj "inj" w
+inject(${1:init}) do |${2:t}, ${3:var}|
     ${4}
 end
 endsnippet
 
-snippet injb
+snippet injb "injb" w
 inject(${1:init}) {|${2:t}, ${3:var}| ${4} }
 endsnippet
 
 # map
-snippet map
-map do |${1:x}| 
-    ${2} 
+snippet map "map" w
+map do |${1:x}|
+    ${2}
 end
 endsnippet
 
-snippet mapb
+snippet mapb "mapb" w
 map {|${1:x}| ${2} }
 endsnippet
 
 # sort
-snippet sort
-sort do |a, b| 
+snippet sort "sort" w
+sort do |a, b|
     ${1}
 end
 
-snippet sortb
+snippet sortb "sortb" w
 sort {|a, b| ${1} }
 endsnippet
 
 # sort_by
-snippet sob
-sort_by do |${1:x}| 
+snippet sob "sob" w
+sort_by do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet sobb
+snippet sobb "sobb" w
 sort_by {|${1:x}| ${2} }
 endsnippet
 
 # randomize
-snippet rand
+snippet rand "rand" w
 sort_by { rand }
 endsnippet
 
 # all
-snippet all
-all? do |${1:x}| 
+snippet all "all" w
+all? do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet allb
+snippet allb "allb" w
 all? {|${1:x}| ${2} }
 endsnippet
 
 # any
-snippet any
-any? do |${1:x}| 
+snippet any "any" w
+any? do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet anyb
+snippet anyb "anyb" w
 any? {|${1:x}| ${2} }
 endsnippet
 
 # fetch
-snippet fet
-fetch(${1:name}) do |${2:key}| 
+snippet fet "fet" w
+fetch(${1:name}) do |${2:key}|
     ${3}
 end
 endsnippet
 
-snippet fetb
+snippet fetb "fetb" w
 fetch(${1:name}) {|${2:key}| ${3} }
 endsnippet
 
 # find
-snippet find
-find do |${1:x}| 
+snippet find "find" w
+find do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet find
+snippet find "find" w
 find {|${1:x}| ${2} }
 endsnippet
 
 # find_all
-snippet fina
-find_all do |${1:x}| 
+snippet fina "fina" w
+find_all do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet finab
+snippet finab "finab" w
 find_all {|${1:x}| ${2} }
 endsnippet
 
 #grep
-snippet grep
+snippet grep "grep" w
 grep(${1:/pattern/}) do |${2:match}|
     ${3}
 end
 endsnippet
 
-snippet grepb
+snippet grepb "grepb" w
 grep(${1:/pattern/}) {|${2:match}| ${3} }
 endsnippet
 
 # (g)sub
-snippet sub
+snippet sub "sub" w
 ${1:g}sub(${2:/pattern/}) do |${3:match}|
-    ${4} 
+    ${4}
 end
 endsnippet
 
-snippet subb
+snippet subb "subb" w
 ${1:g}sub(${2:/pattern/}) {|${3:match}| ${4} }
 endsnippet
 
 # scan
-snippet scan
-scan(${1:/pattern/}) do |${2:match}| 
+snippet scan "scan" w
+scan(${1:/pattern/}) do |${2:match}|
     ${3}
 end
 endsnippet
 
-snippet scanb
+snippet scanb "scanb" w
 scan(${1:/pattern/}) { |${2:match}| ${3} }
 endsnippet
 
 # max
-snippet max
-max do |a, b| 
+snippet max "max" w
+max do |a, b|
     ${1}
 end
 endsnippet
 
-snippet maxb
+snippet maxb "maxb" w
 max {|a, b| ${1} }
 endsnippet
 
 # min
-snippet min
-min do |a, b| 
+snippet min "min" w
+min do |a, b|
     ${1}
 end
 endsnippet
 
-snippet minb
+snippet minb "minb" w
 min {|a, b| ${1} }
 endsnippet
 
 # partition
-snippet par
-partition do |${1:x}| 
+snippet par "par" w
+partition do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet parb
+snippet parb "parb" w
 partition {|${1:x}| ${2} }
 endsnippet
 
 # reject
-snippet rej
-reject do |${1:x}| 
+snippet rej "rej" w
+reject do |${1:x}|
     ${2}
 end
 endsnippet
 
-snippet rejb
+snippet rejb "rejb" w
 reject {|${1:x}| ${2} }
 endsnippet
 
 # select
-snippet sel
-select do |${1:x}| 
+snippet sel "sel" w
+select do |${1:x}|
     ${2}
 end
 
-snippet selb
+snippet selb "selb" w
 select {|${1:x}| ${2} }
 endsnippet
 
 # lambda
 snippet lam
-lambda do |${1:args}| 
+lambda do |${1:args}|
     ${2}
 end
 
@@ -571,6 +571,10 @@ File.join(File.dirname(__FILE__), "${1:../whatever}")${2}
 endsnippet
 
 snippet relq
+require File.join(File.dirname(__FILE__), "${1:../whatever}")${2}
+endsnippet
+
+snippet reql
 require File.join(File.dirname(__FILE__), "${1:../whatever}")${2}
 endsnippet
 
