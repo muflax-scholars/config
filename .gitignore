@@ -3,6 +3,7 @@
 !/.*
 
 # ignore host-specific files
+.*_local
 .FEH*
 .VirtualBox
 .Xauthority
@@ -14,7 +15,6 @@
 .stardict
 .subversion*
 .unison*
-.*_local
 
 # ignore secure shit :)
 .config/MusicBrainz
@@ -53,14 +53,16 @@
 .netx
 .recently*
 .ri19
+.ruby_inline
 .scim/input-pad-recently-used.pad
 .scim/user-tables
 .session
 .shindai/log*
 .sword
 .thumbnails
-.vim/yankring*
+.vim/.netrwhist
 .vim/spell/*.add*
+.vim/yankring*
 .vimfuzzy*
 .viminfo*
 .xmonad/xmonad*
@@ -74,6 +76,7 @@
 .AbiSuite
 .audacity*
 .avidemux
+.cgdb
 .chmsee
 .config/Google
 .config/Ulduzsoft
@@ -85,8 +88,8 @@
 .gitk
 .gnome2
 .gnumericrc
-.gtickrc
 .googleearth
+.gtickrc
 .htoprc
 .java
 .kchmviewer
@@ -98,9 +101,10 @@
 .rubyripper
 .swac
 .sweeprc
-.xscreensaver
+.tgdb
 .wesnoth
 .wxMaxima
+.xscreensaver
 
 # ignore alarm music
 .timeboxing
@@ -127,11 +131,12 @@
 .snes9x/snapshots*
 
 # configs that are included, but stupid
-.scim/config
 .config/Trolltech.conf
-.config/geeqie
 .config/comix
+.config/geeqie
+.scim/config
 .snes9x/snes9x.xml
 
 # ignore ashuku and similar stuff
 .ashuku
+.poke.sqlite3
