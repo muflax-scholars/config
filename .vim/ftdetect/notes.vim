@@ -11,4 +11,5 @@ au BufNewFile,BufRead *.txt	        set filetype=notes
 au BufNewFile,BufRead ~/spoiler/*	set filetype=notes
 au BufNewFile,BufRead *.mkd	        set filetype=notes
 au BufNewFile,BufRead *.pdc	        set filetype=notes
+au BufNewFile,BufRead README        set filetype=notes
 syn clear
