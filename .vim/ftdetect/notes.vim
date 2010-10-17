@@ -6,6 +6,7 @@ if &compatible || version < 600
 endif
 
 " Detect notes from this extension
+au BufNewFile,BufRead *.note	    set filetype=notes
 au BufNewFile,BufRead *.notes	    set filetype=notes
 au BufNewFile,BufRead *.txt	        set filetype=notes
 au BufNewFile,BufRead ~/spoiler/*	set filetype=notes
