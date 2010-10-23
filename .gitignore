@@ -115,8 +115,8 @@
 .jd
 .mail
 .mozilla
+.pentadactyl/info
 .purple
-.vimperator/info
 .weechat
 
 # ignore wine (has its own backups)
