@@ -8,7 +8,7 @@
 //
 // Usage:
 //  :set hintmatching = custom
-liberator.plugins.customHintMatcher = function(inputString){
+dactyl.plugins.customHintMatcher = function(inputString){
     var XMigemoCore;
     try{
         XMigemoCore = Components.classes['@piro.sakura.ne.jp/xmigemo/factory;1']

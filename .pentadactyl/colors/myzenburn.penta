@@ -42,7 +42,7 @@ hi Object               color: maroon;
 hi Preview              color: gray;
 hi Question             color: #9ECE9E; background: #242421; font-weight: bold;
 hi Search               font-size: inherit; padding: 0; color: #385F38; background-color: #F8F893; padding: 0;
-hi StatusLine           color: #afaf87; background: #3a3a3a; font-size: 9pt; font-family: Droid Sans Mono Slashed; font-weight: bold; padding: 0px 3px;
+hi StatusLine           color: #000000; background: #3a3a3a; font-size: 9pt; font-family: Droid Sans Mono Slashed; font-weight: bold; padding: 0px 3px;
 hi StatusLineBroken     color: #af8787; background: #3a3a3a;
 hi StatusLineSecure     color: #87af87; background: #3a3a3a;
 hi String               color: #9ECE9E;
@@ -73,4 +73,5 @@ statusbarpanel > * { margin: 0 !important; padding: 0 2px 0 0 !important; }
  min-height: 21px !important;
  background: #4e4e4e !important;
 }
+EOM
 

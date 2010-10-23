@@ -14,9 +14,8 @@ nmap zf null
 nmap d <C-w>
 set complete=bl
 set defsearch=g
-set focuscontent
-set runtimepath=/home/amon/.vimperator
-set wildoptions=auto
+set strictfocus
+set runtimepath=/home/amon/.pentadactyl
 style! -name=statusbar chrome://* <<EOF
 #status-bar statusbarpanel { padding: 0 1px !important; }
 statusbarpanel > * { margin: 0 !important; padding: 0 !important; }
@@ -30,6 +29,5 @@ vmap d <C-w>
 colorscheme myzenburn
 set urlseparator=
 set hintmatching=custom
-source! /home/amon/.vimperatorrc.local
 
 " vim: set ft=vimperator:
