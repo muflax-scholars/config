@@ -73,7 +73,7 @@ dmenuQuick' = "exe= `cat $HOME/.programs | "++dmenu'++"` && eval \"exec $exe\""
 keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
-    [ ((modm,               xK_p     ), spawn $ XMonad.terminal conf)
+    [ ((modm,               xK_u     ), spawn $ XMonad.terminal conf)
     -- launch dmenu
     , ((modm,               xK_e     ), spawn dmenuQuick')
     , ((modm,               xK_o     ), spawn dmenuPath')
