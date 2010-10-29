@@ -57,7 +57,6 @@
 .scim/input-pad-recently-used.pad
 .scim/user-tables
 .session
-.shindai/log*
 .sword
 .thumbnails
 .vim/.netrwhist
@@ -141,3 +140,4 @@
 # ignore ashuku and similar stuff
 .ashuku
 .poke.sqlite3
+.shindai
