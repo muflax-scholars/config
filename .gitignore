@@ -73,15 +73,18 @@
 
 # ignore stupid confs no one loves :)
 .AbiSuite
+.Foxit
 .audacity*
 .avidemux
 .cgdb
 .chmsee
 .config/Google
+.config/NVIDIA Corporation
 .config/Ulduzsoft
 .config/enchant
 .config/gtk-2.0
 .config/midori
+.dia
 .ebview
 .gimp*
 .gitk
@@ -95,6 +98,7 @@
 .kde4
 .links
 .mono
+.mozc
 .ooo3
 .openoffice.org
 .rubyripper
@@ -103,6 +107,7 @@
 .tgdb
 .wesnoth
 .wxMaxima
+.xchat2
 .xscreensaver
 
 # ignore alarm music
