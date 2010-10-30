@@ -1,33 +1,13 @@
 "2.2 (created: 2009/10/28 19:04:27)
 
-map L <C-o>
+colorscheme myzenburn
 map H <C-i>
-map zM null
-map zR null
-map zf null
+map L <C-o>
 map d <C-w>
-nmap L <C-o>
-nmap H <C-i>
-nmap zM null
-nmap zR null
-nmap zf null
-nmap d <C-w>
+map zz zZ
 set complete=bl
 set defsearch=g
-set strictfocus
-set runtimepath=/home/amon/.pentadactyl
-style! -name=statusbar chrome://* <<EOF
-#status-bar statusbarpanel { padding: 0 1px !important; }
-statusbarpanel > * { margin: 0 !important; padding: 0 !important; }
-EOF
-vmap L <C-o>
-vmap H <C-i>
-vmap zM null
-vmap zR null
-vmap zf null
-vmap d <C-w>
-colorscheme myzenburn
-set urlseparator=
 set hintmatching=custom
-
-" vim: set ft=vimperator:
+set runtimepath=/home/amon/.pentadactyl
+set strictfocus
+set urlseparator=
