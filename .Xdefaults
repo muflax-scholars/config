@@ -13,7 +13,7 @@ URxvt.jumpScroll:        true
 URxvt.skipScroll:        true
 
 URxvt.urgentOnBell:      true 
-URxvt.visualBelll:       true 
+URxvt.visualBell:        true 
 
 !diversity is for the weak
 URxvt*font:              -efont-fixed-medium-r-normal--12*
