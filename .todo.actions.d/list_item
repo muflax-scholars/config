@@ -1,0 +1,36 @@
+#!/bin/zsh
+setopt RE_MATCH_PCRE
+
+action=$1
+shift
+
+[ "$action" = "usage" ] && {
+  echo "  List given items:"
+  echo "    list_item item"
+  echo "      Show only given line(s) in the todo list."
+  echo ""
+  exit
+}
+
+die()
+{
+    echo "$*"
+    exit 1
+}
+    
+errmsg="usage: $TODO_SH list_item ITEM#"
+do_entries=()
+reward=0
+for item in $(echo $* | tr ',' ' ')
+do 
+    # check that item is valid
+    [ -z "$item" ] && die "$errmsg"
+    [[ "$item" =~ "\d+" ]] || die "$item: not a number"
+
+    # ...and has a todo
+    todo=$(sed "$item!d" "$TODO_FILE")
+    [ -z "$todo" ] && die "$item: No such todo."
+
+    # show item (should go through "normal" route, but whatever...
+    echo $todo        
+done

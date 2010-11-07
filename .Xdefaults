@@ -7,7 +7,6 @@ Xft.rgba:                rgb
 Xft.hinting:             true
 Xft.hintstyle:           hintslight
 
-
 URxvt.preeditType:       OverTheSpot
 URxvt.jumpScroll:        true
 URxvt.skipScroll:        true
