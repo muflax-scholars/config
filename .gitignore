@@ -45,6 +45,8 @@
 .emacs.d/auto-save-list
 .emacs.d/autosave-dir
 .fontconfig*
+.gconf
+.gconfd
 .gem
 .gtk-bookmarks
 .icedteaplugin
