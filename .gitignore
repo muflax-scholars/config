@@ -28,6 +28,7 @@
 !.xmonad/xmonad.hs
 !.xmonad/xmonad.sh
 *.swp
+*.elc
 *history
 .adobe
 .anthy/last-record*
@@ -41,6 +42,8 @@
 .dbus
 .dmenu_cache
 .dvdcss
+.emacs.d/auto-save-list
+.emacs.d/autosave-dir
 .fontconfig*
 .gem
 .gtk-bookmarks
