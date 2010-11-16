@@ -21,6 +21,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
 
 -- layouts
+import XMonad.Layout.Cross
 import XMonad.Layout.GridVariants
 import XMonad.Layout.IM
 import XMonad.Layout.LayoutHints
@@ -188,7 +189,7 @@ layout' =
     -- workspace specific
     onWorkspace "1:tty" (grid ||| tiled) $
 
-    (grid ||| tiled ||| stack ||| full)
+    (grid ||| tiled ||| cross ||| full)
     where
          -- normal tiling
          tiled      = named "瓦" $
@@ -200,9 +201,9 @@ layout' =
                       hinted       $
                       pidgin       $
                       Grid (1/1)
-         -- stacked for many open windows
-         stack      = named "皿" $
-                      StackTile nmaster delta stackRatio
+         -- cross to center one app, mostly anki
+         cross      = named "十" $
+                      Cross (2/3) (1/100)
          -- fullscreen
          full       = named "全"    $
                       smartBorders  $
