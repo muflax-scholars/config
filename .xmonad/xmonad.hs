@@ -36,6 +36,7 @@ import XMonad.Layout.StackTile
 
 -- utils
 import XMonad.Util.Run
+import XMonad.Util.Scratchpad
 
 ------------------
 -- Basic Config --
@@ -75,6 +76,8 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm,               xK_u     ), spawn $ XMonad.terminal conf)
+    -- launch scratchpad
+    , ((modm,               xK_i     ), scratchpadSpawnAction conf)
     -- launch dmenu
     , ((modm,               xK_e     ), spawn dmenuQuick')
     , ((modm,               xK_o     ), spawn dmenuPath')
@@ -251,6 +254,9 @@ manageHook' = composeAll $
                          , "Gxmessage"
                          , "Gimp"
                          ]
+
+-- Scratchpad terminal
+scratchpad' = scratchpadManageHook (W.RationalRect 0.25 0.25 0.5 0.5)
     
 -- Status bars and logging
 customPP = defaultPP {
@@ -260,6 +266,7 @@ customPP = defaultPP {
             , ppWsSep   = dzenColor "" "" " "
             , ppTitle   = shorten 50
             , ppOrder   = \(ws:l:t:_) -> [ws,l,t] -- show workspaces and layout
+            , ppSort    = fmap (.scratchpadFilterOutWorkspace) $ ppSort defaultPP 
           }
 
 logHook' = dynamicLogWithPP customPP
@@ -290,6 +297,6 @@ main = do
 
             -- hooks, layouts
             layoutHook         = layout',
-            manageHook         = manageHook' <+> manageDocks,
+            manageHook         = manageHook' <+> scratchpad' <+> manageDocks,
             logHook            = logHook'
         }
