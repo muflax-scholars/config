@@ -47,28 +47,28 @@ status() {
 
     # current load
     load=($(cat /proc/loadavg))
-    st_uptime="L: $load[1,3]"
+    st_uptime="L $load[1,3]"
 
     # memory usage
     mem=(${$(free -m | grep "Mem:")[2,7]})
-    st_mem=$(printf "M: %4d%+4d" $(($mem[2] - $mem[5] - $mem[6])) $mem[6])
+    st_mem=$(printf "M %4d" $(($mem[2] - $mem[5] - $mem[6])))
 
     # processes with >= 50% cpu load
-    st_ps="P:$(cpu_hogs)"
+    st_ps="P$(cpu_hogs)"
 
     # current date
     year=$(($(date "+%y") + 12))
-    st_date="D: $(date "+%A, 平成${year}年%m月%d日 %H時%M分%S秒")"
+    st_date="$(date "+%d日(%a) %H時%M分%S秒")"
 
     # rest time of current cycle
     #st_cycle=$(cycle)
 
     # days until apocalypse
-    #st_apoc="A: $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
+    #st_apoc="A $(( ($(date --date "2012-12-21" "+%s") - $(date "+%s")) / 86400))日" 
 
     # volume
     mixer="Master"
-    st_volume="V: $(amixer get $mixer | grep -oP '\d+%' | tail -1)"
+    st_volume="V $(amixer get $mixer | grep -oP '\d+%' | tail -1)"
 
     # expanding widgets are always left
     statusbar+=($st_ps)
@@ -79,7 +79,7 @@ status() {
         #st_wifi="W: $(cat /sys/class/net/wlan0/wireless/link)%"
         
         # battery status
-        st_battery="B: ${$(acpi)[(w)3,-1]}"
+        st_battery="B ${$(acpi)[(w)3,-1]}"
 
         statusbar+=($st_battery)
     fi
