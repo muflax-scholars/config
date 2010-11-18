@@ -283,7 +283,7 @@ customPP = defaultPP {
             , ppVisible = dzenColor "" "" . wrap "(" ")"
             , ppUrgent  = dzenColor "" "#ff0000" . wrap "*" "*" . dzenStrip
             , ppWsSep   = dzenColor "" "" " "
-            , ppTitle   = shorten 50
+            , ppTitle   = shorten 80
             , ppOrder   = \(ws:l:t:_) -> [ws,l,t] -- show workspaces and layout
             , ppSort    = fmap (.scratchpadFilterOutWorkspace) $ ppSort defaultPP 
           }
