@@ -57,16 +57,16 @@ borderWidth' = 3
 modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces' = [ "1:tty"   -- main control stuff
-              , "2:hack"  -- programming stuff
-              , "3:暗記"  -- anki
-              , "4:txt"   -- books
-              , "5:研究"  -- current study topic
-              , "6:勉強"  -- uni stuff
-              , "7:eat"   -- }
-              , "8:pray"  -- } dummy ws
-              , "9:love"  -- }
-              , "0:toile" -- web
+workspaces' = [ "tty"   -- main control stuff
+              , "hack"  -- programming stuff
+              , "暗記"  -- anki
+              , "txt"   -- books
+              , "研究"  -- current study topic
+              , "勉強"  -- uni stuff
+              , "eat"   -- }
+              , "pray"  -- } dummy ws
+              , "love"  -- }
+              , "toile" -- web
               ] 
 
 -- Pretty stuff
@@ -206,9 +206,9 @@ layout' =
     mkToggle1 MIRROR    $
 
     -- workspace specific preferences
-    onWorkspace "1:tty" (grid ||| tiled)            $
-    onWorkspace "3:暗記" (grid ||| cross ||| tiled) $
-    onWorkspace "0:toile" (tiled ||| grid)          $
+    onWorkspace "tty" (grid ||| tiled)            $
+    onWorkspace "暗記" (grid ||| cross ||| tiled) $
+    onWorkspace "toile" (tiled ||| grid)          $
 
     (grid ||| tiled ||| cross ||| full)
     where
@@ -257,10 +257,10 @@ manageHook' = composeAll $
         -- auto-float
         [ className =? c --> doCenterFloat | c <- floats' ]
         ++
-        [ className =? "Pidgin"  --> doShift "0:toile"
-        , className =? "Firefox" --> doShift "0:toile"
-        , className =? "claws-mail" --> doShift "0:toile"
-        , className =? "Anki" --> doShift "3:暗記"
+        [ className =? "Pidgin"  --> doShift "toile"
+        , className =? "Firefox" --> doShift "toile"
+        , className =? "claws-mail" --> doShift "toile"
+        , className =? "Anki" --> doShift "暗記"
         ]
         ++
         [ className =? "MPlayer" --> doIgnore] -- FIXME: ugly, but good enough 
