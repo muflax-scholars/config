@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-editors-menu" label="Editors">
+  <item label="GVim">
+    <action name="Execute">
+      <command>gvim</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>GVim</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Emacs">
+    <action name="Execute">
+      <command>emacs</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Emacs</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-term-menu" label="Terminals">
+  <item label="Rxvt Unicode">
+    <action name="Execute">
+      <command>urxvt</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-down-menu" label="Download">
+  <item label="JDownloader">
+    <action name="Execute">
+      <command>jd</command>
+    </action>
+  </item>
+</menu>
+
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <menu id="apps-accessories-menu"/>
+  <menu id="apps-editors-menu"/>
+  <menu id="apps-term-menu"/>
+  <menu id="apps-down-menu"/>
+</menu>
+
+</openbox_menu>

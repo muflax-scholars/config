@@ -149,9 +149,9 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     
     -- yes, those are hardcoded positions... so what?
     , ((modm .|. controlMask, xK_1     ), 
-        spawn "DISPLAY=:0.1 swarp 640 512")
+        spawn "left_display")
     , ((modm .|. controlMask, xK_2     ), 
-        spawn "DISPLAY=:0.0 swarp 840 525")
+        spawn "right_display")
 
     ]
     ++
