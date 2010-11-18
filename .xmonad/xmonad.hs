@@ -22,7 +22,7 @@ import XMonad.Hooks.UrgencyHook
 
 -- layouts
 import XMonad.Layout.Cross
-import XMonad.Layout.GridVariants
+import XMonad.Layout.GridVariants hiding (L, R)
 import XMonad.Layout.IM
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.MultiToggle
@@ -33,8 +33,10 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect               
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.StackTile
+import XMonad.Layout.WindowNavigation
 
 -- utils
+import XMonad.Util.WorkspaceCompare (getSortByIndex)
 import XMonad.Util.Run
 import XMonad.Util.Scratchpad
 
@@ -93,14 +95,16 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- focus movement
     , ((modm,               xK_n     ), windows W.focusUp )
     , ((modm,               xK_r     ), windows W.focusDown )
-    , ((modm,               xK_s     ), windows W.focusMaster )
+    , ((modm,               xK_s     ), sendMessage $ Go L )
+    , ((modm,               xK_t     ), sendMessage $ Go R )
     -- swap based on focus
     , ((modm .|. shiftMask, xK_n     ), windows W.swapUp )
     , ((modm .|. shiftMask, xK_r     ), windows W.swapDown )
-    , ((modm .|. shiftMask, xK_s     ), windows W.swapMaster )
+    , ((modm .|. shiftMask, xK_s     ), sendMessage $ Swap L )
+    , ((modm .|. shiftMask, xK_t     ), sendMessage $ Swap R )
     -- resize
-    , ((modm,               xK_t     ), sendMessage (IncMasterN 1) )
-    , ((modm .|. shiftMask, xK_t     ), sendMessage (IncMasterN (-1)) )
+    , ((modm,               xK_d     ), sendMessage (IncMasterN 1) )
+    , ((modm .|. shiftMask, xK_d     ), sendMessage (IncMasterN (-1)) )
     , ((modm .|. controlMask, xK_n   ), sendMessage Expand )
     , ((modm .|. controlMask, xK_r   ), sendMessage Shrink )
     , ((modm .|. controlMask, xK_t   ), sendMessage MirrorExpand )
@@ -114,8 +118,8 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_b     ), sendMessage $ Toggle NOBORDERS )
     
     -- prev / next workspace
-    , ((modm,               xK_h     ), moveTo Next HiddenNonEmptyWS )
-    , ((modm .|. shiftMask, xK_h     ), moveTo Prev HiddenNonEmptyWS )
+    , ((modm,               xK_h     ), windows . W.greedyView =<< findWorkspace getSortByIndexNoSP Next HiddenNonEmptyWS 1)
+    , ((modm .|. shiftMask, xK_h     ), windows . W.greedyView =<< findWorkspace getSortByIndexNoSP Prev HiddenNonEmptyWS 1)
     -- next screen
     , ((modm,               xK_g     ), nextScreen  )
     -- swap screens
@@ -155,8 +159,12 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
     [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+        | (i, k) <- zip (XMonad.workspaces conf) ([xK_1 .. xK_9] ++ [xK_0])
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+
+    where 
+         getSortByIndexNoSP =
+                fmap (.scratchpadFilterOutWorkspace) getSortByIndex
 
 
 -----------------------------------------------------------
@@ -195,15 +203,17 @@ layout' =
     (grid ||| tiled ||| cross ||| full)
     where
          -- normal tiling
-         tiled      = named "瓦" $
-                      hinted     $
-                      pidgin     $
+         tiled      = named "瓦"       $
+                      hinted           $
+                      windowNavigation $
+                      pidgin           $
                       ResizableTall nmaster delta ratio slaves
          -- grid for terminals or chats
-         grid       = named "格子" $
-                      hinted       $
-                      pidgin       $
-                      Grid (1/1)
+         grid       = named "格子"     $
+                      hinted           $
+                      windowNavigation $
+                      pidgin           $
+                      Grid (1/1)  
          -- cross to center one app, mostly anki
          cross      = named "十" $
                       Cross (2/3) (1/100)
