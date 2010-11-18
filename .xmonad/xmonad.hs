@@ -57,9 +57,17 @@ borderWidth' = 3
 modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces' = ["1:tty", "2:toile", "3:暗記"] 
-               ++ map show [4..6] 
-               ++ ["7:télé", "8:暗愚蛮努", "9:会話"]
+workspaces' = [ "1:tty"   -- main control stuff
+              , "2:hack"  -- programming stuff
+              , "3:暗記"  -- anki
+              , "4:txt"   -- books
+              , "5:研究"  -- current study topic
+              , "6:勉強"  -- uni stuff
+              , "7:eat"   -- }
+              , "8:pray"  -- } dummy ws
+              , "9:love"  -- }
+              , "0:toile" -- web
+              ] 
 
 -- Pretty stuff
 font'               = "-mplus-gothic-medium-r*12"
@@ -105,8 +113,8 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- resize
     , ((modm,               xK_d     ), sendMessage (IncMasterN 1) )
     , ((modm .|. shiftMask, xK_d     ), sendMessage (IncMasterN (-1)) )
-    , ((modm .|. controlMask, xK_n   ), sendMessage Expand )
-    , ((modm .|. controlMask, xK_r   ), sendMessage Shrink )
+    , ((modm .|. controlMask, xK_r   ), sendMessage Expand )
+    , ((modm .|. controlMask, xK_n   ), sendMessage Shrink )
     , ((modm .|. controlMask, xK_t   ), sendMessage MirrorExpand )
     , ((modm .|. controlMask, xK_s   ), sendMessage MirrorShrink )
     
@@ -197,8 +205,10 @@ layout' =
     mkToggle1 NOBORDERS $
     mkToggle1 MIRROR    $
 
-    -- workspace specific
-    onWorkspace "1:tty" (grid ||| tiled) $
+    -- workspace specific preferences
+    onWorkspace "1:tty" (grid ||| tiled)            $
+    onWorkspace "3:暗記" (grid ||| cross ||| tiled) $
+    onWorkspace "0:toile" (tiled ||| grid)          $
 
     (grid ||| tiled ||| cross ||| full)
     where
@@ -247,10 +257,9 @@ manageHook' = composeAll $
         -- auto-float
         [ className =? c --> doCenterFloat | c <- floats' ]
         ++
-        [ className =? "Pidgin"  --> doShift "9:会話"
-        , className =? "Firefox" --> doShift "2:toile"
-        , className =? "claws-mail" --> doShift "2:toile"
-        , className =? "jd-Main" --> doShift "7:télé"
+        [ className =? "Pidgin"  --> doShift "0:toile"
+        , className =? "Firefox" --> doShift "0:toile"
+        , className =? "claws-mail" --> doShift "0:toile"
         , className =? "Anki" --> doShift "3:暗記"
         ]
         ++

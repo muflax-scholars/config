@@ -30,8 +30,8 @@ case $HOSTNAME in
 esac
 
 DZEN="dzen2 -fg '$FG' -bg '$BG' -fn '$FN' -e '$E' -h '$H' -y '$(($HEIGHT - $H))'" 
-DZEN_LEFT="$DZEN -x '0' -w '$(($WIDTH / 3))' -ta 'l'"
-DZEN_RIGHT="$DZEN -x '$(($WIDTH / 3))' -w '$(($WIDTH * 2 / 3))' -ta 'r'"
+DZEN_LEFT="$DZEN -x '0' -w '$(($WIDTH / 2))' -ta 'l'"
+DZEN_RIGHT="$DZEN -x '$(($WIDTH / 2))' -w '$(($WIDTH / 2))' -ta 'r'"
 
 cowsay "starting xmonad nao!"
 (~/.xmonad/status.sh | eval $DZEN_RIGHT) &
