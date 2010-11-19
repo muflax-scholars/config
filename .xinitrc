@@ -19,8 +19,10 @@ skb.sh
 
 xsetroot -cursor_name left_ptr
 
+# load xdefault data
+xrdb $HOME/.Xdefaults
+
 DISPLAY=:0.0 urxvt &
 
 WM="$HOME/.xmonad/xmonad.sh"
-
 exec dbus-launch --auto-syntax --exit-with-session $WM
