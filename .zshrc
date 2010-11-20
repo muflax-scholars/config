@@ -64,10 +64,6 @@ case ${TERM} in
         ;;
 esac
 
-if [[ $TERM == "rxvt-unicode" && -f /usr/share/terminfo/r/rxvt-unicode256 ]]; then
-    export TERM="rxvt-unicode256"
-fi
-
 export PATH="$HOME/local/bin:$HOME/local/gems/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 
@@ -234,7 +230,7 @@ bindkey '^[[6~' end-of-history
 ###########
 
 # normal aliases
-alias angband="TERM=rxvt-unicode256 angband -mgcu -umuflax"
+alias angband="angband -mgcu -umuflax"
 alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias cal="cal -m -3"
 alias cgrep="grep --color=always"
