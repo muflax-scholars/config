@@ -1,6 +1,3 @@
-# machine specific configs
-source ~/.xinitrc_local
-
 export GTK_IM_MODULE="scim"
 export QT_IM_MODULE="scim"
 export XMODIFIERS=@im=SCIM
@@ -10,6 +7,9 @@ export PATH="$HOME/local/bin:$PATH"
 #export LANG=C
 
 export OOO_FORCE_DESKTOP="gnome"
+
+# machine specific configs
+source ~/.xinitrc_local
 
 scim -d
 
