@@ -14,7 +14,7 @@ URxvt.skipScroll:        true
 URxvt.urgentOnBell:      true 
 
 !diversity is for the weak
-URxvt*font:              -efont-fixed-medium-r-normal--12*
+URxvt*font:              -efont-*-medium-r-normal--12*
 
 !no bold fonts - fucks up more than it solves
 URxvt*boldFont:
