@@ -7,7 +7,6 @@ map d <C-w>
 map zz zZ
 set complete=bl
 set defsearch=g
-set hintmatching=custom
 set runtimepath=/home/amon/.pentadactyl
 set strictfocus
 set urlseparator=
