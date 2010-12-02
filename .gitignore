@@ -62,6 +62,7 @@
 .scim/input-pad-recently-used.pad
 .scim/user-tables
 .session
+.smex-items
 .sword
 .thumbnails
 .vim/.netrwhist
