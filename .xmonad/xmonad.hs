@@ -87,7 +87,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm,               xK_u     ), spawn $ XMonad.terminal conf)
     -- launch scratchpad
-    , ((modm,               xK_i     ), scratchpadSpawnAction conf)
+    , ((modm,               xK_i     ), scratchpad)
     -- launch dmenu
     , ((modm,               xK_e     ), spawn dmenuQuick')
     , ((modm,               xK_o     ), spawn dmenuPath')
@@ -275,7 +275,10 @@ manageHook' = composeAll $
                          ]
 
 -- Scratchpad terminal
-scratchpad' = scratchpadManageHook (W.RationalRect 0.25 0.25 0.5 0.5)
+manageScratchpad = scratchpadManageHook (W.RationalRect 0.25 0.25 0.5 0.5)
+scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -cd ~/spoiler"
+{-scratchpad = scratchpadSpawnActionCustom $-}
+	{-"emacs --name scratchpad ~/spoiler/scratchpad"-}
     
 -- Status bars and logging
 customPP = defaultPP {
@@ -316,6 +319,6 @@ main = do
 
             -- hooks, layouts
             layoutHook         = layout',
-            manageHook         = manageHook' <+> scratchpad' <+> manageDocks,
+            manageHook         = manageHook' <+> manageScratchpad <+> manageDocks,
             logHook            = logHook'
         }

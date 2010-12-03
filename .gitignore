@@ -33,6 +33,7 @@
 .adobe
 .anthy/last-record*
 .anthy/lock-file_default
+.aspell*
 .bibletime
 .brainworkshop/stats.txt
 .cache
@@ -44,6 +45,7 @@
 .dvdcss
 .emacs.d/auto-save-list
 .emacs.d/autosave-dir
+.emacs.d/ac-comphist.dat
 .fontconfig*
 .gconf
 .gconfd
