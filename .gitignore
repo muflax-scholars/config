@@ -1,6 +1,8 @@
 # ignore all "normal" files/dirs, but manage all dotfiles
 /*
 !/.*
+*.swp
+*.pyc
 
 # ignore host-specific files
 .*_local
@@ -46,6 +48,9 @@
 .emacs.d/auto-save-list
 .emacs.d/autosave-dir
 .emacs.d/ac-comphist.dat
+.emacs.d/history
+.emacs.d/saveplace
+.emacs.d/tramp
 .fontconfig*
 .gconf
 .gconfd
