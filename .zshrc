@@ -41,8 +41,9 @@ setopt HASH_LIST_ALL
 setopt NOCLOBBER
 
 # non-zsh
+# editor is still vim for speed and because it's more compatible in general
 export EDITOR="vim"
-export VISUIAL="vim"
+export VISUAL="vim"
 export MPD_HOST="192.168.1.15"
 
 # go
@@ -235,7 +236,8 @@ alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias cal="cal -m -3"
 alias cgrep="grep --color=always"
 alias diff="colordiff"
-alias e="emacs -nw"
+alias e="emacsclient -t --alternate-editor=''"
+alias em="emacsclient -c --alternate-editor=''"
 alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
 alias gi="gvim"
 alias grep="grep --color=auto -P"
