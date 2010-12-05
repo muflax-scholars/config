@@ -45,10 +45,12 @@
 .dbus
 .dmenu_cache
 .dvdcss
+.emacs.bmk
 .emacs.d/auto-save-list
 .emacs.d/autosave-dir
 .emacs.d/ac-comphist.dat
 .emacs.d/history
+.emacs.d/org-clock-save.el
 .emacs.d/saveplace
 .emacs.d/tramp
 .fontconfig*
