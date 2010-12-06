@@ -288,7 +288,7 @@ customPP = defaultPP {
             , ppWsSep   = dzenColor "" "" " "
             , ppTitle   = shorten 80
             , ppOrder   = \(ws:l:t:_) -> [ws,l,t] -- show workspaces and layout
-            , ppSort    = fmap (.scratchpadFilterOutWorkspace) $ ppSort defaultPP 
+            {-, ppSort    = fmap (.scratchpadFilterOutWorkspace) $ ppSort defaultPP -}
           }
 
 logHook' = dynamicLogWithPP customPP
