@@ -210,7 +210,7 @@ layout' =
     onWorkspace "暗記" (grid ||| cross ||| tiled) $
     onWorkspace "toile" (tiled ||| grid)          $
 
-    (grid ||| tiled ||| cross ||| full)
+    (grid ||| tiled ||| cross)
     where
          -- normal tiling
          tiled      = named "瓦"       $
