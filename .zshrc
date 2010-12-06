@@ -251,7 +251,12 @@ alias po="popd"
 alias sc="screen"
 alias sr="screen -RD"
 alias vi="vim"
-alias alock="alock -auth pam"
+
+# youtube download
+function y() {
+    echo "Paste links, ^D start to download."
+    youtube-dl -c -o '~/youtube/%(title)s-%(id)s.%(ext)s' -a-
+}
 
 # portage
 alias cdl="cd /usr/local/portage/local"
