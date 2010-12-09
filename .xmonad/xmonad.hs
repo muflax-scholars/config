@@ -134,8 +134,8 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_g     ), swapNextScreen  )
 
     -- Restart xmonad
-    , ((modm              , xK_q     ), 
-        spawn "xmonad --recompile; xmonad --restart")
+    , ((modm .|. shiftMask, xK_q     ), 
+        spawn "xmonad --recompile && xmonad --restart")
     
     -- Volume Control
     , ((0                 , 0x1008ff11), -- XF86AudioLowerVolume 
