@@ -28,6 +28,7 @@ setopt NO_BG_NICE
 setopt EXTENDEDGLOB
 setopt INTERACTIVECOMMENTS
 setopt PROMPT_SUBST
+setopt RE_MATCH_PCRE
 
 setopt NO_CHASE_LINKS
 setopt NO_CHASE_DOTS
@@ -123,8 +124,13 @@ if [ $(uname -m) = "i686" ]; then
 fi
 
 # are we in an mc shell?
-if [[ $MC_SID != "" ]] then
+if [[ $MC_SID != "" ]]; then
     local mc=" ${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
+fi
+
+# alarm after successful command if in scratchpad
+if [[ $STY =~ "^\d+\.scratchpad$" ]]; then
+    local bell=""
 fi
 
 # current path
@@ -137,7 +143,7 @@ local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3 ($?%)%
 # last command, used in PS2
 local cur_cmd="${op}%_${cp}"
 
-PROMPT="${date}${path_p}${vcs}${user_host}${arch}
+PROMPT="${date}${path_p}${vcs}${user_host}${arch}${bell}
 ${smiley}${mc} # "
 PROMPT2="${cur_cmd}> "
 
