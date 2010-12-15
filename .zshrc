@@ -256,6 +256,7 @@ alias mmv="noglob zmv -W"
 alias po="popd"
 alias sc="screen"
 alias sr="screen -RD"
+alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
 alias vi="vim"
 
 # youtube download
