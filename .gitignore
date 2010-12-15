@@ -38,6 +38,7 @@
 .aspell*
 .bibletime
 .brainworkshop/stats.txt
+.breadcrumb
 .cache
 .cola
 .config/menus
