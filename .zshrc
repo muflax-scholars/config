@@ -445,18 +445,18 @@ alias wtf='dmesg'
 # syntax highlighting (srsly!) #
 ################################
 ZLE_RESERVED_WORD_STYLE='fg=yellow,bold'
-ZLE_ALIAS_STYLE='fg=magenta,bold'
+ZLE_ALIAS_STYLE='fg=cyan,bold'
 ZLE_BUILTIN_STYLE='fg=cyan,bold'
-ZLE_FUNCTION_STYLE='fg=blue,bold'
+ZLE_FUNCTION_STYLE='fg=cyan,bold'
 ZLE_COMMAND_STYLE='fg=green,bold'
 ZLE_COMMAND_UNKNOWN_TOKEN_STYLE='fg=red,bold'
 
 ZLE_HYPHEN_CLI_OPTION='fg=yellow,bold'
 ZLE_DOUBLE_HYPHEN_CLI_OPTION='fg=green,bold'
 ZLE_SINGLE_QUOTED='fg=magenta,bold'
-ZLE_DOUBLE_QUOTED='fg=red,bold'
+ZLE_DOUBLE_QUOTED='fg=magenta,bold'
 ZLE_BACK_QUOTED='fg=cyan,bold'
-ZLE_GLOBING='fg=blue,bold'
+ZLE_GLOBING='fg=red,bold'
 
 ZLE_DEFAULT='fg=white,bold'
 
