@@ -209,10 +209,6 @@ zstyle ':completion:*' matcher-list 'm:{A-Z}={a-z}' 'm:{a-z}={A-Z}' 'r:|[._-]=**
 # on processes completion complete all user processes
 zstyle ':completion:*:processes' command 'ps -au$USER'
 
-# automagically escape urls
-autoload -U url-quote-magic
-zle -N self-insert url-quote-magic
-
 # Expand partial paths
 zstyle ':completion:*' expand 'yes'
 zstyle ':completion:*' squeeze-slashes 'yes'
@@ -444,14 +440,14 @@ alias wtf='dmesg'
 ################################
 # syntax highlighting (srsly!) #
 ################################
-ZLE_RESERVED_WORD_STYLE='fg=yellow,bold'
-ZLE_ALIAS_STYLE='fg=cyan,bold'
-ZLE_BUILTIN_STYLE='fg=cyan,bold'
-ZLE_FUNCTION_STYLE='fg=cyan,bold'
+ZLE_RESERVED_WORD_STYLE='fg=cyan,bold'
+ZLE_ALIAS_STYLE='fg=green,bold'
+ZLE_BUILTIN_STYLE='fg=green,bold'
+ZLE_FUNCTION_STYLE='fg=green,bold'
 ZLE_COMMAND_STYLE='fg=green,bold'
 ZLE_COMMAND_UNKNOWN_TOKEN_STYLE='fg=red,bold'
 
-ZLE_HYPHEN_CLI_OPTION='fg=yellow,bold'
+ZLE_HYPHEN_CLI_OPTION='fg=green,bold'
 ZLE_DOUBLE_HYPHEN_CLI_OPTION='fg=green,bold'
 ZLE_SINGLE_QUOTED='fg=magenta,bold'
 ZLE_DOUBLE_QUOTED='fg=magenta,bold'
