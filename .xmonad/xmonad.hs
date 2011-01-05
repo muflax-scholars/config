@@ -276,7 +276,7 @@ manageHook' = composeAll $
 
 -- Scratchpad terminal
 manageScratchpad = scratchpadManageHook (W.RationalRect 0.25 0.25 0.5 0.5)
-scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -e screen -DRS scratchpad"
+scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad'"
 {-scratchpad = scratchpadSpawnActionCustom $-}
 	{-"emacs --name scratchpad ~/spoiler/scratchpad"-}
     
