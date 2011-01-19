@@ -91,6 +91,7 @@
 # ignore stupid confs no one loves :)
 .AbiSuite
 .Foxit
+.android
 .audacity*
 .avidemux
 .cgdb
