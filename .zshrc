@@ -173,6 +173,7 @@ function title() {
 }
 
 function precmd() {
+    vcs_info 'prompt'
     title "zsh" "%m"
 }
 
