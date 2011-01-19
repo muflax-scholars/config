@@ -12,19 +12,15 @@ altscreen       on
 nethack         on
 zombie          ko
 
-#termcapinfo xterm*|Eterm|mlterm|rxvt 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
-termcapinfo xterm|xterms|xs|rxvt ti@:te@
-defhstatus "$USER@ H | #  |  t"
+# pretty titles and stuff
+termcapinfo xterm*|rxvt* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 hardstatus off
-#hardstatus alwayslastline
-#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+hardstatus string "s%n [%h]%?"
 
+caption always "%{= .b}[ %H %{b}][ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%-= %{b}][%{B} %l %{b}]"
 bell_msg " *ring* -> %n"
-#caption always "%{= wk} %?%-Lw%?%{= kd} %n*%f %t %{= wk}%?%+Lw%? %{= wk}%=%{= Wk}"  
-hardstatus alwayslastline "%{= .b}[ %{B}%H %{b}][ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%-= %{b}][%{B} %l %{b}]"
 
 # remove stupid bindings, put saner ones
-
 escape "^gg"
 
 bind .
