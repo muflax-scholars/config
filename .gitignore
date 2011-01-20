@@ -11,6 +11,7 @@
 .Xauthority
 .config/nitrogen
 .feh*
+.fonts
 .mc
 .mplayer
 .serverauth*
