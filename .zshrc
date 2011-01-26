@@ -319,7 +319,8 @@ alias -g GC='| grep --color=always'
 
     # only what is relevant today
     alias now="noglob todo.sh -d ~/.todo-today.cfg"
-    alias n="echo "TODO:"; TODOTXT_VERBOSE=0 now ls; ashuku add"
+    #alias n="echo "TODO:"; TODOTXT_VERBOSE=0 now ls; ashuku add"
+    alias n="now"
     alias nl="now ls"
     alias na="now add"
     alias nd="now do"
