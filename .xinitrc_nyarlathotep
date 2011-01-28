@@ -1,3 +1,3 @@
-#DISPLAY=:0.0 redshift -l 49.35:8.15 -t 5500:3400 -m randr &
+DISPLAY=:0.0 redshift -l 49.35:8.15 -t 5500:3400 -m randr &
 
 DISPLAY=:0.0 nitrogen --restore &
