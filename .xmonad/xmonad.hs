@@ -2,6 +2,7 @@
 -- Import --
 ------------
 -- basic imports
+import Data.List
 import Data.Monoid
 import Data.Ratio ((%))
 import XMonad
@@ -25,6 +26,7 @@ import XMonad.Layout.Cross
 import XMonad.Layout.GridVariants hiding (L, R)
 import XMonad.Layout.IM
 import XMonad.Layout.LayoutHints
+import XMonad.Layout.MagicFocus
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Layout.Named
@@ -299,6 +301,11 @@ urgencyHook' = withUrgencyHookC NoUrgencyHook urgencyConfig {
                , remindWhen   = Dont
                } 
 
+-- Event hook to ignore mouse focus on certain layouts
+eventHook' = followOnlyIf (fmap not isCross)
+    where isCross = fmap (isSuffixOf "十") $
+                    gets (description . W.layout . W.workspace . W.current . windowset)
+
 -----------------------------------------------------
 -- Now run xmonad with all the defaults we set up. --
 -----------------------------------------------------
@@ -320,5 +327,6 @@ main = do
             -- hooks, layouts
             layoutHook         = layout',
             manageHook         = manageHook' <+> manageScratchpad <+> manageDocks,
+            handleEventHook    = eventHook',
             logHook            = logHook'
         }
