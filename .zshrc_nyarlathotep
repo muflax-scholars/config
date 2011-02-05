@@ -1,7 +1,7 @@
 alias unison="unison -log=false -auto -ui=text"
 alias un='unison kira -times; unison kira-anki -times'
 alias ur='unison kira-repo'
-alias uep='sudo unison kira-portage -times -log=false -auto'
+alias uep='sudo unison kira-portage -times -log=false -auto -ui=text'
 
 function dipa() {
     # update in both directions
@@ -14,10 +14,21 @@ function dipa() {
 }
 
 function up() {
-    ur
+    # config
     uep
+    # repos
+    ur
     rsync -avP --delete rsync://azathoth/gentoo-layman /var/lib/layman/
     dipa
     sudo emerge --sync
+    
+    # eix
     eix-update
+
+    # clean-up
+    echo -n "cleaning up..."
+    azash "find ~/ -name '*.unison.tmp*' -delete" &
+    find ~/ -name "*.unison.tmp*" -delete &
+    wait
+    echo "done."
 }
