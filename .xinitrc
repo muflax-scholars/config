@@ -22,7 +22,7 @@ xsetroot -cursor_name left_ptr
 # load xdefault data
 xrdb $HOME/.Xdefaults
 
-DISPLAY=:0.0 urxvt &
+DISPLAY=:0.0 urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad' &
 
 WM="$HOME/.xmonad/xmonad.sh"
 exec dbus-launch --auto-syntax --exit-with-session $WM
