@@ -317,6 +317,8 @@ alias -g GC='| grep --color=always'
     alias td="t do"
     alias tl="t ls"
     alias trm="t rm"
+    alias tt="t delay"
+    alias tdel="t delay"
 
     # only what is relevant today
     alias now="noglob todo.sh -d ~/.todo-today.cfg"
@@ -326,6 +328,8 @@ alias -g GC='| grep --color=always'
     alias na="now add"
     alias nd="now do"
     alias nrm="now rm"
+    alias nt="now delay"
+    alias ndel="now delay"
 
     # idea file
     alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
