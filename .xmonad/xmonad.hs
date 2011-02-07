@@ -209,7 +209,7 @@ layout' =
 
     -- workspace specific preferences
     onWorkspace "tty" (grid ||| tiled)            $
-    onWorkspace "暗記" (grid ||| cross ||| tiled) $
+    onWorkspace "暗記" (cross ||| grid ||| tiled) $
     onWorkspace "toile" (tiled ||| grid)          $
 
     (grid ||| tiled ||| cross)
