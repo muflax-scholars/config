@@ -3,6 +3,7 @@ abiword
 brainworkshop
 claws-mail
 comix
+chromium-bin
 dia
 emacs-gui
 ebview
@@ -14,5 +15,6 @@ okular
 quake3
 pidgin
 picard
+soffice
 VirtualBox
 wicd-client -n
