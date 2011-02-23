@@ -1,13 +1,3 @@
-function muba() {
-    # backup #
-    ##########
-    mpc update
-    rsync -avP --delete-before --exclude lost+found ~/音/ /mnt/surfqueen_ongaku/
-}
-function cowon() {
-    rsync -avP --delete-before --exclude lost+found ~/音/朗読/ /mnt/disk/音楽/
-}
-
 alias up="sudo emerge --sync &; layman -S &; wait; eix-update"
 
 # timeboxing with pororo #TODO should combine this with tb
