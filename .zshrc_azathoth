@@ -6,3 +6,11 @@ alias pol="D1 pororo -s 1280 1024"
 function tb_s() { pol 10m+2m/5 12m/5 /1 && mplayer -really-quiet /home/amon/.timeboxing }                          
 function tb_m() { pol 25m+5m/2 30m/2 /1 && mplayer -really-quiet /home/amon/.timeboxing }                          
 function tb_l() { pol 45m+15m/1 /1 && mplayer -really-quiet /home/amon/.timeboxing}                          
+
+function meba() {
+    local target="/mnt/quetzalcoatl_media_backup/"
+    for dir in ~/音 ~/テレビ ~/映画
+    do
+        rsync -xavP --delete-before $dir $target
+    done
+}
