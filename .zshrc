@@ -364,7 +364,7 @@ alias m="mw -m"
 alias r="mw -r"
 
 # wake-on-lan
-alias wake_azathoth="wakeonlan 00:12:79:DE:C7:2C"
+alias wake_azathoth="wakeonlan 00:1E:8C:45:D2:90"
 alias wake_totenkopf="wakeonlan 00:18:E7:16:6F:C5"
 
 # wine
