@@ -155,6 +155,8 @@
 
 # ignore anki
 .anki
+.yomichan
+
 
 # ignore savegames
 .angband
