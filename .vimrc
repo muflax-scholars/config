@@ -181,11 +181,3 @@ nnoremap <F11> yyp<c-v>$r=
 inoremap <F11> <Esc>yyp<c-v>$r=o
 nnoremap <F12> yyp<c-v>$r-
 inoremap <F12> <Esc>yyp<c-v>$r-o
-
-"fuzzy finder
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;tmp/**"
-let g:fuzzy_ceiling = 100000
-let g:fuzzy_matching_limit = 50
-map <Leader>o :FuzzyFinderTextMate<CR>
-map <Leader>f :FuzzyFinderFile<CR>
-map <Leader>b :FuzzyFinderBuffer<CR>
