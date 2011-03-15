@@ -15,6 +15,8 @@ scim -d
 
 eval "$(gpg-agent --daemon)"
 
+emacs --daemon
+
 skb.sh
 
 xsetroot -cursor_name left_ptr
