@@ -1,6 +1,4 @@
-"2.2 (created: 2009/10/28 19:04:27)
-
-colorscheme myzenburn
+colorscheme lightgrey
 map H <C-i>
 map L <C-o>
 map d <C-w>
@@ -11,4 +9,3 @@ set runtimepath=/home/amon/.pentadactyl
 set strictfocus
 set urlseparator=
 set editor='emacsclient -c --alternate-editor="" +%l %f'
-set guioptions+=T
