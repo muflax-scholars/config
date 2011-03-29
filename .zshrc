@@ -446,7 +446,7 @@ alias wtf='dmesg'
 ################################
 # syntax highlighting (srsly!) #
 ################################
-source ~/.zsh_syntax
+source ~/.zsh_syntax/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=red'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=magenta'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=magenta'
