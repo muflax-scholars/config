@@ -40,6 +40,7 @@ import XMonad.Layout.WindowNavigation
 -- utils
 import XMonad.Util.WorkspaceCompare (getSortByIndex)
 import XMonad.Util.Run
+import XMonad.Util.NamedScratchpad
 import XMonad.Util.Scratchpad
 
 ------------------
@@ -90,6 +91,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_u     ), spawn $ XMonad.terminal conf)
     -- launch scratchpad
     , ((modm,               xK_i     ), scratchpad)
+    , ((modm,               xK_p     ), namedScratchpadAction scratchpads "pidgin")
     -- launch dmenu
     , ((modm,               xK_e     ), spawn dmenuQuick')
     , ((modm,               xK_o     ), spawn dmenuPath')
@@ -277,11 +279,15 @@ manageHook' = composeAll $
                          ]
 
 -- Scratchpad terminal
-manageScratchpad = scratchpadManageHook (W.RationalRect 0.25 0.25 0.5 0.5)
+manageTerminal = scratchpadManageHook (W.RationalRect 0.25 0.25 0.5 0.5)
 scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad'"
-{-scratchpad = scratchpadSpawnActionCustom $-}
-	{-"emacs --name scratchpad ~/spoiler/scratchpad"-}
+
+-- Other Scratchpads
+scratchpads = [ NS "pidgin" "pidgin" (role =? "buddy_list") defaultFloating ]
+              where role = stringProperty "WM_WINDOW_ROLE"
     
+manageScratchpads = manageTerminal <+> namedScratchpadManageHook scratchpads
+
 -- Status bars and logging
 customPP = defaultPP {
               ppCurrent = dzenColor "" focusedBorderColor' . wrap " " " "
@@ -326,7 +332,7 @@ main = do
 
             -- hooks, layouts
             layoutHook         = layout',
-            manageHook         = manageHook' <+> manageScratchpad <+> manageDocks,
+            manageHook         = manageHook' <+> manageScratchpads <+> manageDocks,
             handleEventHook    = eventHook',
             logHook            = logHook'
         }
