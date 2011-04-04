@@ -157,7 +157,6 @@
 .anki
 .yomichan
 
-
 # ignore savegames
 .angband
 .fceux/sav
@@ -175,3 +174,6 @@
 .ashuku
 .poke.sqlite3
 .shindai
+
+# ignore rvm
+.rvm

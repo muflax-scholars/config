@@ -1,0 +1,2 @@
+export rvm_path="/home/amon/.rvm"
+export rvm_make_flags="-j 2"

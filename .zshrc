@@ -41,15 +41,18 @@ setopt HASH_LIST_ALL
 # you have to do "rm foo; ls > foo" or in one step "ls >! foo"
 setopt NOCLOBBER
 
-# non-zsh
 # editor is still vim for speed and because it's more compatible in general
 export EDITOR="vim"
 export VISUAL="vim"
 export MPD_HOST="192.168.1.15"
 
 # ruby
-export GEM_HOME="$HOME/local/gems/"
+[[ -s "/home/amon/.rvm/scripts/rvm" ]] && source "/home/amon/.rvm/scripts/rvm"
 
+# python
+export PYTHONSTARTUP="$HOME/.pythonrc"
+
+# don't use japanese on TTY
 case ${TERM} in
     linux)
         export LANG=C
@@ -59,10 +62,8 @@ case ${TERM} in
         ;;
 esac
 
-# python
-export PYTHONSTARTUP="$HOME/.pythonrc"
-
-export PATH="$HOME/local/bin:$HOME/local/gems/bin:$PATH"
+# PATH
+export PATH="$HOME/local/bin:$PATH"
 export MANPATH="$HOME/local/share/man:$MANPATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 
