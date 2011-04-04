@@ -102,12 +102,14 @@
 .config/Google
 .config/NVIDIA Corporation
 .config/Ulduzsoft
+.config/calibre
 .config/chromium
 .config/enchant
 .config/gtk-2.0
 .config/midori
 .dia
 .ebview
+.eclipse
 .gimp*
 .gitk
 .gnome2
