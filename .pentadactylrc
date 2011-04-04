@@ -3,6 +3,10 @@ map H <C-i>
 map L <C-o>
 map d <C-w>
 map zz zZ
+
+"remove add bookmark mapping 
+map a ""
+
 set complete=bl
 set defsearch=g
 set runtimepath=/home/amon/.pentadactyl
