@@ -335,6 +335,11 @@ alias -g GC='| grep --color=always'
     alias il="idea ls"
     alias irm="idea rm"
 
+    # timetrap
+    alias tid="ti display all --start 'today 0:00'"
+    alias tiy="ti display all --start 'yesterday 0:00' --end 'yesterday 23:59:59'"
+    alias til="ti list"
+
 # suspend-to-ram
 function ss() {
     sudo ~/local/bin/suspend $*
