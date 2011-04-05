@@ -273,12 +273,12 @@ alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y w
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
 alias co="./configure"
-alias p2="/usr/bin/python"
-alias p3="/usr/bin/python3"
-alias p="/usr/bin/python3"
-alias pe="/usr/bin/perl"
-alias ru="/usr/bin/ruby"
-alias b="/usr/bin/irb"
+alias p2="python"
+alias p3="python3"
+alias p="python3"
+alias pe="perl"
+alias ru="ruby"
+alias b="irb"
 
 # optimized local compiles
 function om() {
