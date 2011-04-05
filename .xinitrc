@@ -11,18 +11,18 @@ export OOO_FORCE_DESKTOP="gnome"
 # machine specific configs
 source ~/.xinitrc_local
 
-scim -d
+scim -d &
 
-eval "$(gpg-agent --daemon)"
+eval "$(gpg-agent --daemon)" &
 
-emacs --daemon
+emacs --daemon &
 
-skb.sh
+skb.sh &
 
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
 
 # load xdefault data
-xrdb $HOME/.Xdefaults
+xrdb $HOME/.Xdefaults &
 
 DISPLAY=:0.0 urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad' &
 
