@@ -6,7 +6,7 @@ defutf8         on
 autodetach      on
 startup_message off
 vbell           off
-defscrollback   10000
+defscrollback   100000
 shell           -$SHELL
 altscreen       on
 nethack         on

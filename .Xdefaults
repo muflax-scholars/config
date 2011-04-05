@@ -39,7 +39,7 @@ URxvt*shading:           20
 URxvt*perl-ext-common:   default,matcher
 URxvt*urlLauncher:       /usr/bin/firefox
 URxvt*matcher.button:    1
-URxvt*saveLines:         10000
+URxvt*saveLines:         100000
 
 !way more readable blue
 *color4:                 rgb:36/73/b5
