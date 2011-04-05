@@ -336,9 +336,19 @@ alias -g GC='| grep --color=always'
     alias irm="idea rm"
 
     # timetrap
+    # time intervals
     alias tid="ti display all --start 'today 0:00'"
     alias tiy="ti display all --start 'yesterday 0:00' --end 'yesterday 23:59:59'"
+    alias tiw="ti week all"
+    alias tim="ti display all --start 'first day this month'"
+    # shortcuts
     alias til="ti list"
+    alias tin="ti in"
+    alias tio="ti out"
+    alias to="tio"
+    alias tis="ti sheet"
+    alias tir="ti now"
+    
 
 # suspend-to-ram
 function ss() {
