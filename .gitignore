@@ -53,6 +53,7 @@
 .emacs.d/breadcrumb
 .emacs.d/history
 .emacs.d/org-clock-save.el
+.emacs.d/semanticdb
 .emacs.d/saveplace
 .emacs.d/tramp
 .fontconfig*
