@@ -41,6 +41,7 @@
 .brainworkshop/stats.txt
 .cache
 .cola
+.config/ibus
 .config/menus
 .darcs
 .dbus
