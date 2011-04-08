@@ -7,9 +7,9 @@ Xft.rgba:                rgb
 Xft.hinting:             true
 Xft.hintstyle:           hintslight
 
-URxvt.preeditType:       OverTheSpot
-URxvt.jumpScroll:        true
-URxvt.skipScroll:        true
+URxvt.inputMethod:       ibus
+URxvt.preeditType:       OnTheSpot,None
+URxvt.imLocale:          ja_JP.UTF-8
 
 URxvt.urgentOnBell:      true 
 
@@ -27,6 +27,8 @@ URxvt*scrollBar_right:   true
 URxvt*scrollTtyKeypress: true
 URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyOutput:   false
+URxvt.jumpScroll:        true
+URxvt.skipScroll:        true
 
 !URxvt*internalBorder:   1
 !URxvt*borderColor:      black
