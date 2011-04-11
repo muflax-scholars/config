@@ -30,6 +30,7 @@ xrdb $HOME/.Xdefaults &
 
 # keyboard data
 skb.sh
+xmodmap ~/.Xmodmap
 
 DISPLAY=:0.0 urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad' &
 
