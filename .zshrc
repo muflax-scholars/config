@@ -356,7 +356,7 @@ alias -g GC='| grep --color=always'
 
 # suspend-to-ram
 function ss() {
-    sudo ~/local/bin/suspend $*
+    sudo ~/in/scripts/suspend $*
 }
 
 # download arte+7 files
