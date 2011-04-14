@@ -63,7 +63,7 @@ case ${TERM} in
 esac
 
 # PATH
-export PATH="$HOME/local/bin:$PATH"
+export PATH="$HOME/local/src/in/scripts:$HOME/local/bin:$PATH"
 export MANPATH="$HOME/local/share/man:$MANPATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 
