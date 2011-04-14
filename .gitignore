@@ -141,10 +141,6 @@
 .xchat2
 .xscreensaver
 
-# ignore alarm music
-.timeboxing
-.wakeup
-
 # ignore mail, firefox and ims, oh my!
 .claws-mail
 .jd
