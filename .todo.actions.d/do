@@ -38,7 +38,7 @@ do
 
     # if there are marble points associated with it, pass them to shindai
     if perl -e "if ('$todo' =~ / (^\[|\s*\[) \d+m? \] (\s+|$) /x) { exit 0} else { exit 1}"; then
-        ~/local/src/in/gtd/add_marbles <<< "$todo"
+        gtd_add_marbles <<< "$todo"
     fi
 
     # handle recurring events
@@ -50,7 +50,7 @@ do
             # leave blank line behind (preserves line numbers)
             sed -i.bak -e $item"s/^.*//" "$TODO_FILE"
         fi
-        "$TODO_SH" command add $(~/local/src/in/gtd/recur <<< "$todo")
+        "$TODO_SH" command add $(gtd_recur <<< "$todo")
     else
         do_entries+=$item
     fi

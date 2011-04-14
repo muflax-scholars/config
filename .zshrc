@@ -64,6 +64,10 @@ esac
 
 # PATH
 export PATH="$HOME/local/src/in/scripts:$HOME/local/bin:$PATH"
+# adding all subdirs of scripts, too
+for dir in $HOME/local/src/in/scripts/**/*(/); do
+  export PATH="$dir:$PATH"
+done
 export MANPATH="$HOME/local/share/man:$MANPATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 

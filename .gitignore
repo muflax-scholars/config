@@ -28,8 +28,6 @@
 .ssh
 
 # ignore caches and histories
-!.xmonad/xmonad.hs
-!.xmonad/xmonad.sh
 *.swp
 *.elc
 *history
@@ -86,7 +84,9 @@
 .vim/yankring*
 .vimfuzzy*
 .viminfo*
-.xmonad/xmonad*
+.xmonad/xmonad.errors
+.xmonad/xmonad.hi
+.xmonad/xmonad.o
 .zcompdump
 
 # ignore logs

@@ -15,7 +15,7 @@ shift
 
 # parse meta-data
 entry="$@"
-entry=$(~/local/src/in/gtd/parse_date <<< "$entry")
+entry=$(gtd_parse_date <<< "$entry")
 
 # call back to the main script to add
 "$TODO_SH" command add $entry
