@@ -1,14 +1,13 @@
-# scim
-#export GTK_IM_MODULE="scim"
-#export QT_IM_MODULE="scim"
-#export XMODIFIERS=@im=SCIM
+#!/bin/zsh
+# load zsh settings
+source $HOME/.zshrc
+
 # ibus
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export XMODIFIERS=@im=ibus
 
 export LANG="ja_JP.UTF8"
-export PATH="$HOME/local/bin:$PATH"
 #export LANG=C
 
 export OOO_FORCE_DESKTOP="gnome"
@@ -16,17 +15,14 @@ export OOO_FORCE_DESKTOP="gnome"
 # machine specific configs
 source ~/.xinitrc_local
 
-#scim -d &
+# daemons
 ibus-daemon -x -d &
-
 eval "$(gpg-agent --daemon)" &
-
 emacs --daemon &
-
-xsetroot -cursor_name left_ptr &
 
 # load xdefault data
 xrdb $HOME/.Xdefaults &
+xsetroot -cursor_name left_ptr &
 
 # keyboard data
 skb.sh
