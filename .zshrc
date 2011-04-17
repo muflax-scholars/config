@@ -341,10 +341,38 @@ alias -g GC='| grep --color=always'
 
     # timetrap
     # time intervals
-    alias tid="ti display all --start 'today 0:00'"
-    alias tiy="ti display all --start 'yesterday 0:00' --end 'yesterday 23:59:59'"
-    alias tiw="ti week all"
-    alias tim="ti display all --start 'first day this month'"
+    function tid() {
+      if [[ $# -eq 0 ]]; then
+        arg="all"
+      else
+        arg=$*
+      fi
+      ti display $arg --start 'today 0:00'
+    }
+    function tiy() {
+      if [[ $# -eq 0 ]]; then
+        arg="all"
+      else
+        arg=$*
+      fi
+      ti display $arg --start 'yesterday 0:00' --end 'yesterday 23:59:59'
+    }
+    function tim() {
+      if [[ $# -eq 0 ]]; then
+        arg="all"
+      else
+        arg=$*
+      fi
+      ti week $arg
+    }
+    function tiw() {
+      if [[ $# -eq 0 ]]; then
+        arg="all"
+      else
+        arg=$*
+      fi
+      ti display $arg --start 'first day this month'
+    }
     # shortcuts
     alias til="ti list"
     alias tin="ti in"
