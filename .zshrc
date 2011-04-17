@@ -357,7 +357,7 @@ alias -g GC='| grep --color=always'
       fi
       ti display $arg --start 'yesterday 0:00' --end 'yesterday 23:59:59'
     }
-    function tim() {
+    function tiw() {
       if [[ $# -eq 0 ]]; then
         arg="all"
       else
@@ -365,7 +365,7 @@ alias -g GC='| grep --color=always'
       fi
       ti week $arg
     }
-    function tiw() {
+    function tim() {
       if [[ $# -eq 0 ]]; then
         arg="all"
       else
