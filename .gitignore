@@ -36,6 +36,7 @@
 .anthy/lock-file_default
 .aspell*
 .bibletime
+.brainworkshop/*.dat
 .brainworkshop/stats.txt
 .cache
 .cola
