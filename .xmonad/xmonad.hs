@@ -61,9 +61,9 @@ modMask' = mod4Mask
 
 -- Pre-defined workspaces.
 workspaces' = [ "tty"   -- main control stuff
-              , "hack"  -- programming stuff
+              , "txt"   -- books and emacs
               , "暗記"  -- anki
-              , "txt"   -- books
+              , "hack"  -- programming stuff
               , "研究"  -- current study topic
               , "勉強"  -- uni stuff
               , "eat"   -- }
