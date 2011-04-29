@@ -54,12 +54,12 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # don't use japanese on TTY
 case ${TERM} in
-    linux)
-        export LANG=C
-        ;;
-    *)
-        export LANG=ja_JP.UTF-8
-        ;;
+  linux)
+    export LANG=C
+    ;;
+  *)
+    export LANG=ja_JP.UTF-8
+    ;;
 esac
 
 # PATH
@@ -79,7 +79,7 @@ export LS_COLORS
 ################################
 autoload colors
 if [[ ${terminfo[colors]} -ge 8 ]] then
-    colors
+  colors
 fi
 autoload -Uz vcs_info
 
@@ -106,33 +106,33 @@ local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
 
 # current user, with warning if root
 if [ $(whoami) = "root" ]; then
-    local user="%{$fg[red]%}%n%{$reset_color%}"
+  local user="%{$fg[red]%}%n%{$reset_color%}"
 else
-    local user="%{$fg[cyan]%}%n%{$reset_color%}"
+  local user="%{$fg[cyan]%}%n%{$reset_color%}"
 fi
 
 # current host, with warning if ssh
 if [ -z $SSH_CONNECTION ]; then
-    local host="%{$fg[cyan]%}%m%{$reset_color%}"
+  local host="%{$fg[cyan]%}%m%{$reset_color%}"
 else
-    local host="%{$fg[red]%}%m%{$reset_color%}"
+  local host="%{$fg[red]%}%m%{$reset_color%}"
 fi
 
 local user_host=" ${op}${user}%{$fg[cyan]%}@%{$reset_color%}${host}${cp}"
 
 # warning if not 64bit
 if [ $(uname -m) = "i686" ]; then
-    local arch=" ${op}(i686)${cp}"
+  local arch=" ${op}(i686)${cp}"
 fi
 
 # are we in an mc shell?
 if [[ $MC_SID != "" ]]; then
-    local mc=" ${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
+  local mc=" ${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
 fi
 
 # alarm after successful command if in scratchpad
 if [[ $STY =~ "^\d+\.scratchpad$" ]]; then
-    local bell=""
+  local bell=""
 fi
 
 # current path
@@ -154,36 +154,36 @@ PROMPT2="${cur_cmd}> "
 ##################
 
 function title() {
-    # escape '%' chars in $1, make nonprintables visible
-    local a=${(V)1//\%/\%\%}
+  # escape '%' chars in $1, make nonprintables visible
+  local a=${(V)1//\%/\%\%}
 
-    # Truncate command, and join lines.
-    a=$(print -Pn "%40>...>$a" | tr -d "\n")
+  # Truncate command, and join lines.
+  a=$(print -Pn "%40>...>$a" | tr -d "\n")
 
-    case $TERM in
-        screen*)
-            print -Pn "\e]2;$a @$2\a" # plain xterm title
-            print -Pn "\ek$a\e\\"      # screen title (in ^A")
-            ;;
-        rxvt*|xterm*)
-            print -Pn "\e]2;$a @$2\a" # plain xterm title
-            ;;
-    esac
+  case $TERM in
+    screen*)
+      print -Pn "\e]2;$a @$2\a" # plain xterm title
+      print -Pn "\ek$a\e\\"      # screen title (in ^A")
+      ;;
+    rxvt*|xterm*)
+      print -Pn "\e]2;$a @$2\a" # plain xterm title
+      ;;
+  esac
 }
 
 function precmd() {
-    vcs_info 'prompt'
-    title "zsh" "%m"
+  vcs_info 'prompt'
+  title "zsh" "%m"
 }
 
 # set simple screen title just before program is executed
 function preexec() {
-    case $TERM in
-        screen*)
-            local CMD=${1[(wr)^(*=*|sudo|-*)]}
-	        echo -ne "\ek$CMD\e\\"
-            ;;
-    esac
+  case $TERM in
+    screen*)
+      local CMD=${1[(wr)^(*=*|sudo|-*)]}
+      echo -ne "\ek$CMD\e\\"
+      ;;
+  esac
 }    
 
 ##############
@@ -265,8 +265,8 @@ alias vi="vim"
 
 # youtube download
 function y() {
-    echo "Paste links, ^D start to download."
-    youtube-dl -c -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
+  echo "Paste links, ^D start to download."
+  youtube-dl -c -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
 }
 
 # portage
@@ -288,10 +288,10 @@ alias b="irb"
 
 # optimized local compiles
 function om() {
-    CFLAGS='-O2 -pipe -march=nocona' 
-    CXXFLAGS=$CFLAGS 
-    LDFLAGS='-Wl,-O1 -Wl,--sort-common -Wl,--hash-style=gnu -Wl,--as-needed'  
-    make -j3 $*
+  CFLAGS='-O2 -pipe -march=nocona' 
+  CXXFLAGS=$CFLAGS 
+  LDFLAGS='-Wl,-O1 -Wl,--sort-common -Wl,--hash-style=gnu -Wl,--as-needed'  
+  make -j3 $*
 }
 
 # universal aliases
@@ -299,103 +299,101 @@ alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
 alias -g D1='DISPLAY=:0.1'
 alias -g LC='LANG=C'
+alias -g LE='LANG=en_US.UTF-8'
 alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
 alias -g G='| grep'
 alias -g GC='| grep --color=always'
 
 # GTD
-    alias as="ashuku"
-    alias a="ashuku add"
+  # ashuku
+  alias as="ashuku"
+  alias a="ashuku add"
 
-    alias c="shindai challenge"
-    alias s="shindai"
-    alias sk="shindai skill"
+  # full todo list
+  alias t="noglob todo.sh -d ~/.todo.cfg"
+  alias ta="t add"
+  alias td="t do"
+  alias tl="t ls"
+  alias trm="t rm"
+  alias tt="t delay"
+  alias tdel="t delay"
 
-    # full todo list
-    alias t="noglob todo.sh -d ~/.todo.cfg"
-    alias ta="t add"
-    alias td="t do"
-    alias tl="t ls"
-    alias trm="t rm"
-    alias tt="t delay"
-    alias tdel="t delay"
+  # only what is relevant today
+  alias now="noglob todo.sh -d ~/.todo-today.cfg"
+  #alias n="echo "TODO:"; TODOTXT_VERBOSE=0 now ls; ashuku add"
+  alias n="now"
+  alias nl="now ls"
+  alias na="now add"
+  alias nd="now do"
+  alias nrm="now rm"
+  alias nt="now delay"
+  alias ndel="now delay"
 
-    # only what is relevant today
-    alias now="noglob todo.sh -d ~/.todo-today.cfg"
-    #alias n="echo "TODO:"; TODOTXT_VERBOSE=0 now ls; ashuku add"
-    alias n="now"
-    alias nl="now ls"
-    alias na="now add"
-    alias nd="now do"
-    alias nrm="now rm"
-    alias nt="now delay"
-    alias ndel="now delay"
+  # idea file
+  alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
+  alias ideas="idea ls"
+  alias i="idea"
+  alias ia="idea add"
+  alias id="idea do"
+  alias il="idea ls"
+  alias irm="idea rm"
 
-    # idea file
-    alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
-    alias ideas="idea ls"
-    alias i="idea"
-    alias ia="idea add"
-    alias id="idea do"
-    alias il="idea ls"
-    alias irm="idea rm"
-
-    # timetrap
-    # time intervals
-    function tid() {
-      if [[ $# -eq 0 ]]; then
-        arg="all"
-      else
-        arg=$*
-      fi
-      ti display $arg --start 'today 0:00'
-    }
-    function tiy() {
-      if [[ $# -eq 0 ]]; then
-        arg="all"
-      else
-        arg=$*
-      fi
-      ti display $arg --start 'yesterday 0:00' --end 'yesterday 23:59:59'
-    }
-    function tiw() {
-      if [[ $# -eq 0 ]]; then
-        arg="all"
-      else
-        arg=$*
-      fi
-      ti week $arg
-    }
-    function tim() {
-      if [[ $# -eq 0 ]]; then
-        arg="all"
-      else
-        arg=$*
-      fi
-      ti display $arg --start 'first day this month'
-    }
-    # shortcuts
-    alias til="ti list"
-    alias tin="ti in"
-    alias tio="ti out"
-    alias to="tio"
-    alias tis="ti sheet"
-    alias tir="ti now"
-    
+  # timetrap
+  # time intervals
+  function tid() {
+  if [[ $# -eq 0 ]]; then
+    arg="all"
+  else
+    arg=$*
+  fi
+  ti display $arg --start 'today 0:00'
+  }
+  function tiy() {
+  if [[ $# -eq 0 ]]; then
+    arg="all"
+  else
+    arg=$*
+  fi
+  ti display $arg --start 'yesterday 0:00' --end 'yesterday 23:59:59'
+  }
+  function tiw() {
+  if [[ $# -eq 0 ]]; then
+    arg="all"
+  else
+    arg=$*
+  fi
+  ti week $arg
+  }
+  function tim() {
+  if [[ $# -eq 0 ]]; then
+    arg="all"
+  else
+    arg=$*
+  fi
+  ti display $arg --start 'first day this month'
+  }
+  # shortcuts
+  alias til="ti list"
+  alias tin="ti in"
+  alias tio="ti out"
+  alias to="tio"
+  alias tis="ti sheet"
+  alias tir="ti now"
+  
 
 # suspend-to-ram
 function ss() {
-    sudo ~/in/scripts/suspend $*
+  sudo ~/in/scripts/suspend $*
 }
 
 # download arte+7 files
 function mimi() {
-    for mms in ~/A7*.wmv; do
-        url=$(grep -o 'mms://[^"]+' $mms)
-        mimms -r $url ~/映画/arte/${url:t:r}.wmv
-        rm $mms
-    done
+  for mms in ~/A7*.wmv; do
+    url=$(grep -o 'mms://[^"]+' $mms)
+    mimms -r $url ~/映画/arte/${url:t:r}.wmv
+    rm $mms
+  done
 }
 
 # a bit of security
@@ -425,51 +423,51 @@ alias azash="ssh amon@azathoth"
 alias nyash="ssh amon@nyarlathotep"
 
 function ipt() {
-    S=$(/etc/init.d/iptables status | grep -oP "(start|stop)")
-    case $S in
-        stop)
-            echo "shields up! go to red alert!"
-            sudo /etc/init.d/iptables start
-        ;;
-        start)
-            echo "lower your shields and surrender your ships!"
-            sudo /etc/init.d/iptables stop
-        ;;
-    esac
+  S=$(/etc/init.d/iptables status | grep -oP "(start|stop)")
+  case $S in
+    stop)
+      echo "shields up! go to red alert!"
+      sudo /etc/init.d/iptables start
+    ;;
+    start)
+      echo "lower your shields and surrender your ships!"
+      sudo /etc/init.d/iptables stop
+    ;;
+  esac
 }
 
 function nap() {
-    mpc --no-status pause
-    echo "お休みなさい。。。"
-    if [[ $# -ge 1 ]] then 
-        TIME=$(( ($(date -d "$*" +%s) - $(date +%s)) / 60 ))
-        echo "going down for $TIME minutes..."
-        read
-        doff
-        sleep ${TIME}m
-    else 
-        doff
-        sleep 25m
-    fi && {
-        echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
-        wakeup.sh
-    }
+  mpc --no-status pause
+  echo "お休みなさい。。。"
+  if [[ $# -ge 1 ]] then 
+    TIME=$(( ($(date -d "$*" +%s) - $(date +%s)) / 60 ))
+    echo "going down for $TIME minutes..."
+    read
+    doff
+    sleep ${TIME}m
+  else 
+    doff
+    sleep 25m
+  fi && {
+    echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
+    wakeup.sh
+  }
 }  
 
 function take_hostage() {
-    # encrypts each argument individually, writes names and password in the
-    # hostage file for further use
-    for i in $(seq $#); do
-        pw=$(pwgen -1 -B 16)
-        target=$*[$i]
-        7z -mx0 -p"$pw" a "$target.7z" "$target"
-        7z -p"$pw" t "$target.7z"
-        if [ $? -eq 0 ]; then
-            cowsay "everything seems alright, killing $target..."
-            echo "$target - $pw" >> ~/hostages.txt
-            rm -rf "$target"
-        fi
-    done
+  # encrypts each argument individually, writes names and password in the
+  # hostage file for further use
+  for i in $(seq $#); do
+    pw=$(pwgen -1 -B 16)
+    target=$*[$i]
+    7z -mx0 -p"$pw" a "$target.7z" "$target"
+    7z -p"$pw" t "$target.7z"
+    if [ $? -eq 0 ]; then
+      cowsay "everything seems alright, killing $target..."
+      echo "$target - $pw" >> ~/hostages.txt
+      rm -rf "$target"
+    fi
+  done
 }
 
 # torrent
@@ -477,21 +475,9 @@ alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o
 alias nor="sudo umount.cifs /mnt/network/torrent-samba"
 alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/.torrents/ && rm ~/*.torrent" 
 
-# LOL!!k!
+# lol!!k!
 alias cya='sudo reboot'
-alias donotwant='rm'
-alias dowant='cp'
-alias gtfo='mv'
-alias hai='cd'
-alias icanhas='mkdir'
-alias invisible='cat'
 alias kthxbai='sudo shutdown -h now'
-alias moar='less'
-alias nomnomnom='killall'
-alias ohnoes='sudo cat /var/log/errors.log'
-alias rtfm='man'
-alias visible='echo'
-alias wtf='dmesg'
 
 ################################
 # syntax highlighting (srsly!) #
