@@ -18,7 +18,7 @@ source ~/.xinitrc_local
 # daemons
 ibus-daemon -x -d &
 eval "$(gpg-agent --daemon)" &
-emacs --daemon &
+#emacs --daemon &
 
 # load xdefault data
 xrdb $HOME/.Xdefaults &
