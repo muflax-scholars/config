@@ -48,6 +48,8 @@ export MPD_HOST="192.168.1.15"
 
 # ruby
 [[ -s "/home/amon/.rvm/scripts/rvm" ]] && source "/home/amon/.rvm/scripts/rvm"
+# gentoo sets -rauto_gem, so unset it
+unset RUBYOPT
 
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
