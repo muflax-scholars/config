@@ -89,13 +89,9 @@
 .xsession-errors
 
 # ignore stupid confs no one loves :)
-.AbiSuite
-.Foxit
-.android
 .audacity*
 .avidemux
 .cgdb
-.chmsee
 .config/Google
 .config/NVIDIA Corporation
 .config/Ulduzsoft
@@ -103,7 +99,6 @@
 .config/chromium
 .config/enchant
 .config/gtk-2.0
-.config/midori
 .dia
 .ebview
 .eclipse
@@ -122,19 +117,11 @@
 .links
 .mono
 .mozc
-.ooo3
-.openoffice.org
-.opera
-.q3a
-.rubyripper
-.swac
-.sweeprc
 .tgdb
 .universalindentgui
 .wesnoth
 .wxMaxima
 .xchat2
-.xscreensaver
 
 # ignore mail, firefox and ims, oh my!
 .claws-mail
@@ -143,7 +130,6 @@
 .mozilla
 .pentadactyl/info
 .purple
-.weechat
 
 # ignore wine (has its own backups)
 .wine*
@@ -162,7 +148,6 @@
 .config/Trolltech.conf
 .config/comix
 .config/geeqie
-.scim/config
 .snes9x/snes9x.xml
 
 # ignore rvm
