@@ -1,6 +1,7 @@
 # ignore all "normal" files/dirs, but manage all dotfiles
 /*
 !/.*
+*.elc
 *.swp
 *.pyc
 
@@ -12,23 +13,17 @@
 .config/nitrogen
 .feh*
 .mc
-.mplayer
 .serverauth*
-.stardict
 .subversion*
 .unison*
 
 # ignore secure shit :)
 .config/MusicBrainz
-.config/qtscrob.conf
-.config/transmission*
 .gnupg
 .ncftp
 .ssh
 
 # ignore caches and histories
-*.swp
-*.elc
 *history
 .adobe
 .anthy/last-record*
@@ -169,12 +164,6 @@
 .config/geeqie
 .scim/config
 .snes9x/snes9x.xml
-
-# ignore ashuku and similar stuff
-.ashuku
-.poke.sqlite3
-.shindai
-.timetrap.db
 
 # ignore rvm
 .rvm

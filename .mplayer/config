@@ -1,0 +1,16 @@
+# Write your default config options here!
+#sid="0"
+double="yes"
+#delay=-0.05
+alang="jpn"
+#slang="jpn"
+stop-xscreensaver="yes"
+xy=400
+fs="yes"
+ao="alsa"
+mc=0
+nojoystick="yes"
+
+noautosub=1
+ass="yes"
+embeddedfonts="yes"
