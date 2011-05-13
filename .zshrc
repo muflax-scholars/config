@@ -277,6 +277,7 @@ alias dew="sudo FEATURES=distcc emerge -auD --changed-use --binpkg-respect-use y
 alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
 alias ec="sudo eclean -d -t2w distfiles; sudo eclean -d -t2w packages"
 alias ecc="sudo eclean -d distfiles; sudo eclean -d packages"
+alias wg="watch genlop -nc"
 
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
