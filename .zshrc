@@ -278,7 +278,7 @@ alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y w
 alias ec="sudo eclean -d -t2w distfiles; sudo eclean -d -t2w packages"
 alias ecc="sudo eclean -d distfiles; sudo eclean -d packages"
 alias wg="watch genlop -nc"
-alias us="sudo update_system"
+alias us="sudo ~/in/scripts/update_system"
 
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
