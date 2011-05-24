@@ -279,6 +279,16 @@ alias ec="sudo eclean -d -t2w distfiles; sudo eclean -d -t2w packages"
 alias ecc="sudo eclean -d distfiles; sudo eclean -d packages"
 alias wg="watch genlop -nc"
 
+function update_system() {
+  ew -k
+  sudo revdep-rebuild -i
+  sudo perl-cleaner --all
+  sudo haskell-updater
+  sudo python-updater
+  ec
+}
+alias us="update_system"
+
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
 alias co="./configure"
