@@ -1,6 +1,5 @@
-#!/bin/zsh
 # load zsh settings
-source $HOME/.zshrc
+export PATH="$($HOME/in/scripts/extend_path.sh):$PATH"
 
 # ibus
 export GTK_IM_MODULE="ibus"
