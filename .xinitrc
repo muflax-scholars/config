@@ -29,5 +29,5 @@ xmodmap ~/.Xmodmap
 
 DISPLAY=:0.0 urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad' &
 
-WM="$HOME/.xmonad/xmonad.sh"
+WM="start_xmonad.sh"
 exec dbus-launch --auto-syntax --exit-with-session $WM
