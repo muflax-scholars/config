@@ -60,15 +60,15 @@ borderWidth' = 3
 modMask' = mod4Mask
 
 -- Pre-defined workspaces.
-workspaces' = [ "tty"   -- main control stuff
-              , "txt"   -- books and emacs
-              , "暗記"  -- anki
-              , "hack"  -- programming stuff
-              , "研究"  -- current study topic
-              , "勉強"  -- uni stuff
+workspaces' = [ "一"
+              , "二"
+              , "三"
+              , "四"
+              , "五"
               , "eat"   -- }
               , "pray"  -- } dummy ws
               , "love"  -- }
+              , "暗記"  -- anki
               , "toile" -- web
               ] 
 
@@ -210,7 +210,6 @@ layout' =
     mkToggle1 MIRROR    $
 
     -- workspace specific preferences
-    onWorkspace "tty" (grid ||| tiled)            $
     onWorkspace "暗記" (cross ||| grid ||| tiled) $
     onWorkspace "toile" (tiled ||| grid)          $
 
