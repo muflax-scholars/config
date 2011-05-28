@@ -9,7 +9,9 @@ export XMODIFIERS=@im=ibus
 export LANG="ja_JP.UTF8"
 #export LANG=C
 
+# openoffice stuff
 export OOO_FORCE_DESKTOP="gnome"
+export SAL_USE_VCLPLUGIN="gen"
 
 # machine specific configs
 source ~/.xinitrc_local
