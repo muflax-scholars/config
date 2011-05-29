@@ -321,7 +321,6 @@ alias -g GC='| grep --color=always'
 
   # only what is relevant today
   alias now="noglob todo.sh -d ~/.todo-today.cfg"
-  #alias n="echo "TODO:"; TODOTXT_VERBOSE=0 now ls; ashuku add"
   alias n="now"
   alias nl="now ls"
   alias na="now add"
@@ -338,6 +337,13 @@ alias -g GC='| grep --color=always'
   alias id="idea do"
   alias il="idea ls"
   alias irm="idea rm"
+
+  # fume stuff
+  alias fumes="noglob todo.sh -d ~/.todo-fume.cfg"
+  alias fa="fumes add"
+  alias fd="fumes do"
+  alias fl="fumes ls"
+  alias frm="fumes rm"
 
   # timetrap
   # time intervals
