@@ -1,6 +1,10 @@
 # load zsh settings
 export PATH="$($HOME/in/scripts/extend_path.sh):$PATH"
 
+# don't blank monitor
+setterm -blank 0 -powersave off -powerdown 0
+xset s off
+
 # ibus
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
