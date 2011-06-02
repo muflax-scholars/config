@@ -276,6 +276,7 @@ alias ec="sudo eclean -d -t2w distfiles; sudo eclean -d -t2w packages"
 alias ecc="sudo eclean -d distfiles; sudo eclean -d packages"
 alias wg="watch genlop -nc"
 alias us="sudo ~/in/scripts/update_system"
+alias mup="mashpodder;up"
 
 # programming
 alias burnburnBURN="rm -f *.class; javac *.java"
