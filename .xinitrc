@@ -1,5 +1,6 @@
 # load zsh settings
 export PATH="$($HOME/in/scripts/extend_path.sh):$PATH"
+[[ -s "/home/amon/.rvm/scripts/rvm" ]] && source "/home/amon/.rvm/scripts/rvm"
 
 # don't blank monitor
 setterm -blank 0 -powersave off -powerdown 0
