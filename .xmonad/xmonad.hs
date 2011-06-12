@@ -100,9 +100,9 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Rotate through the available layout algorithms
     , ((modm,               xK_space ) , sendMessage NextLayout)
     -- reset layouts
-    , ((modm .|. shiftMask, xK_space ) , setLayout $ XMonad.layoutHook conf)
+    , ((modm .|. altMask,   xK_space ), setLayout $ XMonad.layoutHook conf)
     -- tile again
-    , ((modm .|. controlMask, xK_space ) , withFocused $ windows . W.sink)
+    , ((modm .|. controlMask, xK_space ), withFocused $ windows . W.sink)
     
     -- focus movement
     , ((modm,               xK_n     ), windows W.focusUp )
@@ -177,6 +177,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     where 
          getSortByIndexNoSP =
                 fmap (.scratchpadFilterOutWorkspace) getSortByIndex
+         altMask = mod1Mask
 
 
 -----------------------------------------------------------
