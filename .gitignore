@@ -2,8 +2,8 @@
 /*
 !/.*
 *.elc
-*.swp
 *.pyc
+*.swp
 
 # ignore host-specific files
 .*_local
@@ -142,8 +142,8 @@
 .angband
 .fceux/sav
 .minecraft
-.snes9x/snapshots*
 .scummvm*
+.snes9x/snapshots*
 
 # configs that are included, but stupid
 .config/Trolltech.conf
