@@ -497,5 +497,8 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=magenta'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
 
+# disable flow control to free up ^s and ^q
+stty -ixon -ixoff
+
 # local .zshrc aliases
 source ~/.zshrc_local
