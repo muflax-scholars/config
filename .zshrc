@@ -382,6 +382,7 @@ alias -g GC='| grep --color=always'
   ti display $arg --start 'first day this month'
   }
   # shortcuts
+  alias ti="noglob ti"
   alias til="ti list"
   alias tin="ti in"
   alias tio="ti out"
