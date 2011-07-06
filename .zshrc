@@ -308,10 +308,6 @@ alias -g G='| grep'
 alias -g GC='| grep --color=always'
 
 # GTD
-  # ashuku
-  alias as="ashuku"
-  alias a="ashuku add"
-
   # full todo list
   alias t="noglob todo.sh -d ~/.todo.cfg"
   alias ta="t add"
