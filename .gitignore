@@ -140,6 +140,7 @@
 
 # ignore savegames
 .angband
+.doom3
 .fceux/sav
 .minecraft
 .scummvm*
