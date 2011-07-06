@@ -401,6 +401,11 @@ function mimi() {
   done
 }
 
+# move target to location and create symbolic link
+function mvln() {
+  mv $1 $2/ && ln -s $2/$1 $1
+}
+
 # a bit of security
 alias cp="cp -i"
 alias mv="mv -i"
