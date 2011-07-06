@@ -265,7 +265,7 @@ alias vi="vim"
 # youtube download
 function y() {
   echo "Paste links, ^D start to download."
-  youtube-dl -c -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
+  youtube-dl -i -c -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
 }
 
 # portage
