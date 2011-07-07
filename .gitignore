@@ -12,7 +12,9 @@
 .Xauthority
 .config/nitrogen
 .feh*
-.mc
+.mc/filepos
+.mc/history
+.mc/panels.ini
 .serverauth*
 .subversion*
 .unison*
