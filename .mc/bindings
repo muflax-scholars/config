@@ -332,39 +332,33 @@ include/image
 ### Sound files ###
 
 regex/\.([wW][aA][vV]|[sS][nN][dD]|[vV][oO][cC]|[aA][uU]|[sS][mM][pP]|[aA][iI][fF][fF]|[sS][nN][dD])$
-       Open=if [ "$DISPLAY" = "" ]; then play %f; else (xmms -e %f 1>/dev/null 2>&1 &); fi
+    Include=audio
 
 regex/\.([mM][oO][dD]|[sS]3[mM]|[xX][mM]|[iI][tT]|[mM][tT][mM]|669|[sS][tT][mM]|[uU][lL][tT]|[fF][aA][rR])$
-       Open=mikmod %f
-       #Open=tracker %f
+    Include=audio
 
 regex/\.([wW][aA][wW]22)$
-       Open=vplay -s 22 %f
+    Include=audio
 
 regex/\.([mM][pP]3)$
-	Open=mw %f
-	View=%view{ascii} mpg123 -vtn1 %f 2>&1 | sed -n '/^Title/,/^Comment/p;/^MPEG/,/^Audio/p'
-
-regex/\.([fF][lL][aA][cC])$
-	Open=mw %f
+    Include=audio
 
 regex/\.([oO][gG][gG])$
-	Open=mw %f
-	View=%view{ascii} ogginfo %s
+    Include=audio
 
 regex/\.([mM][iI][dD][iI]?|[rR][mM][iI][dD]?)$
-	Open=timidity %f
+    Include=audio
 
 regex/\.([wW][mM][aA])$
-	Open=mw %f
-	View=%view{ascii} mplayer -quiet -slave -frames 0 -vo null -ao null -identify %f 2>/dev/null | tail +13 || file %f
-
+    Include=audio
 
 ### Play lists ###
 
 regex/\.([mM]3[uU]|[pP][lL][sS])$
-	Open=if [ -z "$DISPLAY" ]; then mw -playlist %f; else (xmms -p %f &); fi
+    include=audio
 
+include/audio
+	Open=(mw %f)
 
 ### Video ###
 
