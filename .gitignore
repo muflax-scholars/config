@@ -28,8 +28,6 @@
 # ignore caches and histories
 *history
 .adobe
-.anthy/last-record*
-.anthy/lock-file_default
 .aspell*
 .bibletime
 .brainworkshop/*.dat
@@ -70,8 +68,6 @@
 .recently*
 .ri19
 .ruby_inline
-.scim/input-pad-recently-used.pad
-.scim/user-tables
 .session
 .smex-items
 .sword
@@ -94,7 +90,6 @@
 .audacity*
 .avidemux
 .cgdb
-.config/Google
 .config/NVIDIA Corporation
 .config/Ulduzsoft
 .config/calibre
@@ -108,7 +103,6 @@
 .gitk
 .gnome2
 .gnumericrc
-.googleearth
 .gstreamer*
 .gtickrc
 .htoprc
@@ -121,7 +115,6 @@
 .mozc
 .tgdb
 .universalindentgui
-.wesnoth
 .wxMaxima
 .xchat2
 
@@ -142,17 +135,12 @@
 
 # ignore savegames
 .angband
-.doom3
-.fceux/sav
 .minecraft
-.scummvm*
-.snes9x/snapshots*
 
 # configs that are included, but stupid
 .config/Trolltech.conf
 .config/comix
 .config/geeqie
-.snes9x/snes9x.xml
 
 # ignore rvm
 .rvm
