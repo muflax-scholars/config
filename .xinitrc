@@ -1,5 +1,5 @@
 # load zsh settings
-export PATH="$($HOME/in/scripts/extend_path.sh):$PATH"
+export PATH="$HOME/local/gems/bin:$($HOME/in/scripts/extend_path.sh):$PATH"
 [[ -s "/home/amon/.rvm/scripts/rvm" ]] && source "/home/amon/.rvm/scripts/rvm"
 
 # don't blank monitor
