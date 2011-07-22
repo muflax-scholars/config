@@ -96,6 +96,7 @@
 .config/chromium
 .config/enchant
 .config/gtk-2.0
+.config/yarpen.cz
 .dia
 .ebview
 .eclipse
