@@ -1,6 +1,8 @@
-# load zsh settings
-export PATH="$HOME/local/gems/bin:$($HOME/in/scripts/extend_path.sh):$PATH"
-[[ -s "/home/amon/.rvm/scripts/rvm" ]] && source "/home/amon/.rvm/scripts/rvm"
+# load relevant zsh settings
+export GEM_HOME="$HOME/local/gems"
+export GEM_PATH="$GEM_HOME"
+export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$($HOME/in/scripts/extend_path.sh):$PATH"
 
 # don't blank monitor
 setterm -blank 0 -powersave off -powerdown 0
