@@ -121,12 +121,12 @@
 .xchat2
 
 # ignore mail, firefox and ims, oh my!
-.claws-mail
 .jd
 .mail
 .mozilla
 .pentadactyl/info
 .purple
+.thunderbird
 
 # ignore wine (has its own backups)
 .wine*
