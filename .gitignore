@@ -50,6 +50,7 @@
 .emacs.d/semanticdb
 .emacs.d/saveplace
 .emacs.d/tramp
+.emacs.d/url
 .fontconfig*
 .gconf
 .gconfd
