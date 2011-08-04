@@ -411,7 +411,7 @@ alias mv="mv -i"
 
 # mplayer
 alias l="mw -l"
-alias m="mw -m"
+alias m="mw -l"
 alias r="mw -r"
 
 # wake-on-lan
