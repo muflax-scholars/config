@@ -390,15 +390,6 @@ function ss() {
   sudo ~/in/scripts/suspend $*
 }
 
-# download arte+7 files
-function mimi() {
-  for mms in ~/A7*.wmv; do
-    url=$(grep -o 'mms://[^"]+' $mms)
-    mimms -r $url ~/映画/arte/${url:t:r}.wmv
-    rm $mms
-  done
-}
-
 # move target to location and create symbolic link
 function mvln() {
   mv $1 $2/ && ln -s $2/$1 $1
