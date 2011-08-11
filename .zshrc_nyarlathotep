@@ -23,7 +23,7 @@ function up() {
     sudo emerge --sync
     
     # eix
-    eix-update &
+    eix-update
 
     # clean-up
     echo -n "cleaning up..."
