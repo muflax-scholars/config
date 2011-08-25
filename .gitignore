@@ -23,6 +23,7 @@
 .config/MusicBrainz
 .gnupg
 .ncftp
+.s3cfg
 .ssh
 
 # ignore caches and histories
