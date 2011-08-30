@@ -8,8 +8,8 @@ function tb_m() { pol 25m+5m/2 30m/2 /1 && mplayer -really-quiet /home/amon/.tim
 function tb_l() { pol 45m+15m/1 /1 && mplayer -really-quiet /home/amon/.timeboxing}                          
 
 function amoeba() {
-    local target="/mnt/quetzalcoatl_media_backup/"
-    for dir in ~/音 ~/テレビ
+    local target="/mnt/media_backup/"
+    for dir in ~/音
     do
         rsync -xavP --delete-before $dir $target
     done
