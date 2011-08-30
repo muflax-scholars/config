@@ -3,7 +3,7 @@
 !/.*
 *.elc
 *.pyc
-*.swp
+*.sw[a-z]
 
 # ignore host-specific files
 .*_local
