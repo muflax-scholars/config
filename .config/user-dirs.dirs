@@ -1,8 +1,8 @@
 XDG_DESKTOP_DIR="/home/amon/"
+XDG_DOCUMENTS_DIR="/home/amon/"
 XDG_DOWNLOAD_DIR="/home/amon/"
-XDG_TEMPLATES_DIR="/home/amon/"
-XDG_PUBLICSHARE_DIR="/home/amon/"
-XDG_DOCUMENTS_DIR="/home/amon/
 XDG_MUSIC_DIR="/home/amon/音"
 XDG_PICTURES_DIR="/home/amon/pigs"
+XDG_PUBLICSHARE_DIR="/home/amon/"
+XDG_TEMPLATES_DIR="/home/amon/"
 XDG_VIDEOS_DIR="/home/amon/"
