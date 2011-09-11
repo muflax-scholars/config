@@ -128,6 +128,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_y     ), sendMessage $ Toggle REFLECTY )
     , ((modm,               xK_m     ), sendMessage $ Toggle MIRROR )
     , ((modm,               xK_b     ), sendMessage $ Toggle NOBORDERS )
+    , ((modm .|. shiftMask, xK_b     ), sendMessage ToggleStruts )
     
     -- prev / next workspace
     , ((modm,               xK_h     ), windows . W.greedyView =<< findWorkspace getSortByIndexNoSP Next HiddenNonEmptyWS 1)
