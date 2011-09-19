@@ -10,6 +10,7 @@ Xft.hintstyle:           hintslight
 URxvt.inputMethod:       ibus
 URxvt.preeditType:       OnTheSpot,None
 URxvt.imLocale:          ja_JP.UTF-8
+Emacs*useXIM:            false
 
 URxvt.urgentOnBell:      true 
 
