@@ -66,6 +66,7 @@
 .matplotlib
 .netx
 .pki
+.pulse*
 .pylint.d
 .recently*
 .ri19
