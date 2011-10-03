@@ -241,7 +241,6 @@ bindkey '^[[6~' end-of-history
 
 # normal aliases
 alias angband="angband -mgcu -umuflax"
-alias aria2c="aria2c -c --summary-interval=0 --check-certificate=false"
 alias cal="cal -m -3"
 alias cgrep="grep --color=always"
 alias diff="colordiff"
