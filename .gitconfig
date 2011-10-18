@@ -12,3 +12,6 @@
 
 [push]
     default = matching
+
+[github]
+    user = muflax
