@@ -10,11 +10,11 @@
 .FEH*
 .VirtualBox
 .Xauthority
+.config/mc/filepos
+.config/mc/history
+.config/mc/panels.ini
 .config/nitrogen
 .feh*
-.mc/filepos
-.mc/history
-.mc/panels.ini
 .serverauth*
 .subversion*
 .unison*
