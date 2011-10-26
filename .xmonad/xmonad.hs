@@ -78,8 +78,9 @@ normalBorderColor'  = "#000000"
 focusedBorderColor' = "#aa5500"
 
 -- dmenu
-dmenu'     = "dmenu -b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '"++focusedBorderColor'++"'"
-dmenuPath' = "exe= `dmenu_path | "++dmenu'++"` && eval \"exec $exe\""
+dmenuOpts'  = "-b -i -fn '"++font'++"' -nb '#000000' -nf '#FFFFFF' -sb '"++focusedBorderColor'++"'"
+dmenu'      = "dmenu "++dmenuOpts'
+dmenuPath'  = "dmenu_run "++dmenuOpts'
 dmenuQuick' = "exe= `cat $HOME/.programs | "++dmenu'++"` && eval \"exec $exe\""
 
 -------------------
