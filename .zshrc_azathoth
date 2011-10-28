@@ -9,7 +9,7 @@ function tb_l() { pol 45m+15m/1 /1 && mplayer -really-quiet /home/amon/.timeboxi
 
 function amoeba() {
     local target="/mnt/media_backup/"
-    for dir in ~/音 ~/テレビ ~/p2p
+    for dir in ~/音 ~/テレビ
     do
         rsync -xavP --delete-before $dir $target
     done
