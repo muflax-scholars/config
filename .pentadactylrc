@@ -12,3 +12,5 @@ set defsearch=g
 set runtimepath=/home/amon/.pentadactyl
 set urlseparator=
 set editor='emacsclient -c --alternate-editor="" +%l %f'
+
+set! browser.startup.page=2
