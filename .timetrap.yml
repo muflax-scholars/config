@@ -1,7 +1,0 @@
---- 
-database_file: /home/amon/spoiler/logging/timetrap.db
-round_in_seconds: 900
-append_notes_delimiter: " "
-formatter_search_paths: 
-- /home/amon/.timetrap/formatters
-default_formatter: text
