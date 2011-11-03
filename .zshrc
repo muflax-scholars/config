@@ -367,6 +367,14 @@ alias -g GC='| grep --color=always'
     fi
     ti display $arg --start 'first day this month'
   }
+  function tilm() {
+    if [[ $# -eq 0 ]]; then
+      arg="all"
+    else
+      arg=($*)
+    fi
+    ti display $arg --start 'first day last month' --end 'first day this month'
+  }
   # shortcuts
   alias ti="noglob ti"
   alias til="ti list"
