@@ -87,9 +87,10 @@
 .config/NVIDIA Corporation
 .config/Ulduzsoft
 .config/calibre
-.config/google-chrome
 .config/enchant
+.config/google-chrome
 .config/gtk-2.0
+.config/kde.org/
 .config/yarpen.cz
 .dia
 .ebview
@@ -112,6 +113,8 @@
 .universalindentgui
 .wxMaxima
 .xchat2
+.xine/
+
 
 # ignore mail, firefox and ims, oh my!
 .jd
