@@ -391,8 +391,6 @@ alias -g GC='| grep --color=always'
     
     if [[ $# -gt 2 ]]; then
       ti out -a $3
-    else
-      ti out
     fi
   }
 
