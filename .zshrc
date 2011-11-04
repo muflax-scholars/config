@@ -375,6 +375,27 @@ alias -g GC='| grep --color=always'
     fi
     ti display $arg --start 'first day last month' --end 'first day this month'
   }
+
+  function ti_past() {
+    if [[ $# -lt 1 || $# -gt 3 ]]; then
+      echo "usage: ti_past [context] start [end]" 
+      return 1
+    fi
+    
+    if [[ $# -gt 1 ]]; then
+      ti sheet $1
+      ti in -a $2
+    else 
+      ti in -a  $1
+    fi
+    
+    if [[ $# -gt 2 ]]; then
+      ti out -a $3
+    else
+      ti out
+    fi
+  }
+
   # shortcuts
   alias ti="noglob ti"
   alias til="ti list"
