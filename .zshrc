@@ -377,16 +377,16 @@ alias -g GC='| grep --color=always'
   }
 
   function ti_past() {
-    if [[ $# -lt 1 || $# -gt 3 ]]; then
-      echo "usage: ti_past [context] start [end]" 
+    if [[ $# -lt 1 || $# -gt 4 ]]; then
+      echo "usage: ti_past [context] start [end] [task]" 
       return 1
     fi
     
     if [[ $# -gt 1 ]]; then
       ti sheet $1
-      ti in -a $2
+      ti in -a $2 $4
     else 
-      ti in -a  $1
+      ti in -a  $1 $4
     fi
     
     if [[ $# -gt 2 ]]; then
