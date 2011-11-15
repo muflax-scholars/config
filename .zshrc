@@ -258,6 +258,7 @@ alias sc="screen"
 alias scratchpad="screen -DRS scratchpad"
 alias sr="screen -RD"
 alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
+alias unison="unison -log=false -auto -ui=text -times"
 alias vi="vim"
 
 # youtube download

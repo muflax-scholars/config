@@ -1,3 +1,5 @@
+alias uk='unison kindle'
+
 alias up="sudo emerge --sync &; layman -S &; wait; eix-update"
 
 # timeboxing with pororo #TODO should combine this with tb
