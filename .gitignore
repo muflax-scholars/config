@@ -51,7 +51,8 @@
 .icedtea
 .icedteaplugin
 .lesshst
-.local/share
+.local/share/*
+!/.local/share/mc
 .lyrics
 .macromedia
 .matplotlib
