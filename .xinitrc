@@ -20,6 +20,9 @@ export LANG="ja_JP.UTF8"
 export OOO_FORCE_DESKTOP="gnome"
 export SAL_USE_VCLPLUGIN="gen"
 
+# fix java bug
+wmname "LG3D"
+
 # machine specific configs
 source ~/.xinitrc_local
 
