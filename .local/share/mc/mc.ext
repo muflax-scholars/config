@@ -490,7 +490,7 @@ regex/\.([eE][xX][eE])$
   Include=exe
 
 include/exe
-  Open(wine explorer /desktop=mc,1024x768 %f )
+  Open=(wine explorer /desktop=mc,1024x768 %f )
 
 ### Documents ###
 
