@@ -241,6 +241,7 @@ bindkey '^[[6~' end-of-history
 
 # normal aliases
 alias angband="angband -mgcu -umuflax"
+alias avg="noglob average_damage.rb"
 alias cal="cal -m -3"
 alias cgrep="grep --color=always"
 alias diff="colordiff"
