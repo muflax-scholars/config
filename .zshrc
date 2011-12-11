@@ -285,7 +285,7 @@ alias p3="python3"
 alias p="python3"
 alias pe="perl"
 alias ru="ruby"
-alias b="irb"
+alias i="irb -rrange_math"
 
 # optimized local compiles
 function om() {
@@ -329,7 +329,6 @@ alias -g GC='| grep --color=always'
   # idea file
   alias idea="noglob todo.sh -d ~/.todo-ideas.cfg"
   alias ideas="idea ls"
-  alias i="idea"
   alias ia="idea add"
   alias id="idea do"
   alias il="idea ls"

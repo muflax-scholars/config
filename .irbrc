@@ -1,7 +1,6 @@
 require 'rubygems'
 
 begin
-
   # load wirble
   require 'wirble'
 
