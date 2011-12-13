@@ -47,8 +47,8 @@ export MANPATH="$HOME/local/share/man:$MANPATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
 
 # editor is still vim for speed and because it's more compatible in general
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="emacsclient -nw"
+export VISUAL="emacsclient -nw"
 export MPD_HOST="192.168.1.15"
 
 # ruby
@@ -245,10 +245,6 @@ alias avg="noglob average_damage.rb"
 alias cal="cal -m -3"
 alias cgrep="grep --color=always"
 alias diff="colordiff"
-alias e="emacsclient -nw"
-alias ee="emacsclient -c -n"
-alias em="emacs-gui"
-alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
 alias grep="grep --color=auto -P"
 alias less="less -iF" 
 alias ls="ls --color=always --group-directories-first -v"
@@ -261,7 +257,13 @@ alias scratchpad="screen -DRS scratchpad"
 alias sr="screen -RD"
 alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
 alias unison="unison -log=false -auto -ui=text -times"
-alias vi="vim"
+
+# emacs
+alias e="emacsclient -nw"
+alias ee="emacsclient -c -n"
+alias em="emacs-gui"
+alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; e"
+alias vi="evil" # brainwashing
 
 # youtube download
 function y() {
