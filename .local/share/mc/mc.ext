@@ -501,7 +501,7 @@ type/^PostScript
 
 # PDF
 type/^PDF
-	Open=(okular %f & 2>&1 >/dev/null)
+	Open=(okular %f >/dev/null 2>&1 &)
 	#Open=(acroread %f &)
 	#Open=(ghostview %f &)
 	View=%view{ascii} pdftotext %f -
