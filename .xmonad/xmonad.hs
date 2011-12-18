@@ -154,8 +154,9 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         spawn "ssh amon@azathoth -- amixer set Master -q 5+")
     
     -- mpc
-    , ((modm              , xK_c     ), spawn "MPD_HOST=192.168.1.15 mpc --no-status toggle")
-    , ((modm .|. shiftMask, xK_c     ), spawn "remember_song.sh")
+    , ((modm                , xK_c     ), spawn "MPD_HOST=192.168.1.15 mpc --no-status toggle")
+    , ((modm .|. shiftMask  , xK_c     ), spawn "remember_song.sh")
+    , ((modm .|. controlMask, xK_c     ), spawn "MPD_HOST=192.168.1.15 mpc del 0")
 
     -- screenshots
     , ((modm .|. shiftMask, xK_o     ), 
