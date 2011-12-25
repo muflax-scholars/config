@@ -260,6 +260,7 @@ alias unison="unison -log=false -auto -ui=text -times"
 
 # emacs
 alias e="emacsclient -nw"
+alias se="sudo -e"
 alias ee="emacsclient -c -n"
 alias em="emacs-gui"
 alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; e"
