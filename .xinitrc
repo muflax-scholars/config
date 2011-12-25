@@ -1,8 +1,6 @@
 # load relevant zsh settings
-export GEM_HOME="$HOME/local/gems"
-export GEM_PATH="$GEM_HOME"
-export PATH="$GEM_HOME/bin:$PATH"
-export PATH="$($HOME/in/scripts/extend_path.sh):$PATH"
+source $HOME/.zsh/env.sh
+source $HOME/.zsh/path.sh
 
 # don't blank monitor
 setterm -blank 0 -powersave off -powerdown 0

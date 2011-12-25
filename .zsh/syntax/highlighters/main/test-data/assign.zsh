@@ -28,27 +28,8 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
+BUFFER='A=1'
 
-# Load the main script.
-. $(dirname $0)/../zsh-syntax-highlighting.zsh
-
-# Process each test data file in data/.
-for data_file in $(dirname $0)/data/*.zsh; do
-
-  # Load the data and prepare checking it.
-  BUFFER=
-  echo -n "* ${data_file:t:r}: "
-  . $data_file
-
-  # Check the data declares $BUFFER.
-  if [[ ${#BUFFER} -eq 0 ]]; then
-    echo "KO\n   - 'BUFFER' is not declared or blank."
-  else
-
-    # Measure the time taken by _zsh_highlight-zle-buffer.
-    TIMEFMT="%*Es"
-    time ( BUFFER="$BUFFER" && _zsh_highlight-zle-buffer)
-
-  fi
-
-done
+expected_region_highlight=(
+  "1 3 $ZSH_HIGHLIGHT_STYLES[assign]" # A=1
+)

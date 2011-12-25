@@ -18,6 +18,7 @@
 .serverauth*
 .subversion*
 .unison*
+.zsh/local.sh
 
 # ignore secure shit :)
 .config/MusicBrainz

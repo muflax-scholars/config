@@ -29,61 +29,47 @@
 # -------------------------------------------------------------------------------------------------
 
 
-ZSH_HIGHLIGHT_STYLES+=(
-  bracket-error                 'fg=red,bold'
-)
-
-# Colors for bracket levels.
-# Put as many color as you wish.
-# Leave it as an empty array to disable.
-ZSH_HIGHLIGHT_MATCHING_BRACKETS_STYLES=(
-  'fg=blue,bold'
-  'fg=green,bold'
-  'fg=magenta,bold'
-  'fg=yellow,bold'
-  'fg=cyan,bold'
-)
-
-# Whether the bracket match highlighting shound be called or not.
-_zsh_highlight_bracket-match-p() {
-  _zsh_highlight_cursor-moved-p || _zsh_highlight_buffer-modified-p
+# Check an highlighter was given as argument.
+[[ -n "$1" ]] || {
+  echo "You must provide the name of a valid highlighter as argument." >&2
+  exit 1
 }
 
-# Bracket match highlighting.
-_zsh_highlight_bracket-match() {
-  bracket_color_size=${#ZSH_HIGHLIGHT_MATCHING_BRACKETS_STYLES}
-  if ((bracket_color_size > 0)); then
-    typeset -A levelpos lastoflevel matching revmatching
-    ((level = 0))
-    for pos in {1..${#BUFFER}}; do
-      case $BUFFER[pos] in
-        "("|"["|"{")
-          levelpos[$pos]=$((++level))
-          lastoflevel[$level]=$pos
-          ;;
-        ")"|"]"|"}")
-          matching[$lastoflevel[$level]]=$pos
-          revmatching[$pos]=$lastoflevel[$level]
-          levelpos[$pos]=$((level--))
-          ;;
-      esac
-    done
-    for pos in ${(k)levelpos}; do
-      level=$levelpos[$pos]
-      if ((level < 1)); then
-        region_highlight+=("$((pos - 1)) $pos "$ZSH_HIGHLIGHT_STYLES[bracket-error])
-      else
-        region_highlight+=("$((pos - 1)) $pos "$ZSH_HIGHLIGHT_MATCHING_BRACKETS_STYLES[(( (level - 1) % bracket_color_size + 1 ))])
-      fi
-    done
-    ((c = CURSOR + 1))
-    if [[ -n $levelpos[$c] ]]; then
-      ((otherpos = -1))
-      [[ -n $matching[$c] ]] && otherpos=$matching[$c]
-      [[ -n $revmatching[$c] ]] && otherpos=$revmatching[$c]
-      region_highlight+=("$((otherpos - 1)) $otherpos standout")
-    fi
+# Check the highlighter is valid.
+[[ -f ${0:h:h}/highlighters/$1/$1-highlighter.zsh ]] || {
+  echo "Could not find highlighter '$1'." >&2
+  exit 1
+}
+
+# Check the highlighter has test data.
+[[ -d ${0:h:h}/highlighters/$1/test-data ]] || {
+  echo "Highlighter '$1' has no test data." >&2
+  exit 1
+}
+
+# Load the main script.
+. ${0:h:h}/zsh-syntax-highlighting.zsh
+
+# Activate the highlighter.
+ZSH_HIGHLIGHT_HIGHLIGHTERS=($1)
+
+# Process each test data file in test data directory.
+for data_file in ${0:h:h}/highlighters/$1/test-data/*; do
+
+  # Load the data and prepare checking it.
+  BUFFER=
+  echo -n "* ${data_file:t:r}: "
+  . $data_file
+
+  # Check the data declares $BUFFER.
+  if [[ ${#BUFFER} -eq 0 ]]; then
+    echo "KO\n   - 'BUFFER' is not declared or blank."
+  else
+
+    # Measure the time taken by _zsh_highlight.
+    TIMEFMT="%*Es"
+    time ( BUFFER="$BUFFER" && _zsh_highlight)
+
   fi
-}
 
-_zsh_highlight_add-highlighter _zsh_highlight_bracket-match
+done

@@ -28,8 +28,11 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-BUFFER='echo $(echo ${(z)array})'
+hash -d D=highlighters/main/test-data
+
+BUFFER='ls ~D/path-tilde-named.zsh'
 
 expected_region_highlight=(
-  # TODO
+  "1 2  $ZSH_HIGHLIGHT_STYLES[command]" # ls
+  "4 23 $ZSH_HIGHLIGHT_STYLES[path]"    # ~D/path-tilde-named.zsh
 )
