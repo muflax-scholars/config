@@ -482,7 +482,7 @@ regex/\.([fF][lL][vV])$
     Include=video
 
 include/video
-	Open=(mw --youtube -- %f )
+	Open=(mw --youtube %f )
 	#Open=(gtv %f >/dev/null 2>&1 &)
 	#Open=(xanim %f >/dev/null 2>&1 &)
 
