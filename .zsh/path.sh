@@ -10,5 +10,5 @@ for dir in $(find $SCRIPTS -type d -not -path "*/.git*"); do
   PATH="$dir:$PATH"
 done
 
-# ruby
-export PATH="$GEM_HOME/bin:$PATH"
+# rvm
+[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm

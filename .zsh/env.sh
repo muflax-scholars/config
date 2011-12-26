@@ -2,9 +2,8 @@ export EDITOR="emacsclient -nw"
 export VISUAL="emacsclient -nw"
 export MPD_HOST="192.168.1.15"
 
-# ruby
-export GEM_HOME="$HOME/local/gems"
-export GEM_PATH="$GEM_HOME"
+# ruby (rvm sets the rest)
+unset RUBYOPT
 
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
