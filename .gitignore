@@ -141,6 +141,7 @@
 # ignore savegames
 .angband
 .minecraft
+.renpy
 
 # configs that are included, but stupid
 .config/Trolltech.conf
