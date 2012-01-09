@@ -109,7 +109,7 @@ alias nyash="ssh amon@nyarlathotep"
 
 # torrent
 alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,uid=1000,gid=1006"
-alias nor="sudo umount.cifs /mnt/network/torrent-samba"
+alias nor="sudo umount /mnt/network/torrent-samba"
 alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/.torrents/ && rm ~/*.torrent" 
 
 # lolshell
