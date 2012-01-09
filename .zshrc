@@ -11,4 +11,4 @@ source ~/.zsh/gtd.sh
 source ~/.zsh/functions.sh
 source ~/.zsh/syntax.sh
 source ~/.zsh/terminal.sh
-source ~/.zsh/local.sh
+[[ -s ~/.zsh/local.sh ]] && source ~/.zsh/local.sh
