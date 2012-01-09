@@ -22,7 +22,6 @@
 
 # ignore secure shit :)
 .config/MusicBrainz
-.gitconfig
 .gnupg
 .ncftp
 .s3cfg

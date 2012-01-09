@@ -1,0 +1,17 @@
+[alias]
+  ci = commit -a
+  co = checkout
+  st = status
+
+[color]
+  ui = auto
+
+[user]
+  name = muflax
+  email = mail@muflax.com
+
+[push]
+  default = matching
+
+[github]
+  user = muflax

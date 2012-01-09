@@ -1,10 +1,3 @@
 alias uk='unison -fat kindle'
 
 alias up="sudo emerge --sync &; layman -S &; wait; eix-update"
-
-# timeboxing with pororo #TODO should combine this with tb
-alias pol="D1 pororo -s 1280 1024"
-            
-function tb_s() { pol 10m+2m/5 12m/5 /1 && mplayer -really-quiet /home/amon/.timeboxing }                          
-function tb_m() { pol 25m+5m/2 30m/2 /1 && mplayer -really-quiet /home/amon/.timeboxing }                          
-function tb_l() { pol 45m+15m/1 /1 && mplayer -really-quiet /home/amon/.timeboxing}                          
