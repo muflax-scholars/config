@@ -94,6 +94,7 @@
 .config/google-chrome
 .config/gtk-2.0
 .config/kde.org/
+.config/libreoffice
 .config/meld
 .config/yarpen.cz
 .dia
@@ -110,7 +111,6 @@
 .java
 .kchmviewer
 .kde4
-.libreoffice
 .links
 .mono
 .mozc
