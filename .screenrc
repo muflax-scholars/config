@@ -21,7 +21,7 @@ caption always "%{= .b}[ %H %{b}][ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%
 bell_msg " *ring* -> %n"
 
 # remove stupid bindings, put saner ones
-escape "^gg"
+escape "^tt"
 
 bind .
 bind ^\
