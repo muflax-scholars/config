@@ -82,6 +82,8 @@
 .xsession-errors
 
 # ignore stupid confs no one loves :)
+.Foxit
+.android
 .audacity*
 .avidemux
 .cgdb
