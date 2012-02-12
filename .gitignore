@@ -24,6 +24,7 @@
 .config/MusicBrainz
 .gnupg
 .ncftp
+.offlineimap*
 .s3cfg
 .ssh
 
