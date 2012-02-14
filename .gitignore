@@ -23,6 +23,7 @@
 # ignore secure shit :)
 .config/MusicBrainz
 .gnupg
+.heroku
 .ncftp
 .offlineimap*
 .s3cfg
