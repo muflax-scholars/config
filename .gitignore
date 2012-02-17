@@ -24,6 +24,7 @@
 .config/MusicBrainz
 .gnupg
 .heroku
+.laspyt.cfg
 .ncftp
 .offlineimap*
 .s3cfg
