@@ -28,6 +28,7 @@
 .ncftp
 .offlineimap*
 .s3cfg
+.s3_passphrase
 .ssh
 
 # ignore caches and histories
