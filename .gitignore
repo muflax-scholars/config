@@ -42,7 +42,6 @@
 .cola
 .config/ibus
 .config/menus
-.config/transmission/blocklists/*.bin
 .darcs
 .dbus
 .dmenu_cache
@@ -105,6 +104,7 @@
 .config/kde.org/
 .config/libreoffice
 .config/meld
+.config/transmission/
 .config/yarpen.cz
 .dia
 .ebview
