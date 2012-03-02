@@ -42,6 +42,7 @@
 .cola
 .config/ibus
 .config/menus
+.config/transmission/blocklists/*.bin
 .darcs
 .dbus
 .dmenu_cache
@@ -100,6 +101,7 @@
 .config/enchant
 .config/google-chrome
 .config/gtk-2.0
+.config/htop/
 .config/kde.org/
 .config/libreoffice
 .config/meld
