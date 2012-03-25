@@ -1,7 +1,7 @@
 require 'rubygems'
 
+# wirble
 begin
-  # load wirble
   require 'wirble'
 
   # start wirble (with color)
@@ -9,4 +9,10 @@ begin
   Wirble.colorize
 rescue LoadError => err
   warn "Couldn't load Wirble: #{err}"
+end
+
+begin
+  require 'awesome_print'
+rescue LoadError => err
+  warn "Couldn't load awesome_print: #{err}"
 end
