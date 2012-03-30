@@ -2,7 +2,7 @@
 # /home/amon/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Wed Jan 11 18:21:01 2012
+# Generated on Fri Mar 30 13:51:20 2012
 #
 
 # ConfigProperties:
@@ -13,12 +13,12 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = No
-Timer = Graphics_Card_(GPU_1),Yes,1000
-Timer = Graphics_Card_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
 Timer = Thermal_Monitor_(GPU_1),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Graphics_Card_(GPU_0),Yes,1000
+Timer = Graphics_Card_(GPU_1),Yes,1000
 
 # Attributes:
 
@@ -30,14 +30,15 @@ Timer = Thermal_Monitor_(GPU_1),Yes,1000
 0/CursorShadowXOffset=4
 0/CursorShadowYOffset=2
 0/SyncToVBlank=1
-0/LogAniso=4
-0/FSAA=9
+0/LogAniso=0
+0/FSAA=0
 0/TextureSharpen=0
+0/TextureClamping=0
 0/AllowFlipping=1
-0/FSAAAppControlled=0
-0/LogAnisoAppControlled=0
+0/FSAAAppControlled=1
+0/LogAnisoAppControlled=1
 0/OpenGLImageSettings=3
-0/FSAAAppEnhanced=1
+0/FSAAAppEnhanced=0
 0/RedBrightness=0.000000
 0/GreenBrightness=0.000000
 0/BlueBrightness=0.000000
@@ -48,15 +49,10 @@ Timer = Thermal_Monitor_(GPU_1),Yes,1000
 0/GreenGamma=1.000000
 0/BlueGamma=1.000000
 0/DigitalVibrance[DFP-0]=0
-0/DigitalVibrance[DFP-1]=0
 0/GPUScaling[DFP-0]=65539
-0/GPUScaling[DFP-1]=131075
 0/OverscanCompensation[DFP-0]=0
-0/OverscanCompensation[DFP-1]=0
 0/ColorSpace[DFP-0]=0
-0/ColorSpace[DFP-1]=0
 0/ColorRange[DFP-0]=0
-0/ColorRange[DFP-1]=0
 0/XVideoTextureBrightness=0
 0/XVideoTextureContrast=0
 0/XVideoTextureHue=0
