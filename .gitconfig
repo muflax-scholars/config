@@ -2,7 +2,8 @@
   ci = commit -a
   co = checkout
   st = status
-
+  pum = pull origin master
+  
 [color]
   ui = auto
 
