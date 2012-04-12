@@ -42,15 +42,22 @@ alias ecc="sudo eclean -d distfiles; sudo eclean -d packages"
 alias wg="watch genlop -nc"
 alias us="sudo ~/in/scripts/update_system"
 
-# programming
+# java
 alias burnburnBURN="rm -f *.class; javac *.java"
+
+# c
 alias co="./configure"
+
+# python
 alias p2="python"
 alias p3="python3"
 alias p="python3"
 alias pe="perl"
+
+# ruby stuff
 alias ru="ruby"
 alias i="irb -rrange_math"
+alias cdg="cd $(rvm gemdir)/gems/"
 
 # optimized local compiles
 function om() {
@@ -116,3 +123,4 @@ alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/.torrents/ &&
 # lolshell
 alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
+
