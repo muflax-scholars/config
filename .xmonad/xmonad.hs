@@ -279,7 +279,6 @@ manageHook' = composeAll $
         [ isFullscreen --> doFullFloat ]
     where floats'      = [ "Wine" 
                          , "Gxmessage"
-                         , "Gimp"
                          ]
 
 -- Scratchpad terminal
