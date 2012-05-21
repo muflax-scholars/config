@@ -59,6 +59,9 @@ alias ru="ruby"
 alias i="irb -rrange_math"
 alias cdg="cd $(rvm gemdir)/gems/"
 
+# bayescraft
+alias post="noglob posterior"
+
 # optimized local compiles
 function om() {
   CFLAGS='-O2 -pipe -march=nocona' 
