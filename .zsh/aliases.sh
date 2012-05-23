@@ -30,7 +30,7 @@ alias vi="evil" # brainwashing
 # youtube download
 function y() {
   echo "Paste links, ^D start to download."
-  youtube-dl -i -c -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
+  youtube-dl --ignore-errors --continue --rate-limit 2.5m -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
 }
 
 # portage
