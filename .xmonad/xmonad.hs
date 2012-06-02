@@ -282,7 +282,7 @@ manageHook' = composeAll $
                          ]
 
 -- Scratchpad terminal
-manageTerminal = scratchpadManageHook (W.RationalRect 0.25 0.2 0.5 0.6)
+manageTerminal = scratchpadManageHook (W.RationalRect 0.25 0.225 0.5 0.55)
 scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -e zsh -i -c 'scratchpad'"
 
 -- Other Scratchpads
