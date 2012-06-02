@@ -37,7 +37,7 @@ xsetroot -cursor_name left_ptr &
 skb.sh
 xmodmap ~/.Xmodmap
 
-DISPLAY=:0.0 urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad' &
+DISPLAY=:0.0 urxvt -name scratchpad -e zsh -i -c 'scratchpad' &
 
 WM="start_xmonad.sh"
 exec dbus-launch --auto-syntax --exit-with-session $WM

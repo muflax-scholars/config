@@ -282,8 +282,8 @@ manageHook' = composeAll $
                          ]
 
 -- Scratchpad terminal
-manageTerminal = scratchpadManageHook (W.RationalRect 0.25 0.25 0.5 0.5)
-scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -e zsh -c 'screen -DRS scratchpad'"
+manageTerminal = scratchpadManageHook (W.RationalRect 0.25 0.2 0.5 0.6)
+scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -e zsh -i -c 'scratchpad'"
 
 -- Other Scratchpads
 scratchpads = [ NS "pidgin" "pidgin" (role =? "buddy_list") defaultFloating ]

@@ -13,11 +13,20 @@ alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
 alias po="popd"
-alias sc="screen"
-alias scratchpad="screen -DRS scratchpad"
-alias sr="screen -RD"
 alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
 alias unison="unison -log=false -auto -ui=text -times"
+
+# tmux
+alias scratchpad="tmr scratchpad"
+function tmr() {
+  if [[ $# -ge 1 ]] then 
+    tmux attach -t $1 || tmux new-session -s $1
+  else
+    echo "usage: tmr session-name"
+    exit 1
+  fi
+}
+
 
 # emacs
 alias e="emacsclient -nw -a vim"
