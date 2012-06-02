@@ -1,0 +1,10 @@
+# ignore compiled stuff
+*.elc
+*.pyc
+
+# ignore temp files
+*.sw[a-z]
+.\#*
+
+# rbenv files
+.rbenv-version

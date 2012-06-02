@@ -57,7 +57,7 @@ alias pe="perl"
 # ruby stuff
 alias ru="ruby"
 alias i="irb -rrange_math"
-alias cdg="cd $(rvm gemdir)/gems/"
+alias cdg="cd $(gem environment gemdir)/gems"
 
 # bayescraft
 alias post="noglob posterior"

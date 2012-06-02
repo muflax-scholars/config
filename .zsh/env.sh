@@ -2,9 +2,6 @@ export EDITOR="emacsclient -nw -a vim"
 export VISUAL="emacsclient -nw -a vim"
 export MPD_HOST="192.168.1.15"
 
-# ruby (rvm sets the rest)
-unset RUBYOPT
-
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
 

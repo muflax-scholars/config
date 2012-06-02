@@ -156,5 +156,5 @@
 .config/comix
 .config/geeqie
 
-# ignore rvm
-.rvm
+# ignore rbenv
+.rbenv

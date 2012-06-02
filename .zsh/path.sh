@@ -10,5 +10,6 @@ for dir in $(find $SCRIPTS -type d -not -path "*/.git*"); do
   PATH="$dir:$PATH"
 done
 
-# rvm
-[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
+# rbenv sets everything for ruby
+PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

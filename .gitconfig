@@ -16,3 +16,6 @@
 
 [github]
   user = muflax
+
+  [core]
+	excludesfile = ~/.gitignore-global
