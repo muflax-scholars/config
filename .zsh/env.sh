@@ -5,6 +5,9 @@ export MPD_HOST="192.168.1.15"
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
+# ruby
+unset RUBYOPT
+
 # don't use japanese on TTY
 case ${TERM} in
   linux)
