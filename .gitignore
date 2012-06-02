@@ -51,6 +51,7 @@
 .gconf
 .gconfd
 .gem
+.gnuplot-wxt
 .gtk-bookmarks
 .icedtea
 .icedteaplugin
@@ -120,6 +121,7 @@
 .java
 .kchmviewer
 .kde4
+.libreoffice
 .links
 .mono
 .mozc
