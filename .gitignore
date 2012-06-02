@@ -39,7 +39,7 @@
 .brainworkshop/*.dat
 .brainworkshop/stats.txt
 .cache
-.cola
+.config/git-cola/
 .config/ibus
 .config/menus
 .darcs
