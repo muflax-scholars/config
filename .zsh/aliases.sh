@@ -17,13 +17,12 @@ alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
 alias unison="unison -log=false -auto -ui=text -times"
 
 # tmux
-alias scratchpad="tmr scratchpad"
-function tmr() {
+alias scratchpad="tm scratchpad"
+function tm() {
   if [[ $# -ge 1 ]] then 
-    tmux attach -t $1 || tmux new-session -s $1
+    tmux attach -t $1 || tmux new-session -s $1 \; set default-path "$(pwd)" \; set -g -a update-environment ' PWD'
   else
-    echo "usage: tmr session-name"
-    exit 1
+    tmux new-session \; set default-path "$(pwd)" \; set -g -a update-environment ' PWD'
   fi
 }
 
