@@ -9,7 +9,7 @@ function title() {
 
   case $TERM in
     screen*)
-      print -Pn "\e]2;$a @$2\a" # plain xterm title
+      print -Pn "\e]2;$a @$2\a"  # plain xterm title
       print -Pn "\ek$a\e\\"      # screen title (in ^A")
       ;;
     rxvt*|xterm*)
