@@ -45,3 +45,36 @@ function take_hostage() {
     fi
   done
 }
+
+# bundler
+bundler-installed() {
+  which bundle > /dev/null 2>&1
+}
+
+within-bundled-project() {
+  local check_dir=$PWD
+  while [ $check_dir != "/" ]; do
+    [ -f "$check_dir/Gemfile" ] && return
+    check_dir="$(dirname $check_dir)"
+  done
+  false
+}
+
+run-with-bundler() {
+  if bundler-installed && within-bundled-project; then
+    bundle exec $@
+  else
+    $@
+  fi
+}
+
+bundled_commands=(annotate cap capify cucumber ey foreman guard middleman nanoc rackup rainbows rails rake rspec ruby shotgun spec spork thin thor unicorn unicorn_rails)
+
+for cmd in $bundled_commands; do
+  eval "function bundled_$cmd () { run-with-bundler $cmd \$@}"
+  alias $cmd=bundled_$cmd
+
+  if which _$cmd > /dev/null 2>&1; then
+    compdef _$cmd bundled_$cmd=$cmd
+  fi
+done
