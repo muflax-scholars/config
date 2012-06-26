@@ -13,9 +13,12 @@
 
 [push]
   default = matching
-
+  
 [github]
   user = muflax
 
-  [core]
+[core]
 	excludesfile = ~/.gitignore-global
+
+[include]
+   path = ~/.git-local

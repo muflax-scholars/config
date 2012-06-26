@@ -23,6 +23,7 @@
 # ignore secure shit :)
 .config/MusicBrainz
 .dropbox
+.git-local
 .gnupg
 .heroku
 .laspyt.cfg
