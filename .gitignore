@@ -49,6 +49,7 @@
 .dmenu_cache
 .dvdcss
 .emacs.d/cache
+.emacs.d/var
 .fontconfig*
 .gconf
 .gconfd
