@@ -2,7 +2,7 @@
 # /home/amon/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Wed May 23 11:33:47 2012
+# Generated on Mon Jul 23 12:54:07 2012
 #
 
 # ConfigProperties:
@@ -50,10 +50,6 @@ Timer = Thermal_Monitor_(GPU_1),Yes,1000
 0/BlueGamma=1.000000
 0/DigitalVibrance[DFP-0]=0
 0/DigitalVibrance[DFP-1]=0
-0/GPUScaling[DFP-0]=131075
-0/GPUScaling[DFP-1]=131075
-0/OverscanCompensation[DFP-0]=0
-0/OverscanCompensation[DFP-1]=0
 0/ColorSpace[DFP-0]=0
 0/ColorSpace[DFP-1]=0
 0/ColorRange[DFP-0]=0
