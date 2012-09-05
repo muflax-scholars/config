@@ -214,8 +214,7 @@ layout' =
     mkToggle1 MIRROR    $
 
     -- workspace specific preferences
-    onWorkspace "暗記" (cross ||| grid ||| tiled) $
-    onWorkspace "toile" (tiled ||| grid)          $
+    onWorkspace "toile" (tiled ||| grid) $
 
     (grid ||| tiled ||| cross)
     where
