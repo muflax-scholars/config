@@ -21,6 +21,7 @@
 .zsh/local.sh
 
 # ignore secure shit :)
+.beeminderrc
 .config/MusicBrainz
 .dropbox
 .git-local
