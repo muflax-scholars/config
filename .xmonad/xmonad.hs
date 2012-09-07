@@ -216,7 +216,7 @@ layout' =
     -- workspace specific preferences
     onWorkspace "toile" (tiled ||| grid) $
 
-    (grid ||| tiled ||| cross)
+    (tiled ||| grid ||| cross)
     where
          -- normal tiling
          tiled      = named "瓦"       $
