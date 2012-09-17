@@ -8,11 +8,14 @@ begin
   Wirble.init
   Wirble.colorize
 rescue LoadError => err
-  warn "Couldn't load Wirble: #{err}"
+  warn "Couldn't load wirble: #{err}"
 end
 
-begin
-  require 'awesome_print'
-rescue LoadError => err
-  warn "Couldn't load awesome_print: #{err}"
+# useful gems
+%w{awesome_print date json yaml}.each do |gem|
+  begin
+    require gem
+  rescue LoadError => err
+    warn "Couldn't load #{gem}: #{err}"
+  end
 end
