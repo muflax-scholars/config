@@ -16,6 +16,9 @@ alias po="popd"
 alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
 alias unison="unison -log=false -auto -ui=text -times"
 
+# gist
+alias gist="jist -t $(git config github.oauth-token)"
+
 # tmux
 alias scratchpad="tm scratchpad"
 function tm() {
