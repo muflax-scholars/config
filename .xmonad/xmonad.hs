@@ -140,8 +140,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_g     ), swapNextScreen  )
 
     -- Restart xmonad
-    , ((modm .|. shiftMask, xK_q     ), 
-        spawn "xmonad --recompile && xmonad --restart")
+    , ((modm .|. shiftMask, xK_q     ), spawn "xmonad --recompile && xmonad --restart")
     
     -- Volume Control
     , ((0                 , 0x1008ff11), -- XF86AudioLowerVolume 
@@ -159,15 +158,16 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. controlMask, xK_c     ), spawn "MPD_HOST=192.168.1.15 mpc del 0")
 
     -- screenshots
-    , ((modm .|. shiftMask, xK_o     ), 
-        spawn "$HOME/in/scripts/selection")
+    , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/in/scripts/selection")
     
     -- yes, those are hardcoded positions... so what?
-    , ((modm .|. controlMask, xK_1     ), 
-        spawn "left_display")
-    , ((modm .|. controlMask, xK_2     ), 
-        spawn "right_display")
+    , ((modm .|. controlMask, xK_1     ), spawn "left_display")
+    , ((modm .|. controlMask, xK_2     ), spawn "right_display")
 
+    -- reset keys
+    , ((modm,               xK_k     ), spawn "$HOME/local/bin/skb.sh")
+
+      
     ]
     ++
 
