@@ -12,7 +12,7 @@ rescue LoadError => err
 end
 
 # useful gems
-%w{awesome_print date json yaml}.each do |gem|
+%w{awesome_print date json set yaml}.each do |gem|
   begin
     require gem
   rescue LoadError => err
