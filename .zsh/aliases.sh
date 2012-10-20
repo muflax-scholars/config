@@ -117,8 +117,8 @@ alias wake_azathoth="wakeonlan 00:1E:8C:45:D2:90"
 alias wake_totenkopf="wakeonlan 00:50:04:42:99:6F"
 
 # wine
-alias ewine="wine explorer /desktop=foo,1024x768"
-alias newine="nice wine explorer /desktop=foo,1024x768"
+alias ewine="wine explorer /desktop=foo${RANDOM},1024x768"
+alias newine="nice ewine"
 
 # monitors on/off
 alias don="D0 xset dpms force on"
