@@ -22,6 +22,7 @@ alias gist="jist -t $(git config github.oauth-token)"
 # shrink pdfs
 function shrink() {
   for pdf in $*; do
+    echo "shrinking ${pdf}..."
     pdf2ps $pdf ${pdf:r}.ps && ps2pdf ${pdf:r}.ps ${pdf:r}_shrunk.pdf && rm ${pdf:r}.ps
   done
 }
