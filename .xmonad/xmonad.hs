@@ -270,10 +270,10 @@ manageHook' = composeAll $
         , className =? "Anki" --> doShift "暗記"
         ]
         ++
-        [ className =? "MPlayer" --> doIgnore] -- FIXME: ugly, but good enough 
-                                               --        for now...
-                                               --        this should probably
-                                               --        be a separate WS...
+        [ className =? "mplayer2" --> doIgnore] -- FIXME: ugly, but good enough 
+                                                --        for now...
+                                                --        this should probably
+                                                --        be a separate WS...
         ++
         [ isFullscreen --> doFullFloat ]
     where floats'      = [ "Wine" 
