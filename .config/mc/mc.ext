@@ -486,7 +486,10 @@ regex/\.([fF][lL][vV])$
 
 regex/\.([mM][4][vV])$
 	Include=video
-    
+
+regex/\.([wW][eE][bB][mM])$
+	Include=video
+
 include/video
 	Open=(mw --youtube %f )
 	#Open=(gtv %f >/dev/null 2>&1 &)
