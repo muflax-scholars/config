@@ -19,6 +19,13 @@ alias unison="unison -log=false -auto -ui=text -times"
 # gist
 alias gist="jist -t $(git config github.oauth-token)"
 
+# shrink pdfs
+function shrink() {
+  for pdf in $*; do
+    pdf2ps $pdf ${pdf:r}.ps && ps2pdf ${pdf:r}.ps ${pdf:r}_shrunk.pdf && rm ${pdf:r}.ps
+  done
+}
+
 # tmux
 alias scratchpad="tm scratchpad"
 function tm() {
