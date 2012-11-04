@@ -1,0 +1,8 @@
+root = /home/amon/spoiler/anki/muflax/
+root = /media/MOT/AnkiDroid/
+
+ignore = Name *.sh
+ignore = Name *.rb
+ignore = Name *.anki2-*
+
+ignore = Name backups

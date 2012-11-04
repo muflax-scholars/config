@@ -17,7 +17,10 @@
 .feh*
 .serverauth*
 .subversion*
-.unison*
+.unison*.log
+.unison/ar*
+.unison/fp*
+.unison/lk*
 .zsh/local.sh
 
 # ignore secure shit :)

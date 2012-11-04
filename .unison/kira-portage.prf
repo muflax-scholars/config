@@ -1,0 +1,5 @@
+root = /etc/portage
+root = ssh://root@azathoth//etc/portage
+
+ignore = Path make.conf
+ignore = Path make.profile

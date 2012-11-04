@@ -1,0 +1,54 @@
+root = /home/amon
+root = ssh://amon@azathoth//home/amon
+path = .
+
+ignore = Path .VirtualBox
+ignore = Path .Xauthority
+ignore = Path .cache
+ignore = Path .dbus
+ignore = Path .dmenu_cache
+ignore = Path .fehbg
+ignore = Path .fontconfig
+ignore = Path .gconfd/saved_state
+ignore = Pat .gnupg/S.gpg-agent
+ignore = Path .htoprc
+ignore = Path .icedteaplugin
+ignore = Path .macromedia
+ignore = Path .rxvt-unicode*
+ignore = Path .vim/yankring*
+ignore = Path .vimfuzzyfinder*
+ignore = Path .viminfo
+ignore = Path .wine*
+ignore = Path .xinitrc_local
+ignore = Path .xsession-errors
+ignore = Path .zcompdump
+ignore = Path .zsh/local.sh
+ignore = Path .zsh_history
+
+ignore = Path .mozilla/firefox
+ignore = Path .pentadactyl/info
+ignore = Path .config/google-chrome
+
+ignore = Path .emacs.d/cache
+
+ignore = Path .config/mc
+ignore = Path .local/share/mc
+
+ignore = Path .unison/{ar,fp}*
+ignore = Path .unison*.log
+
+ignore = Path local/src/out/juniper_linux/juniper_networks/network_connect/ncsvc
+
+ignore = Path p2p
+ignore = Path 音
+ignore = Path テレビ
+
+ignore = Path spoiler-backup
+
+ignore = Path .xmonad/*-pipe
+
+ignore = Path .dropbox
+ignore = Path Dropbox
+
+ignore = Path .purple
+ignore = Path .config/transmission

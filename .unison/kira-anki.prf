@@ -1,0 +1,7 @@
+root = /home/amon
+root = ssh://amon@azathoth//home/amon
+
+fastcheck = false
+path = ./spoiler/anki/muflax/
+
+ignore = Name *.media
