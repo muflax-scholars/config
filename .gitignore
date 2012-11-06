@@ -104,6 +104,7 @@
 .config/DjVuLibre
 .config/Google
 .config/NVIDIA Corporation
+.config/Trolltech
 .config/Ulduzsoft
 .config/calibre
 .config/enchant
@@ -115,6 +116,7 @@
 .config/meld
 .config/transmission/
 .config/yarpen.cz
+.designer
 .dia
 .ebview
 .eclipse
