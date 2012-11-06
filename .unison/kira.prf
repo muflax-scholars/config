@@ -55,3 +55,5 @@ ignore = Path .config/transmission
 
 ignore = Path .local/share/recently-used.xbel
 ignore = Path .config/gtk-2.0/gtkfilechooser.ini
+
+ignore = Path spoiler/anki/muflax
