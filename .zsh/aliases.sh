@@ -134,9 +134,9 @@ alias doff="D0 xset dpms force off"
 
 # ssh
 alias mish="ssh totenkopf@ming"
-alias azash="ssh amon@azathoth"
-alias nyash="ssh amon@nyarlathotep"
-alias tysh="ssh amon@typhus"
+alias azash="ssh -C amon@azathoth"
+alias nyash="ssh -C amon@nyarlathotep"
+alias tysh="ssh -C amon@typhus"
 
 # torrent
 alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,uid=1000,gid=1006"
