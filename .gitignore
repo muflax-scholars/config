@@ -36,6 +36,7 @@
 .s3cfg
 .s3_passphrase
 .ssh
+.steam*
 .trc
 
 # ignore caches and histories
