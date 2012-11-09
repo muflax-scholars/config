@@ -14,7 +14,16 @@ alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
 alias po="popd"
 alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
+
+# unison
 alias unison="unison -log=false -auto -ui=text -times"
+alias uk='unison -fat kindle'
+alias ua='unison -fat -prefer /home/amon/spoiler/anki/muflax/ android-anki'
+alias up="sudo emerge --sync &; layman -S &; wait; eix-update"
+alias un='unison kira'
+alias ur='unison kira-repo'
+alias uep='sudo unison kira-portage -times -log=false -auto -ui=text'
+alias uo='unison kira-ongaku'
 
 # gist
 alias gist="jist -t $(git config github.oauth-token)"

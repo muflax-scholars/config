@@ -1,14 +1,9 @@
-alias un='unison kira'
-alias ur='unison kira-repo'
-alias uep='sudo unison kira-portage -times -log=false -auto -ui=text'
-alias uo='unison kira-ongaku'
-
 function dipa() {
     # update in both directions
-    echo "aza -> nya"
+    echo "aza -> typh"
     sudo rsync -uavP azathoth:/var/cache/distfiles/ /var/cache/distfiles
     sudo rsync -uavP azathoth:/var/cache/packages/  /var/cache/packages
-    echo "nya -> aza"
+    echo "typh -> aza"
     sudo rsync -uavP /var/cache/distfiles/ azathoth:/var/cache/distfiles
     sudo rsync -uavP /var/cache/packages/  azathoth:/var/cache/packages
 }
