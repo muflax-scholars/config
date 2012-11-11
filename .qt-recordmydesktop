@@ -9,7 +9,7 @@
 #Full shots,1 disabled 0 enabled
 1
 #Filename
-/home/amon/out.ogv
+/home/amon/p2p/out.ogv
 #Delay,seconds
 0
 #Number of channels
@@ -33,7 +33,7 @@ $DISPLAY
 #Quick subsampling,1 disabled 0 enabled
 1
 #Working directory(temporary files)
-/home/amon/p2p/recording
+/home/amon/p2p/
 #On the fly encoding,1 disabled 0 enabled
 1
 #Zero compression,1 disabled 0 enabled
