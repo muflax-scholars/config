@@ -293,7 +293,7 @@ scratchpads = [ NS "pidgin"
                        (role =? "buddy_list")
                        defaultFloating
               , NS "anking"
-                       "anking -m 'Basic' -d 'meatgrinder'"
+                       "anking -m 'Basic'"
                        (title =? "Anking Off")
                        defaultFloating
               ]
