@@ -93,6 +93,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch scratchpad
     , ((modm,               xK_i     ), scratchpad)
     , ((modm,               xK_p     ), namedScratchpadAction scratchpads "pidgin")
+    , ((modm,               xK_a     ), namedScratchpadAction scratchpads "anking")
     -- launch dmenu
     , ((modm,               xK_e     ), spawn dmenuQuick')
     , ((modm,               xK_o     ), spawn dmenuPath')
@@ -285,7 +286,15 @@ manageTerminal = scratchpadManageHook (W.RationalRect 0.25 0.225 0.5 0.55)
 scratchpad = scratchpadSpawnActionCustom "urxvt -name scratchpad -e zsh -i -c 'scratchpad'"
 
 -- Other Scratchpads
-scratchpads = [ NS "pidgin" "pidgin" (role =? "buddy_list") defaultFloating ]
+scratchpads = [ NS "pidgin"
+                       "pidgin"
+                       (role =? "buddy_list")
+                       defaultFloating
+              , NS "anking"
+                       "anking -m 'Basic' -d 'meatgrinder'"
+                       (title =? "Anking Off")
+                       defaultFloating
+              ]
               where role = stringProperty "WM_WINDOW_ROLE"
     
 manageScratchpads = manageTerminal <+> namedScratchpadManageHook scratchpads
