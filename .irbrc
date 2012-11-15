@@ -12,10 +12,12 @@ rescue LoadError => err
 end
 
 # useful gems
-%w{awesome_print date json set yaml}.each do |gem|
+gems = %w{awesome_print date json set yaml bayescraft chronic}
+
+gems.each do |gem|
   begin
     require gem
   rescue LoadError => err
-    warn "Couldn't load #{gem}: #{err}"
+    warn "Couldn't load #{gem}: #{err}, skipping..."
   end
 end
