@@ -1,6 +1,9 @@
 root = /var/cache
 root = ssh://root@azathoth//var/cache
 
+nodeletion = /var/cache
+nodeletion = ssh://root@azathoth//var/cache
+
 path = distfiles
 path = packages
 
