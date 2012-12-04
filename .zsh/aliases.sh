@@ -23,6 +23,7 @@ alias un='unison kira'
 alias ur='unison kira-repo'
 alias uep='sudo unison kira-portage -times -log=false -auto -ui=text'
 alias uo='unison kira-ongaku'
+alias udipa='sudo unison kira-dipa -times -log=false -auto -ui=text'
 
 # gist
 alias gist="jist -t $(git config github.oauth-token)"

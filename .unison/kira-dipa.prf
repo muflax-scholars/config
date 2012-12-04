@@ -1,0 +1,5 @@
+root = /var/cache
+root = ssh://root@azathoth//var/cache
+
+path = ./distfiles
+path = ./packages
