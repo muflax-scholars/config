@@ -46,7 +46,6 @@ function tm() {
   fi
 }
 
-
 # emacs
 alias e="emacsclient -nw -a vim"
 alias se="sudo -e"
@@ -75,6 +74,7 @@ alias burnburnBURN="rm -f *.class; javac *.java"
 
 # c
 alias co="./configure"
+alias tagify="ctags -eR ."
 
 # python
 alias p2="python"
