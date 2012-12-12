@@ -99,6 +99,7 @@
 # ignore stupid confs no one loves :)
 .Foxit
 .android
+.ardour*
 .audacity*
 .avidemux
 .cgdb
@@ -115,12 +116,15 @@
 .config/kde.org/
 .config/libreoffice
 .config/meld
+.config/piorekf
 .config/transmission/
+.config/vmpk.sourceforge.net
 .config/yarpen.cz
 .designer
 .dia
 .ebview
 .eclipse
+.gervill
 .gimp*
 .gitk
 .gnome2
@@ -138,11 +142,11 @@
 .mozc
 .synopsys
 .tgdb
+.tuxguitar*
 .universalindentgui
 .wxMaxima
 .xchat2
 .xine/
-
 
 # ignore mail, firefox and ims, oh my!
 .jd
