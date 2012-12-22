@@ -268,7 +268,7 @@ manageHook' = composeAll $
         , className =? "Firefox" --> doShift "toile"
         , className =? "Chromium-browser" --> doShift "toile"
         , className =? "Claws-mail" --> doShift "toile"
-        , className =? "Anki" --> doShift "暗記"
+        , className =? "Runanki" --> doShift "暗記"
         ]
         ++
         [ className =? "mplayer2" --> doIgnore -- FIXME: ugly, but good enough 
