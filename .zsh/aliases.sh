@@ -132,6 +132,7 @@ alias r="mw -r"
 #alias wake_azathoth="wakeonlan 00:18:E7:16:6F:C5"
 alias wake_azathoth="wakeonlan 00:1E:8C:45:D2:90"
 alias wake_totenkopf="wakeonlan 00:50:04:42:99:6F"
+alias wake_typhus="wakeonlan 00:19:d2:c4:45:0d"
 
 # wine
 alias ewine="wine explorer /desktop=foo${RANDOM},1024x768"
