@@ -21,6 +21,9 @@ export SAL_USE_VCLPLUGIN="gen"
 # fix java bug
 wmname "LG3D"
 
+# steam audio
+export SDL_AUDIODRIVER="alsa"
+
 # machine specific configs
 source ~/.xinitrc_local
 
