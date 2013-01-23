@@ -8,12 +8,19 @@ alias cgrep="grep --color=always"
 alias diff="colordiff"
 alias grep="grep --color=auto -P"
 alias less="less -iF" 
-alias ls="ls --color=always --group-directories-first -v"
 alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
 alias po="popd"
 alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
+
+# ls
+alias ls="ls --color=always --group-directories-first -v"
+alias l="ls -L"
+alias ll="ls -lhL"
+alias lh="ls -lh"
+alias lss="ls -lhsR"
+alias lsr="ls -lhsR"
 
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
@@ -124,7 +131,6 @@ alias cp="cp -i"
 alias mv="mv -i"
 
 # mplayer
-alias l="mw -l"
 alias m="mw -l"
 alias r="mw -r"
 
