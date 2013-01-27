@@ -19,8 +19,8 @@ alias ls="ls --color=always --group-directories-first -v"
 alias l="ls -L"
 alias ll="ls -lhL"
 alias lh="ls -lh"
-alias lss="ls -lhsR"
-alias lsr="ls -lhsR"
+alias lss="ls -lhS"
+alias lsr="ls -lhSr"
 
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
