@@ -167,6 +167,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- reset keys
     , ((modm,               xK_k     ), spawn "$HOME/local/bin/skb.sh")
+    , ((modm .|. shiftMask, xK_k     ), spawn "setxkbmap us")
 
       
     ]
