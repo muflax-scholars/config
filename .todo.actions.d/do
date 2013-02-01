@@ -36,11 +36,6 @@ do
         reward=$(( $reward + 1 ))
     fi
 
-    # if there are marble points associated with it, pass them to shindai
-    if perl -e "if ('$todo' =~ / (^\[|\s*\[) \d+m? \] (\s+|$) /x) { exit 0} else { exit 1}"; then
-        gtd_add_marbles <<< "$todo"
-    fi
-
     # handle recurring events
     if perl -e "if ('$todo' =~ / (^!|\s*!) \d+ (\s+|$) /x) { exit 0} else { exit 1}"; then
         if [ $TODOTXT_PRESERVE_LINE_NUMBERS = 0 ]; then
