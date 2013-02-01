@@ -142,7 +142,7 @@ alias wake_typhus="wakeonlan 00:19:d2:c4:45:0d"
 
 # wine
 alias ewine="wine explorer /desktop=foo${RANDOM},1024x768"
-alias newine="nice ewine"
+alias newine="nice wine explorer /desktop=foo${RANDOM},1024x768""
 
 # monitors on/off
 alias don="D0 xset dpms force on"
