@@ -166,6 +166,7 @@
 
 # ignore savegames
 .angband
+.caravel
 .minecraft
 .renpy
 
