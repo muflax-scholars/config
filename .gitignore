@@ -7,14 +7,12 @@
 
 # ignore host-specific files
 .*_local
-.FEH*
 .VirtualBox
 .Xauthority
 .config/mc/filepos
 .config/mc/history
 .config/mc/panels.ini
 .config/nitrogen
-.feh*
 .serverauth*
 .subversion*
 .unison*.log
@@ -42,15 +40,11 @@
 # ignore caches and histories
 *history
 .adobe
-.aspell*
-.bibletime
 .brainworkshop/*.dat
 .brainworkshop/stats.txt
 .cache
 .config/git-cola/
 .config/ibus
-.config/menus
-.darcs
 .dbus
 .dmenu_cache
 .dvdcss
@@ -59,7 +53,6 @@
 .fontconfig*
 .gconf
 .gconfd
-.gem
 .gnuplot-wxt
 .gtk-bookmarks
 .icedtea
@@ -71,16 +64,11 @@
 .matplotlib
 .netx
 .nv
-.pki
-.pulse*
-.pylint.d
 .recently*
 .ri19
-.ruby_inline
 .session
 .slocdata
 .smex-items
-.sword
 .thumbnails
 .vim/.netrwhist
 .vim/spell/*.add*
@@ -101,10 +89,7 @@
 .android
 .ardour*
 .audacity*
-.avidemux
 .cgdb
-.config/DjVuLibre
-.config/Google
 .config/NVIDIA Corporation
 .config/Trolltech
 .config/Ulduzsoft
@@ -141,27 +126,23 @@
 .links
 .mono
 .mozc
+.ruby_inline
 .synopsys
 .tgdb
 .tuxguitar*
 .universalindentgui
 .wxMaxima
 .xchat2
-.xine/
 
 # ignore mail, firefox and ims, oh my!
 .jd
-.mail
 .mozilla
-.pentadactyl/info
 .purple
-.thunderbird
 
 # ignore wine (has its own backups)
 .wine*
 
 # ignore anki
-.anki
 .yomichan
 
 # ignore savegames
