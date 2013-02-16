@@ -64,6 +64,7 @@
 .matplotlib
 .netx
 .nv
+.pulse*
 .recently*
 .ri19
 .session
