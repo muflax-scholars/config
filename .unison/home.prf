@@ -7,7 +7,6 @@ ignore = Path .Xauthority
 ignore = Path .cache
 ignore = Path .dbus
 ignore = Path .dmenu_cache
-ignore = Path .fehbg
 ignore = Path .fontconfig
 ignore = Path .gconfd/saved_state
 ignore = Path .gnupg/S.gpg-agent
@@ -26,7 +25,6 @@ ignore = Path .zsh/local.sh
 ignore = Path .zsh_history
 
 ignore = Path .mozilla/firefox
-ignore = Path .pentadactyl/info
 ignore = Path .config/google-chrome
 
 ignore = Path .emacs.d/cache

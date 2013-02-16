@@ -26,11 +26,11 @@ alias lsr="ls -lhSr"
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
 alias ua='unison -fat -prefer /home/amon/spoiler/anki/muflax/ android-anki'
-alias un='unison kira'
-alias ur='unison kira-repo'
-alias uep='sudo unison kira-portage -times -log=false -auto -ui=text'
-alias uo='unison kira-ongaku'
-alias udipa='sudo unison kira-dipa -times -log=false -auto -ui=text -prefer newer -batch'
+alias un='unison home'
+alias ur='unison local-repo'
+alias uep='sudo unison portage -times -log=false -auto -ui=text'
+alias uo='unison ongaku'
+alias udipa='sudo unison dipa -times -log=false -auto -ui=text -prefer newer -batch'
 
 # gist
 alias gist="jist -t $(git config github.oauth-token)"
