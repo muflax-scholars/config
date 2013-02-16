@@ -22,3 +22,7 @@
 
 [include]
    path = .git-local
+[merge]
+	tool = /usr/bin/meld
+[gui]
+	encoding = utf-8
