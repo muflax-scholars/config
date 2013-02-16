@@ -69,8 +69,8 @@ function y() {
 
 # portage
 alias cdl="cd /usr/local/portage/local"
-alias dew="sudo FEATURES=distcc emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
-alias ew="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
+alias ew="sudo emerge -au --changed-use --binpkg-respect-use y world"
+alias eww="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
 alias ec="sudo eclean -d -t2w distfiles && sudo eclean -d -t2w packages"
 alias ecc="sudo eclean -d distfiles && sudo eclean -d packages"
 alias wg="watch genlop -nc"
