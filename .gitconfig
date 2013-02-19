@@ -26,3 +26,4 @@
 	tool = /usr/bin/meld
 [gui]
 	encoding = utf-8
+	spellingdictionary = none
