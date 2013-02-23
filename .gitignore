@@ -25,6 +25,7 @@
 .beeminderrc
 .config/MusicBrainz
 .dropbox
+.gem
 .git-local
 .gnupg
 .heroku
