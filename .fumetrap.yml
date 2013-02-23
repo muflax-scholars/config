@@ -1,4 +1,0 @@
---- 
-database_file: /home/amon/spoiler/logging/fumetrap.db
-append_notes_delimiter: " "
-default_formatter: text

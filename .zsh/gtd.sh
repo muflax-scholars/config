@@ -51,7 +51,7 @@ function tiw() {
   else
     arg=($*)
   fi
-  ti week $arg
+  ti display $arg --start 'last monday'
 }
 function tim() {
   if [[ $# -eq 0 ]]; then
