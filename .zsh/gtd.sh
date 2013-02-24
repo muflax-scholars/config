@@ -35,7 +35,7 @@ function tid() {
   else
     arg=($*)
   fi
-  ti display $arg --start 'today 0:00'
+  ti display --context $arg --start 'today 0:00'
 }
 function tiy() {
   if [[ $# -eq 0 ]]; then
@@ -43,7 +43,7 @@ function tiy() {
   else
     arg=($*)
   fi
-  ti display $arg --start 'yesterday 0:00' --end 'yesterday 23:59:59'
+  ti display --context $arg --start 'yesterday 0:00' --stop 'yesterday 23:59:59'
 }
 function tiw() {
   if [[ $# -eq 0 ]]; then
@@ -51,7 +51,7 @@ function tiw() {
   else
     arg=($*)
   fi
-  ti display $arg --start 'last monday'
+  ti display --context $arg --start 'last monday'
 }
 function tim() {
   if [[ $# -eq 0 ]]; then
@@ -59,7 +59,7 @@ function tim() {
   else
     arg=($*)
   fi
-  ti display $arg --start 'first day this month'
+  ti display --context $arg --start 'first day this month'
 }
 function tilm() {
   if [[ $# -eq 0 ]]; then
@@ -67,7 +67,7 @@ function tilm() {
   else
     arg=($*)
   fi
-  ti display $arg --start 'first day last month' --end 'first day this month'
+  ti display --context $arg --start 'first day last month' --stop 'first day this month'
 }
 
 function ti_past() {
@@ -90,10 +90,8 @@ function ti_past() {
 
 # shortcuts
 alias ti="noglob ti"
-alias til="ti list"
 alias tin="ti in"
 alias tio="ti out"
 alias to="tio"
-alias tis="ti sheet"
 alias tir="ti now"
 
