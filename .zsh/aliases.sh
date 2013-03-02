@@ -35,6 +35,9 @@ alias udipa='sudo unison dipa -times -log=false -auto -ui=text -prefer newer -ba
 # gist
 alias gist="jist -t $(git config github.oauth-token)"
 
+# git-annex
+alias ga="git-annex"
+
 # shrink pdfs
 function shrink() {
   for pdf in $*; do
