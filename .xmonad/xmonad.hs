@@ -165,9 +165,10 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. controlMask, xK_1     ), spawn "left_display")
     , ((modm .|. controlMask, xK_2     ), spawn "right_display")
 
-    -- reset keys
-    , ((modm,               xK_k     ), spawn "$HOME/local/bin/skb.sh")
-    , ((modm .|. shiftMask, xK_k     ), spawn "setxkbmap us")
+    -- change keyboard settings
+    , ((modm,                 xK_k     ), spawn "$HOME/local/bin/skb.sh")
+    , ((modm .|. shiftMask,   xK_k     ), spawn "setxkbmap us")
+    , ((modm .|. controlMask, xK_k     ), spawn "$HOME/in/scripts/toggle_repeat.rb")
 
       
     ]
