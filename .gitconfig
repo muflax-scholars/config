@@ -22,8 +22,14 @@
 
 [include]
    path = .git-local
+
 [merge]
-	tool = /usr/bin/meld
+  tool = meld3
+  conflictsytle = diff3
+
+[mergetool "meld3"]
+  cmd = /usr/bin/meld $LOCAL $BASE $REMOTE $MERGED
+  
 [gui]
 	encoding = utf-8
 	spellingdictionary = none
