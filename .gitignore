@@ -104,11 +104,12 @@
 .config/kde.org/
 .config/libreoffice
 .config/meld
-.config/mirage
+.config/ristretto
 .config/piorekf
 .config/transmission/
 .config/vmpk.sourceforge.net
 .config/yarpen.cz
+.config/xfce4
 .designer
 .dia
 .ebview
