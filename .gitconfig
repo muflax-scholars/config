@@ -28,7 +28,7 @@
   conflictsytle = diff3
 
 [mergetool "meld3"]
-  cmd = /usr/bin/meld $LOCAL $BASE $REMOTE $MERGED
+  cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $MERGED $REMOTE
   
 [gui]
 	encoding = utf-8
