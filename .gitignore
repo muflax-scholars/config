@@ -88,6 +88,7 @@
 
 # ignore stupid confs no one loves :)
 .Foxit
+.Mathematica
 .android
 .ardour*
 .audacity*
@@ -104,12 +105,12 @@
 .config/kde.org/
 .config/libreoffice
 .config/meld
-.config/ristretto
 .config/piorekf
+.config/ristretto
 .config/transmission/
 .config/vmpk.sourceforge.net
-.config/yarpen.cz
 .config/xfce4
+.config/yarpen.cz
 .designer
 .dia
 .ebview
