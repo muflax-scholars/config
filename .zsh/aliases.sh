@@ -60,7 +60,9 @@ function ga-new() {
   git-annex init "$label"
   echo "defaulting to direct mode, semitrust and 2 copies (see .gitattributes)..."
   git-annex direct
-  echo "* annex.numcopies=2" >> .gitattributes
+  echo "* annex.numcopies=2" > .gitattributes
+  git add .gitattributes
+  git commit -m "init repo"
 }
 
 # shrink pdfs

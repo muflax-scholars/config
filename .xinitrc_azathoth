@@ -3,3 +3,6 @@ DISPLAY=:0.0 redshift -l 49.35:8.15 -t 6500:4500 -m vidmode &
 DISPLAY=:0.0 nitrogen --restore
 
 export VDPAU_NVIDIA_NO_OVERLAY=1
+
+# start git-annex daemons
+git_annex_watchers.sh
