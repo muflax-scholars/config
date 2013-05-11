@@ -54,6 +54,15 @@ alias gu="git-annex sync && git-annex get --auto"
 # clean up and minimize disk usage
 alias gc="git-annex sync && git-annex dropunused && git-annex drop --auto"
 
+function ga-new() {
+  echo "Label?" && read $label
+  git init
+  git-annex init "$label"
+  echo "defaulting to direct mode, semitrust and 2 copies (see .gitattributes)..."
+  git-annex direct
+  echo "* annex.numcopies=2" >> .gitattributes
+}
+
 # shrink pdfs
 function shrink() {
   for pdf in $*; do
