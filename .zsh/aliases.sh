@@ -35,16 +35,24 @@ alias udipa='sudo unison dipa -times -log=false -auto -ui=text -prefer newer -ba
 # gist
 alias gist="jist -t $(git config github.oauth-token)"
 
-# git-annex
+# git-annex abbrevs
 alias ga="git-annex"
 alias gas="git-annex sync"
+alias gast="git-annex status"
 alias gag="git-annex get"
 alias gaga="git-annex get --auto"
 alias gad="git-annex drop"
 alias gada="git-annex drop --auto"
 alias gaw="git-annex whereis"
+alias gac="git-annex copy"
 alias gam="git-annex move"
 alias gaa="git-annex add ."
+# push new stuff into archive mode
+alias gp="git-annex sync && git-annex add . && git-annex sync"
+# update archive
+alias gu="git-annex sync && git-annex get --auto"
+# clean up and minimize disk usage
+alias gc="git-annex sync && git-annex dropunused && git-annex drop --auto"
 
 # shrink pdfs
 function shrink() {
