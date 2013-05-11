@@ -37,6 +37,14 @@ alias gist="jist -t $(git config github.oauth-token)"
 
 # git-annex
 alias ga="git-annex"
+alias gas="git-annex sync"
+alias gag="git-annex get"
+alias gaga="git-annex get --auto"
+alias gad="git-annex drop"
+alias gada="git-annex drop --auto"
+alias gaw="git-annex whereis"
+alias gam="git-annex move"
+alias gaa="git-annex add ."
 
 # shrink pdfs
 function shrink() {
