@@ -3,6 +3,8 @@
   co = checkout
   st = status
   pum = pull origin master
+  untracked = ls-files --other --exclude-standard
+  unt = ls-files --other --exclude-standard
   
 [color]
   ui = auto
