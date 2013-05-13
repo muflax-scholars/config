@@ -5,4 +5,4 @@ DISPLAY=:0.0 nitrogen --restore
 export VDPAU_NVIDIA_NO_OVERLAY=1
 
 # start git-annex daemons
-git_annex_watchers.sh
+# git_annex_watchers.sh
