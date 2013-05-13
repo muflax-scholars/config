@@ -39,8 +39,8 @@ ignore = Path local/src/out/juniper_linux/juniper_networks/network_connect/ncsvc
 
 ignore = Path p2p
 
-ignore = path books
-ignore = path games/install
+ignore = Path books
+ignore = Path games/install
 ignore = Path 音
 ignore = Path テレビ
 
