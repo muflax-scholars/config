@@ -53,11 +53,11 @@ alias geta="git-annex get --auto"
 alias drop="git-annex drop"
 alias dropa="git-annex drop --auto"
 # push new stuff into archive mode
-alias gp="git-annex sync && git-annex add . && git-annex sync"
+alias gp="git-annex sync; git-annex add . ; git-annex sync"
 # update archive
-alias gu="git-annex sync && git-annex get --auto"
+alias gu="git-annex sync ; git-annex get --auto"
 # clean up and minimize disk usage
-alias gc="git-annex sync && git-annex dropunused && git-annex drop --auto"
+alias gc="git-annex sync ; git-annex dropunused && git-annex drop --auto"
 
 function ga-new() {
   echo "Label?" && read $label
