@@ -58,8 +58,9 @@ function ga-new() {
   echo "Label?" && read $label
   git init
   git-annex init "$label"
-  echo "defaulting to direct mode, semitrust and 2 copies (see .gitattributes)..."
+  echo "defaulting to direct mode, semitrust, 2 copies (see .gitattributes) and 100m reserve..."
   git-annex direct
+  git config add annex.diskreserve "100m"
   echo "* annex.numcopies=2" > .gitattributes
   git add .gitattributes
   git commit -m "init repo"
