@@ -47,6 +47,11 @@ alias gaw="git-annex whereis"
 alias gac="git-annex copy"
 alias gam="git-annex move"
 alias gaa="git-annex add"
+# easier to memorize
+alias get="git-annex get"
+alias geta="git-annex get --auto"
+alias drop="git-annex drop"
+alias dropa="git-annex drop --auto"
 # push new stuff into archive mode
 alias gp="git-annex sync && git-annex add . && git-annex sync"
 # update archive
