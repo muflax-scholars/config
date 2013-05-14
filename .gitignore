@@ -32,6 +32,7 @@
 .laspyt.cfg
 .ncftp
 .offlineimap*
+.pki
 .s3cfg
 .s3_passphrase
 .ssh
