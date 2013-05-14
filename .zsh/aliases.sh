@@ -88,6 +88,7 @@ function tm() {
     tmux new-session \; set default-path "$(pwd)" \; set -g -a update-environment ' PWD'
   fi
 }
+alias tma="tmux attach-session"
 
 # emacs
 alias e="emacsclient -nw -a vim"
