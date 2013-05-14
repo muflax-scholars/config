@@ -92,6 +92,7 @@
 .android
 .ardour*
 .audacity*
+.bibletime
 .cgdb
 .config/NVIDIA Corporation
 .config/Trolltech
@@ -133,6 +134,7 @@
 .mono
 .mozc
 .ruby_inline
+.sword
 .synopsys
 .tgdb
 .tuxguitar*
