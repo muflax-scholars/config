@@ -24,7 +24,7 @@
 # ignore secure shit :)
 .beeminderrc
 .config/MusicBrainz
-.dropbox
+.dropbox*
 .gem
 .git-local
 .gnupg
