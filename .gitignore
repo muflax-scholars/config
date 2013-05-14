@@ -100,6 +100,7 @@
 .config/enchant
 .config/google-chrome
 .config/gtk-2.0
+.config/hexchat
 .config/htop/
 .config/inkscape
 .config/kde.org/
@@ -137,7 +138,6 @@
 .tuxguitar*
 .universalindentgui
 .wxMaxima
-.xchat2
 
 # ignore mail, firefox and ims, oh my!
 .jd
