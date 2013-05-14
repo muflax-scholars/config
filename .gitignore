@@ -156,9 +156,9 @@
 # ignore savegames
 .angband
 .caravel
+.ftblauncher
 .minecraft
 .renpy
-.techniclauncher
 
 # configs that are included, but stupid
 .config/Trolltech.conf
