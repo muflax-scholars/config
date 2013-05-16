@@ -45,7 +45,8 @@ ignore = Path 音
 ignore = Path テレビ
 
 ignore = Path games
-ignore = Path .steam/steam.pipe
+ignore = Path .steam*
+ignore = Path .minecraft*
 
 ignore = Path spoiler-backup
 
