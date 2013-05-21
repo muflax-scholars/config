@@ -71,6 +71,10 @@ function ga-new() {
   git commit -m "init repo"
 }
 
+# beeminder stuff
+alias bot="beeminder_org_todo.rb"
+alias bota="beeminder_org_todo.rb -a"
+
 # shrink pdfs
 function shrink() {
   for pdf in $*; do
