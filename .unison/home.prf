@@ -43,6 +43,7 @@ ignore = Path books
 ignore = Path games/install
 ignore = Path 音
 ignore = Path テレビ
+follow = Path youtube
 
 ignore = Path games
 ignore = Path .steam*
