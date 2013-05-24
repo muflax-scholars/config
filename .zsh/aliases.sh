@@ -27,6 +27,7 @@ alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
 alias ua='unison -fat -prefer /home/amon/spoiler/anki/muflax/ android-anki'
 alias un='unison home'
+alias unm='unison home-minimal'
 alias ur='unison local-repo'
 alias uep='sudo unison portage -times -log=false -auto -ui=text'
 alias uo='unison ongaku'
