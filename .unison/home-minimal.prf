@@ -1,0 +1,4 @@
+root = /home/amon
+root = ssh://amon@azathoth//home/amon
+
+path = local/src/in
