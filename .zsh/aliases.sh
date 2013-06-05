@@ -134,7 +134,7 @@ alias pe="perl"
 
 # ruby stuff
 alias ru="ruby"
-alias i="irb -rrange_math"
+alias i="pry"
 alias cdg="cd $(gem environment gemdir)/gems"
 
 # bayescraft
