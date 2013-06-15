@@ -47,6 +47,7 @@
 .cache
 .config/git-cola/
 .config/ibus
+.darcs
 .dbus
 .dmenu_cache
 .dvdcss
