@@ -1,3 +1,8 @@
+#!/usr/bin/env ruby
+# -*- encoding: utf-8 -*-
+# Copyright muflax <mail@muflax.com>, 2013
+# License: GNU GPL 3 <http://www.gnu.org/copyleft/gpl.html>
+
 def load_gem gem, &block
   begin
     require gem
@@ -16,3 +21,7 @@ load_gem("awesome_print") {Pry.config.print = proc {|output, value| Pry::Helpers
 
 # pry config
 # Pry.config.theme = "monokai"
+Pry.config.editor = "emacsclient -n -c"
+
+# some aliases
+Pry.config.commands.alias_command "ee", "edit"
