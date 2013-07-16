@@ -2,4 +2,5 @@ root = /home/amon
 root = ssh://amon@azathoth//home/amon
 
 path = local/src/in
+path = archive
 ignore = Path local/src/in/hiwi
