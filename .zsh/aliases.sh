@@ -52,7 +52,7 @@ alias gaw="git-annex whereis"
 alias gac="git-annex copy"
 alias gam="git-annex move"
 alias gaa="git-annex add"
-# easier to memorize
+# easier to remember
 alias get="git-annex get"
 alias geta="git-annex get --auto"
 alias drop="git-annex drop"
