@@ -161,6 +161,10 @@
 .minecraft
 .polynomial
 .renpy
+.config/zdoom/*.pk3
+.config/zdoom/*.wad
+.config/zdoom/*.zds
+
 
 # configs that are included, but stupid
 .config/Trolltech.conf
