@@ -14,6 +14,10 @@ alias mmv="noglob zmv -W"
 alias po="popd"
 alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
 
+# shortcuts for common tools
+function ok() { okular $* &! 2>&1 DN }
+function li() { libreoffice $* &! 2>&1 DN }
+
 # ls
 alias ls="ls --color=always --group-directories-first -v"
 alias l="ls -L"
