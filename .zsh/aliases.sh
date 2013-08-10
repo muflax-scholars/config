@@ -122,7 +122,7 @@ alias ewn="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y 
 alias ec="sudo eclean -d -t2w distfiles && sudo eclean -d -t2w packages"
 alias ecc="sudo eclean -d distfiles && sudo eclean -d packages"
 alias wg="watch genlop -nc"
-alias us="sudo ~/in/scripts/update_system"
+alias us="sudo ~/src/scripts/update_system"
 
 # java
 alias burnburnBURN="rm -f *.class; javac *.java"
@@ -166,7 +166,7 @@ alias -g GC='| grep --color=always'
 
 # suspend-to-ram
 function ss() {
-  sudo ~/in/scripts/suspend $*
+  sudo ~/src/scripts/suspend $*
 }
 
 # move target to location and create symbolic link

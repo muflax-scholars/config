@@ -159,7 +159,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. controlMask, xK_c     ), spawn "MPD_HOST=192.168.1.15 mpc del 0")
 
     -- screenshots
-    , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/in/scripts/selection >/dev/null")
+    , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/src/scripts/selection >/dev/null")
     
     -- yes, those are hardcoded positions... so what?
     , ((modm .|. controlMask, xK_1     ), spawn "left_display")
@@ -168,7 +168,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- change keyboard settings
     , ((modm,                 xK_k     ), spawn "$HOME/local/bin/skb.sh")
     , ((modm .|. shiftMask,   xK_k     ), spawn "setxkbmap us")
-    , ((modm .|. controlMask, xK_k     ), spawn "$HOME/in/scripts/toggle_repeat.rb")
+    , ((modm .|. controlMask, xK_k     ), spawn "$HOME/src/scripts/toggle_repeat.rb")
 
       
     ]
