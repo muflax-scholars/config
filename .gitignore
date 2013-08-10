@@ -101,6 +101,7 @@
 .config/Trolltech
 .config/Ulduzsoft
 .config/calibre
+.config/mcomix
 .config/enchant
 .config/google-chrome
 .config/gtk-2.0
@@ -169,7 +170,6 @@
 
 # configs that are included, but stupid
 .config/Trolltech.conf
-.config/comix
 .config/geeqie
 
 # ignore rbenv
