@@ -1,6 +1,6 @@
 root = /home/amon
 root = ssh://amon@azathoth//home/amon
 
-path = local/src/in
+path = local/src
 path = archive
-ignore = Path local/src/in/hiwi
+ignore = Path local/src/hiwi

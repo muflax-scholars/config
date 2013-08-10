@@ -35,8 +35,6 @@ ignore = Path .local/share/mc
 ignore = Path .unison/{ar,fp}*
 ignore = Path .unison*.log
 
-ignore = Path local/src/juniper_linux/juniper_networks/network_connect/ncsvc
-
 ignore = Path p2p
 
 ignore = Path books
