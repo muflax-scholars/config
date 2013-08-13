@@ -4,8 +4,8 @@ function up() {
     # repos
     ur
     rsync -avP --delete rsync://azathoth/gentoo-layman /var/lib/layman/
-    udipa
-    sudo emerge --sync
+    # udipa
+    # sudo emerge --sync
     
     # eix
     eix-update
