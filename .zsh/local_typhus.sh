@@ -1,16 +1,3 @@
-function up() {
-    # config
-    uep
-    # repos
-    ur
-    rsync -avP --delete rsync://azathoth/gentoo-layman /var/lib/layman/
-    # udipa
-    # sudo emerge --sync
-    
-    # eix
-    eix-update
-}
-
 function fun() {
   # full sync of laptop
 

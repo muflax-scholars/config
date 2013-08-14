@@ -211,3 +211,18 @@ alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/.torrents/ &&
 alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
 
+function up() {
+  # sync config
+  uep
+  
+  # sync local repo
+  ur
+
+  # sync external repos
+  layman -S &
+  sudo emerge --sync &
+  wait
+  
+  # eix
+  eix-update
+}
