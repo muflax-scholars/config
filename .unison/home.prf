@@ -4,6 +4,7 @@ path = .
 
 ignore = Path .VirtualBox
 ignore = Path .Xauthority
+ignore = Path .adobe
 ignore = Path .cache
 ignore = Path .dbus
 ignore = Path .dmenu_cache
