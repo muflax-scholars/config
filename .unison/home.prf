@@ -4,6 +4,7 @@ path = .
 
 ignore = Path .VirtualBox
 ignore = Path .Xauthority
+ignore = Path .adobe
 ignore = Path .cache
 ignore = Path .dbus
 ignore = Path .dmenu_cache
@@ -63,4 +64,4 @@ ignore = Path .config/gtk-2.0/gtkfilechooser.ini
 
 ignore = Path anki/muflax
 
-ignore = Path src/hiwi
+ignore = Path local/src/hiwi
