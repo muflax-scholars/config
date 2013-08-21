@@ -183,10 +183,7 @@ alias m="mw -l"
 alias r="mw -r"
 
 # wake-on-lan
-#alias wake_azathoth="wakeonlan 00:18:E7:16:6F:C5"
 alias wake_azathoth="wakeonlan 00:1E:8C:45:D2:90"
-alias wake_totenkopf="wakeonlan 00:50:04:42:99:6F"
-alias wake_typhus="wakeonlan 00:19:d2:c4:45:0d"
 
 # wine
 alias ewine="wine explorer /desktop=foo${RANDOM},1024x768"
@@ -197,15 +194,11 @@ alias don="D0 xset dpms force on"
 alias doff="D0 xset dpms force off"
 
 # ssh
-alias mish="ssh totenkopf@ming"
 alias azash="ssh -C amon@azathoth"
 alias nyash="ssh -C amon@nyarlathotep"
-alias tysh="ssh -C amon@typhus"
-
-# torrent
-alias tor="sudo mount.cifs //192.168.1.102/torrent /mnt/network/torrent-samba -o guest,uid=1000,gid=1006"
-alias nor="sudo umount /mnt/network/torrent-samba"
-alias toto="scp ~/*.torrent totenkopf@ming:/home/totenkopf/torrent/.torrents/ && rm ~/*.torrent" 
+alias tysh="ssh  -C amon@typhus"
+alias nash="ssh  -C amon@pleonasty"
+alias scash="ssh -C amon@scabeiathrax"
 
 # lolshell
 alias cya='sudo reboot'
