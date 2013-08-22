@@ -1,0 +1,5 @@
+DISPLAY=:0.0 redshift -l 49.35:8.15 -t 5500:4500 -m randr &
+
+DISPLAY=:0.0 nitrogen --restore &
+
+export VDPAU_NVIDIA_NO_OVERLAY=1
