@@ -201,6 +201,7 @@ alias tysh="ssh  -C amon@typhus"
 alias nash="ssh  -C amon@pleonasty"
 alias scash="ssh -C amon@scabeiathrax"
 alias scab="scash"
+alias plesh="ssh -C amon@pleonasty"
 
 # lolshell
 alias cya='sudo reboot'
