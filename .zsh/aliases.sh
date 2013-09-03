@@ -44,27 +44,18 @@ alias gist="jist -t $(git config github.oauth-token)"
 alias ga="git-annex"
 alias gas="git-annex sync"
 alias gast="git-annex status"
-alias gag="git-annex get"
-alias gaga="git-annex get --auto"
-alias gad="git-annex drop"
-alias gada="git-annex drop --auto"
 alias gaw="git-annex whereis"
 alias gac="git-annex add . && git commit -m 'update'"
 alias gam="git merge synced/master"
 alias gaco="git-annex copy"
 alias gamo="git-annex move"
 alias gaa="git-annex add"
-# easier to remember
+alias gau="git-annex unlock"
+alias gal="git-annex lock"
 alias get="git-annex get"
 alias geta="git-annex get --auto"
 alias drop="git-annex drop"
 alias dropa="git-annex drop --auto"
-# push new stuff into archive mode
-alias gp="git-annex sync; git-annex add . ; git-annex sync"
-# update archive
-alias gu="git-annex sync ; git-annex get --auto"
-# clean up and minimize disk usage
-alias gc="git-annex sync ; git-annex dropunused && git-annex drop --auto"
 
 function ga-new() {
   echo "Label?" && read $label
