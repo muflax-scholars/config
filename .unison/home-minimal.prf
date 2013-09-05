@@ -2,7 +2,6 @@ root = /home/amon
 root = ssh://amon@azathoth//home/amon
 
 path = local/src
-ignore = Path local/src/hiwi
 ignore = Path local/src/ruby/rbenv
 
 path = archive
