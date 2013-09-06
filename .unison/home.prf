@@ -25,7 +25,10 @@ ignore = Path .zcompdump
 ignore = Path .zsh/local.sh
 ignore = Path .zsh_history
 
+ignore = Path .bup
+ignore = Path .config/transmission
 ignore = Path .mozilla/firefox
+ignore = Path .purple
 ignore = Path .config/google-chrome
 
 ignore = Path .emacs.d/cache
@@ -55,9 +58,6 @@ ignore = Path .xmonad/*-pipe
 
 ignore = Path .dropbox*
 ignore = Path Dropbox
-
-ignore = Path .purple
-ignore = Path .config/transmission
 
 ignore = Path .local/share/recently-used.xbel
 ignore = Path .config/gtk-2.0/gtkfilechooser.ini
