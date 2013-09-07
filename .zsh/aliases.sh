@@ -112,7 +112,7 @@ alias cdl="cd /usr/local/portage/local"
 alias ew="sudo emerge -au --changed-use --binpkg-respect-use y world"
 alias eww="sudo emerge -auD --binpkg-respect-use y --with-bdeps y world"
 alias ewn="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
-alias ec="sudo eclean -d -t2w distfiles && sudo eclean -d -t2w packages"
+alias ec="sudo eclean distfiles && sudo eclean packages"
 alias wg="watch genlop -nc"
 
 # c
