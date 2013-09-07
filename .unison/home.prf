@@ -2,66 +2,19 @@ root = /home/amon
 root = ssh://amon@azathoth//home/amon
 path = .
 
-ignore = Path .VirtualBox
-ignore = Path .Xauthority
-ignore = Path .adobe
-ignore = Path .cache
-ignore = Path .dbus
-ignore = Path .dmenu_cache
-ignore = Path .fontconfig
-ignore = Path .gconfd/saved_state
-ignore = Path .gnupg/S.gpg-agent
-ignore = Path .htoprc
-ignore = Path .icedteaplugin
-ignore = Path .macromedia
-ignore = Path .rxvt-unicode*
-ignore = Path .vim/yankring*
-ignore = Path .vimfuzzyfinder*
-ignore = Path .viminfo
-ignore = Path .wine*
-ignore = Path .xinitrc_local
-ignore = Path .xsession-errors
-ignore = Path .zcompdump
-ignore = Path .zsh/local.sh
-ignore = Path .zsh_history
+ignore = Path .*
 
-ignore = Path .bup
-ignore = Path .config/transmission
-ignore = Path .mozilla/firefox
-ignore = Path .purple
-ignore = Path .config/google-chrome
+follow = Path youtube
 
-ignore = Path .emacs.d/cache
-
-ignore = Path .config/mc
-ignore = Path .local/share/mc
-
-ignore = Path .unison/{ar,fp}*
-ignore = Path .unison*.log
-
+ignore = Path Dropbox
+ignore = Path anki/muflax
+ignore = Path games
 ignore = Path p2p
+ignore = Path pigs/daily
+ignore = Path spoiler
+ignore = Path spoiler-backup
 
 ignore = Path books
 ignore = Path games/install
 ignore = Path 音
 ignore = Path テレビ
-follow = Path youtube
-
-ignore = Path games
-ignore = Path .steam*
-ignore = Path .minecraft*
-
-ignore = Path spoiler
-ignore = Path spoiler-backup
-
-ignore = Path .xmonad/*-pipe
-
-ignore = Path .dropbox*
-ignore = Path Dropbox
-
-ignore = Path .local/share/recently-used.xbel
-ignore = Path .config/gtk-2.0/gtkfilechooser.ini
-
-ignore = Path anki/muflax
-
-ignore = Path pigs/daily
