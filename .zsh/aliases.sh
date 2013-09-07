@@ -29,13 +29,17 @@ alias lsr="ls -lhSr"
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
-alias ua='unison -fat -prefer /home/amon/spoiler/anki/muflax/ android-anki'
-alias un='unison home'
-alias unm='unison home-minimal'
-alias ur='unison local-repo'
-alias uep='sudo unison portage -times -log=false -auto -ui=text'
-alias uo='unison ongaku'
-alias udipa='sudo unison dipa -times -log=false -auto -ui=text -prefer newer -batch'
+
+# only sync files
+alias unm='unison home'
+
+# also sync configs etc.
+function un() {
+  (cd ~/; git pum && git push)
+  ~/spoiler/sync.sh
+  unison home
+}
+
 
 # gist
 alias gist="jist -t $(git config github.oauth-token)"
