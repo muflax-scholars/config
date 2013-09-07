@@ -12,7 +12,6 @@ alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
 alias po="popd"
-alias unc="uncrustify --no-backup -c ~/.uncrustify.cfg"
 
 # shortcuts for common tools
 function ok() { okular $* 2>&1 >/dev/null &! }
@@ -98,15 +97,13 @@ alias tma="tmux attach-session"
 
 # emacs
 alias e="emacsclient -nw -a vim"
-alias se="sudo -e"
 alias ee="emacsclient -c -n -a vim"
 alias em="emacs-gui"
 alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; e"
-alias vi="evil" # brainwashing
 
 # youtube download
 function y() {
-  echo "Paste links, ^D start to download."
+  echo "Paste links, ^D to start the download."
   youtube-dl --ignore-errors --max-quality 22 --continue --rate-limit 2.5m -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
 }
 
@@ -116,15 +113,11 @@ alias ew="sudo emerge -au --changed-use --binpkg-respect-use y world"
 alias eww="sudo emerge -auD --binpkg-respect-use y --with-bdeps y world"
 alias ewn="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
 alias ec="sudo eclean -d -t2w distfiles && sudo eclean -d -t2w packages"
-alias ecc="sudo eclean -d distfiles && sudo eclean -d packages"
 alias wg="watch genlop -nc"
-alias us="sudo ~/src/scripts/update_system"
-
-# java
-alias burnburnBURN="rm -f *.class; javac *.java"
 
 # c
 alias co="./configure"
+alias cop="./configure --prefix=$HOME/local"
 alias tagify="ctags -eR ."
 
 # python
@@ -141,14 +134,6 @@ alias cdg="cd $(gem environment gemdir)/gems"
 # bayescraft
 alias post="noglob posterior"
 
-# optimized local compiles
-function om() {
-  CFLAGS='-O2 -pipe -march=nocona' 
-  CXXFLAGS=$CFLAGS 
-  LDFLAGS='-Wl,-O1 -Wl,--sort-common -Wl,--hash-style=gnu -Wl,--as-needed'  
-  make -j3 $*
-}
-
 # universal aliases
 alias -g DN='&> /dev/null'
 alias -g D0='DISPLAY=:0.0'
@@ -158,7 +143,7 @@ alias -g LE='LANG=en_US.UTF-8'
 alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
 alias -g G='| grep'
-alias -g GC='| grep --color=always'
+alias -g CG='| grep --color=always'
 
 # suspend-to-ram
 function ss() {
@@ -170,16 +155,13 @@ function mvln() {
   mv $1 $2/ && ln -s $2/$1 $1
 }
 
-# a bit of security
+# a bit of security; use /bin/cp etc. to overwrite stuff
 alias cp="cp -i"
 alias mv="mv -i"
 
 # mplayer
 alias m="mw -l"
 alias r="mw -r"
-
-# wake-on-lan
-alias wake_azathoth="wakeonlan 00:1E:8C:45:D2:90"
 
 # wine
 alias ewine="wine explorer /desktop=foo${RANDOM},1024x768"
@@ -195,7 +177,7 @@ alias nyash="ssh -C amon@nyarlathotep"
 alias tysh="ssh  -C amon@typhus"
 alias nash="ssh  -C amon@pleonasty"
 alias scash="ssh -C amon@scabeiathrax"
-alias scab="scash"
+alias scab="scash"  # more elegant
 alias plesh="ssh -C amon@pleonasty"
 
 # lolshell
@@ -203,16 +185,15 @@ alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
 
 function up() {
-  # sync config
-  uep
-  
+  # sync etc
+  # TODO
+
   # sync local repo
-  ur
+  (cdl; git pum && git push)
 
   # sync external repos
-  layman -S &
-  sudo emerge --sync &
-  wait
+  layman -S
+  sudo emerge --sync
   
   # eix
   eix-update
