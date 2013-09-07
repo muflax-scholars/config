@@ -184,6 +184,7 @@ alias plesh="ssh -C amon@pleonasty"
 alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
 
+# full version
 function up() {
   # sync etc
   # TODO
@@ -195,6 +196,15 @@ function up() {
   layman -S
   sudo emerge --sync
   
+  # eix
+  eix-update
+}
+
+# minimal version
+function upm() {
+  # sync local repo
+  (cdl; git pum && git push)
+
   # eix
   eix-update
 }
