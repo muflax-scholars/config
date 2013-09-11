@@ -1,9 +1,0 @@
-root = /home/amon/音/
-root = ssh://amon@azathoth//home/amon/音/
-path = .
-
-ignore = Path lost+found
-ignore = Path ASMR
-ignore = Path miku
-ignore = Path podcasts
-
