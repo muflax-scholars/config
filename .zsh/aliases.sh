@@ -28,7 +28,7 @@ alias lsr="ls -lhSr"
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
-
+alias uep="unison portage"
 # only sync files
 alias unm='unison home'
 
