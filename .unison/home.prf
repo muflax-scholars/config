@@ -14,7 +14,7 @@ ignore = Path pigs/daily
 ignore = Path spoiler
 ignore = Path spoiler-backup
 
-ignore = Path books
 ignore = Path games/install
+ignore = Path txt
 ignore = Path 音
 ignore = Path テレビ
