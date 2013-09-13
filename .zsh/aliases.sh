@@ -29,14 +29,27 @@ alias lsr="ls -lhSr"
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
 alias uep="unison portage"
+
 # only sync files
-alias unm='unison home'
+function unm() {
+  # because unison doesn't accept two remote hosts, we just figure out the partner this way
+  case $(hostname) in
+    typhus)
+      host=scabeiathrax
+      ;;
+    scabeiathrax)
+      host=typhus
+      ;;
+  esac
+  
+  unison home -root ssh://$host//home/amon
+}
 
 # also sync configs etc.
 function un() {
   (cd ~/; git pum && git push)
   ~/spoiler/sync.sh
-  unison home
+  unm
 }
 
 

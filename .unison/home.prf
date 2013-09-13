@@ -1,5 +1,4 @@
-root = ssh://amon@scabeiathrax//home/amon
-root = ssh://amon@typhus//home/amon
+root = /home/amon
 path = .
 
 ignore = Path .*
