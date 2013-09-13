@@ -1,6 +1,6 @@
 export EDITOR="emacsclient -nw -a vim"
 export VISUAL="emacsclient -nw -a vim"
-export MPD_HOST="192.168.1.15"
+export MPD_HOST="localhost"
 export BROWSER="firefox %s &"
 
 # python
