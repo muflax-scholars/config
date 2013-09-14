@@ -28,7 +28,7 @@ alias lsr="ls -lhSr"
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
-alias uep="unison portage"
+alias uep="sudo unison -log=false -auto -ui=text -times portage"
 
 # only sync files
 function unm() {
@@ -200,7 +200,7 @@ alias kthxbai='sudo shutdown -h now'
 # full version
 function up() {
   # sync etc
-  # TODO
+  uep
 
   # sync local repo
   (cdl; git pum && git push)
