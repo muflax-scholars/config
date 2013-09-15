@@ -161,14 +161,14 @@
 # ignore savegames
 .angband
 .caravel
-.ftblauncher
-.minecraft
-.polynomial
-.renpy
 .config/zdoom/*.pk3
 .config/zdoom/*.wad
 .config/zdoom/*.zds
-
+.ftblauncher
+.gog*
+.minecraft
+.polynomial
+.renpy
 
 # configs that are included, but stupid
 .config/Trolltech.conf
