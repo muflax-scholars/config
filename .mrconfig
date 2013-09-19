@@ -1,0 +1,75 @@
+
+[/home/amon]
+checkout = git clone 'git@github.com:muflax/config.git' 'amon'
+
+[src/scripts]
+checkout = git clone 'git@github.com:muflax/scripts.git' 'scripts'
+
+[src/android/eventrend]
+checkout = svn co 'http://eventrend.googlecode.com/svn/trunk' 'eventrend'
+
+[src/backup/bup]
+checkout = git clone 'https://github.com/bup/bup' 'bup'
+
+[src/backup/fast-export]
+checkout = git clone 'git://repo.or.cz/fast-export.git' 'fast-export'
+
+[src/backup/git-annex]
+checkout = git clone 'https://github.com/joeyh/git-annex/' 'git-annex'
+
+[src/backup/glacier-cli]
+checkout = git clone 'https://github.com/basak/glacier-cli.git' 'glacier-cli'
+
+[src/forks/ebview]
+checkout = git clone 'git://github.com/fujii/ebview.git' 'ebview'
+
+[src/forks/heroku]
+checkout = git clone 'https://github.com/heroku/heroku.git' 'heroku'
+
+[src/haskell/scion]
+checkout = git clone 'https://github.com/nominolo/scion' 'scion'
+
+[src/instruction/midorideas]
+checkout = git clone 'https://github.com/OwenAR/midorideas' 'midorideas'
+
+[src/instruction/khan-exercises]
+checkout = git clone 'https://github.com/Khan/khan-exercises' 'khan-exercises'
+
+[src/linguistics/compound-splitter]
+checkout = git clone 'git://github.com/danielnaber/compound-splitter.git' 'compound-splitter'
+
+[src/linguistics/graded-reader]
+checkout = git clone 'https://github.com/jtauber/graded-reader' 'graded-reader'
+
+[src/misc/gitignore]
+checkout = git clone 'https://github.com/github/gitignore.git' 'gitignore'
+
+[src/music/chordy]
+checkout = git clone 'https://github.com/darth10/chordy' 'chordy'
+
+[src/music/onomatosynthesizer]
+checkout = git clone 'https://github.com/steinbro/onomatosynthesizer.git' 'onomatosynthesizer'
+
+[src/music/plug]
+checkout = hg clone 'https://bitbucket.org/piorekf/plug' 'plug'
+
+[local/src/play/grognaks-mod-manager]
+checkout = git clone 'https://github.com/Grognak/Grognaks-Mod-Manager.git' 'grognaks-mod-manager'
+
+[local/src/ruby/rbenv]
+checkout = git clone 'git://github.com/sstephenson/rbenv.git' 'rbenv'
+
+[local/src/ruby/rbenv/plugins/ruby-build]
+checkout = git clone 'git://github.com/sstephenson/ruby-build.git' 'ruby-build'
+
+[local/src/ruby/ripper-tags]
+checkout = git clone 'https://github.com/tmm1/ripper-tags' 'ripper-tags'
+
+[local/src/ruby/rlisp]
+checkout = git clone 'https://github.com/taw/rlisp' 'rlisp'
+
+[local/src/statistics/best-python]
+checkout = git clone 'https://github.com/strawlab/best' 'best-python'
+
+[local/src/statistics/rb-gsl]
+checkout = git clone 'https://github.com/romanbsd/rb-gsl.git' 'rb-gsl'
