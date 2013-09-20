@@ -34,7 +34,6 @@
 .offlineimap*
 .pki
 .s3cfg
-.s3_passphrase
 .ssh
 .steam*
 .trc
@@ -42,11 +41,8 @@
 # ignore caches and histories
 *history
 .adobe
-.brainworkshop/*.dat
-.brainworkshop/stats.txt
 .bup
 .cache
-.config/git-cola/
 .config/ibus
 .darcs
 .dbus
@@ -144,8 +140,6 @@
 .synopsys
 .tgdb
 .tuxguitar*
-.universalindentgui
-.wxMaxima
 
 # ignore mail, firefox and ims, oh my!
 .jd
