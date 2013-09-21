@@ -29,9 +29,11 @@ local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
 
 # current user, with warning if root
 if [ $(whoami) = "root" ]; then
-  local user="%{$fg[red]%}%n%{$reset_color%}"
+  local user="%{$fg[red]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}"
+elif [ $(whoami) = "amon" ]; then
+  local user="" # save some space
 else
-  local user="%{$fg[cyan]%}%n%{$reset_color%}"
+  local user="%{$fg[cyan]%}%n@%{$reset_color%}"
 fi
 
 # current host, with warning if ssh
@@ -41,7 +43,7 @@ else
   local host="%{$fg[red]%}%m%{$reset_color%}"
 fi
 
-local user_host=" ${op}${user}%{$fg[cyan]%}@%{$reset_color%}${host}${cp}"
+local user_host=" ${op}${user}${host}${cp}"
 
 # warning if not 64bit
 if [ $(uname -m) = "i686" ]; then
