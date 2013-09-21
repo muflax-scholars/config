@@ -12,17 +12,14 @@ local cp="%{$fg_bold[black]%}]%{$reset_color%}"
 
 # vcs config
 zstyle ':vcs_info:*' enable git
-# changes are slow, so it's on trial
 local vcs_action="(%a)" # e.g. (rebase-i)
 local vcs_branch="%b%u%c" # e.g. master(*)(s)
 zstyle ':vcs_info:*:prompt:*' check-for-changes true
-zstyle ':vcs_info:*:prompt:*' unstagedstr '(*)'  # display [u] if there are unstaged changes
-zstyle ':vcs_info:*:prompt:*' stagedstr '(s)'    # display [s] if there are staged changes
+zstyle ':vcs_info:*:prompt:*' unstagedstr '(*)'  # display this if there are unstaged changes
+zstyle ':vcs_info:*:prompt:*' stagedstr '(s)'    # display this if there are staged changes
 zstyle ':vcs_info:*:prompt:*' actionformats " ${op}%{$fg[cyan]%}${vcs_branch}${vcs_action}%{$reset_color%}${cp}"
 zstyle ':vcs_info:*:prompt:*' formats "${op}%{$fg[cyan]%}${vcs_branch}%{$reset_color%}${cp}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats ""
-
-# every option takes care of their own leading space
 
 # current date
 local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
