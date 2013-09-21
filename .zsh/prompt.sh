@@ -66,10 +66,10 @@ local path_p="${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
 # current VCS status
 local vcs='$vcs_info_msg_0_'
 # smiley based on return status
-local smiley="${op}%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3%{$reset_color%})${cp}"
+local smiley="%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3%{$reset_color%})"
 # last command, used in PS2
 local cur_cmd="${op}%_${cp}"
 
 PROMPT="${date}${path_p}${vcs}${user_host}${arch}${bell}
-${smiley}${mc} # "
+${smiley}${mc} "
 PROMPT2="${cur_cmd}> "
