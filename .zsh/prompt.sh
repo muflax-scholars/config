@@ -7,8 +7,8 @@ fi
 autoload -Uz vcs_info
 
 # brackets
-local op="%{$fg[green]%}[%{$reset_color%}"
-local cp="%{$fg[green]%}]%{$reset_color%}"
+local op="%{$fg_bold[black]%}[%{$reset_color%}"
+local cp="%{$fg_bold[black]%}]%{$reset_color%}"
 
 # vcs config
 zstyle ':vcs_info:*' enable git
@@ -19,7 +19,7 @@ zstyle ':vcs_info:*:prompt:*' check-for-changes true
 zstyle ':vcs_info:*:prompt:*' unstagedstr '(*)'  # display [u] if there are unstaged changes
 zstyle ':vcs_info:*:prompt:*' stagedstr '(s)'    # display [s] if there are staged changes
 zstyle ':vcs_info:*:prompt:*' actionformats " ${op}%{$fg[cyan]%}${vcs_branch}${vcs_action}%{$reset_color%}${cp}"
-zstyle ':vcs_info:*:prompt:*' formats " ${op}%{$fg[cyan]%}${vcs_branch}%{$reset_color%}${cp}"
+zstyle ':vcs_info:*:prompt:*' formats "${op}%{$fg[cyan]%}${vcs_branch}%{$reset_color%}${cp}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats ""
 
 # every option takes care of their own leading space
@@ -43,7 +43,7 @@ else
   local host="%{$fg[red]%}%m%{$reset_color%}"
 fi
 
-local user_host=" ${op}${user}${host}${cp}"
+local user_host="${op}${user}${host}${cp}"
 
 # warning if not 64bit
 if [ $(uname -m) = "i686" ]; then
@@ -52,7 +52,7 @@ fi
 
 # are we in an mc shell?
 if [[ $MC_SID != "" ]]; then
-  local mc=" ${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
+  local mc="${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
 fi
 
 # alarm after successful command if in scratchpad
@@ -61,7 +61,7 @@ if [[ $STY =~ "^\d+\.scratchpad$" ]]; then
 fi
 
 # current path
-local path_p=" ${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
+local path_p="${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
 
 # current VCS status
 local vcs='$vcs_info_msg_0_'
