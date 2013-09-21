@@ -49,7 +49,7 @@ fi
 
 # are we in an mc shell?
 if [[ $MC_SID != "" ]]; then
-  local mc="${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
+  local mc=" ${op}%{$fg[cyan]%}°_°%{$reset_color%}${cp}"
 fi
 
 # alarm after successful command if in scratchpad
