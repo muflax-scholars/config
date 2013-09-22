@@ -25,6 +25,9 @@ alias lh="ls -lh"
 alias lss="ls -lhS"
 alias lsr="ls -lhSr"
 
+# repo update
+alias mup="mr -j5 update"
+
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
