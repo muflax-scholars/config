@@ -66,6 +66,7 @@ alias gist="jist -t $(git config github.oauth-token)"
 # git-annex abbrevs
 alias ga="git-annex"
 alias gas="git-annex sync"
+alias gass="git_annex_sync.sh"
 alias gast="git-annex status"
 alias gaw="git-annex whereis"
 alias gac="git-annex add . && git commit -m 'update'"
