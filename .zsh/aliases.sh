@@ -1,21 +1,25 @@
 # aliases
 
-# normal aliases
+# default options
 alias angband="angband -mgcu -umuflax"
 alias avg="noglob average_damage.rb"
 alias cal="cal -m -3"
 alias cgrep="grep --color=always"
-alias diff="colordiff"
 alias grep="grep --color=auto -P"
 alias less="less -iF" 
 alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
-alias po="popd"
 
-# shortcuts for common tools
-function ok() { okular $* 2>&1 >/dev/null &! }
-function li() { libreoffice $* 2>&1 >/dev/null &! }
+# command replacements
+alias diff="colordiff"
+
+# shortcuts
+alias my="sudo chown amon:amon"
+alias x="chmod +x"
+alias po="popd"
+function ok() { okular $* DN &! }
+function li() { libreoffice $* DN &! }
 
 # ls
 alias ls="ls --color=always --group-directories-first -v"
@@ -151,7 +155,7 @@ alias cdg="cd $(gem environment gemdir)/gems"
 alias post="noglob posterior"
 
 # universal aliases
-alias -g DN='&> /dev/null'
+alias -g DN='>/dev/null 2>/dev/null'
 alias -g D0='DISPLAY=:0.0'
 alias -g D1='DISPLAY=:0.1'
 alias -g LC='LANG=C'
