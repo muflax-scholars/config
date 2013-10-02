@@ -10,6 +10,7 @@ alias less="less -iF"
 alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
+alias watch="watch -c"
 
 # command replacements
 alias diff="colordiff"
