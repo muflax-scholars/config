@@ -92,7 +92,7 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm,               xK_u     ), spawn $ XMonad.terminal conf)
     -- launch scratchpad
     , ((modm,               xK_i     ), scratchpad)
-    -- , ((modm,               xK_p     ), namedScratchpadAction scratchpads "pidgin")
+    , ((modm,               xK_p     ), namedScratchpadAction scratchpads "pidgin")
     , ((modm,               xK_a     ), namedScratchpadAction scratchpads "anking")
     -- launch dmenu
     , ((modm,               xK_e     ), spawn dmenuQuick')
