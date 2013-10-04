@@ -15,5 +15,5 @@ ignore = Path spoiler-backup
 
 ignore = Path games/install
 ignore = Path txt
-ignore = Path 音
-ignore = Path テレビ
+ignore = Path ongaku
+ignore = Path telebi
