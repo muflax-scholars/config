@@ -81,6 +81,9 @@ alias get="git-annex get"
 alias geta="git-annex get --auto"
 alias drop="git-annex drop"
 alias dropa="git-annex drop --auto"
+alias gaun="git-annex unused"
+alias gadun="git-annex dropunused"
+alias gaduna="git-annex dropunused 1-10000"
 
 function ga-new() {
   echo "Label?" && read $label
