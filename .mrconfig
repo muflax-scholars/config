@@ -70,8 +70,5 @@ checkout = git clone 'https://github.com/taw/rlisp' 'rlisp'
 [local/src/statistics/best-python]
 checkout = git clone 'https://github.com/strawlab/best' 'best-python'
 
-[local/src/statistics/rb-gsl]
-checkout = git clone 'https://github.com/romanbsd/rb-gsl.git' 'rb-gsl'
-
 [Dropbox/muflax.com]
 checkout = git clone '/home/amon/src/muflax.com' 'muflax.com'
