@@ -78,3 +78,9 @@ checkout = git clone 'http://github.com/arclanguage/anarki' 'anarki'
 
 [local/src/lisp/arc/lathe]
 checkout = git clone 'https://github.com/rocketnia/lathe' 'lathe'
+
+[local/src/lisp/arc/arc-nu]
+checkout = git clone 'https://github.com/arclanguage/arc-nu' 'arc-nu'
+
+[src/lisp/clojure/leiningen]
+checkout = git clone 'https://github.com/technomancy/leiningen' 'leiningen'
