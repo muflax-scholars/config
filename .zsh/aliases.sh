@@ -31,6 +31,7 @@ alias lss="ls -lhS"
 alias lsr="ls -lhSr"
 
 # repo update
+alias mrr="mr register"
 alias mup="mr -j5 update"
 
 # unison

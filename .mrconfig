@@ -72,3 +72,9 @@ checkout = git clone 'https://github.com/strawlab/best' 'best-python'
 
 [Dropbox/muflax.com]
 checkout = git clone '/home/amon/src/muflax.com' 'muflax.com'
+
+[local/src/lisp/arc/anarki]
+checkout = git clone 'http://github.com/arclanguage/anarki' 'anarki'
+
+[local/src/lisp/arc/lathe]
+checkout = git clone 'https://github.com/rocketnia/lathe' 'lathe'
