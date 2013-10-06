@@ -13,7 +13,7 @@ def load_gem gem, &block
 end
 
 # useful gems you want loaded by default
-gems = %w{date json set yaml bayescraft muflax-chronic range_math highline/import}
+gems = %w{date json set yaml bayescraft chronic range_math highline/import}
 gems.each {|gem| load_gem gem}
 
 # awesome_print

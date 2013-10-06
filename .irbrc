@@ -12,7 +12,7 @@ rescue LoadError => err
 end
 
 # useful gems
-gems = %w{awesome_print date json set yaml bayescraft muflax-chronic}
+gems = %w{awesome_print date json set yaml bayescraft chronic}
 
 gems.each do |gem|
   begin
