@@ -149,9 +149,9 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((shiftMask         , 0x1008ff11), -- S-XF86AudioLowerVolume 
         safeSpawn "amixer" ["set", "Master", "-q", "5+"])
     , ((modm              , 0x1008ff11), -- M-XF86AudioLowerVolume 
-        spawn "ssh amon@azathoth -- amixer set Master -q 5-")
+        safeSpawn "amixer" ["set", "Headphone", "-q", "toggle"])
     , ((modm .|. shiftMask, 0x1008ff11), -- M-S-XF86AudioLowerVolume 
-        spawn "ssh amon@azathoth -- amixer set Master -q 5+")
+        safeSpawn "amixer" ["set", "Headphone", "-q", "toggle"])
     
     -- mpc
     , ((modm                , xK_c     ), spawn "MPD_HOST=localhost mpc --no-status toggle")
