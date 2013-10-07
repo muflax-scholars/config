@@ -14,6 +14,9 @@ fi
 export MPD_HOST="localhost"
 export BROWSER="firefox %s &"
 
+# ruby
+unset RUBYOPT # gentoo sucks
+
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
