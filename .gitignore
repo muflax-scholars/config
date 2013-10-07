@@ -1,7 +1,6 @@
 # ignore all "normal" files/dirs, but manage all dotfiles
 /*
 !/.*
-*.elc
 *.pyc
 *.sw[a-z]
 
@@ -50,6 +49,7 @@
 .dvdcss
 .emacs.d/cache
 .emacs.d/var
+!.emacs.d/**/*.elc
 .fontconfig*
 .gconf
 .gconfd
