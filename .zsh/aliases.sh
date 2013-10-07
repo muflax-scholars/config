@@ -122,9 +122,9 @@ function tm() {
 alias tma="tmux attach-session"
 
 # emacs
-alias e="emacsclient -nw -a vim"
-alias ee="emacsclient -c -n -a vim"
-alias em="emacs-gui"
+alias e="emacs"
+alias ee="emacs-gui"
+alias em="emacs"
 alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; e"
 
 # youtube download

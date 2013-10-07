@@ -1,13 +1,21 @@
-export EDITOR="emacsclient -nw -a vim"
-export VISUAL="emacsclient -nw -a vim"
+if [[ -e $(which emacs) ]]; then
+  export EDITOR="emacs"
+  export VISUAL="emacs"
+else
+  if [[ -e $(which vim) ]]; then
+    export EDITOR="vim"
+    export VISUAL="vim"
+  else
+    export EDITOR="vi"
+    export VISUAL="vi"
+  fi
+fi
+
 export MPD_HOST="localhost"
 export BROWSER="firefox %s &"
 
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
-
-# ruby
-unset RUBYOPT
 
 # don't use japanese on TTY
 case ${TERM} in
