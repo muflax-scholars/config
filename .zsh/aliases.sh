@@ -59,6 +59,7 @@ function un() {
   (cd ~/; git pum && git push)
   ~/spoiler/sync.sh
   unm
+  git_annex_sync.sh
 }
 
 
