@@ -73,7 +73,6 @@ alias gass="git_annex_sync.sh"
 alias gast="git-annex status"
 alias gaw="git-annex whereis"
 alias gac="git-annex add . && git commit -m 'update'"
-alias gam="git merge synced/master"
 alias gaco="git-annex copy"
 alias gamo="git-annex move"
 alias gaa="git-annex add"
@@ -83,9 +82,14 @@ alias get="git-annex get"
 alias geta="git-annex get --auto"
 alias drop="git-annex drop"
 alias dropa="git-annex drop --auto"
-alias gaun="git-annex unused"
+alias gadu="git-annex unused"
 alias gadun="git-annex dropunused"
 alias gaduna="git-annex dropunused 1-10000"
+
+# common tasks
+alias gam="git merge synced/master"
+alias gacop="git-annex copy --to pleonasty --not --in pleonasty"
+alias gamop="git-annex move --to pleonasty"
 
 function ga-new() {
   echo "Label?" && read $label
