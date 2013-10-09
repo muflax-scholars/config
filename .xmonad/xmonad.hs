@@ -95,14 +95,14 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_p     ), namedScratchpadAction scratchpads "pidgin")
     , ((modm,               xK_a     ), namedScratchpadAction scratchpads "anking")
     -- launch dmenu
-    , ((modm,               xK_e     ), spawn dmenuQuick')
-    , ((modm,               xK_o     ), spawn dmenuPath')
+    , ((modm,               xK_e       ), spawn dmenuQuick')
+    , ((modm,               xK_o       ), spawn dmenuPath')
     -- close focused window
-    , ((modm .|. shiftMask, xK_w     ), kill)
+    , ((modm .|. shiftMask, xK_w       ), kill)
     -- Rotate through the available layout algorithms
-    , ((modm,               xK_space ) , sendMessage NextLayout)
+    , ((modm,               xK_space   ) , sendMessage NextLayout)
     -- reset layouts
-    , ((modm .|. altMask,   xK_space ), setLayout $ XMonad.layoutHook conf)
+    , ((modm .|. altMask,   xK_space   ), setLayout $ XMonad.layoutHook conf)
     -- tile again
     , ((modm .|. controlMask, xK_space ), withFocused $ windows . W.sink)
     
@@ -139,6 +139,11 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_g     ), nextScreen  )
     -- swap screens
     , ((modm .|. shiftMask, xK_g     ), swapNextScreen  )
+
+   -- swap screens
+    , ((modm,                 xK_j   ), spawn "rotate_screen normal")
+    , ((modm .|. shiftMask,   xK_j   ), spawn "rotate_screen left")
+    , ((modm .|. controlMask, xK_j   ), spawn "rotate_screen right")
 
     -- Restart xmonad
     , ((modm .|. shiftMask, xK_q     ), spawn "xmonad --recompile && xmonad --restart")
