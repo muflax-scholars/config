@@ -145,13 +145,13 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     
     -- Volume Control
     , ((0                 , 0x1008ff11), -- XF86AudioLowerVolume 
-        safeSpawn "amixer" ["-c", "0", "set", "Master", "-q", "5-"])
+        safeSpawn "amixer" ["set", "Master", "-q", "5-"])
     , ((shiftMask         , 0x1008ff11), -- S-XF86AudioLowerVolume 
-        safeSpawn "amixer" ["-c", "0", "set", "Master", "-q", "5+"])
+        safeSpawn "amixer" ["set", "Master", "-q", "5+"])
     , ((modm              , 0x1008ff11), -- M-XF86AudioLowerVolume 
-        safeSpawn "amixer" ["-c", "0", "set", "Headphone", "-q", "toggle"])
+        safeSpawn "amixer" ["set", "Headphone", "-q", "toggle"])
     , ((modm .|. shiftMask, 0x1008ff11), -- M-S-XF86AudioLowerVolume 
-        safeSpawn "amixer" ["-c", "0", "set", "Headphone", "-q", "toggle"])
+        safeSpawn "amixer" ["set", "Headphone", "-q", "toggle"])
     
     -- mpc
     , ((modm                , xK_c     ), spawn "MPD_HOST=localhost mpc --no-status toggle")
