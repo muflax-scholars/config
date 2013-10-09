@@ -7,7 +7,7 @@ Xft.rgba:                rgb
 Xft.hinting:             true
 Xft.hintstyle:           hintslight
 
-! disable bad font rendering
+! disable bad font rendering (use xft to turn on blurry fonts)
 Emacs.FontBackend:       x
 
 URxvt.inputMethod:       ibus
