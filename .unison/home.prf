@@ -17,3 +17,4 @@ ignore = Path games/install
 ignore = Path txt
 ignore = Path ongaku
 ignore = Path telebi
+ignore = Path podcasts
