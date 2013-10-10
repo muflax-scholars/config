@@ -243,3 +243,8 @@ function upm() {
   # eix
   eix-update
 }
+
+# dropbox
+alias dcs="dropbox-cli status"
+alias dcfs="dropbox-cli filestatus"
+alias dcst="dropbox-cli start"
