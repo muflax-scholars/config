@@ -84,3 +84,21 @@ checkout = git clone 'https://github.com/arclanguage/arc-nu' 'arc-nu'
 
 [src/lisp/clojure/leiningen]
 checkout = git clone 'https://github.com/technomancy/leiningen' 'leiningen'
+
+[src/linguistics/learning-greek]
+checkout = git clone 'https://github.com/jtauber/learning-greek' 'learning-greek'
+
+[src/linguistics/biblicalhumanities/greek-new-testament]
+checkout = git clone 'https://github.com/biblicalhumanities/greek-new-testament' 'greek-new-testament'
+
+[src/linguistics/biblicalhumanities/sblgnt]
+checkout = git clone 'https://github.com/biblicalhumanities/sblgnt' 'sblgnt'
+
+[src/linguistics/biblicalhumanities/Abbott-Smith]
+checkout = git clone 'https://github.com/biblicalhumanities/Abbott-Smith' 'Abbott-Smith'
+
+[src/linguistics/biblicalhumanities/tischendorf]
+checkout = git clone 'https://github.com/biblicalhumanities/tischendorf' 'tischendorf'
+
+[src/linguistics/biblicalhumanities/rigaudon]
+checkout = git clone 'https://github.com/biblicalhumanities/rigaudon' 'rigaudon'
