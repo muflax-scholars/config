@@ -18,9 +18,6 @@ export LANG="ja_JP.UTF8"
 export OOO_FORCE_DESKTOP="gnome"
 export SAL_USE_VCLPLUGIN="gen"
 
-# fix java bug
-wmname "LG3D"
-
 # steam audio
 export SDL_AUDIODRIVER="alsa"
 
@@ -42,5 +39,5 @@ xmodmap ~/.Xmodmap
 
 DISPLAY=:0.0 urxvt -name scratchpad -e zsh -i -c 'scratchpad' &
 
-WM="start_xmonad.sh"
+WM="awesome"
 exec dbus-launch --auto-syntax --exit-with-session $WM
