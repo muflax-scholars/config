@@ -176,12 +176,12 @@ keys' conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. controlMask, xK_k     ), spawn "$HOME/src/scripts/toggle_repeat.rb")
 
     -- backlights
-    , ((0                 , 0x1008ff4a), -- FN1
-        spawn "sudo $HOME/src/misc/apple/light/light.rb keyboard")
-    , ((0                 , 0x1008ff03), -- FN2
-        spawn "sudo $HOME/src/misc/apple/light/light.rb decrement")
-    , ((0                 , 0x1008ff02), -- FN3
-        spawn "sudo $HOME/src/misc/apple/light/light.rb increment")
+    -- , ((0                 , 0x1008ff4a), -- FN1
+    --     spawn "sudo $HOME/src/misc/apple/light/light.rb keyboard")
+    -- , ((0                 , 0x1008ff03), -- FN2
+    --     spawn "sudo $HOME/src/misc/apple/light/light.rb decrement")
+    -- , ((0                 , 0x1008ff02), -- FN3
+    --     spawn "sudo $HOME/src/misc/apple/light/light.rb increment")
       
     ]
     ++
