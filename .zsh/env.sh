@@ -11,7 +11,7 @@ else
   fi
 fi
 
-export MPD_HOST="pleonasty.local"
+export MPD_HOST="localhost"
 export BROWSER="firefox %s &"
 
 # ruby
