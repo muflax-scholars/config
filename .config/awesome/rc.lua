@@ -36,7 +36,6 @@ if beautiful.wallpaper then
     gears.wallpaper.maximized(beautiful.wallpaper, s, true)
   end
 end
--- }}}
 
 -- default apps
 terminal = "urxvt"
@@ -50,8 +49,6 @@ dmenu_quick = "eval \"exec `cat $HOME/.programs | "..dmenu.."`\""
 
 -- keybindings
 modkey = "Mod4"
-
--- {{{ Key bindings
 globalkeys = awful.util.table.join(
   -- move through tags
   awful.key({ modkey,           }, "h",   awful.tag.viewprev),
