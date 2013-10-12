@@ -68,7 +68,7 @@ theme.widg_cpu_mid  = "#285577"
 theme.widg_cpu_end  = "#AEC6D8"
 theme.vol_bg        = "#000033"
 
-theme.border_width  = 1
+theme.border_width  = 5
 theme.border_normal = "#000124"
 theme.border_focus  = "#4148ea"
 theme.border_marked = "#0000f0"

@@ -37,6 +37,9 @@ xsetroot -cursor_name left_ptr &
 skb.sh
 xmodmap ~/.Xmodmap
 
+# wifi
+wicd-client --tray & > /dev/null
+
 DISPLAY=:0.0 urxvt -name scratchpad -e zsh -i -c 'scratchpad' &
 
 WM="awesome"
