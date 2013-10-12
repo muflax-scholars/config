@@ -149,7 +149,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "x", awful.client.urgent.jumpto),
 
   -- restore first minimized window
-  awful.key({ modkey, "Shift"   }, "|", function ()
+  awful.key({ modkey, "Shift"   }, "v", function ()
               for _, c in ipairs(client.get(mouse.screen)) do
                 if (c.minimized
                     and c:tags()[mouse.screen] == awful.tag.selected(mouse.screen)) then
@@ -162,7 +162,7 @@ globalkeys = awful.util.table.join(
   end ),
 
   -- restore all minimized windows
-  awful.key({ modkey, "Control" }, "|", function ()
+  awful.key({ modkey, "Control" }, "v", function ()
               local gave_focus = false -- give focus to first in list
               for _, c in ipairs(client.get(mouse.screen)) do
                 if (c.minimized
@@ -278,10 +278,10 @@ clientkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "w", function (c) c:kill() end),
 
   -- minimize window
-  awful.key({ modkey,           }, "|", function (c) c.minimized = true end),
+  awful.key({ modkey,           }, "v", function (c) c.minimized = true end),
   
   -- mark client
-  awful.key({ modkey,           }, "v", function (c) awful.client.togglemarked(c) end),
+  awful.key({ modkey,           }, "l", function (c) awful.client.togglemarked(c) end),
 
   -- float it
   awful.key({ modkey,           }, "t", awful.client.floating.toggle),
