@@ -59,6 +59,13 @@ local scratchpad_anking = scratchpad({ command = "anking",
                                        height  = 0.7,
                                        width   = 0.5})
 
+-- disable mouse
+function mouse_toggle()
+  awful.util.spawn("toggle_mouse.rb")
+  -- move cursor in lower left corner and don't trigger any events
+  mouse.coords({x=0, y=screen[1][1]}, true)
+end
+
 -- keybindings
 modkey = "Mod4"
 globalkeys = awful.util.table.join(
@@ -141,7 +148,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey            }, "Escape", function () awful.util.spawn("slock") end),
 
   -- toggle trackpad
-  awful.key({ modkey            }, "f", function () awful.util.spawn("toggle_mouse.rb") end),
+  awful.key({ modkey            }, "f", mouse_toggle),
   
   -- volume control
   awful.key({                   }, "XF86AudioLowerVolume", function ()
