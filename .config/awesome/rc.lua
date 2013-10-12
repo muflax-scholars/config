@@ -31,11 +31,19 @@ do
   end)
 end
 
+local hostname = awful.util.pread("hostname")
+
 -- visual settings
 beautiful.init(awful.util.getdir("config") .. "/themes/blue/theme.lua")
-if beautiful.wallpaper then
-  for s = 1, screen.count() do
-    gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+if hostname == "scabeiathrax" then
+  gears.wallpaper.maximized(
+    awful.util.getdir("config") .. "/themes/wallpaper_scabeiathrax.jpg", nil, false)
+elseif hostname == "typhus" then
+  gears.wallpaper.maximized(
+    awful.util.getdir("config") .. "/themes/wallpaper_typhus.jpg", nil, false)
+else
+  if beautiful.wallpaper then
+    gears.wallpaper.maximized(beautiful.wallpaper, nil, true)
   end
 end
 
@@ -66,6 +74,25 @@ function mouse_toggle()
   mouse.coords({x=0, y=screen[1][1]}, true)
 end
 
+-- run the command if it not exists, otherwise raise/kill it (and rely on tool itself to tray)
+function run_or_raise(command, rule, active_hide)
+  active_hide = active_hide or false
+  
+  local matcher = function (c)                             
+    return awful.rules.match(c, rule) 
+  end                      
+  
+  if matcher(client.focus) then
+    if active_hide then
+      -- FIXME implement
+    else
+      client.focus:kill()
+    end
+  else
+    awful.client.run_or_raise(command, matcher)
+  end
+end
+  
 -- keybindings
 modkey = "Mod4"
 globalkeys = awful.util.table.join(
@@ -99,6 +126,35 @@ globalkeys = awful.util.table.join(
   -- jump to urgent client
   awful.key({ modkey,           }, "x", awful.client.urgent.jumpto),
 
+  -- restore first minimized window
+  awful.key({ modkey, "Shift"   }, "|", function ()
+              for _, c in ipairs(client.get(mouse.screen)) do
+                if (c.minimized
+                    and c:tags()[mouse.screen] == awful.tag.selected(mouse.screen)) then
+                  c.minimized = false
+                  client.focus = c
+                  c:raise()
+                  return
+                end
+              end
+  end ),
+
+  -- restore all minimized windows
+  awful.key({ modkey, "Control" }, "|", function ()
+              local gave_focus = false -- give focus to first in list
+              for _, c in ipairs(client.get(mouse.screen)) do
+                if (c.minimized
+                    and c:tags()[mouse.screen] == awful.tag.selected(mouse.screen)) then
+                  c.minimized = false
+                  c:raise()
+                  if not gave_focus then
+                    client.focus = c
+                    gave_focus = true
+                  end
+                end
+              end
+  end ),
+  
   -- move clients around
   awful.key({ modkey, "Shift"   }, "n", function () awful.client.swap.byidx(-1) end),
   awful.key({ modkey, "Shift"   }, "r", function () awful.client.swap.byidx(1) end),
@@ -115,11 +171,6 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Control" }, "r", function () awful.tag.incmwfact( 0.05) end),
   awful.key({ modkey, "Control" }, "n", function () awful.tag.incmwfact(-0.05) end),
 
-  -- minimize / restore window
-  awful.key({ modkey,           }, "|", function (c)
-              c.minimized = true end),
-  awful.key({ modkey, "Control" }, "|", awful.client.restore),
-  
   -- toggles
   -- , ((modm,               xK_f     ), sendMessage $ Toggle NBFULL )
   -- , ((modm,               xK_y     ), sendMessage $ Toggle REFLECTX )
@@ -130,7 +181,13 @@ globalkeys = awful.util.table.join(
 
   -- launch scratchpad
   awful.key({ modkey,           }, "i", function () scratchpad_term:toggle() end),
+
+  -- anking / anki
   awful.key({ modkey,           }, "a", function () scratchpad_anking:toggle() end),
+  awful.key({ modkey, "Shift"   }, "a", function () run_or_raise("anki", {class = "Runanki"}) end),
+
+  -- pidgin
+  awful.key({ modkey,           }, "p", function () run_or_raise("pidgin", {role = "buddy_list"}) end),
 
   -- launch terminal
   awful.key({ modkey,           }, "u", function () awful.util.spawn(terminal) end),
@@ -197,6 +254,12 @@ clientkeys = awful.util.table.join(
 
   -- close it
   awful.key({ modkey, "Shift"   }, "w", function (c) c:kill() end),
+
+  -- minimize window
+  awful.key({ modkey,           }, "|", function (c) c.minimized = true end),
+  
+  -- mark client
+  awful.key({ modkey,           }, "v", function (c) awful.client.togglemarked(c) end),
 
   -- float it
   awful.key({ modkey,           }, "t", awful.client.floating.toggle),
@@ -304,12 +367,41 @@ end
 --   },
 -- }
 
--- rules that affect all clients
+-- rules for windows
+function full_focus_filter(client)
+  local sibling_focus = false -- if there are other windows of the same process,
+                              -- only give focus if one of them is focused
+  local has_siblings  = false -- clients with the same pid
+  local stupid_client = false -- is the client stupid?
+
+  -- check all other clients with the same id
+  -- FIXME later
+  -- for c in awful.client.iterate(function (c)
+  --                                 return (not c == client and c.pid == client.pid)
+  --                               end, nil, nil) do
+  --   has_siblings = true
+
+  --   if c.focus then
+  --     sibling_focus = true
+  --     break
+  --   end
+  -- end
+
+  -- pidgin is annoying, so prevent its conversations from stealing focus
+  if client.class == "Pidgin" and client.role == "conversation" then
+    stupid_client = true
+  end
+  
+  return (awful.client.focus.filter
+            and not (has_siblings and not sibling_focus)
+            and not stupid_client)
+end
+
 awful.rules.rules = {
   { rule = { },
     properties = { border_width = beautiful.border_width,
                    border_color = beautiful.border_normal,
-                   focus = awful.client.focus.filter,
+                   focus = full_focus_filter,
                    keys = clientkeys,
                    buttons = clientbuttons } },
 
@@ -324,14 +416,6 @@ awful.rules.rules = {
   { rule = { role = "buddy_list" },
     properties = { floating = true } },
 
-  
-  -- force these clients to be above other (i.e. tiled) clients
-  -- { rule_any = { class = { "anking" }},
-  --   properties = { ontop = true } },
-
--- force clients to be centered
--- tyrannical.properties.centered = { "anking" }
-
 }
 
 -- signals
@@ -340,7 +424,7 @@ client.connect_signal("manage", function (c, startup)
                         -- enable mouse focus
                         c:connect_signal("mouse::enter", function(c)
                                            if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-                                           and awful.client.focus.filter(c) then
+                                           and awful.client.focus.filter then
                                              client.focus = c
                                            end
                         end)
