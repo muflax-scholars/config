@@ -139,6 +139,9 @@ globalkeys = awful.util.table.join(
 
   -- lock screen
   awful.key({ modkey            }, "Escape", function () awful.util.spawn("slock") end),
+
+  -- toggle trackpad
+  awful.key({ modkey            }, "f", function () awful.util.spawn("toggle_mouse.rb") end),
   
   -- volume control
   awful.key({                   }, "XF86AudioLowerVolume", function ()
