@@ -81,16 +81,37 @@ function run_or_raise(command, rule, active_hide)
   
   local matcher = function (c)                             
     return awful.rules.match(c, rule) 
-  end                      
-  
-  if matcher(client.focus) then
+  end
+
+  local kill_or_hide = function (c)
     if active_hide then
       -- FIXME implement
     else
-      client.focus:kill()
+      c:kill()
     end
+  end
+  
+  if client.focus and matcher(client.focus) then
+    kill_or_hide(client.focus)
   else
-    awful.client.run_or_raise(command, matcher)
+    local c = nil
+    for cc in awful.client.iterate(function (c)
+                                     return matcher(c)
+                                   end, nil, nil) do
+      c = cc
+      break
+    end
+
+    if c then
+      if c:tags()[mouse.screen] == awful.tag.selected(mouse.screen) then
+        client.focus = c
+        c:raise()
+      else
+        kill_or_hide(c)
+      end
+    else
+      awful.util.spawn(command)
+    end
   end
 end
   
@@ -350,25 +371,7 @@ for s = 1, screen.count() do
                       s, default_layout)
 end
 
-
--- client rules and tags
--- tyrannical.tags = {
---   { name   = "toile",
---     init   = true,
---     layout = awful.layout.suit.tile.left,      
---     class  = { "Firefox",
---                "Pidgin",
---                "Google-chrome"}
---   },
---   { name      = "暗記",
---     init      = false,
---     exec_init = "anki",
---     layout    = awful.layout.suit.max,
---     class     = { "Runanki" }
---   },
--- }
-
--- rules for windows
+-- rules for automatic focus switching
 function full_focus_filter(client)
   local sibling_focus = false -- if there are other windows of the same process,
                               -- only give focus if one of them is focused
@@ -398,6 +401,7 @@ function full_focus_filter(client)
             and not stupid_client)
 end
 
+-- client rules
 awful.rules.rules = {
   { rule = { },
     properties = { border_width = beautiful.border_width,
@@ -414,13 +418,22 @@ awful.rules.rules = {
                  "anking"}},
     properties = { floating = true } },
 
+  -- floating and sticky
   { rule = { role = "buddy_list" },
-    properties = { floating = true } },
+    properties = { floating = true, sticky = true } },
+
+    -- default tags
+  { rule_any = { class = { "Pidgin",
+                           "Firefox",
+                           "Chromium-browser",
+                           "Google-chrome"}},
+    properties = { tag = tags[1][10] }},
+  { rule_any = { class = { "Runanki"}},
+    properties = { tag = tags[1][9] }},
 
 }
 
 -- signals
--- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c, startup)
                         -- enable mouse focus
                         c:connect_signal("mouse::enter", function(c)
