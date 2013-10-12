@@ -31,14 +31,15 @@ do
   end)
 end
 
-local hostname = awful.util.pread("hostname")
+local hostname = awful.util.pread("hostname"):gsub("\n$", "")
 
 -- visual settings
-beautiful.init(awful.util.getdir("config") .. "/themes/blue/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/zenburn/theme.lua")
 if hostname == "scabeiathrax" then
   gears.wallpaper.maximized(
     awful.util.getdir("config") .. "/themes/wallpaper_scabeiathrax.jpg", nil, false)
 elseif hostname == "typhus" then
+
   gears.wallpaper.maximized(
     awful.util.getdir("config") .. "/themes/wallpaper_typhus.jpg", nil, false)
 else
