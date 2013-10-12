@@ -1,11 +1,13 @@
 -- load libraries
-local gears = require("gears")
-local awful = require("awful")
-awful.rules = require("awful.rules")
+local gears      = require("gears")
+local awful      = require("awful")
+awful.rules      = require("awful.rules")
 require("awful.autofocus")
-local wibox = require("wibox")
-local beautiful = require("beautiful")
-local naughty = require("naughty")
+local wibox      = require("wibox")
+local beautiful  = require("beautiful")
+local naughty    = require("naughty")
+local eminent    = require("eminent")
+local scratchpad = require("scratchpad")
 
 -- fall back to preset config if errors are found
 if awesome.startup_errors then
@@ -39,13 +41,23 @@ end
 
 -- default apps
 terminal = "urxvt"
-editor = "emacs-gui"
+editor   = "emacs-gui"
 
 dmenu_font  = "-mplus-gothic-medium-r*12"
 dmenu_opts  = "-b -i -fn '"..dmenu_font.."' -nb '#000000' -nf '#FFFFFF' -sb '"..beautiful.border_normal.."'"
 dmenu       = "dmenu "..dmenu_opts
 dmenu_all   = "dmenu_run "..dmenu_opts
 dmenu_quick = "eval \"exec `cat $HOME/.programs | "..dmenu.."`\""
+
+-- scratchpads
+local scratchpad_term = scratchpad({ command = terminal.." -name scratchpad -e zsh -i -c 'scratchpad'",
+                                     name    = "scratchpad",
+			                               height  = 0.5,
+                                     width   = 0.5})
+local scratchpad_anking = scratchpad({ command = "anking",
+                                       name    = "anking",
+                                       height  = 0.7,
+                                       width   = 0.5})
 
 -- keybindings
 modkey = "Mod4"
@@ -110,9 +122,8 @@ globalkeys = awful.util.table.join(
   -- , ((modm .|. shiftMask, xK_b     ), sendMessage ToggleStruts )
 
   -- launch scratchpad
-  -- , ((modm,               xK_i     ), scratchpad)
-  -- , ((modm,               xK_p     ), namedScratchpadAction scratchpads "pidgin")
-  -- , ((modm,               xK_a     ), namedScratchpadAction scratchpads "anking")
+  awful.key({ modkey,           }, "i", function () scratchpad_term:toggle() end),
+  awful.key({ modkey,           }, "a", function () scratchpad_anking:toggle() end),
 
   -- launch terminal
   awful.key({ modkey,           }, "u", function () awful.util.spawn(terminal) end),
@@ -126,6 +137,9 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "j", function () awful.util.spawn("rotate_screen left") end),
   awful.key({ modkey, "Control" }, "j", function () awful.util.spawn("rotate_screen right") end),
 
+  -- lock screen
+  awful.key({ modkey            }, "Escape", function () awful.util.spawn("slock") end),
+  
   -- volume control
   awful.key({                   }, "XF86AudioLowerVolume", function ()
               awful.util.spawn("amixer -c 0 set Master -q 5-") end),
@@ -180,7 +194,7 @@ clientkeys = awful.util.table.join(
 )
 
 -- bind all key numbers to tags
-for i = 1, 9 do
+for i = 1, 10 do
   globalkeys = awful.util.table.join(
     globalkeys,
     awful.key({ modkey }, "#" .. i + 9,
@@ -221,21 +235,21 @@ root.keys(globalkeys)
 -- mouse bindings; note that the order is left (1), middle (2), right (3)
 clientbuttons = awful.util.table.join(
   -- floating clients
-  awful.button({ modkey            }, 1,
+  awful.button({ modkey          }, 1, awful.mouse.client.move),
+  awful.button({ modkey, "Shift" }, 1,
                function()
                  local c = awful.mouse.client_under_pointer()
                  if c then
                    awful.client.floating.toggle(c)
                  end
   end),
-
-  awful.button({ modkey, "Shift"   }, 1, awful.mouse.client.move),
-  awful.button({ modkey, "Control" }, 1, awful.mouse.client.resize))
+  awful.button({ modkey          }, 3, awful.mouse.client.resize))
 
 -- open menu on empty screen
 root.buttons(awful.util.table.join(awful.button({ }, 1, function () awesome_menu:toggle() end)))
 
 -- layouts
+
 local layouts = {
   awful.layout.suit.tile,
   awful.layout.suit.tile.left,
@@ -243,16 +257,45 @@ local layouts = {
   awful.layout.suit.max.fullscreen,
 }
 
+local default_layout = awful.layout.suit.tile
+
 -- tags
 tags = {}
 for s = 1, screen.count() do
-  -- each screen has its own tag table.
-  tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+  -- each screen has its own tag table for now
+  tags[s] = awful.tag({ "一",
+                        "二",
+                        "三",
+                        "四",
+                        "五",
+                        "六",
+                        "七",
+                        "八",
+                        "暗記",
+                        "toile" },
+                      s, default_layout)
 end
 
--- rules
+
+-- client rules and tags
+-- tyrannical.tags = {
+--   { name   = "toile",
+--     init   = true,
+--     layout = awful.layout.suit.tile.left,      
+--     class  = { "Firefox",
+--                "Pidgin",
+--                "Google-chrome"}
+--   },
+--   { name      = "暗記",
+--     init      = false,
+--     exec_init = "anki",
+--     layout    = awful.layout.suit.max,
+--     class     = { "Runanki" }
+--   },
+-- }
+
+-- rules that affect all clients
 awful.rules.rules = {
-  -- all clients
   { rule = { },
     properties = { border_width = beautiful.border_width,
                    border_color = beautiful.border_normal,
@@ -260,21 +303,25 @@ awful.rules.rules = {
                    keys = clientkeys,
                    buttons = clientbuttons } },
 
-  -- keep these floating
-  { rule = { class = "mplayer2" },
-    properties = { floating = true } },
-  { rule = { class = "pinentry" },
-    properties = { floating = true } },
-  { rule = { class = "gimp" },
-    properties = { floating = true } },
-  { rule = { class = "Screenkey" },
-    properties = { floating = true } },
-  { rule = { class = "Gxmessage" },
+  -- float these by default
+  { rule_any = { class = { "mplayer2",
+                 "pinentry",
+                 "Wine",
+                 "Gxmessage",
+                 "anking"}},
     properties = { floating = true } },
 
-  -- put these in specific tags
-  { rule = { class = "Firefox" },
-    properties = { tag = tags[1][9] } },
+  { rule = { role = "buddy_list" },
+    properties = { floating = true } },
+
+  
+  -- force these clients to be above other (i.e. tiled) clients
+  -- { rule_any = { class = { "anking" }},
+  --   properties = { ontop = true } },
+
+-- force clients to be centered
+-- tyrannical.properties.centered = { "anking" }
+
 }
 
 -- signals
@@ -297,7 +344,7 @@ client.connect_signal("manage", function (c, startup)
                         end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("focus",   function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- menu / launcher
