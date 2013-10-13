@@ -19,9 +19,16 @@ io.stderr:write("======================================\n")
 -- fall back to preset config if errors are found
 if awesome.startup_errors then
   naughty.notify({preset = naughty.config.presets.critical,
-                  title = "Oops, there were errors during startup!",
-                  text = awesome.startup_errors})
+                  title  = "Oops, there were errors during startup!",
+                  text   = awesome.startup_errors})
 end
+
+function debug(text)
+  naughty.notify({preset = naughty.config.presets.critical,
+                  title  = "Debug:",
+                  text   = text})
+end
+
 
 -- handle runtime errors after startup
 do
@@ -75,8 +82,6 @@ local layouts = {
   awful.layout.suit.max.fullscreen,
   awful.layout.suit.magnifier,
 }
-
-local default_layout = layouts[1]
 
 function toggleLayouts(a, b) -- a is preferred default
   if awful.layout.get(mouse.screen) == a then
@@ -398,21 +403,40 @@ clientbuttons = awful.util.table.join(
 -- open menu on empty screen
 root.buttons(awful.util.table.join(awful.button({ }, 1, function () awesome_menu:toggle() end)))
 
+-- tag options
+local default_layout  = layouts[1]
+local default_mwfact  = 0.6
+local default_nmaster = 1
+local default_ncol    = 1
+
 -- tags
+tag_defs = {
+  --[[1]] { "一",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[2]] { "二",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[3]] { "三",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[4]] { "四",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[5]] { "五",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[6]] { "六",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[7]] { "七",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[8]] { "八",   default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[9]] { "暗記", default_layout, default_mwfact, default_nmaster, default_ncol },
+  --[[0]] { "toile", default_layout, 0.8,            default_nmaster, default_ncol },
+}
+
 tags = {}
 for s = 1, screen.count() do
   -- each screen has its own tag table for now
-  tags[s] = awful.tag({ "一",
-                        "二",
-                        "三",
-                        "四",
-                        "五",
-                        "六",
-                        "七",
-                        "八",
-                        "暗記",
-                        "toile" },
-                      s, default_layout)
+  for i = 1, #tag_defs do
+    td = tag_defs[i]
+    t  = awful.tag.add    (td[1], {})
+    awful.tag.setproperty (t, "number", i)
+    awful.layout.set      (td[2], t)
+    awful.tag.setmwfact   (td[3], t)
+    awful.tag.setnmaster  (td[4], t)
+    awful.tag.setncol     (td[5], t)
+
+    tags[s]  = t
+  end
 end
 
 -- rules for automatic focus switching
@@ -583,6 +607,8 @@ mem = lain.widgets.mem({
                          end
 })
 
+spacer = wibox.widget.textbox(" ")
+
 -- status bar
 awesome_wibox = {}
 promptbox     = {}
@@ -646,8 +672,9 @@ for s = 1, screen.count() do
 
   -- aligned to the right
   local right_layout = wibox.layout.fixed.horizontal()
-  if s == 1 then right_layout:add(wibox.widget.systray()) end
   -- right_layout:add(fume) -- TODO
+  right_layout:add(wibox.widget.systray())
+  right_layout:add(spacer)
   right_layout:add(baticon)
   right_layout:add(bat)
   right_layout:add(cpuicon)
