@@ -10,8 +10,11 @@ local eminent    = require("eminent")
 local scratchpad = require("scratchpad")
 local lain       = require("lain")
 local helpers    = require("lain.helpers")
-local io         = { popen    = io.popen }
 local markup     = lain.util.markup
+
+io.stderr:write("======================================\n")
+io.stderr:write("This gonna be - wait for it - LEGEN...\n")
+io.stderr:write("======================================\n")
 
 -- fall back to preset config if errors are found
 if awesome.startup_errors then
@@ -141,24 +144,29 @@ function run_or_raise(command, rule, active_hide)
       c:kill()
     end
   end
+
+  local find_client = function ()
+    for c in awful.client.iterate(function (cc)
+                                    return matcher(cc)
+                                  end, nil, nil) do
+      return c
+    end
+
+    return nil
+  end
+
   
   if client.focus and matcher(client.focus) then
     kill_or_hide(client.focus)
   else
-    local c = nil
-    for cc in awful.client.iterate(function (c)
-                                     return matcher(c)
-                                   end, nil, nil) do
-      c = cc
-      break
-    end
+    c = find_client()
 
     if c then
       if c:tags()[mouse.screen] == awful.tag.selected(mouse.screen) then
         client.focus = c
         c:raise()
       else
-        kill_or_hide(c)
+        awful.client.jumpto(c)
       end
     else
       awful.util.spawn(command)
@@ -575,10 +583,6 @@ mem = lain.widgets.mem({
                          end
 })
 
--- # processes with >= 50% cpu load
--- echo "$dzen_number P$(cpu_hogs)"
--- dzen_number+=1
-
 -- status bar
 awesome_wibox = {}
 promptbox     = {}
@@ -628,6 +632,7 @@ for s = 1, screen.count() do
   
   taglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist.buttons)
 
+  -- TODO make it more elaborate, maybe by splitting off minimized tasks?
   tasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist.buttons)
 
   -- Create the wibox
@@ -642,10 +647,9 @@ for s = 1, screen.count() do
   -- aligned to the right
   local right_layout = wibox.layout.fixed.horizontal()
   if s == 1 then right_layout:add(wibox.widget.systray()) end
-  -- right_layout:add(fume)
+  -- right_layout:add(fume) -- TODO
   right_layout:add(baticon)
   right_layout:add(bat)
-  -- right_layout:add(processes)
   right_layout:add(cpuicon)
   right_layout:add(cpu)
   right_layout:add(memicon)
@@ -663,3 +667,7 @@ for s = 1, screen.count() do
 
   awesome_wibox[s]:set_widget(layout)
 end
+
+io.stderr:write("========\n")
+io.stderr:write("...DARY!\n")
+io.stderr:write("========\n")
