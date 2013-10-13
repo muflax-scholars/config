@@ -426,6 +426,7 @@ tag_defs = {
 tags = {}
 for s = 1, screen.count() do
   -- each screen has its own tag table for now
+  tags[s] = {}
   for i = 1, #tag_defs do
     td = tag_defs[i]
     t  = awful.tag.add    (td[1], {})
@@ -435,7 +436,7 @@ for s = 1, screen.count() do
     awful.tag.setnmaster  (td[4], t)
     awful.tag.setncol     (td[5], t)
 
-    tags[s]  = t
+    tags[s][i] = t
   end
 end
 
@@ -471,13 +472,19 @@ end
 
 -- client rules
 awful.rules.rules = {
+  -- defaults for all clients
   { rule = { },
     properties = { border_width = beautiful.border_width,
                    border_color = beautiful.border_normal,
-                   focus = full_focus_filter,
-                   keys = clientkeys,
-                   buttons = clientbuttons } },
+                   focus        = full_focus_filter,
+                   keys         = clientkeys,
+                   buttons      = clientbuttons,
+                   callback     = awful.client.setslave }},
 
+  -- ignore that stupid urxvt gap
+  { rule_any = { class = { "URxvt" } },
+    properties = { size_hints_honor = false }},
+  
   -- float these by default
   { rule_any = { class = { "mplayer2",
                  "pinentry",
