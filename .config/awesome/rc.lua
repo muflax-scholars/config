@@ -76,7 +76,7 @@ local layouts = {
   awful.layout.suit.magnifier,
 }
 
-local default_layout = awful.layout.suit.tile
+local default_layout = layouts[1]
 
 function toggleLayouts(a, b) -- a is preferred default
   if awful.layout.get(mouse.screen) == a then
