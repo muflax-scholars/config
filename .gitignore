@@ -140,9 +140,9 @@
 .rstudio-desktop
 .ruby_inline
 .sword
-.synopsys
 .tgdb
 .tuxguitar*
+.wireshark
 
 # ignore mail, firefox and ims, oh my!
 .jd
