@@ -676,6 +676,7 @@ for s = 1, screen.count() do
   left_layout:add(layoutbox[s])
   left_layout:add(taglist[s])
   left_layout:add(promptbox[s])
+  left_layout:add(spacer)
 
   -- aligned to the right
   local right_layout = wibox.layout.fixed.horizontal()
