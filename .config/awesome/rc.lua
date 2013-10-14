@@ -482,7 +482,7 @@ awful.rules.rules = {
                    callback     = awful.client.setslave }},
 
   -- ignore that stupid urxvt gap
-  { rule_any = { class = { "URxvt" } },
+  { rule_any = { class = { "URxvt", "Emacs" } },
     properties = { size_hints_honor = false }},
   
   -- float these by default
