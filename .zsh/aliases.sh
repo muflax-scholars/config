@@ -140,9 +140,6 @@ alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; e"
 function y() {
   echo "Paste links, ^D to start the download."
   youtube-dl --ignore-errors --max-quality 22 --continue --rate-limit 2.5m -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
-
-  # add files to git-annex
-  (cd ~/youtube && gac)
 }
 
 # portage
