@@ -307,8 +307,8 @@ globalkeys = awful.util.table.join(
               awful.util.spawn("$HOME/src/scripts/selection >/dev/null") end),
   
   -- switch to different machine
-  awful.key({ modkey, "Control" }, "1", function () awful.util.spawn("scabeiathrax_display") end),
-  awful.key({ modkey, "Control" }, "2", function () awful.util.spawn("typhus_display") end),
+  -- awful.key({ modkey, "Control" }, "1", function () awful.util.spawn("scabeiathrax_display") end),
+  -- awful.key({ modkey, "Control" }, "2", function () awful.util.spawn("typhus_display") end),
   
   -- change keyboard settings
   awful.key({ modkey,           }, "k", function () awful.util.spawn("skb.sh") end),
