@@ -316,12 +316,12 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Control" }, "k", function () awful.util.spawn("toggle_repeat.rb") end),
 
   -- backlights
-  awful.key({ modkey,           }, "XF86MonBrightnessDown", function ()
-              awful.util.spawn("sudo $HOME/src/misc/apple/light/light.rb decrement") end),
-  awful.key({ modkey,           }, "XF86MonBrightnessUp", function ()
-              awful.util.spawn("sudo $HOME/src/misc/apple/light/light.rb increment") end),
-  awful.key({ modkey,           }, "XF86LaunchA", function ()
-              awful.util.spawn("sudo $HOME/src/misc/apple/light/light.rb keyboard") end),
+  awful.key({                   }, "XF86MonBrightnessDown", function ()
+              awful.util.spawn_with_shell("sudo $HOME/src/misc/apple/light/light.rb decrement") end),
+  awful.key({                   }, "XF86MonBrightnessUp", function ()
+              awful.util.spawn_with_shell("sudo $HOME/src/misc/apple/light/light.rb increment") end),
+  awful.key({                 _with_shell  }, "XF86LaunchA", function ()
+              awful.util.spawn_with_shell("sudo $HOME/src/misc/apple/light/light.rb keyboard") end),
 
   -- restart awesome
   awful.key({ modkey, "Shift"   }, "q", awesome.restart)
