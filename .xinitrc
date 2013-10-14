@@ -43,7 +43,5 @@ wicd-client --tray & >/dev/null
 # clipboard synchronization
 klipper >/dev/null 2>/dev/null
 
-DISPLAY=:0.0 urxvt -name scratchpad -e zsh -i -c 'scratchpad' &
-
 WM="awesome"
 exec dbus-launch --auto-syntax --exit-with-session $WM
