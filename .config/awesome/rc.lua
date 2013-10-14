@@ -183,12 +183,12 @@ end
 modkey = "Mod4"
 globalkeys = awful.util.table.join(
   -- move through tags
-  awful.key({ modkey,           }, "h",   awful.tag.viewprev),
-  awful.key({ modkey,           }, "g",   awful.tag.viewnext),
+  awful.key({ modkey,           }, "h",   awful.tag.viewnext),
+  awful.key({ modkey, "Shift"   }, "h",   awful.tag.viewprev),
 
   -- move through screens
-  awful.key({ modkey, "Shift"   }, "h", function () awful.screen.focus_relative(-1) end),
-  awful.key({ modkey, "Shift"   }, "g", function () awful.screen.focus_relative(1) end),
+  awful.key({ modkey,           }, "g", function () awful.screen.focus_relative(1) end),
+  awful.key({ modkey, "Shift"   }, "g", function () awful.screen.focus_relative(-1) end),
   -- focus history
   awful.key({ modkey,           }, "Tab", awful.tag.history.restore),
   awful.key({ modkey, "Shift"   }, "Tab", function ()
