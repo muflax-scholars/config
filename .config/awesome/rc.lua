@@ -485,11 +485,16 @@ awful.rules.rules = {
                  "Wine",
                  "Gxmessage",
                  "anking"}},
-    properties = { floating = true } },
+    properties = { floating = true }},
 
+  -- keep them on top
+  { rule_any = { class = { "mplayer2" }},
+    properties = { ontop = true }},
+  
+  
   -- floating and sticky
   { rule = { role = "buddy_list" },
-    properties = { floating = true, sticky = true } },
+    properties = { floating = true, sticky = true }},
 
     -- default tags
   { rule_any = { class = { "Pidgin",
