@@ -410,33 +410,27 @@ local default_nmaster = 1
 local default_ncol    = 1
 
 -- tags
-tag_defs = {
-  --[[1]] { "一",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[2]] { "二",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[3]] { "三",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[4]] { "四",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[5]] { "五",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[6]] { "六",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[7]] { "七",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[8]] { "八",   default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[9]] { "暗記", default_layout, default_mwfact, default_nmaster, default_ncol },
-  --[[0]] { "toile", default_layout, 0.8,            default_nmaster, default_ncol },
-}
-
 tags = {}
+tag_names = {
+  "一",  
+  "二",  
+  "三",  
+  "四",  
+  "五",  
+  "六",  
+  "七",  
+  "八",  
+  "暗記", 
+  "toile",
+}
 for s = 1, screen.count() do
   -- each screen has its own tag table for now
-  tags[s] = {}
-  for i = 1, #tag_defs do
-    td = tag_defs[i]
-    t  = awful.tag.add    (td[1], {})
-    awful.tag.setproperty (t, "number", i)
-    awful.layout.set      (td[2], t)
-    awful.tag.setmwfact   (td[3], t)
-    awful.tag.setnmaster  (td[4], t)
-    awful.tag.setncol     (td[5], t)
+  tags[s] = awful.tag(tag_names, s, default_layout)
 
-    tags[s][i] = t
+  for i = 1, #tag_names do
+    awful.tag.setmwfact  (default_mwfact,  t)
+    awful.tag.setnmaster (default_nmaster, t)
+    awful.tag.setncol    (default_ncol,    t)
   end
 end
 
