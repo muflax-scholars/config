@@ -538,7 +538,7 @@ clockicon = wibox.widget.imagebox(beautiful.widget_clock)
 clock     = wibox.widget.textbox()
 clock_timer = helpers.newtimer
 clock_timer("clock", 0.9, function()
-              local mom_t = chomp_read('TZ="Europe/Berlin" date "+u:%H"')
+              local mom_t = chomp_read('TZ="Europe/Berlin" date "+m:%H"')
               local us_t  = chomp_read('TZ="America/Los_Angeles" date "+u:%H"')
               clock:set_markup(
                 -- date
