@@ -43,5 +43,8 @@ wicd-client --tray & >/dev/null
 # clipboard synchronization
 klipper >/dev/null 2>/dev/null
 
+# dropbox
+dropbox-cli start
+
 WM="awesome"
 exec dbus-launch --auto-syntax --exit-with-session $WM
