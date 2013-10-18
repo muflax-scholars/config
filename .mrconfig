@@ -102,3 +102,6 @@ checkout = git clone 'https://github.com/biblicalhumanities/tischendorf' 'tische
 
 [src/linguistics/biblicalhumanities/rigaudon]
 checkout = git clone 'https://github.com/biblicalhumanities/rigaudon' 'rigaudon'
+
+[local/src/linguistics/kytea]
+checkout = git clone 'https://github.com/neubig/kytea' 'kytea'
