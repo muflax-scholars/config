@@ -519,7 +519,7 @@ type/^PDF
 	View=%view{ascii} pdftotext %f -
 	
 regex/\.([dD][jJ][vV][uU])$
-    Open=(okular %f & >/dev/null 2>/dev/null)
+    Open=(okular %f >/dev/null 2>/dev/null &)
 
 # The following code very ugly and should not be taken as example.
 # It should be cleaned up when the new format of mc.ext is developed.
