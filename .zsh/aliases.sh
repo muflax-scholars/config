@@ -249,3 +249,18 @@ function upm() {
 alias dcs="dropbox-cli status"
 alias dcfs="dropbox-cli filestatus"
 alias dcst="dropbox-cli start"
+
+# pack folder
+function pack-7z() {
+  for dir in $*; do
+    echo "packing $dir..."
+    7z -mx9 a $dir.7z $dir && rm -rf $dir
+  done
+}
+function pack-tar() {
+  for dir in $*; do
+    echo "packing $dir..."
+    tar -vczf $dir.tar.gz $dir && rm -rf $dir
+  done
+}
+alias pack="pack-7z"
