@@ -491,7 +491,6 @@ awful.rules.rules = {
   { rule_any = { class = { "mplayer2" }},
     properties = { ontop = true }},
   
-  
   -- floating and sticky
   { rule = { role = "buddy_list" },
     properties = { floating = true, sticky = true }},
