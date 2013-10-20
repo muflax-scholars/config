@@ -35,7 +35,7 @@ URxvt.jumpScroll:        true
 URxvt.skipScroll:        true
 
 URxvt.depth:             32
-URxvt*background:        [80]#000000
+URxvt*background:        [90]#000000
 URxvt*foreground:        #FFFFFF
 URxvt*perl-ext-common:   default,matcher
 URxvt*url-launcher:      firefox
