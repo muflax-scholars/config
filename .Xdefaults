@@ -34,14 +34,9 @@ URxvt*scrollTtyOutput:   false
 URxvt.jumpScroll:        true
 URxvt.skipScroll:        true
 
-!URxvt*internalBorder:   1
-!URxvt*borderColor:      black
-
-URxvt*background:        #000000
+URxvt.depth:             32
+URxvt*background:        [80]#000000
 URxvt*foreground:        #FFFFFF
-URxvt*transparent:       true
-URxvt*fading:            30
-URxvt*shading:           20
 URxvt*perl-ext-common:   default,matcher
 URxvt*url-launcher:      firefox
 URxvt*matcher.button:    1
