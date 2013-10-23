@@ -15,6 +15,7 @@ end
 # useful gems you want loaded by default
 gems = [
         "active_support",
+        "active_support/all",
         "bayescraft",
         "chronic",
         "date",
