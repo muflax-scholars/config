@@ -480,11 +480,14 @@ awful.rules.rules = {
     properties = { size_hints_honor = false }},
   
   -- float these by default
-  { rule_any = { class = { "mplayer2",
-                 "pinentry",
-                 "Wine",
-                 "Gxmessage",
-                 "anking"}},
+  { rule_any = { class = {
+                   "mplayer2",
+                   "pinentry",
+                   "Wine",
+                   "Gxmessage",
+                   "anking",
+                   "Plugin-container",
+               }},
     properties = { floating = true }},
 
   -- keep them on top
