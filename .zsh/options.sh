@@ -36,3 +36,6 @@ setopt HASH_LIST_ALL
 # with this option set you can't do "ls > foo" if foo already exists, so
 # you have to do "rm foo; ls > foo" or in one step "ls >! foo"
 setopt NOCLOBBER
+
+# make spaces saner
+export IFS=$'\t'$'\n'$'\0'
