@@ -298,7 +298,7 @@ globalkeys = awful.util.table.join(
   -- mpc
   awful.key({ modkey,           }, "c", function ()
               awful.util.spawn_with_shell("MPD_HOST=localhost mpc --no-status toggle") end),
-  awful.key({ modkey, "Shift"   }, "c", function () awful.util.spawn("remember_song.sh") end),
+  -- awful.key({ modkey, "Shift"   }, "c", function () awful.util.spawn("remember_song.sh") end),
   awful.key({ modkey, "Control" }, "c", function ()
               awful.util.spawn_with_shell("MPD_HOST=localhost mpc del 0") end),
 
