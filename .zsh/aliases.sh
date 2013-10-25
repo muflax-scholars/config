@@ -267,4 +267,4 @@ alias pack="pack-7z"
 
 # treat each new line as an item
 alias each_line="perl -lne 'print quotemeta'"
-alias -g EL="each_line"
+alias EL="each_line"
