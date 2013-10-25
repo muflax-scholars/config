@@ -134,7 +134,7 @@ if [[ -e $(which emacs-24) ]]; then
 else
   function em() { emacs $* &! }
 fi
-alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; e"
+alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
 
 # youtube download
 function y() {
