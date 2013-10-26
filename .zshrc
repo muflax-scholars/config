@@ -8,7 +8,6 @@ source ~/.zsh/completion.sh
 source ~/.zsh/keys.sh
 source ~/.zsh/aliases.sh
 source ~/.zsh/gtd.sh
-source ~/.zsh/functions.sh
 source ~/.zsh/syntax.sh
 source ~/.zsh/terminal.sh
 [[ -s ~/.zsh/local.sh ]] && source ~/.zsh/local.sh
