@@ -325,3 +325,4 @@ done
 src=~/src
 maff=~/Dropbox/0german/canoonet_grammar/
 local=/usr/local/portage/local
+lets=~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
