@@ -322,7 +322,9 @@ for cmd in $bundled_commands; do
 done
 
 # name of directories
-src=~/src
-maff=~/Dropbox/0german/canoonet_grammar/
-local=/usr/local/portage/local
+gdict=~/src/linguistics/german_dictionaries
+german=~/Dropbox/0german
 lets=~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
+local=/usr/local/portage/local
+maff=~/Dropbox/0german/canoonet_grammar/
+src=~/src
