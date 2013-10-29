@@ -6,7 +6,7 @@ alias avg="noglob average_damage.rb"
 alias cal="cal -m -3"
 alias cgrep="grep --color=always"
 alias grep="grep --color=auto -P"
-alias less="less -iF" 
+alias less="less -iF"
 alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
@@ -51,7 +51,7 @@ function unm() {
       host=typhus
       ;;
   esac
-  
+
   unison home -root ssh://$host//home/amon
 }
 
@@ -120,7 +120,7 @@ function shrink() {
 # tmux
 alias scratchpad="tm scratchpad"
 function tm() {
-  if [[ $# -ge 1 ]] then 
+  if [[ $# -ge 1 ]] then
     tmux attach -t $1 || tmux new-session -s $1 \; set default-path "$(pwd)" \; set -g -a update-environment ' PWD'
   else
     tmux new-session \; set default-path "$(pwd)" \; set -g -a update-environment ' PWD'
@@ -233,7 +233,7 @@ function up() {
   # sync external repos
   layman -S
   sudo emerge --sync
-  
+
   # eix
   eix-update
 }
@@ -274,13 +274,13 @@ alias EL="each_line"
 function nap() {
   mpc --no-status pause
   echo "お休みなさい。。。"
-  if [[ $# -ge 1 ]] then 
+  if [[ $# -ge 1 ]] then
         TIME=$(( ($(date -d "$*" +%s) - $(date +%s)) / 60 ))
         echo "going down for $TIME minutes..."
         read
         doff
         sleep ${TIME}m
-  else 
+  else
     doff
     sleep 25m
   fi && {
@@ -320,3 +320,8 @@ for cmd in $bundled_commands; do
     compdef _$cmd bundled_$cmd=$cmd
   fi
 done
+
+# name of directories
+src=~/src
+maff=~/Dropbox/0german/canoonet_grammar/
+local=/usr/local/portage/local
