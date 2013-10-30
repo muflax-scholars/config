@@ -226,7 +226,7 @@ function up() {
   uep
 
   # sync local repo
-  (cd ~local; git pum && git push)
+  (cd ~plocal; git pum && git push)
 
   # sync external repos
   layman -S
@@ -239,7 +239,7 @@ function up() {
 # minimal version
 function upm() {
   # sync local repo
-  (cd ~local; git pum && git push)
+  (cd ~plocal; git pum && git push)
 
   # eix
   eix-update
@@ -322,14 +322,15 @@ done
 # named directories
 typeset -A NAMED_DIRS
 NAMED_DIRS=(
+  0g       ~/Dropbox/0german
   gdict    ~/src/linguistics/german_dictionaries
-  german   ~/Dropbox/0german
-  lets     ~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
-  local    /usr/local/portage/local
-  maff     ~/Dropbox/0german/canoonet_grammar/
-  src      ~/src
   gems     $(gem environment gemdir)/gems
+  german   ~/spoiler/languages/german
+  lets     ~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
+  maff     ~/Dropbox/0german/canoonet_grammar/
   nfs      /mnt/nfs/
+  plocal   /usr/local/portage/local
+  src      ~/src
 )
 for key in ${(k)NAMED_DIRS}
 do
