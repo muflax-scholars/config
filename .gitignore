@@ -95,12 +95,12 @@
 .audacity*
 .bibletime
 .cgdb
+.config/Duden
 .config/NVIDIA Corporation
 .config/RStudio
 .config/Trolltech
 .config/Ulduzsoft
 .config/calibre
-.config/mcomix
 .config/enchant
 .config/google-chrome
 .config/google-googletalkplugin
@@ -110,6 +110,7 @@
 .config/inkscape
 .config/kde.org/
 .config/libreoffice
+.config/mcomix
 .config/meld
 .config/piorekf
 .config/ristretto
@@ -137,6 +138,7 @@
 .links
 .mono
 .mozc
+.officebib
 .rstudio-desktop
 .ruby_inline
 .sword
