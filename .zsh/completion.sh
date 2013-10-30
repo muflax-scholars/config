@@ -7,11 +7,11 @@ zstyle ':completion:*:match:*' original only
 # ignore completion for non-existant functions
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
-# tab completion for PID :D
+# tab completion for PID
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 
-# cd not select parent dir. 
+# cd not select parent dir.
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # complete ../
@@ -37,3 +37,5 @@ zstyle ':completion:*:manuals.*'  insert-sections   true
 # always rehash not found commands
 zstyle ':acceptline:*' rehash true
 
+# limit completion of users to curent user
+zstyle ':completion:*' users $(whoami)
