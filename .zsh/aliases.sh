@@ -322,9 +322,28 @@ for cmd in $bundled_commands; do
 done
 
 # name of directories
-gdict=~/src/linguistics/german_dictionaries
-german=~/Dropbox/0german
-lets=~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
-local=/usr/local/portage/local
-maff=~/Dropbox/0german/canoonet_grammar/
-src=~/src
+typeset -A NAMED_DIRS
+NAMED_DIRS=(
+  gdict    ~/src/linguistics/german_dictionaries
+  german   ~/Dropbox/0german
+  lets     ~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
+  local    /usr/local/portage/local
+  maff     ~/Dropbox/0german/canoonet_grammar/
+  src      ~/src
+)
+for key in ${(k)NAMED_DIRS}
+do
+  # only add paths that actually exist
+  if [[ -d ${NAMED_DIRS[$key]} ]]; then
+    export $key=${NAMED_DIRS[$key]}
+  else
+    unset "NAMED_DIRS[$key]"
+  fi
+done
+
+function lsdirs () {
+  for key in ${(k)NAMED_DIRS}
+  do
+    printf "%s\t%s\n" $key  ${NAMED_DIRS[$key]}
+  done | sort
+}
