@@ -7,6 +7,7 @@ source ~/.zsh/title.sh
 source ~/.zsh/completion.sh
 source ~/.zsh/keys.sh
 source ~/.zsh/aliases.sh
+source ~/.zsh/dirs.sh
 source ~/.zsh/gtd.sh
 source ~/.zsh/syntax.sh
 source ~/.zsh/terminal.sh
