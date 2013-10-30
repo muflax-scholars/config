@@ -57,7 +57,7 @@ function unm() {
 
 # also sync configs etc.
 function un() {
-  (cd ~/; git pum && git push)
+  (cd ~; git pum && git push)
   ~/spoiler/sync.sh
   unm
   git_annex_sync.sh
@@ -145,7 +145,6 @@ function y() {
 }
 
 # portage
-alias cdl="cd /usr/local/portage/local"
 alias ew="sudo emerge -au --changed-use --binpkg-respect-use y world"
 alias eww="sudo emerge -auD --binpkg-respect-use y --with-bdeps y world"
 alias ewn="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
@@ -167,7 +166,6 @@ alias pe="perl"
 # ruby stuff
 alias ru="ruby"
 alias i="pry"
-alias cdg="cd $(gem environment gemdir)/gems"
 
 # bayescraft
 alias post="noglob posterior"
@@ -228,7 +226,7 @@ function up() {
   uep
 
   # sync local repo
-  (cdl; git pum && git push)
+  (cd ~local; git pum && git push)
 
   # sync external repos
   layman -S
@@ -241,7 +239,7 @@ function up() {
 # minimal version
 function upm() {
   # sync local repo
-  (cdl; git pum && git push)
+  (cd ~local; git pum && git push)
 
   # eix
   eix-update
@@ -321,7 +319,7 @@ for cmd in $bundled_commands; do
   fi
 done
 
-# name of directories
+# named directories
 typeset -A NAMED_DIRS
 NAMED_DIRS=(
   gdict    ~/src/linguistics/german_dictionaries
@@ -330,14 +328,14 @@ NAMED_DIRS=(
   local    /usr/local/portage/local
   maff     ~/Dropbox/0german/canoonet_grammar/
   src      ~/src
+  gems     $(gem environment gemdir)/gems
+  nfs      /mnt/nfs/
 )
 for key in ${(k)NAMED_DIRS}
 do
   # only add paths that actually exist
   if [[ -d ${NAMED_DIRS[$key]} ]]; then
-    export $key=${NAMED_DIRS[$key]}
-  else
-    unset "NAMED_DIRS[$key]"
+    hash -d $key=${NAMED_DIRS[$key]}
   fi
 done
 
