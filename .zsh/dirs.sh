@@ -23,6 +23,6 @@ done
 function lsdirs () {
   for key in ${(k)NAMED_DIRS}
   do
-    printf "%s\t%s\n" $key  ${NAMED_DIRS[$key]}
-  done | sort
+    printf "%10s --> %s\n" $key  ${NAMED_DIRS[$key]}
+  done | sort -b
 }
