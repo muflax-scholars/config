@@ -76,9 +76,9 @@ turn_dialog=""
 unit_standing_animations=""
 use_twelve_hour_clock_format=""
 xresolution=""
-xwindowsize=1920
+xwindowsize=1274
 yresolution=""
-ywindowsize=1187
+ywindowsize=778
 [hotkey]
 	alt=no
 	cmd=no
