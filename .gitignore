@@ -164,6 +164,7 @@
 .config/zdoom/*.pk3
 .config/zdoom/*.wad
 .config/zdoom/*.zds
+.frogatto/save.cfg
 .ftblauncher
 .gog*
 .minecraft
