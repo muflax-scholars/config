@@ -19,9 +19,10 @@ alias diff="colordiff"
 alias my="sudo chown amon:amon"
 alias x="chmod +x"
 alias po="popd"
-function ok() { okular      $* >/dev/null 2>/dev/null &! }
-function li() { libreoffice $* >/dev/null 2>/dev/null &! }
-function ff() { firefox     $* >/dev/null 2>/dev/null &! }
+function ok()  { okular              $* >/dev/null 2>/dev/null &! }
+function li()  { libreoffice         $* >/dev/null 2>/dev/null &! }
+function ff()  { firefox             $* >/dev/null 2>/dev/null &! }
+function ffw() { firefox -new-window $* >/dev/null 2>/dev/null &! }
 
 # ls
 alias ls="ls --color=always --group-directories-first -v"
