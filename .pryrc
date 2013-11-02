@@ -14,15 +14,10 @@ end
 
 # useful gems you want loaded by default
 gems = [
-        "active_support",
-        "active_support/all",
         "bayescraft",
         "chronic",
-        "date",
-        "highline/import",
         "json",
-        "range_math",
-        "set",
+        "muflax",
         "yaml",
        ]
 gems.each {|gem| load_gem gem}
