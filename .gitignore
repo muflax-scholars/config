@@ -170,6 +170,7 @@
 .minecraft
 .polynomial
 .renpy
+.scummvm*
 
 # configs that are included, but stupid
 .config/Trolltech.conf
