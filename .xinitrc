@@ -11,7 +11,8 @@ export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export XMODIFIERS="@im=ibus"
 
-export LANG="ja_JP.UTF8"
+# export LANG="ja_JP.UTF8"
+export LANG="en_US.UTF8"
 #export LANG=C
 
 # openoffice stuff

@@ -20,13 +20,14 @@ unset RUBYOPT # gentoo sucks
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
-# don't use japanese on TTY
+# don't use complex locales on TTY
 case ${TERM} in
   linux)
     export LANG=C
     ;;
   *)
-    export LANG=ja_JP.UTF-8
+    # export LANG=ja_JP.UTF-8
+    export LANG=en_US.UTF-8
     ;;
 esac
 
