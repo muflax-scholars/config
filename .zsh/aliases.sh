@@ -209,7 +209,6 @@ alias don="D0 xset dpms force on"
 alias doff="D0 xset dpms force off"
 
 # ssh
-alias azash="ssh -C amon@azathoth"
 alias nyash="ssh -C amon@nyarlathotep"
 alias tysh="ssh  -C amon@typhus"
 alias nash="ssh  -C amon@pleonasty"
