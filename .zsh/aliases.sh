@@ -62,6 +62,7 @@ function un() {
   ~/spoiler/sync.sh
   unm
   git_annex_sync.sh
+  git_annex_auto.sh
 }
 
 
