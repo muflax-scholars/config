@@ -78,3 +78,6 @@ checkout = git clone 'https://github.com/jtauber/learning-greek' 'learning-greek
 
 [local/src/misc/unix-utilities]
 checkout = git clone 'https://github.com/taw/unix-utilities' 'unix-utilities'
+
+[src/backup/git-annex-utils]
+checkout = git clone 'http://git.mysteryvortex.com/repositories/git-annex-utils.git' 'git-annex-utils'
