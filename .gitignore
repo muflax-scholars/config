@@ -177,5 +177,6 @@
 .config/Trolltech.conf
 .config/geeqie
 
-# ignore rbenv
+# ignore language-specific package management
+.cabal
 .rbenv
