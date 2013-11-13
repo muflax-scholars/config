@@ -137,9 +137,9 @@ end
 -- run the command if it not exists, otherwise raise/kill it (and rely on tool itself to tray)
 function run_or_raise(command, rule, active_hide)
   active_hide = active_hide or false
-  
-  local matcher = function (c)                             
-    return awful.rules.match(c, rule) 
+
+  local matcher = function (c)
+    return awful.rules.match(c, rule)
   end
 
   local kill_or_hide = function (c)
@@ -160,7 +160,7 @@ function run_or_raise(command, rule, active_hide)
     return nil
   end
 
-  
+
   if client.focus and matcher(client.focus) then
     kill_or_hide(client.focus)
   else
@@ -236,7 +236,7 @@ globalkeys = awful.util.table.join(
                 end
               end
   end ),
-  
+
   -- move clients around
   awful.key({ modkey, "Shift"   }, "n", function () awful.client.swap.byidx(-1) end),
   awful.key({ modkey, "Shift"   }, "r", function () awful.client.swap.byidx(1) end),
@@ -246,10 +246,10 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
   -- fast toggling of layouts
-  awful.key({ modkey,           }, "m", toggleVerticalTiling), 
-  awful.key({ modkey, "Shift"   }, "m", toggleHorizontalTiling), 
-  awful.key({ modkey, "Control" }, "m", toggleGridTiling), 
-  awful.key({ modkey,           }, "f", toggleFullScreenTiling), 
+  awful.key({ modkey,           }, "m", toggleVerticalTiling),
+  awful.key({ modkey, "Shift"   }, "m", toggleHorizontalTiling),
+  awful.key({ modkey, "Control" }, "m", toggleGridTiling),
+  awful.key({ modkey,           }, "f", toggleFullScreenTiling),
 
   -- resize winodws
   awful.key({ modkey,           }, "d", function () awful.tag.incnmaster( 1) end),
@@ -273,7 +273,7 @@ globalkeys = awful.util.table.join(
   -- launch dmenu
   awful.key({ modkey,           }, "e", function () awful.util.spawn_with_shell(dmenu_quick) end),
   awful.key({ modkey,           }, "o", function () awful.util.spawn(dmenu_all) end),
-  
+
   -- rotate screen
   awful.key({ modkey,           }, "j", function () awful.util.spawn("rotate_screen normal") end),
   awful.key({ modkey, "Shift"   }, "j", function () awful.util.spawn("rotate_screen left") end),
@@ -284,7 +284,8 @@ globalkeys = awful.util.table.join(
 
   -- toggle trackpad
   awful.key({ modkey            }, "y", mouse_toggle),
-  
+  awful.key({ modkey, "Shift"   }, "y", function () awful.util.spawn("toggle_laptop_keyboard.rb") end),
+
   -- volumecontrol
   awful.key({                   }, "XF86AudioLowerVolume", function ()
               awful.util.spawn("amixer -c 0 set Master -q 5-")
@@ -305,11 +306,11 @@ globalkeys = awful.util.table.join(
   -- screenshots
   awful.key({ modkey, "Shift"   }, "o", function ()
               awful.util.spawn("$HOME/src/scripts/selection >/dev/null") end),
-  
+
   -- switch to different machine
   -- awful.key({ modkey, "Control" }, "1", function () awful.util.spawn("scabeiathrax_display") end),
   -- awful.key({ modkey, "Control" }, "2", function () awful.util.spawn("typhus_display") end),
-  
+
   -- change keyboard settings
   awful.key({ modkey,           }, "k", function () awful.util.spawn("skb.sh") end),
   awful.key({ modkey, "Shift"   }, "k", function () awful.util.spawn("setxkbmap us") end),
@@ -339,7 +340,7 @@ clientkeys = awful.util.table.join(
 
   -- minimize window
   awful.key({ modkey,           }, "v", function (c) c.minimized = true end),
-  
+
   -- mark client
   awful.key({ modkey,           }, "l", function (c) awful.client.togglemarked(c) end),
 
@@ -412,15 +413,15 @@ local default_ncol    = 1
 -- tags
 tags = {}
 tag_names = {
-  "一",  
-  "二",  
-  "三",  
-  "四",  
-  "五",  
-  "六",  
-  "七",  
-  "八",  
-  "暗記", 
+  "一",
+  "二",
+  "三",
+  "四",
+  "五",
+  "六",
+  "七",
+  "八",
+  "暗記",
   "toile",
 }
 for s = 1, screen.count() do
@@ -458,7 +459,7 @@ function full_focus_filter(client)
   if client.class == "Pidgin" and client.role == "conversation" then
     stupid_client = true
   end
-  
+
   return (awful.client.focus.filter
             and not (has_siblings and not sibling_focus)
             and not stupid_client)
@@ -478,7 +479,7 @@ awful.rules.rules = {
   -- ignore that stupid urxvt gap
   { rule_any = { class = { "URxvt", "Emacs" } },
     properties = { size_hints_honor = false }},
-  
+
   -- float these by default
   { rule_any = { class = {
                    "mplayer2",
@@ -495,7 +496,7 @@ awful.rules.rules = {
     properties = { ontop  = true,
                    sticky = true,
   }},
-  
+
   -- floating and sticky
   { rule = { role = "buddy_list" },
     properties = { floating = true, sticky = true }},
@@ -593,7 +594,7 @@ bat = lain.widgets.bat({ battery = local_battery,
                            elseif bat_now.status == "Discharging" then
                              status = "-"
                            end
-                           
+
                            widget:set_text(status..bat_now.perc)
                          end
 })
@@ -665,7 +666,7 @@ for s = 1, screen.count() do
   layoutbox[s]:buttons(awful.util.table.join(
                          awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
                          awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end)))
-  
+
   taglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist.buttons)
 
   -- TODO make it more elaborate, maybe by splitting off minimized tasks?
