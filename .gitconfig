@@ -36,3 +36,6 @@
 [gui]
 	encoding           = utf-8
 	spellingdictionary = none
+
+[difftool]
+  prompt = false
