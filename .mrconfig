@@ -37,46 +37,46 @@ checkout = git clone 'https://github.com/jtauber/graded-reader' 'graded-reader'
 [src/misc/gitignore]
 checkout = git clone 'https://github.com/github/gitignore.git' 'gitignore'
 
-[local/src/play/grognaks-mod-manager]
+[src/play/grognaks-mod-manager]
 checkout = git clone 'https://github.com/Grognak/Grognaks-Mod-Manager.git' 'grognaks-mod-manager'
 
-[local/src/ruby/rbenv]
+[src/ruby/rbenv]
 checkout = git clone 'git://github.com/sstephenson/rbenv.git' 'rbenv'
 
-[local/src/ruby/rbenv/plugins/ruby-build]
+[src/ruby/rbenv/plugins/ruby-build]
 checkout = git clone 'git://github.com/sstephenson/ruby-build.git' 'ruby-build'
 
-[local/src/ruby/ripper-tags]
+[src/ruby/ripper-tags]
 checkout = git clone 'https://github.com/tmm1/ripper-tags' 'ripper-tags'
 
-[local/src/ruby/rlisp]
+[src/ruby/rlisp]
 checkout = git clone 'https://github.com/taw/rlisp' 'rlisp'
 
-[local/src/statistics/best-python]
+[src/statistics/best-python]
 checkout = git clone 'https://github.com/strawlab/best' 'best-python'
 
 [Dropbox/muflax.com]
 checkout = git clone '/home/amon/src/muflax.com' 'muflax.com'
 
-[local/src/lisp/arc/anarki]
+[src/lisp/arc/anarki]
 checkout = git clone 'http://github.com/arclanguage/anarki' 'anarki'
 
-[local/src/lisp/arc/lathe]
+[src/lisp/arc/lathe]
 checkout = git clone 'https://github.com/rocketnia/lathe' 'lathe'
 
-[local/src/lisp/arc/arc-nu]
+[src/lisp/arc/arc-nu]
 checkout = git clone 'https://github.com/arclanguage/arc-nu' 'arc-nu'
 
 [src/lisp/clojure/leiningen]
 checkout = git clone 'https://github.com/technomancy/leiningen' 'leiningen'
 
-[local/src/linguistics/kytea]
+[src/linguistics/kytea]
 checkout = git clone 'https://github.com/neubig/kytea' 'kytea'
 
 [src/linguistics/learning-greek]
 checkout = git clone 'https://github.com/jtauber/learning-greek' 'learning-greek'
 
-[local/src/misc/unix-utilities]
+[src/misc/unix-utilities]
 checkout = git clone 'https://github.com/taw/unix-utilities' 'unix-utilities'
 
 [src/backup/git-annex-utils]
