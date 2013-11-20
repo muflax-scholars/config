@@ -17,10 +17,10 @@ Emacs*useXIM:            false
 
 URxvt.urgentOnBell:      true
 
-!diversity is for the weak
+! diversity is for the weak
 URxvt*font:              -efont-*-medium-r-normal--12*
 
-!no bold fonts - fucks up more than it solves
+! no bold fonts - fucks up more than it solves
 URxvt*boldFont:
 URxvt*italicFont:
 URxvt*boldItalicFont:
@@ -42,8 +42,9 @@ URxvt*url-launcher:      firefox
 URxvt*matcher.button:    1
 URxvt*saveLines:         100000
 
-URxvt.keysym.C-BackSpace: \033[33~
+! makes C-Backspace work in emacs
+URxvt.keysym.C-BackSpace: \033[31~
 
-!way more readable blue
+! way more readable blue
 *color4:                 rgb:36/73/b5
 *color12:                rgb:1b/85/d6
