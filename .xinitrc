@@ -3,8 +3,8 @@ source $HOME/.zsh/env.sh
 source $HOME/.zsh/path.sh
 
 # don't blank monitor
-setterm -blank 0 -powersave off -powerdown 0
-xset s off
+# setterm -blank 0 -powersave off -powerdown 0
+# xset s off
 
 # ibus
 export GTK_IM_MODULE="ibus"
@@ -13,7 +13,6 @@ export XMODIFIERS="@im=ibus"
 
 # export LANG="ja_JP.UTF8"
 export LANG="en_US.UTF8"
-#export LANG=C
 
 # openoffice stuff
 export OOO_FORCE_DESKTOP="gnome"
@@ -28,7 +27,6 @@ source ~/.xinitrc_local
 # daemons
 ibus-daemon -x -d &
 eval "$(gpg-agent --daemon)" &
-#emacs --daemon &
 
 # load xdefault data
 xrdb $HOME/.Xdefaults &
