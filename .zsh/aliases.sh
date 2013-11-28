@@ -11,6 +11,7 @@ alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
 alias watch="watch -c"
+alias sed="sed -r"
 
 # command replacements
 alias diff="colordiff"
