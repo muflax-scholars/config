@@ -25,20 +25,11 @@ checkout = git clone 'https://github.com/nominolo/scion' 'scion'
 [src/instruction/midorideas]
 checkout = git clone 'https://github.com/OwenAR/midorideas' 'midorideas'
 
-[src/instruction/khan-exercises]
-checkout = git clone 'https://github.com/Khan/khan-exercises' 'khan-exercises'
-
-[src/linguistics/compound-splitter]
-checkout = git clone 'git://github.com/danielnaber/compound-splitter.git' 'compound-splitter'
-
 [src/linguistics/graded-reader]
 checkout = git clone 'https://github.com/jtauber/graded-reader' 'graded-reader'
 
 [src/misc/gitignore]
 checkout = git clone 'https://github.com/github/gitignore.git' 'gitignore'
-
-[src/play/grognaks-mod-manager]
-checkout = git clone 'https://github.com/Grognak/Grognaks-Mod-Manager.git' 'grognaks-mod-manager'
 
 [src/ruby/rbenv]
 checkout = git clone 'git://github.com/sstephenson/rbenv.git' 'rbenv'
@@ -48,9 +39,6 @@ checkout = git clone 'git://github.com/sstephenson/ruby-build.git' 'ruby-build'
 
 [src/ruby/ripper-tags]
 checkout = git clone 'https://github.com/tmm1/ripper-tags' 'ripper-tags'
-
-[src/ruby/rlisp]
-checkout = git clone 'https://github.com/taw/rlisp' 'rlisp'
 
 [src/statistics/best-python]
 checkout = git clone 'https://github.com/strawlab/best' 'best-python'
