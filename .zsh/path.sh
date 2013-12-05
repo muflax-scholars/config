@@ -13,6 +13,8 @@ done
 # R
 export R_LIBS="$HOME/local/R"
 
-# rbenv sets everything for ruby
+# rbenv loads most gems
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+# but prefer bundler's version if it exists
+export PATH="$HOME/.bundle/bin:$PATH"

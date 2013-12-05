@@ -41,6 +41,7 @@ tags
 # ignore caches and histories
 *history
 .adobe
+.bundle/bin
 .bup
 .cache
 .config/ibus
