@@ -1,0 +1,58 @@
+source 'https://rubygems.org'
+
+# my own stuff
+gem "backup-urls", :path => File.expand_path("~/src/backup/backup-urls")
+gem "bayescraft"
+gem "muflax"
+gem "muflax-t"
+
+# pry
+gem "pry"
+gem "pry-byebug"
+gem "pry-doc"
+gem "pry-docmore"
+gem "pry-nav"
+gem "pry-rails"
+gem "pry-rescue"
+gem "pry-stack_explorer"
+gem "pry-theme"
+gem "pry-vterm_aliases"
+
+# TAGS
+gem "ripper-tags"
+gem "gem-ripper-tags"
+
+# rspec
+gem "autotest"
+gem "rspec"
+
+# gtd
+gem "beeminder"
+gem "future_me"
+
+# games
+gem "gosu"
+gem "hasu"
+gem "opengl"
+
+# lol
+gem "lolcommits"
+
+# used by scripts
+gem "rb-inotify"
+gem "sqlite3"
+gem "unicode_utils"
+gem "uuid"
+
+# rbenv
+gem "rbenv-rehash"
+
+# meta
+gem "treetop"
+
+# some generically useful stuff
+gem "kramdown"
+gem "nokogiri"
+gem "org-ruby"
+gem "systemu"
+gem "tidy_ffi"

@@ -39,6 +39,9 @@ alias lsr="ls -lhSr"
 alias mrr="mr register"
 alias mup="mr -j5 update"
 
+# update local gems
+function bu() { (cd ~/.bundle; bundle update) }
+
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'

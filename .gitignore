@@ -3,6 +3,7 @@
 !/.*
 *.pyc
 *.sw[a-z]
+tags
 
 # ignore host-specific files
 .*_local
