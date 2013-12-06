@@ -49,7 +49,7 @@ GEM
       tzinfo
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    byebug (2.4.0)
+    byebug (2.4.1)
       columnize (~> 0.3.6)
       debugger-linecache (~> 1.2.0)
     choice (0.1.6)
