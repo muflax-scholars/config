@@ -1,12 +1,12 @@
 # zsh options
 export HISTFILE=~/.zsh_history
-export HISTSIZE=100000
-export SAVEHIST=100000
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 
-autoload -U compinit zmv 
+autoload -U compinit zmv
 compinit
 
-setopt AUTOPUSHD 
+setopt AUTOPUSHD
 setopt PUSHDMINUS
 setopt PUSHDSILENT
 setopt PUSHDTOHOME

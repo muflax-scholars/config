@@ -40,7 +40,7 @@ URxvt*foreground:        #FFFFFF
 URxvt*perl-ext-common:   default,matcher
 URxvt*url-launcher:      firefox
 URxvt*matcher.button:    1
-URxvt*saveLines:         100000
+URxvt*saveLines:         1000000
 
 ! makes C-Backspace work in emacs
 URxvt.keysym.C-BackSpace: \033[31~
