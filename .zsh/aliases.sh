@@ -226,6 +226,7 @@ alias plesh="ssh -C amon@pleonasty"
 # lolshell
 alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
+alias aaaaaaaaah="ff http://i.imgur.com/dp8uDuW.gif"
 
 # full version
 function up() {
