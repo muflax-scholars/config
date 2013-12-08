@@ -1,0 +1,26 @@
+[$Version]
+update_info=okular.upd:sep_settings
+
+[Core General]
+ExternalEditor=Emacsclient
+ObeyDRM=false
+
+[Core Performance]
+MemoryLevel=Aggressive
+TextHinting=Enabled
+
+[General]
+UseKTTSD=false
+
+[Identity]
+IdentityAuthor=muflax
+
+[Main View]
+ShowLeftPanel=false
+SplitterSizes=344,398
+
+[PageView]
+CenterFirstPageInRow=true
+
+[Zoom]
+ZoomMode=2

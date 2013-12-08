@@ -135,7 +135,6 @@ tags
 .htoprc
 .java
 .kchmviewer
-.kde4
 .libreoffice
 .links
 .mono
@@ -149,7 +148,7 @@ tags
 .tuxguitar*
 .wireshark
 
-# ignore mail, firefox and ims, oh my!
+# ignore firefox and ims, oh my!
 .jd
 .mozilla
 .purple
@@ -183,3 +182,19 @@ tags
 # ignore language-specific package management
 .cabal
 .rbenv
+
+# kde cruft
+.kde4/cache-*
+.kde4/data
+.kde4/socket-*
+.kde4/tmp-*
+.kde4/share/apps/*
+!.kde4/share/apps/konsole
+!.kde4/share/apps/okular
+.kde4/share/apps/okular/*
+!.kde4/share/apps/okular/*.rc
+.kde4/share/config/*
+!.kde4/share/config/gtkrc*
+!.kde4/share/config/konsole*
+!.kde4/share/config/okularpartrc
+.kde4/share/kde4
