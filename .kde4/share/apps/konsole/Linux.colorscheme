@@ -2,7 +2,7 @@
 Color=0,0,0
 
 [BackgroundIntense]
-Color=104,104,104
+Color=0,0,0
 
 [Color0]
 Color=0,0,0
@@ -11,10 +11,10 @@ Color=0,0,0
 Color=104,104,104
 
 [Color1]
-Color=255,34,34
+Color=255,10,10
 
 [Color1Intense]
-Color=255,84,84
+Color=217,11,11
 
 [Color2]
 Color=24,178,24
@@ -23,13 +23,13 @@ Color=24,178,24
 Color=84,255,84
 
 [Color3]
-Color=234,255,0
+Color=194,103,0
 
 [Color3Intense]
-Color=255,255,84
+Color=255,162,0
 
 [Color4]
-Color=0,128,255
+Color=0,99,197
 
 [Color4Intense]
 Color=84,84,255
@@ -41,13 +41,13 @@ Color=246,33,246
 Color=255,84,255
 
 [Color6]
-Color=24,178,178
+Color=27,204,204
 
 [Color6Intense]
 Color=84,255,255
 
 [Color7]
-Color=178,178,178
+Color=218,218,218
 
 [Color7Intense]
 Color=255,255,255
@@ -59,6 +59,6 @@ Color=213,213,213
 Color=255,255,255
 
 [General]
-Description=Linux 色
+Description=custom design
 Opacity=0.8
 Wallpaper=

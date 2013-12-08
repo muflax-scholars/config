@@ -12,13 +12,15 @@ Favorites=Shell.profile
 
 [KonsoleWindow]
 AllowMenuAccelerators=true
+ShowMenuBarByDefault=false
 ShowWindowTitleOnTitleBar=true
 
 [MainWindow]
 Height 1050=1044
 Height 1200=1181
 Height 800=386
-State=AAAA/wAAAAD9AAAAAAAAAboAAAFuAAAABAAAAAQAAAAIAAAACPwAAAAA
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAboAAAC+AAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1280=442
 Width 1680=1674
