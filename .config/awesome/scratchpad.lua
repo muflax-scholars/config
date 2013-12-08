@@ -91,7 +91,7 @@ function Scratchpad:display()
   client.above = true
   client.skip_taskbar = true
   client.sticky = true
-  
+
   -- This is not a normal window, don't apply any specific keyboard stuff
   -- client:buttons({})
   -- client:keys({})
@@ -111,7 +111,7 @@ function Scratchpad:new(config)
   -- The "scratchpad" object is just its configuration.
 
   -- The application to be invoked is:
-  config.command  = config.command  or "urxvt -name scratchpad" -- application to spawn
+  config.command  = config.command  or "konsole --name scratchpad" -- application to spawn
   config.name     = config.name     or "scratchpad" -- name used to identify it
 
   -- If width or height <= 1 this is a proportion of the workspace

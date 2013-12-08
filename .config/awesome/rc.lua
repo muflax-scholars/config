@@ -108,8 +108,7 @@ function toggleFullScreenTiling()
 end
 
 -- default apps
-terminal = "urxvt"
-editor   = "emacs-gui"
+editor = "emacs-gui"
 
 dmenu_font  = "-mplus-gothic-medium-r*12"
 dmenu_opts  = "-b -i -fn '"..dmenu_font.."' -nb '#000000' -nf '#FFFFFF' -sb '"..beautiful.border_normal.."'"
@@ -118,7 +117,7 @@ dmenu_all   = "dmenu_run "..dmenu_opts
 dmenu_quick = "eval \"exec `cat $HOME/.programs | "..dmenu.."`\""
 
 -- scratchpads
-local scratchpad_term = scratchpad({ command = terminal.." -name scratchpad -e zsh -i -c 'scratchpad'",
+local scratchpad_term = scratchpad({ command = "konsole --name scratchpad -e zsh -i -c 'scratchpad'",
                                      name    = "scratchpad",
 			                               height  = 0.5,
                                      width   = 0.5})
@@ -268,7 +267,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "p", function () run_or_raise("pidgin", {role = "buddy_list"}) end),
 
   -- launch terminal
-  awful.key({ modkey,           }, "u", function () awful.util.spawn(terminal) end),
+  awful.key({ modkey,           }, "u", function () awful.util.spawn("konsole") end),
 
   -- launch dmenu
   awful.key({ modkey,           }, "e", function () awful.util.spawn_with_shell(dmenu_quick) end),
@@ -401,9 +400,6 @@ clientbuttons = awful.util.table.join(
   end),
   awful.button({ modkey          }, 3, awful.mouse.client.resize))
 
--- open menu on empty screen
-root.buttons(awful.util.table.join(awful.button({ }, 1, function () awesome_menu:toggle() end)))
-
 -- tag options
 local default_layout  = layouts[1]
 local default_mwfact  = 0.6
@@ -516,12 +512,6 @@ end)
 
 client.connect_signal("focus",   function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
--- menu / launcher
-awesome_menu = awful.menu({items = {
-                            { "open terminal", terminal },
-                            { "edit config", editor .. " " .. awesome.conffile },
-                            { "restart", awesome.restart }}})
 
 -- widgets
 
@@ -701,7 +691,7 @@ function run_once(prg, args)
   awful.util.spawn_with_shell('pgrep -f -u $USER -x ' .. prg .. ' || (' .. prg .. ' ' .. args ..')')
 end
 
-run_once("urxvt -name scratchpad -e zsh -i -c 'scratchpad")
+run_once("konsole --name scratchpad -e zsh -i -c 'scratchpad")
 
 io.stderr:write("========\n")
 io.stderr:write("...DARY!\n")

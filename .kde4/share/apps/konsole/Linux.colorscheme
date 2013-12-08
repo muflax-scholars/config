@@ -53,12 +53,12 @@ Color=218,218,218
 Color=255,255,255
 
 [Foreground]
-Color=213,213,213
+Color=233,233,233
 
 [ForegroundIntense]
 Color=255,255,255
 
 [General]
 Description=custom design
-Opacity=0.8
+Opacity=0.9
 Wallpaper=
