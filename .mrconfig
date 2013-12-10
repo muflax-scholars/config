@@ -22,12 +22,6 @@ checkout = git clone 'git://github.com/fujii/ebview.git' 'ebview'
 [src/haskell/scion]
 checkout = git clone 'https://github.com/nominolo/scion' 'scion'
 
-[src/instruction/midorideas]
-checkout = git clone 'https://github.com/OwenAR/midorideas' 'midorideas'
-
-[src/linguistics/graded-reader]
-checkout = git clone 'https://github.com/jtauber/graded-reader' 'graded-reader'
-
 [src/misc/gitignore]
 checkout = git clone 'https://github.com/github/gitignore.git' 'gitignore'
 
@@ -36,9 +30,6 @@ checkout = git clone 'git://github.com/sstephenson/rbenv.git' 'rbenv'
 
 [src/ruby/rbenv/plugins/ruby-build]
 checkout = git clone 'git://github.com/sstephenson/ruby-build.git' 'ruby-build'
-
-[src/ruby/ripper-tags]
-checkout = git clone 'https://github.com/tmm1/ripper-tags' 'ripper-tags'
 
 [src/statistics/best-python]
 checkout = git clone 'https://github.com/strawlab/best' 'best-python'
@@ -55,14 +46,8 @@ checkout = git clone 'https://github.com/rocketnia/lathe' 'lathe'
 [src/lisp/arc/arc-nu]
 checkout = git clone 'https://github.com/arclanguage/arc-nu' 'arc-nu'
 
-[src/lisp/clojure/leiningen]
-checkout = git clone 'https://github.com/technomancy/leiningen' 'leiningen'
-
 [src/linguistics/kytea]
 checkout = git clone 'https://github.com/neubig/kytea' 'kytea'
-
-[src/linguistics/learning-greek]
-checkout = git clone 'https://github.com/jtauber/learning-greek' 'learning-greek'
 
 [src/misc/unix-utilities]
 checkout = git clone 'https://github.com/taw/unix-utilities' 'unix-utilities'
