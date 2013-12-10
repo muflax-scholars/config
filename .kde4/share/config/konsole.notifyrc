@@ -1,10 +1,12 @@
 [Event/Activity]
+Action=Popup
 Execute=
 KTTS=
 Logfile=
 Sound=
 
 [Event/BellInvisible]
+Action=
 Execute=
 KTTS=
 Logfile=
@@ -24,6 +26,7 @@ Logfile=
 Sound=
 
 [Event/Silence]
+Action=
 Execute=
 KTTS=
 Logfile=
