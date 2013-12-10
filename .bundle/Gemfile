@@ -26,10 +26,6 @@ gem "gem-ripper-tags"
 gem "autotest"
 gem "rspec"
 
-# gtd
-gem "beeminder"
-gem "future_me"
-
 # games
 gem "gosu"
 gem "hasu"
