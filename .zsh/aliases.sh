@@ -79,6 +79,7 @@ alias gist="jist -t $(git config github.oauth-token)"
 alias ga="git-annex"
 alias gas="git-annex sync"
 alias gass="git_annex_sync.sh"
+alias gai="git-annex info"
 alias gast="git-annex status"
 alias gaw="git-annex whereis"
 alias gac="git-annex add . && git commit -m 'update'"
@@ -112,10 +113,6 @@ function ga-new() {
   git add .gitattributes
   git commit -m "init repo"
 }
-
-# beeminder stuff
-alias bot="beeminder_org_todo.rb"
-alias bota="beeminder_org_todo.rb -a"
 
 # shrink pdfs
 function shrink() {
@@ -326,3 +323,22 @@ for cmd in $bundled_commands; do
     compdef _$cmd bundled_$cmd=$cmd
   fi
 done
+
+# full todo list
+alias t="noglob todo.sh -d ~/.todo.cfg"
+alias ta="t add"
+alias td="t do"
+alias tl="t ls"
+alias trm="t rm"
+alias tt="t delay"
+alias tdel="t delay"
+
+# only what is relevant today
+alias now="noglob todo.sh -d ~/.todo-today.cfg"
+alias n="now"
+alias nl="now ls"
+alias na="now add"
+alias nd="now do"
+alias nrm="now rm"
+alias nt="now delay"
+alias ndel="now delay"
