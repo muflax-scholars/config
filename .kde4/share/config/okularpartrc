@@ -21,7 +21,6 @@ SplitterSizes=344,398
 
 [PageView]
 CenterFirstPageInRow=true
-MouseMode=TextSelect
 
 [Zoom]
 ZoomMode=2
