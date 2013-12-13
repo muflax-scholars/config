@@ -160,7 +160,7 @@ alias wg="watch genlop -nc"
 # c
 alias co="./configure"
 alias cop="./configure --prefix=$HOME/local"
-alias tagify="ctags -eR ."
+alias tagify-c="ctags -eR ."
 
 # python
 alias p2="python"
@@ -171,6 +171,8 @@ alias pe="perl"
 # ruby stuff
 alias ru="ruby"
 alias i="pry"
+alias tagify-ruby="ripper-tags -R --exclude=vendor --emacs"
+alias tags="tagify-ruby"
 
 # bayescraft
 alias post="noglob posterior"
