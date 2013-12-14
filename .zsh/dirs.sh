@@ -2,10 +2,11 @@
 typeset -A NAMED_DIRS
 NAMED_DIRS=(
   0g             ~/Dropbox/0german
-  gdict          ~/src/linguistics/german_dictionaries
+  1t             ~/Dropbox/1toki\ pona
+  gdict          ~/src/linguistics/german_dictionaries/lists
   gems           $(gem environment gemdir)/gems
   german         ~/spoiler/languages/german
-  greengen       ~/src/instruction/german_greengen
+  muflax         ~/src/ruby/muflax
   lets           ~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
   maff           ~/Dropbox/0german/canoonet_grammar/
   nfs            /mnt/nfs/
