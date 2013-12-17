@@ -286,11 +286,11 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "y", function () awful.util.spawn("toggle_laptop_keyboard.rb") end),
 
   -- volumecontrol
-  awful.key({ modkey            }, "Muhenkan", function ()
+  awful.key({ modkey            }, "%", function ()
               awful.util.spawn("amixer -c 0 set Master -q 5-")
               volume:update()
   end),
-  awful.key({ modkey, "Shift"   }, "Muhenkan", function ()
+  awful.key({ modkey, "Shift"   }, "%", function ()
               awful.util.spawn("amixer -c 0 set Master -q 5+")
               volume:update()
   end),
