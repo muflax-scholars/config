@@ -20,6 +20,8 @@ NAMED_DIRS=(
   functionese    ~/spoiler/languages/functionese
 
   bgerman        ~/txt/languages/pie/germanic/german
+  blatin         ~/txt/languages/pie/romance/latin
+  brussian       ~/txt/languages/pie/slavic/russian
   blojban        ~/txt/languages/conlangs/loglan/lojban
 )
 for key in ${(k)NAMED_DIRS}
