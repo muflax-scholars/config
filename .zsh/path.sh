@@ -13,11 +13,10 @@ done
 # R
 export R_LIBS="$HOME/local/R"
 
-# rbenv loads most gems
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # unroll rbenv code for speedup
 if [[ -s ~/.rbenv ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$HOME/.rbenv/shims:$PATH"
   export RBENV_SHELL=zsh
   source '/home/amon/.rbenv/completions/rbenv.zsh'
   rbenv() {
@@ -34,7 +33,7 @@ if [[ -s ~/.rbenv ]]; then
         command rbenv "$command" "$@";;
     esac
   }
-fi
 
-# but prefer bundler's version if it exists
-export PATH="$HOME/.bundle/bin:$PATH"
+  # rbenv loads most gems, but prefer bundler's version if it exists
+  export PATH="$HOME/.bundle/bin:$PATH"
+fi
