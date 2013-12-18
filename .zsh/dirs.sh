@@ -7,7 +7,6 @@ NAMED_DIRS=(
   maff           ~/Dropbox/0german/canoonet_grammar
 
   nfs            /mnt/nfs
-  gems           $(gem environment gemdir)/gems
   plocal         /usr/local/portage/local
   portage        /usr/portage
 
