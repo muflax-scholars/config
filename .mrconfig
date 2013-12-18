@@ -4,9 +4,6 @@ checkout = git clone 'git@github.com:muflax/config.git' 'amon'
 [src/scripts]
 checkout = git clone 'git@github.com:muflax/scripts.git' 'scripts'
 
-[src/backup/bup]
-checkout = git clone 'https://github.com/bup/bup' 'bup'
-
 [src/backup/fast-export]
 checkout = git clone 'git://repo.or.cz/fast-export.git' 'fast-export'
 
