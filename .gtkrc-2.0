@@ -2,12 +2,12 @@
 include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
 
 style "user-font" {
-	font_name = "Gothic 9"
+	font_name = "Droid Sans 9"
 }
 
 widget_class "*" style "user-font"
 
-gtk-font-name="Gothic 9"
+gtk-font-name="Droid Sans 9"
 
 gtk-theme-name  = "Clearlooks"
 
