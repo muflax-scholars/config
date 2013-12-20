@@ -4,8 +4,8 @@
 alias angband="angband -mgcu -umuflax"
 alias avg="noglob average_damage.rb"
 alias cal="cal -m -3"
-alias cgrep="grep --color=always"
-alias grep="grep --color=auto -P"
+alias agrep="command grep -P --color=auto"
+alias grep="command grep -P --color=always"
 alias less="less -iF"
 alias mc="mc -x"
 alias mkdir="mkdir -p"
@@ -20,6 +20,9 @@ alias diff="colordiff"
 alias my="sudo chown amon:amon"
 alias x="chmod +x"
 alias po="popd"
+alias u="normalize"
+
+# background programs
 function ok()  { okular              $* >/dev/null 2>/dev/null &! }
 function li()  { libreoffice         $* >/dev/null 2>/dev/null &! }
 function ff()  { firefox             $* >/dev/null 2>/dev/null &! }
@@ -40,7 +43,7 @@ alias mrr="mr register"
 alias mup="mr -j5 update"
 
 # update local gems
-function bu() { (cd ~/.bundle; bundle update) }
+function bu() { (cd ~/.bundle; bundle update; bundle clean --force) }
 
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
@@ -289,7 +292,7 @@ function nap() {
     doff
     sleep 25m
   fi && {
-    echo "b(・ｏ・)dおw(・0・)wはぁで(・＜＞・)まよｃ(^・^)っちゅ"
+    echo "b(・o・)dおw(・0・)wはぁで(・<>・)まよc(^・^)っちゅ"
     wakeup.sh
   }
 }
