@@ -473,6 +473,7 @@ awful.rules.rules = {
                    "Gxmessage",
                    "anking",
                    "Plugin-container",
+                   "Plover",
                }},
     properties = { floating = true }},
 
