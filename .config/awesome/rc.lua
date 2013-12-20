@@ -434,7 +434,7 @@ end
 -- rules for automatic focus switching
 function full_focus_filter(client)
   local stupid_client = false -- is the client stupid?
-  local default_focus = false -- whether to give a client focus by default
+  local default_focus = true  -- whether to give a client focus by default
 
   -- pidgin is annoying, so prevent its conversations from stealing focus
   if client.class == "Pidgin" and client.role == "conversation" then
