@@ -688,10 +688,10 @@ function run_once(prg, args)
   if not args then
     args=""
   end
-  awful.util.spawn_with_shell('pgrep -f -u $USER -x ' .. prg .. ' || (' .. prg .. ' ' .. args ..')')
+  awful.util.spawn_with_shell('pgrep -u $USER -x ' .. prg .. ' >/dev/null || ' .. prg .. ' ' .. args)
 end
 
-run_once("konsole --name scratchpad -e zsh -i -c 'scratchpad")
+run_once("konsole", "--name scratchpad -e zsh -i -c 'scratchpad'")
 
 io.stderr:write("========\n")
 io.stderr:write("...DARY!\n")
