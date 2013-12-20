@@ -20,7 +20,10 @@ alias diff="colordiff"
 alias my="sudo chown amon:amon"
 alias x="chmod +x"
 alias po="popd"
-alias u="normalize"
+
+function u() {
+  echo $* | "normalize"
+}
 
 # background programs
 function ok()  { okular              $* >/dev/null 2>/dev/null &! }

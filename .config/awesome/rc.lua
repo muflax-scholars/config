@@ -323,6 +323,12 @@ globalkeys = awful.util.table.join(
   awful.key({                   }, "XF86LaunchA", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb keyboard") end),
 
+  -- pipe selection through command
+  awful.key({ modkey,           }, "|", function () awful.util.spawn("clipboard-pipe") end),
+  awful.key({ modkey, "Shift"   }, "|", function () awful.util.spawn("clipboard-pipe --paste") end),
+  awful.key({ modkey, "Control"   }, "|", function () awful.util.spawn("clipboard-pipe --command 'normalize'") end),
+
+
   -- restart awesome
   awful.key({ modkey, "Shift"   }, "q", awesome.restart)
 )
