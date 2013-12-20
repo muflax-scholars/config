@@ -69,6 +69,7 @@ tags
 .netx
 .npm
 .nv
+.plover-lock*
 .pulse*
 .recently*
 .ri19
