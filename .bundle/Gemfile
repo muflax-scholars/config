@@ -32,7 +32,7 @@ gem "hasu"
 gem "opengl"
 
 # lol
-gem "lolcommits", :path => File.expand_path("~/src/forks/lolcommits")
+gem "lolcommits"
 
 # used by scripts
 gem "rb-inotify"
@@ -50,5 +50,6 @@ gem "treetop"
 gem "kramdown"
 gem "nokogiri"
 gem "org-ruby"
+gem "ruby-graphviz"
 gem "systemu"
 gem "tidy_ffi"
