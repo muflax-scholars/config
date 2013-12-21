@@ -32,7 +32,7 @@ gem "hasu"
 gem "opengl"
 
 # lol
-gem "lolcommits"
+gem "lolcommits", :path => File.expand_path("~/src/forks/lolcommits")
 
 # used by scripts
 gem "rb-inotify"
