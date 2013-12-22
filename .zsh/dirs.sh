@@ -14,6 +14,8 @@ NAMED_DIRS=(
   gdict          ~/src/linguistics/german_dictionaries/lists
   muflax         ~/src/ruby/muflax
   scripts        ~/src/scripts
+  ibus-steno     ~/src/typing/ibus/ibus-steno
+  mavothi        ~/src/instruction/mavothi
 
   german         ~/spoiler/languages/german
   functionese    ~/spoiler/languages/functionese
