@@ -5,7 +5,7 @@
   pum       = pull origin master
   untracked = ls-files --other --exclude-standard
   unt       = ls-files --other --exclude-standard
-  adda      = add --all
+  adda      = add --all .
 
 [color]
   ui = auto
