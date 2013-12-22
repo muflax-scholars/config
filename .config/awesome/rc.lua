@@ -478,7 +478,10 @@ awful.rules.rules = {
     properties = { floating = true }},
 
   -- keep them on top
-  { rule_any = { class = { "mplayer2" }},
+  { rule_any = { class = {
+                   "mplayer2",
+                   "Plover",
+               }},
     properties = { ontop  = true,
                    sticky = true,
   }},
