@@ -45,6 +45,11 @@ GEM
       gnuplot
       integration
       rubystats
+    beeminder (0.2.3)
+      chronic (~> 0.7)
+      highline (~> 1.6)
+      json
+      trollop (~> 2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     byebug (2.5.0)
@@ -81,6 +86,12 @@ GEM
       multipart-post (~> 1.2.0)
     fastercsv (1.5.5)
     ffi (1.2.1)
+    future_me (0.16.5)
+      awesome_print
+      beeminder (~> 0.2)
+      chronic (~> 0.10)
+      highline (~> 1.6)
+      trollop (~> 2.0)
     gem-ripper-tags (1.0.6)
       ripper-tags (>= 0.1.2)
     geokit (1.7.1)
@@ -251,6 +262,7 @@ DEPENDENCIES
   autotest
   backup-urls!
   bayescraft
+  future_me
   gem-ripper-tags
   gosu
   hasu
