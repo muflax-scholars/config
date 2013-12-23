@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
-<kpartgui version="34" name="okular_part">
+<kpartgui version="35" name="okular_part">
  <MenuBar>
   <Menu name="file">
    <text>&amp;File</text>
@@ -35,6 +35,7 @@
    <Action name="view_zoom_out"/>
    <Action name="view_fit_to_width"/>
    <Action name="view_fit_to_page"/>
+   <Action name="view_auto_fit"/>
    <Separator/>
    <Action name="view_continuous"/>
    <Action name="view_render_mode"/>
@@ -112,9 +113,9 @@
   <Action name="mouse_selecttools"/>
  </ToolBar>
  <ActionProperties>
-  <Action shortcut="Alt+Left" name="view_orientation_rotate_ccw"/>
-  <Action shortcut="Alt+Right" name="view_orientation_rotate_cw"/>
   <Action shortcut="Home" name="first_page"/>
   <Action shortcut="End" name="last_page"/>
+  <Action shortcut="Alt+Left" name="view_orientation_rotate_ccw"/>
+  <Action shortcut="Alt+Right" name="view_orientation_rotate_cw"/>
  </ActionProperties>
 </kpartgui>
