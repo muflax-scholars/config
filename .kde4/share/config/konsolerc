@@ -27,5 +27,8 @@ Width 1680=1674
 Width 1920=1914
 Width 3360=834
 
+[Notification Messages]
+CloseAllTabs=true
+
 [TabBar]
 TabBarVisibility=ShowTabBarWhenNeeded
