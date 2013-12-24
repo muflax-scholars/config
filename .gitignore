@@ -163,6 +163,8 @@ tags
 # ignore savegames
 .angband
 .caravel
+.config/MonoGame
+.config/RogueLegacyStorageContainer
 .config/unity3d
 .config/zdoom/*.pk3
 .config/zdoom/*.wad
