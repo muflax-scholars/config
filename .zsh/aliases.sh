@@ -21,6 +21,9 @@ alias my="sudo chown amon:amon"
 alias x="chmod +x"
 alias po="popd"
 alias w="watch.rb"
+function i() {
+  watch.rb --changes . $*
+}
 
 function u() {
   echo $* | "normalize"
