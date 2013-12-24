@@ -136,7 +136,7 @@ GEM
     mini_magick (3.7.0)
       subexec (~> 0.2.1)
     mini_portile (0.5.2)
-    muflax (0.1.17)
+    muflax (0.1.18)
       activesupport
       awesome_print
       chronic
