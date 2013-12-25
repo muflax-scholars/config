@@ -117,7 +117,7 @@ dmenu_all   = "dmenu_run "..dmenu_opts
 dmenu_quick = "eval \"exec `cat $HOME/.programs | "..dmenu.."`\""
 
 -- scratchpads
-local scratchpad_term = scratchpad({ command = "konsole --name scratchpad -e zsh -i -c 'scratchpad'",
+local scratchpad_term = scratchpad({ command = "konsole --name scratchpad -e zsh -l -c 'scratchpad'",
                                      name    = "scratchpad",
 			                               height  = 0.5,
                                      width   = 0.5})
@@ -701,7 +701,7 @@ function run_once(prg, args)
   awful.util.spawn_with_shell('pgrep -u $USER -x ' .. prg .. ' >/dev/null || ' .. prg .. ' ' .. args)
 end
 
-run_once("konsole", "--name scratchpad -e zsh -i -c 'scratchpad'")
+run_once("konsole", "--name scratchpad -e zsh -l -c 'scratchpad'")
 
 io.stderr:write("========\n")
 io.stderr:write("...DARY!\n")
