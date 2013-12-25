@@ -356,3 +356,6 @@ alias nd="now do"
 alias nrm="now rm"
 alias nt="now delay"
 alias ndel="now delay"
+
+# dictionaries
+alias di="~/src/linguistics/german_dictionaries/our_dict/lookup.rb"
