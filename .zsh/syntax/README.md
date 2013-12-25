@@ -3,7 +3,7 @@ zsh-syntax-highlighting
 
 **[Fish shell](http://www.fishshell.com) like syntax highlighting for [Zsh](http://www.zsh.org).**
 
-*Requirements: zsh 4.3.9+.*
+*Requirements: zsh 4.3.17+.*
 
 
 How to install
@@ -41,12 +41,12 @@ How to install
         plugins=( [plugins...] zsh-syntax-highlighting)
 
 * Source `~/.zshrc`  to take changes into account:
-    
+
         source ~/.zshrc
 
 
 How to tweak
 ------------
 
-Syntax highlighting is done by pluggable highlighter scripts, see the [highlighters directory](zsh-syntax-highlighting/tree/master/highlighters)
+Syntax highlighting is done by pluggable highlighter scripts, see the [highlighters directory](highlighters)
 for documentation and configuration settings.
