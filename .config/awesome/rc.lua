@@ -119,8 +119,8 @@ dmenu_quick = "eval \"exec `cat $HOME/.programs | "..dmenu.."`\""
 -- scratchpads
 local scratchpad_term = scratchpad({ command = "konsole --name scratchpad -e zsh -l -c 'scratchpad'",
                                      name    = "scratchpad",
-			                               height  = 0.5,
-                                     width   = 0.5})
+			                               height  = 0.7,
+                                     width   = 0.6})
 local scratchpad_anking = scratchpad({ command = "anking",
                                        name    = "anking",
                                        height  = 0.7,
