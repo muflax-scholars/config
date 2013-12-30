@@ -39,3 +39,6 @@ setopt NOCLOBBER
 
 # make spaces saner
 export IFS=$'\t'$'\n'$'\0'
+
+# don't eat spaces because WTF
+ZLE_REMOVE_SUFFIX_CHARS=$'\t\n'
