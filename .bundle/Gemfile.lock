@@ -85,6 +85,8 @@ GEM
       multipart-post (~> 1.2.0)
     fastercsv (1.5.5)
     ffi (1.2.1)
+    fftw3 (0.3)
+      narray
     future_me (0.17.0)
       awesome_print
       beeminder (~> 0.2)
@@ -158,6 +160,7 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
+    narray (0.6.0.8)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9)
     nokogiri (1.6.1)
@@ -261,6 +264,7 @@ DEPENDENCIES
   autotest
   backup-urls!
   bayescraft
+  fftw3
   future_me
   gem-ripper-tags
   gosu

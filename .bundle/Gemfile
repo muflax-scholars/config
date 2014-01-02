@@ -31,6 +31,9 @@ gem "gosu"
 gem "hasu"
 gem "opengl"
 
+# music stuff
+gem "fftw3"
+
 # gtd
 gem "future_me"
 
