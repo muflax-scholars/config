@@ -193,6 +193,7 @@ tags
 .kde4/socket-*
 .kde4/tmp-*
 .kde4/share/apps/*
+!.kde4/share/apps/dolphin
 !.kde4/share/apps/konsole
 !.kde4/share/apps/okular
 .kde4/share/apps/okular/*
