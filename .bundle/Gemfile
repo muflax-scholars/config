@@ -33,6 +33,8 @@ gem "opengl"
 
 # music stuff
 gem "fftw3"
+gem "ruby-audio"
+gem "narray"
 
 # gtd
 gem "future_me"

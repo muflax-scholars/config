@@ -207,7 +207,7 @@ GEM
     rbenv-rehash (0.3)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    retryable (1.3.3)
+    retryable (1.3.4)
     ripper-tags (0.1.3)
       yajl-ruby
     rspec (2.14.1)
@@ -218,6 +218,7 @@ GEM
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.4)
+    ruby-audio (1.6.1)
     ruby-graphviz (1.0.9)
     rubypants (0.2.0)
     rubystats (0.2.3)
@@ -273,6 +274,7 @@ DEPENDENCIES
   lolcommits!
   muflax
   muflax-t
+  narray
   nokogiri
   opengl
   org-ruby
@@ -290,6 +292,7 @@ DEPENDENCIES
   rbenv-rehash
   ripper-tags
   rspec
+  ruby-audio
   ruby-graphviz
   sqlite3
   systemu
