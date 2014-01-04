@@ -30,6 +30,7 @@ gem "rspec"
 gem "gosu"
 gem "hasu"
 gem "opengl"
+gem "rmagick"
 
 # music stuff
 gem "fftw3"
