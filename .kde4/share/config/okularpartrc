@@ -16,8 +16,7 @@ UseKTTSD=false
 IdentityAuthor=muflax
 
 [Main View]
-ShowLeftPanel=false
-SplitterSizes=344,398
+SplitterSizes=273,916
 
 [PageView]
 CenterFirstPageInRow=true
