@@ -16,6 +16,7 @@ UseKTTSD=false
 IdentityAuthor=muflax
 
 [Main View]
+ShowLeftPanel=false
 SplitterSizes=290,944
 
 [Nav Panel]
