@@ -33,9 +33,10 @@ gem "opengl"
 gem "rmagick"
 
 # music stuff
-gem "fftw3"
-gem "ruby-audio"
 gem "narray"
+gem "fftw3"
+gem "ruby-alsa"
+gem "ruby-audio"
 
 # gtd
 gem "future_me"
