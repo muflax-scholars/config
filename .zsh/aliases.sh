@@ -35,9 +35,11 @@ function u() {
 function ok()  { okular              $* >/dev/null 2>/dev/null &! }
 function li()  { libreoffice         $* >/dev/null 2>/dev/null &! }
 function ff()  { firefox             $* >/dev/null 2>/dev/null &! }
+function fft() { firefox -new-tab    $* >/dev/null 2>/dev/null &! }
 function ffw() { firefox -new-window $* >/dev/null 2>/dev/null &! }
 function ge()  { geeqie              $* >/dev/null 2>/dev/null &! }
 function me()  { meld                $* >/dev/null 2>/dev/null &! }
+function d()   { dolphin             $* >/dev/null 2>/dev/null &! }
 
 # ls
 alias ls="ls --color=always --group-directories-first -v"
@@ -107,7 +109,7 @@ alias drop="git-annex drop"
 alias dropa="git-annex drop --auto"
 alias gadu="git-annex unused"
 alias gadun="git-annex dropunused"
-alias gaduna="git-annex dropunused 1-10000"
+alias gaduna="git-annex dropunused 1-10000 --force"
 
 # common tasks
 alias gam="git merge synced/master"
