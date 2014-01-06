@@ -6,6 +6,7 @@ NAMED_DIRS=(
   lets           ~/Dropbox/LET\'S\ SING\ THE\ SHARING\ SONG\ YAY
   maff           ~/Dropbox/0german/canoonet_grammar
 
+  layman         /var/lib/layman
   nfs            /mnt/nfs
   plocal         /usr/local/portage/local
   portage        /usr/portage
