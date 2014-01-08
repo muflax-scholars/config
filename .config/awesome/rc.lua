@@ -320,6 +320,10 @@ globalkeys = awful.util.table.join(
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb decrement") end),
   awful.key({                   }, "XF86MonBrightnessUp", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb increment") end),
+  awful.key({ modkey            }, "F1", function ()
+              awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb decrement") end),
+  awful.key({ modkey            }, "F2", function ()
+              awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb increment") end),
   awful.key({                   }, "XF86LaunchA", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb keyboard") end),
 
