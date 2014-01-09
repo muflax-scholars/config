@@ -158,5 +158,10 @@
   <Action priority="0" name="edit_cut"/>
   <Action priority="0" name="edit_copy"/>
   <Action priority="0" name="edit_paste"/>
+  <Action shortcut="F7" name="create_dir"/>
+  <Action shortcut="" name="editable_location"/>
+  <Action shortcut="" name="help_contents"/>
+  <Action shortcut="F1" name="rename"/>
+  <Action shortcut="F6" name="show_folders_panel"/>
  </ActionProperties>
 </kpartgui>
