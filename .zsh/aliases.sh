@@ -31,6 +31,12 @@ function u() {
   echo $* | "normalize"
 }
 
+function um() {
+  for d in $*; do
+    mv $d $(u $d)
+  done
+}
+
 # background programs
 function ok()  { okular              $* >/dev/null 2>/dev/null &! }
 function li()  { libreoffice         $* >/dev/null 2>/dev/null &! }
