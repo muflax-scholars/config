@@ -48,5 +48,8 @@ dropbox-cli start
 # fancy window fading
 compton -f -I 0.10 -O 0.10 -D 5 -b
 
+# reading lists and so on
+mount_filterfs.sh
+
 WM="awesome"
 exec dbus-launch --auto-syntax --exit-with-session $WM
