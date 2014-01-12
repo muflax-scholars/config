@@ -367,3 +367,8 @@ alias ndel="now delay"
 
 # dictionaries
 alias di="~/src/linguistics/german_dictionaries/our_dict/lookup.rb"
+
+# file tagging
+alias rr="tag_filename -t read"
+alias ur="tag_filename -t !read"
+alias ut="tag_filename -t !"

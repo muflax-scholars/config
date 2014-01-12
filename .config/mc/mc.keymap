@@ -1,6 +1,6 @@
 [main]
 Help =
-UserMenu = f2
+UserMenu =f2;  ctrl-u
 View = f3
 # ViewFile =
 Edit = f4
@@ -19,7 +19,7 @@ HotList = ctrl-backslash
 Reread = ctrl-r
 DirSize = ctrl-space
 Suspend = ctrl-z
-Swap = ctrl-u
+# Swap = ctrl-u
 History = alt-h
 # PanelListing =
 PanelListingSwitch = alt-t
@@ -423,7 +423,7 @@ Tab2 = 2
 Tab3 = 3
 Tab4 = 4
 Tab8 = 8
-Swap = ctrl-u
+# Swap = ctrl-u
 Redo = ctrl-r
 HunkNext = n; enter; space
 HunkPrev = p; backspace
