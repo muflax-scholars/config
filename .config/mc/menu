@@ -14,25 +14,25 @@ e       Do something on the tagged files
 
 + ! t t
 r       Mark current file as read
-	zsh -l -c "rr '%f'"
+	zsh -l -c "rr \"%f\""
 
 + t t
 r       Mark tagged files as read
-	set %t; CMD=%{Enter command}
+	set %t
 	while [ -n "$1" ]; do
-  	zsh -l -c "rr '$1'"
+  	zsh -l -c "rr \"$1\""
 	  shift
 	done
 
 + ! t t
 u       Mark current file as unread
-	zsh -l -c "ur '%f'"
+	zsh -l -c "ur %f"
 
 + t t
 u       Mark tagged files as unread
-	set %t; CMD=%{Enter command}
+	set %t
 	while [ -n "$1" ]; do
-  	zsh -l -c "ur '$1'"
+  	zsh -l -c "ur $1"
 	  shift
 	done
 
