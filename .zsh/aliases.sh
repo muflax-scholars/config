@@ -175,7 +175,7 @@ alias eww="sudo emerge -auD --binpkg-respect-use y --with-bdeps y world"
 alias ewn="sudo emerge -auD --changed-use --binpkg-respect-use y --with-bdeps y world"
 alias ec="sudo eclean -t 1w packages && sudo eclean -t 1w distfiles"
 alias ecc="sudo eclean -d -t 1w packages && sudo eclean -d -t 1w distfiles"
-alias wg="watch genlop -nc"
+alias wg="watch genlop -c"
 
 # c
 alias co="./configure"
