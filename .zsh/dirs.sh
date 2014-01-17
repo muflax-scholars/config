@@ -23,6 +23,7 @@ NAMED_DIRS=(
 
   bgerman        ~/txt/languages/pie/germanic/german
   blatin         ~/txt/languages/pie/romance/latin
+  bjapanese      ~/txt/languages/isolates/japanese
   brussian       ~/txt/languages/pie/slavic/russian
   blojban        ~/txt/languages/conlangs/loglan/lojban
 )
