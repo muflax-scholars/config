@@ -100,7 +100,7 @@ function toggleVerticalTiling()
 end
 
 function toggleGridTiling()
-  toggleLayouts(awful.layout.suit.fair, awful.layout.suit.tile.fair.horizontal)
+  toggleLayouts(awful.layout.suit.fair, awful.layout.suit.fair.horizontal)
 end
 
 function toggleFullScreenTiling()
