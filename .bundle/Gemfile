@@ -56,6 +56,9 @@ gem "rbenv-rehash"
 # meta
 gem "treetop"
 
+# profiling
+gem "ruby-prof"
+
 # some generically useful stuff
 gem "kramdown"
 gem "nokogiri"
