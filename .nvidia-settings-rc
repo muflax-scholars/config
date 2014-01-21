@@ -2,7 +2,7 @@
 # /home/amon/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Wed Nov 20 14:47:54 2013
+# Generated on Tue Jan 21 08:38:12 2014
 #
 
 # ConfigProperties:
@@ -14,13 +14,13 @@ SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = Graphics_Card_(GPU_1),Yes,1000
-Timer = Graphics_Card_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
-Timer = Thermal_Monitor_(GPU_1),Yes,1000
 Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_1),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Graphics_Card_(GPU_0),Yes,1000
+Timer = Graphics_Card_(GPU_1),Yes,1000
 
 # Attributes:
 
