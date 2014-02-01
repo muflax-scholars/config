@@ -1,8 +1,0 @@
-gtk-icon-theme-name = "yasis"
-gtk-key-theme-name = "Emacs-Lite"
-
-style "scrollbar"
-{
-GtkScrollbar::slider-width = 8
-}
-class "Gtk*Scrollbar" style "scrollbar"
