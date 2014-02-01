@@ -117,5 +117,7 @@
   <Action shortcut="End" name="last_page"/>
   <Action shortcut="Alt+Left" name="view_orientation_rotate_ccw"/>
   <Action shortcut="Alt+Right" name="view_orientation_rotate_cw"/>
+  <Action shortcut="Ctrl++; Ctrl+Up" name="view_zoom_in"/>
+  <Action shortcut="Ctrl+-; Ctrl+Down" name="view_zoom_out"/>
  </ActionProperties>
 </kpartgui>
