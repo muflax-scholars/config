@@ -60,7 +60,12 @@ alias mrr="mr register"
 alias mup="mr -j5 update"
 
 # update local gems
-function bu() { (cd ~/.bundle; bundle update; bundle clean --force) }
+function bu() {
+  (cd ~/.bundle; bundle update && bundle clean --force)
+}
+function bui() {
+  (cd ~/.bundle; bundle install --binstubs)
+}
 
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
