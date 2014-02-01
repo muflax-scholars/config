@@ -177,6 +177,7 @@ GEM
       rubypants (>= 0.2.0)
     parallel (0.9.2)
     polyglot (0.3.3)
+    pru (0.1.6)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -287,6 +288,7 @@ DEPENDENCIES
   nokogiri
   opengl
   org-ruby
+  pru
   pry
   pry-byebug
   pry-doc

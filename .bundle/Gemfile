@@ -50,6 +50,9 @@ gem "sqlite3"
 gem "unicode_utils"
 gem "uuid"
 
+# CLI stuff
+gem "pru"
+
 # rbenv
 gem "rbenv-rehash"
 
