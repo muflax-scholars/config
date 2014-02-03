@@ -377,3 +377,18 @@ alias di="~/src/linguistics/german_dictionaries/our_dict/lookup.rb"
 alias rr="tag_filename -t read"
 alias ur="tag_filename -t !read"
 alias ut="tag_filename -t !"
+
+# lock laptop overnight
+function nighto() {
+  # lock mouse so random disturbances / the cat don't turn on the screen
+  toggle_mouse.rb
+
+  # wait a bit before turning off the screen so I can close the lid
+  sleep 5; doff
+
+  # lock screen
+  slock
+
+  # get mouse back
+  toggle_mouse.rb
+}
