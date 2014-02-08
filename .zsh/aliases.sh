@@ -358,20 +358,14 @@ done
 alias t="noglob todo.sh -d ~/.todo.cfg"
 alias ta="t add"
 alias td="t do"
-alias tl="t ls"
 alias trm="t rm"
-alias tt="t delay"
-alias tdel="t delay"
 
 # only what is relevant today
 alias now="noglob todo.sh -d ~/.todo-today.cfg"
 alias n="now"
-alias nl="now ls"
 alias na="now add"
 alias nd="now do"
 alias nrm="now rm"
-alias nt="now delay"
-alias ndel="now delay"
 
 # dictionaries
 alias di="~/src/linguistics/german_dictionaries/our_dict/lookup.rb"
@@ -395,3 +389,8 @@ function nighto() {
   # get mouse back
   toggle_mouse.rb
 }
+
+# trash instead of rm
+alias te=trash-empty
+alias tp=trash-put
+alias tl=trash-list
