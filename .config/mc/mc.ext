@@ -28,7 +28,7 @@
 #
 # Other lines should start with a space or tab and should be in the format:
 #
-# keyword=commandNL (with no spaces around =), where keyword should be: 
+# keyword=commandNL (with no spaces around =), where keyword should be:
 #
 #    Open (if the user presses Enter or doubleclicks it),
 #
@@ -433,7 +433,7 @@ regex/\.([wW][mM][aA])$
 
 regex/\.([fF][lL][aA][cC])$
     Include=audio
-    
+
 ### Play lists ###
 
 regex/\.([mM]3[uU]|[pP][lL][sS])$
@@ -480,7 +480,7 @@ regex/\.([oO][gG][mM])$
 
 regex/\.([oO][gG][vV])$
 	Include=video
-  
+
 regex/\.([rR][aA]?[mM])$
 	Open=(realplay %f >/dev/null 2>&1 &)
 
@@ -517,8 +517,11 @@ type/^PDF
 	#Open=(acroread %f &)
 	#Open=(ghostview %f &)
 	View=%view{ascii} pdftotext %f -
-	
+
 regex/\.([dD][jJ][vV][uU])$
+    Open=(okular %f >/dev/null 2>/dev/null &)
+
+regex/\.([eE][pP][uU][bB])$
     Open=(okular %f >/dev/null 2>/dev/null &)
 
 # The following code very ugly and should not be taken as example.
