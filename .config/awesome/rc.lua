@@ -59,17 +59,18 @@ local hostname = chomp_read("hostname")
 -- visual settings
 local theme = "multicolor"
 beautiful.init(awful.util.getdir("config") .. "/themes/"..theme.."/theme.lua")
-if hostname == "scabeiathrax" then
-  gears.wallpaper.maximized(
-    awful.util.getdir("config") .. "/themes/wallpaper_scabeiathrax.jpg", nil, false)
-elseif hostname == "typhus" then
-  gears.wallpaper.maximized(
-    awful.util.getdir("config") .. "/themes/wallpaper_typhus.jpg", nil, false)
-else
-  if beautiful.wallpaper then
-    gears.wallpaper.maximized(beautiful.wallpaper, nil, true)
-  end
-end
+
+-- if hostname == "scabeiathrax" then
+--   gears.wallpaper.maximized(
+--     awful.util.getdir("config") .. "/themes/wallpaper_scabeiathrax.jpg", nil, false)
+-- elseif hostname == "typhus" then
+--   gears.wallpaper.maximized(
+--     awful.util.getdir("config") .. "/themes/wallpaper_typhus.jpg", nil, false)
+-- else
+--   if beautiful.wallpaper then
+--     gears.wallpaper.maximized(beautiful.wallpaper, nil, true)
+--   end
+-- end
 
 -- layouts
 local layouts = {

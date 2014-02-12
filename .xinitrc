@@ -48,6 +48,9 @@ dropbox-cli start
 # fancy window fading
 compton -f -I 0.10 -O 0.10 -D 5 -b
 
+# background
+nitrogen --restore &
+
 # reading lists and so on
 mount_filterfs.sh
 
