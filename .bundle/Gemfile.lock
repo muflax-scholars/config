@@ -70,7 +70,7 @@ GEM
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
-    domain_name (0.5.15)
+    domain_name (0.5.16)
       unf (>= 0.0.5, < 1.0.0)
     em-http-request (1.1.2)
       addressable (>= 2.3.4)
