@@ -1,15 +1,16 @@
-if [[ -e $(which emacs) ]]; then
-  export EDITOR="emacs"
-  export VISUAL="emacs"
-else
-  if [[ -e $(which vim) ]]; then
-    export EDITOR="vim"
-    export VISUAL="vim"
-  else
-    export EDITOR="vi"
-    export VISUAL="vi"
-  fi
+# default that exists everywhere
+local editor="vi"
+
+if [[ -e $(which emacs-gui) ]]; then
+  editor="emacs-gui"
+elif [[ -e $(which emacs) ]]; then
+  editor="emacs-gui"
+elif [[ -e $(which vim) ]]; then
+  editor="vim"
 fi
+
+export EDITOR=$editor
+export VISUAL=$editor
 
 export MPD_HOST="localhost"
 export BROWSER="firefox -new-tab %s &"
