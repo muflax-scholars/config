@@ -12,7 +12,7 @@ else
 fi
 
 export MPD_HOST="localhost"
-export BROWSER="firefox %s &"
+export BROWSER="firefox -new-tab %s &"
 
 # ruby
 unset RUBYOPT # gentoo sucks
