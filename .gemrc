@@ -1,1 +1,1 @@
-install: --document=rdoc,ri --verbose
+install: --document=rdoc,ri
