@@ -21,6 +21,7 @@ alias x="chmod +x"
 alias po="popd"
 alias g="grep"
 alias ag="agrep"
+alias cg="\ag"
 alias le="less"
 
 # watch
