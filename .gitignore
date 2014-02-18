@@ -38,6 +38,10 @@ tags
 .steam*
 .trc
 
+# monies
+.bitcoin
+.dogecoin
+
 # ignore caches and histories
 *history
 .adobe
@@ -46,6 +50,7 @@ tags
 .cache
 .calibre*
 .config/ibus
+.config/gtk-3.0/bookmarks
 .darcs
 .dbus
 .directory
