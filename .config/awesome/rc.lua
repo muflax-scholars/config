@@ -313,7 +313,7 @@ globalkeys = awful.util.table.join(
 
   -- change keyboard settings
   awful.key({ modkey,           }, "k", function () awful.util.spawn("skb.sh") end),
-  awful.key({ modkey,           }, "Scroll_Lock", function () awful.util.spawn("skb.sh") end),
+  awful.key({                   }, "Scroll_Lock", function () awful.util.spawn("skb.sh") end),
   awful.key({ modkey, "Shift"   }, "k", function () awful.util.spawn("setxkbmap us") end),
   awful.key({ modkey, "Control" }, "k", function () awful.util.spawn("toggle_repeat.rb") end),
 
