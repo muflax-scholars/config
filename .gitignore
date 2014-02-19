@@ -41,6 +41,7 @@ tags
 # monies
 .bitcoin
 .dogecoin
+.electrum
 
 # ignore caches and histories
 *history
