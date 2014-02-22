@@ -130,6 +130,7 @@ alias gaduna="git-annex dropunused 1-10000 --force"
 alias gam="git merge synced/master"
 alias gacop="git-annex copy --to pleonasty --not --in pleonasty"
 alias gamop="git-annex move --to pleonasty"
+alias gaco-glacier="git-annex copy --to glacier --not --in glacier"
 
 function ga-new() {
   echo "Label?" && read $label
