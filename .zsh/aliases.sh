@@ -133,6 +133,7 @@ alias gamop="git-annex move --to pleonasty"
 alias gaco-glacier="git-annex copy --to glacier --not --in glacier"
 alias gdud="gdu -hs *(/)"
 alias gdudl="gdu -hsL *(/)"
+alias dropg="git-annex drop --trust-glacier"
 
 function ga-new() {
   echo "Label?" && read $label
