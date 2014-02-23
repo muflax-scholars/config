@@ -122,7 +122,7 @@ local scratchpad_term = scratchpad({ command = "konsole --name scratchpad -e zsh
                                      name    = "scratchpad",
 			                               height  = 0.7,
                                      width   = 0.6})
-local scratchpad_anking = scratchpad({ command = "anking",
+local scratchpad_anking = scratchpad({ command = "anking -n",
                                        name    = "anking",
                                        height  = 0.7,
                                        width   = 0.5})
