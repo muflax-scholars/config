@@ -131,6 +131,8 @@ alias gam="git merge synced/master"
 alias gacop="git-annex copy --to pleonasty --not --in pleonasty"
 alias gamop="git-annex move --to pleonasty"
 alias gaco-glacier="git-annex copy --to glacier --not --in glacier"
+alias gdud="gdu -hs *(/)"
+alias gdudl="gdu -hsL *(/)"
 
 function ga-new() {
   echo "Label?" && read $label
