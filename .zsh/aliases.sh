@@ -398,3 +398,4 @@ function nighto() {
 alias te=trash-empty
 alias tp=trash-put
 alias tl=trash-list
+alias rm=trash-put
