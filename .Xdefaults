@@ -11,41 +11,5 @@ Xft.hintstyle:           hintslight
 ! Emacs.FontBackend:       x
 Emacs.FontBackend:       xft
 
-URxvt.inputMethod:       ibus
-URxvt.preeditType:       OnTheSpot,None
-URxvt.imLocale:          ja_JP.UTF-8
+! IBus support in Emacs
 Emacs*useXIM:            false
-
-URxvt.urgentOnBell:      true
-
-! diversity is for the weak
-URxvt*font:              -efont-*-medium-r-normal--12*
-
-! no bold fonts - fucks up more than it solves
-URxvt*boldFont:
-URxvt*italicFont:
-URxvt*boldItalicFont:
-
-URxvt*scrollBar:         true
-URxvt*scrollstyle:       plain
-URxvt*scrollBar_right:   true
-URxvt*scrollTtyKeypress: true
-URxvt*scrollWithBuffer:  true
-URxvt*scrollTtyOutput:   false
-URxvt.jumpScroll:        true
-URxvt.skipScroll:        true
-
-URxvt.depth:             32
-URxvt*background:        [85]#000000
-URxvt*foreground:        #FFFFFF
-URxvt*perl-ext-common:   default,matcher
-URxvt*url-launcher:      firefox
-URxvt*matcher.button:    1
-URxvt*saveLines:         100000
-
-! makes C-Backspace work in emacs
-URxvt.keysym.C-BackSpace: \033[31~
-
-! way more readable blue
-*color4:                 rgb:36/73/b5
-*color12:                rgb:1b/85/d6
