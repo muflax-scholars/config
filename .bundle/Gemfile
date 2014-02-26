@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem "backup-urls", :path => File.expand_path("~/src/backup/backup-urls")
 gem "bayescraft"
 gem "muflax"
-gem "muflax-t"
 
 # pry
 gem "pry"
