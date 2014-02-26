@@ -14,7 +14,7 @@ export EDITOR=$editor
 export VISUAL=$editor
 
 export MPD_HOST="localhost"
-export BROWSER="firefox -new-tab %s &"
+export BROWSER="firefox -new-tab %s"
 
 # ruby
 unset RUBYOPT # gentoo sucks
