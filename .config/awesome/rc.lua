@@ -265,7 +265,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "a", function () run_or_raise("anki", {class = "Runanki"}) end),
 
   -- pidgin
-  awful.key({ modkey,           }, "p", function () run_or_raise("pidgin", {role = "buddy_list"}) end),
+  -- awful.key({ modkey,           }, "p", function () run_or_raise("pidgin", {role = "buddy_list"}) end),
 
   -- launch terminal
   awful.key({ modkey,           }, "u", function () awful.util.spawn("konsole") end),
