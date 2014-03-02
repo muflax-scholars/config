@@ -2,6 +2,7 @@ root = /home/amon
 path = .
 
 ignore = Path .*
+ignore = Path local/share/Trash
 
 ignore = Path Dropbox
 ignore = Path anki/muflax
@@ -17,4 +18,3 @@ ignore = Path podcasts
 ignore = Path telebi
 ignore = Path txt
 ignore = Path youtube
-
