@@ -317,6 +317,9 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "k", function () awful.util.spawn("setxkbmap us") end),
   awful.key({ modkey, "Control" }, "k", function () awful.util.spawn("toggle_repeat.rb") end),
 
+  -- send keyboard events to other computer
+  awful.key({ modkey,           }, "0", function () awful.util.spawn("keyboard-send.rb") end),
+
   -- backlights
   awful.key({                   }, "XF86MonBrightnessDown", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb decrement") end),
