@@ -171,6 +171,7 @@ tags
 
 # ignore savegames
 .angband
+.appdata
 .caravel
 .config/MonoGame
 .config/RogueLegacyStorageContainer
