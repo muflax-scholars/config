@@ -12,7 +12,7 @@ NAMED_DIRS=(
   portage        /usr/portage
 
   src            ~/src
-  gdict          ~/src/linguistics/german_dictionaries/lists
+  gdict          ~/src/linguistics/german/lists
   muflax         ~/src/ruby/muflax
   scripts        ~/src/scripts
   ibus-steno     ~/src/typing/ibus/ibus-steno
