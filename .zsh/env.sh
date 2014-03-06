@@ -2,8 +2,7 @@
 local editor="vi"
 
 if [[ -e $(which emacs-gui) ]]; then
-  editor="emacs-gui"
-  export SUDO_EDITOR="emacs-gui-wait"
+  editor="emacs-gui-wait"
 elif [[ -e $(which emacs) ]]; then
   editor="emacs"
 elif [[ -e $(which vim) ]]; then
