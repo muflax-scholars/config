@@ -27,7 +27,7 @@ load_gem("awesome_print") {Pry.config.print = proc {|output, value| Pry::Helpers
 
 # pry config
 # Pry.config.theme = "monokai"
-Pry.config.editor = "emacs-gui"
+Pry.config.editor = "emacs-gui-wait"
 
 # some aliases
 Pry.config.commands.alias_command "ee", "edit"
