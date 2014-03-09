@@ -1,6 +1,8 @@
-# basename titles?
-set status-title-basename false
+# saner titles
+set statusbar-basename false
 set window-title-basename true
+set statusbar-original-path true
+set window-title-original-path true
 
 # navigation
 map \< goto top
