@@ -9,6 +9,7 @@ map \< goto top
 map \> goto bottom
 map <C-a> scroll full-left
 map <C-e> scroll full-right
+set scroll-step 80
 
 # zoom
 map <C-+> zoom in
