@@ -50,6 +50,7 @@ function ffw() { firefox -new-window $* >/dev/null 2>/dev/null &! }
 function ge()  { geeqie              $* >/dev/null 2>/dev/null &! }
 function me()  { meld                $* >/dev/null 2>/dev/null &! }
 function d()   { dolphin             $* >/dev/null 2>/dev/null &! }
+function z()   { zathura             $* >/dev/null 2>/dev/null &! }
 
 # ls
 alias ls="ls --color=always --group-directories-first -v"

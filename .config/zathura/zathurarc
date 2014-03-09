@@ -1,0 +1,26 @@
+# basename titles?
+set status-title-basename false
+set window-title-basename true
+
+# navigation
+map \< goto top
+map \> goto bottom
+map <C-a> scroll full-left
+map <C-e> scroll full-right
+
+# zoom
+map <C-+> zoom in
+map <C-Up> zoom in
+map <C--> zoom out
+map <C-Down> zoom out
+
+# fit
+set adjust-open best-fit
+
+map <C-1> adjust_window best-fit
+map <C-2> adjust_window width
+map <F1> set "pages-per-row 1"
+map <F2> set "pages-per-row 2"
+
+# emacs-y keys
+map <C-g> abort
