@@ -1,11 +1,9 @@
 # aliases
 
 # default options
-alias agrep="command grep -P --color=auto"
 alias angband="angband -mgcu -umuflax"
 alias avg="noglob average_damage.rb"
 alias cal="cal -m -3"
-alias grep="command grep -P --color=always"
 alias less="less -iF"
 alias mc="mc -x"
 alias mkdir="mkdir -p"
@@ -19,10 +17,16 @@ alias diff="colordiff"
 alias my="sudo chown amon:amon"
 alias x="chmod +x"
 alias po="popd"
-alias g="grep"
-alias ag="agrep"
-alias cg="\ag"
 alias le="less"
+
+# grep
+alias bgrep="command grep -P"
+alias cgrep="bgrep --color=always"
+alias ngrep="bgrep --color=auto"
+alias grep="cgrep"
+alias g="grep"
+alias cg="cgrep"
+alias ng="ngrep"
 
 # watch
 alias watch="watch -c"
