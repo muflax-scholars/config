@@ -405,13 +405,18 @@ root.keys(globalkeys)
 -- mouse bindings; note that the order is left (1), middle (2), right (3)
 clientbuttons = awful.util.table.join(
   -- floating clients
+  awful.button({                 }, 1,
+    function()
+      client.focus = awful.mouse.client_under_pointer()
+      client.focus:raise()
+  end),
   awful.button({ modkey          }, 1, awful.mouse.client.move),
   awful.button({ modkey, "Shift" }, 1,
-               function()
-                 local c = awful.mouse.client_under_pointer()
-                 if c then
-                   awful.client.floating.toggle(c)
-                 end
+    function()
+      local c = awful.mouse.client_under_pointer()
+      if c then
+        awful.client.floating.toggle(c)
+      end
   end),
   awful.button({ modkey          }, 3, awful.mouse.client.resize))
 
@@ -512,13 +517,13 @@ awful.rules.rules = {
 
 -- signals
 client.connect_signal("manage", function (c, startup)
-                        -- enable mouse focus
-                        c:connect_signal("mouse::enter", function(c)
-                                           if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-                                           and awful.client.focus.filter then
-                                             client.focus = c
-                                           end
-                        end)
+                        -- -- enable mouse focus
+                        -- c:connect_signal("mouse::enter", function(c)
+                        --                    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+                        --                    and awful.client.focus.filter then
+                        --                      client.focus = c
+                        --                    end
+                        -- end)
 
                         if not startup then
                           -- make new windows slaves
