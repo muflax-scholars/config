@@ -410,6 +410,27 @@ clientbuttons = awful.util.table.join(
       client.focus = awful.mouse.client_under_pointer()
       client.focus:raise()
   end),
+  awful.button({                 }, 2,
+    function()
+      client.focus = awful.mouse.client_under_pointer()
+      client.focus:raise()
+  end),
+  awful.button({                 }, 3,
+    function()
+      client.focus = awful.mouse.client_under_pointer()
+      client.focus:raise()
+  end),
+  awful.button({                 }, 4,
+    function()
+      client.focus = awful.mouse.client_under_pointer()
+      client.focus:raise()
+  end),
+  awful.button({                 }, 5,
+    function()
+      client.focus = awful.mouse.client_under_pointer()
+      client.focus:raise()
+  end),
+
   awful.button({ modkey          }, 1, awful.mouse.client.move),
   awful.button({ modkey, "Shift" }, 1,
     function()
