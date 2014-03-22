@@ -6,7 +6,7 @@
   untracked = ls-files --other --exclude-standard
   unt       = ls-files --other --exclude-standard
   adda      = add --all .
-
+  wdiff     = diff --color-words
 [color]
   ui = auto
 
