@@ -44,7 +44,6 @@ gem "future_me"
 gem "lolcommits", :path => File.expand_path("~/src/forks/lolcommits")
 
 # used by scripts
-gem "moneta"
 gem "rb-inotify"
 gem "sqlite3"
 gem "unicode_utils"
@@ -61,6 +60,10 @@ gem "treetop"
 
 # profiling
 gem "ruby-prof"
+
+# memoization
+gem "moneta"
+gem "memoist"
 
 # some generically useful stuff
 gem "kramdown"
