@@ -34,4 +34,6 @@ case ${TERM} in
 esac
 
 # go
+export GOROOT=$HOME/src/go/golang
+export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/local/go
