@@ -7,7 +7,6 @@ gem "muflax"
 
 # pry
 gem "pry"
-gem "pry-byebug"
 gem "pry-doc"
 gem "pry-docmore"
 gem "pry-nav"

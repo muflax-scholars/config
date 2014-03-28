@@ -9,6 +9,7 @@ elif [[ -e $(which vim) ]]; then
   export EDITOR="vim"
 fi
 
+export EDITOR=$(which $EDITOR)
 export VISUAL=$EDITOR
 
 export MPD_HOST="localhost"
