@@ -37,3 +37,4 @@ esac
 export GOROOT=$HOME/src/go/golang
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/local/go
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
