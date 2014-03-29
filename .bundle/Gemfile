@@ -43,6 +43,7 @@ gem "future_me"
 gem "lolcommits", :path => File.expand_path("~/src/forks/lolcommits")
 
 # used by scripts
+gem "rake"
 gem "rb-inotify"
 gem "sqlite3"
 gem "unicode_utils"

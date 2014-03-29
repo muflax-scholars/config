@@ -172,6 +172,7 @@ GEM
       json (~> 1.8)
     pry-vterm_aliases (1.1.1)
       pry (~> 0.9.12)
+    rake (10.2.2)
     range_math (0.7.1)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -255,6 +256,7 @@ DEPENDENCIES
   pry-stack_explorer
   pry-theme
   pry-vterm_aliases
+  rake
   rb-inotify
   rbenv-rehash
   ripper-tags
