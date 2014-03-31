@@ -409,3 +409,6 @@ alias rm=trash-put
 
 # reload file
 alias res="source ~/.zshrc"
+
+# go
+[[ -e $(which colorgo) ]] && alias go=colorgo
