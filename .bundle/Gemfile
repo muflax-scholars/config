@@ -60,6 +60,7 @@ gem "treetop"
 
 # profiling
 gem "ruby-prof"
+gem "perftools.rb"
 
 # memoization
 gem "moneta"

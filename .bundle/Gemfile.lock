@@ -145,6 +145,7 @@ GEM
     org-ruby (0.9.3)
       rubypants (>= 0.2.0)
     parallel (1.0.0)
+    perftools.rb (2.0.1)
     polyglot (0.3.4)
     pru (0.1.6)
     pry (0.9.12.6)
@@ -246,6 +247,7 @@ DEPENDENCIES
   nokogiri
   opengl
   org-ruby
+  perftools.rb
   pru
   pry
   pry-doc
