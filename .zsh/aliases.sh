@@ -401,11 +401,10 @@ function nighto() {
   toggle_mouse.rb
 }
 
-# trash instead of rm
+# trash
 alias te=trash-empty
 alias tp=trash-put
 alias tl=trash-list
-alias rm=trash-put
 
 # reload file
 alias res="source ~/.zshrc"
