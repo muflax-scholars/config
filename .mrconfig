@@ -31,9 +31,6 @@ checkout = git clone 'git://github.com/sstephenson/ruby-build.git' 'ruby-build'
 [src/statistics/best-python]
 checkout = git clone 'https://github.com/strawlab/best' 'best-python'
 
-[Dropbox/muflax.com]
-checkout = git clone '/home/amon/src/muflax.com' 'muflax.com'
-
 [src/lisp/arc/anarki]
 checkout = git clone 'http://github.com/arclanguage/anarki' 'anarki'
 
