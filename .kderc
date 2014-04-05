@@ -1,9 +1,0 @@
-[General]
-activeFont=gothic [Mona],11,-1,5,75,0,0,0,0,0
-desktopFont=gothic [Mona],11,-1,5,50,0,0,0,0,0
-fixed=gothic [mplus],9,-1,5,50,0,0,0,0,0
-font=gothic [Mona],11,-1,5,50,0,0,0,0,0
-menuFont=gothic [Mona],11,-1,5,50,0,0,0,0,0
-smallestReadableFont=gothic [Mona],11,-1,5,50,0,0,0,0,0
-taskbarFont=gothic [Mona],11,-1,5,50,0,0,0,0,0
-toolBarFont=gothic [Mona],11,-1,5,50,0,0,0,0,0
