@@ -266,6 +266,15 @@ alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
 alias aaaaaaaaah="ff 'file:///home/amon/pigs/explosion bird.gif'"
 
+# totally useful sound effects
+alias s_holycrap="m --really-quiet ~/local/sounds/holycrap.ogg DN"
+alias s_mail="m --really-quiet ~/local/sounds/mail.ogg DN"
+alias s_max="m --really-quiet ~/local/sounds/max.ogg DN"
+alias s_min="m --really-quiet ~/local/sounds/min.ogg DN"
+alias s_oops="m --really-quiet ~/local/sounds/oops.ogg DN"
+alias s_quit="m --really-quiet ~/local/sounds/quit.ogg DN"
+alias s_startup="m --really-quiet ~/local/sounds/startup.ogg DN"
+
 # full version
 function up() {
   # sync etc
