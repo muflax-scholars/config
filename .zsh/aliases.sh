@@ -105,6 +105,17 @@ function un() {
   git_annex_auto.sh
 }
 
+# git
+function git_branch() {
+  local ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
+
+function git_path() {
+  local p=$(command git rev-parse --show-toplevel 2> /dev/null) || return
+  echo $p
+}
 
 # gist
 alias gist="jist -t $(git config github.oauth-token)"

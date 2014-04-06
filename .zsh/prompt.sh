@@ -4,22 +4,62 @@ autoload colors
 if [[ ${terminfo[colors]} -ge 8 ]] then
   colors
 fi
-autoload -Uz vcs_info
 
 # brackets
 local op="%{$fg_bold[black]%}[%{$reset_color%}"
 local cp="%{$fg_bold[black]%}]%{$reset_color%}"
 
-# vcs config
-zstyle ':vcs_info:*' enable git
-local vcs_action="(%a)" # e.g. (rebase-i)
-local vcs_branch="%b%u%c" # e.g. master(*)(s)
-zstyle ':vcs_info:*:prompt:*' check-for-changes true
-zstyle ':vcs_info:*:prompt:*' unstagedstr '(*)'  # display this if there are unstaged changes
-zstyle ':vcs_info:*:prompt:*' stagedstr '(s)'    # display this if there are staged changes
-zstyle ':vcs_info:*:prompt:*' actionformats " ${op}%{$fg[cyan]%}${vcs_branch}${vcs_action}%{$reset_color%}${cp}"
-zstyle ':vcs_info:*:prompt:*' formats "${op}%{$fg[cyan]%}${vcs_branch}%{$reset_color%}${cp}"
-zstyle ':vcs_info:*:prompt:*' nvcsformats ""
+# git config
+function _prompt_git_dirty() {
+  if [[ "$(command git config --get zsh.hide-dirty)" != "1" ]]; then
+    # skip git_annexslow repos because they're super slow
+    if [[ "$(_prompt_git_annex)" != "" ]]; then
+      return
+    fi
+
+    # any (tracked) changes?
+    if [[ -n "$(command git status -uno -s | tail -n 1)" ]]; then
+      echo "(*)"
+    fi
+  fi
+}
+function _prompt_git_ahead() {
+  if $(echo "$(command git log origin/$(git_branch)..HEAD 2> /dev/null)" | command grep '^commit' &> /dev/null); then
+    echo "(^)"
+  fi
+}
+function _prompt_git_annex() {
+  echo "$(command git config --get annex.uuid 2> /dev/null)" || return
+}
+
+function _prompt_git() {
+  # which git repo, if any, are we in?
+  local git_p=$(git_path)
+  case $git_p in
+    $HOME)
+      # warn if we're in ~/
+      git_p="(~)"
+      ;;
+    "")
+      # not in git
+      return
+      ;;
+    *)
+      # otherwise don't care about the path
+      git_p=""
+      ;;
+  esac
+
+  # legit repo, so let's get its status
+  local git_d=$(_prompt_git_dirty)
+  local git_a=$(_prompt_git_ahead)
+  local git_b=$(git_branch)
+
+  echo "${op}%{$fg[cyan]%}${git_d}${git_a}${git_b}${git_p}%{$reset_color%}${cp}"
+}
+
+# current git status (set via precmd in title.sh)
+local vcs='$_prompt_git_cached'
 
 # current date
 local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
@@ -60,8 +100,6 @@ fi
 # current path
 local path_p="${op}%{$fg[cyan]%}%~%{$reset_color%}${cp}"
 
-# current VCS status
-local vcs='$vcs_info_msg_0_'
 # smiley based on return status
 local smiley="%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3%{$reset_color%})"
 # last command, used in PS2

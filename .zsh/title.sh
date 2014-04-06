@@ -19,7 +19,7 @@ function title() {
 }
 
 function precmd() {
-  vcs_info 'prompt'
+  _prompt_git_cached=$(_prompt_git)
   title "zsh" "%m"
 }
 
@@ -31,4 +31,4 @@ function preexec() {
       echo -ne "\ek$CMD\e\\"
       ;;
   esac
-}    
+}
