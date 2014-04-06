@@ -216,6 +216,8 @@ alias tagify-c="ctags -eR ."
 alias p2="python"
 alias p3="python3"
 alias p="python3"
+
+# perl
 alias pe="perl"
 
 # ruby stuff
@@ -235,8 +237,6 @@ alias -g LC='LANG=C'
 alias -g LE='LANG=en_US.UTF-8'
 alias -g LJ='LANG=ja_JP.UTF-8'
 alias -g L='| less'
-alias -g G='| grep'
-alias -g CG='| grep --color=always'
 
 # suspend-to-ram
 function ss() {
