@@ -21,7 +21,7 @@ set number
 set numberwidth=4
 
 "save last 1000 jumps and global marks
-set viminfo='1000,f1 
+set viminfo='1000,f1
 
 "allow increment / decrement of single chars
 set nrformats=hex,alpha
@@ -67,7 +67,7 @@ set formatoptions=tcrqnm
 
 "search
 set incsearch
-set ignorecase  
+set ignorecase
 set smartcase
 set hlsearch
 
@@ -93,21 +93,6 @@ map <F5> :set hls!<bar>set hls?<CR>
 map <Down> gj
 map <Up> gk
 
-"code completion, <Nul> is Ctrl-Space
-filetype plugin on
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType c set omnifunc=ccomplete#Complete
-map <Nul> <C-]>
-map <C-Space> <C-]>
-set completeopt=menuone,longest
-compiler ruby
-
 "automatically make scripts executable
 function! FileExecutable (fname)
     execute "silent! ! test -x" a:fname
@@ -132,9 +117,9 @@ au FileType ruby set foldmethod=syntax
 
 "buffer switching with <f1>, <f2> and \h, \g
 noremap <f1> :bprev<CR>
-noremap <f2> :bnext<CR> 
+noremap <f2> :bnext<CR>
 noremap <Leader>h :bprev<CR>
-noremap <Leader>g :bnext<CR> 
+noremap <Leader>g :bnext<CR>
 "go to last buffer used
 map <Leader>; <C-^>
 map <Leader>_ <C-W>w
@@ -165,13 +150,6 @@ let perl_fold = 1
 
 "supertab
 let g:SuperTabDefaultCompletionType = "context"
-
-"UltiSnips
-"jump triggers are different from tab so as to not conflict with tab completion
-"within a snipper
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<S-Right>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Left>"
 
 "toggle paste with F3
 :set pastetoggle=<F3>
