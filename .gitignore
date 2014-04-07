@@ -59,6 +59,7 @@ tags
 .dvdcss
 .emacs.d/cache
 .emacs.d/var
+!.emacs.d/**/*.elc
 .fontconfig*
 .gconf
 .gconfd
