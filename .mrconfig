@@ -39,3 +39,9 @@ checkout = git clone 'http://git.mysteryvortex.com/repositories/git-annex-utils.
 
 [src/emacs/magnars-emacs.d]
 checkout = git clone 'https://github.com/magnars/.emacs.d' 'magnars-emacs.d'
+
+[src/emacs/rejuvyesh-emacs.d]
+checkout = git clone 'https://github.com/rejuvyesh/emacs.d' 'rejuvyesh-emacs.d'
+
+[src/emacs/setup]
+checkout = git clone 'https://github.com/zk-phi/setup' 'setup'
