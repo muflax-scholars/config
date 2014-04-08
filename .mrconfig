@@ -28,7 +28,7 @@ checkout = git clone 'git://github.com/sstephenson/ruby-build.git' 'ruby-build'
 [src/statistics/best-python]
 checkout = git clone 'https://github.com/strawlab/best' 'best-python'
 
-[src/linguistics/kytea]
+[src/linguistics/japanese/kytea]
 checkout = git clone 'https://github.com/neubig/kytea' 'kytea'
 
 [src/misc/unix-utilities]
