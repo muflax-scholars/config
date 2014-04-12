@@ -37,3 +37,6 @@ esac
 export GOPATH=$HOME/local/go
 export GOROOT=$HOME/src/go/golang
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+
+# haskell / cabal
+export PATH=$HOME/local/cabal/bin:$PATH

@@ -48,6 +48,7 @@ tags
 .adobe
 .bundle/bin
 .bup
+.cabal/setup-exe-cache
 .cache
 .calibre*
 .config/ibus
@@ -195,7 +196,6 @@ tags
 .config/geeqie
 
 # ignore language-specific package management
-.cabal
 .rbenv
 
 # kde cruft
