@@ -67,11 +67,14 @@ gem "perftools.rb"
 gem "moneta"
 gem "memoist"
 
-# some generically useful stuff
+# markups
 gem "kramdown"
 gem "nokogiri"
 gem "org-ruby"
 gem "ruby-graphviz"
+gem "reverse_markdown"
+
+# some generically useful stuff
 gem "systemu"
 gem "tidy_ffi"
 gem "units"
