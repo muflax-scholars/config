@@ -63,6 +63,7 @@ tags
 .fontconfig*
 .gconf
 .gconfd
+.ghc/x86*
 .gnuplot-wxt
 .gtk-bookmarks
 .haskell.salt
