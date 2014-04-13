@@ -235,6 +235,7 @@ DEPENDENCIES
   autotest
   backup-urls!
   bayescraft
+  beeminder
   curses
   fftw3
   future_me
