@@ -287,6 +287,15 @@ alias s_oops="m --really-quiet ~/local/sounds/oops.ogg DN"
 alias s_quit="m --really-quiet ~/local/sounds/quit.ogg DN"
 alias s_startup="m --really-quiet ~/local/sounds/startup.ogg DN"
 
+# play appropriate sound
+function s_ok() {
+  if [[ $? == 0 ]]; then
+    s_max
+  else
+    s_min
+  fi
+}
+
 # full version
 function up() {
   # sync etc
