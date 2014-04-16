@@ -5,7 +5,7 @@
 #Cursor(0 xfixes,1 white,2 black,3 none)
 0
 #Sound,0 disabled 1 enabled
-1
+0
 #Full shots,1 disabled 0 enabled
 1
 #Filename
@@ -19,7 +19,7 @@
 #Sound-device
 DEFAULT
 #Video quality(0-63)
-63
+32
 #Audio quality(0-10)
 10
 #Display
