@@ -54,5 +54,8 @@ nitrogen --restore &
 # reading lists and so on
 mount_filterfs.sh
 
+# mount archives
+mountavfs &
+
 WM="awesome"
 exec dbus-launch --auto-syntax --exit-with-session $WM

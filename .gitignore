@@ -218,3 +218,6 @@ tags
 .emacs.d/cache
 .emacs.d/var
 !.emacs.d/**/*.elc
+
+# avfs to open archives
+.avfs
