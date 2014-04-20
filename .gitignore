@@ -58,9 +58,6 @@ tags
 .directory
 .dmenu_cache
 .dvdcss
-.emacs.d/cache
-.emacs.d/var
-!.emacs.d/**/*.elc
 .fontconfig*
 .gconf
 .gconfd
@@ -214,3 +211,10 @@ tags
 !.kde4/share/config/konsole*
 !.kde4/share/config/okularpartrc
 .kde4/share/kde4
+
+# emacs
+.emacs.d/packages/archives
+.emacs.d/packages/*.txt
+.emacs.d/cache
+.emacs.d/var
+!.emacs.d/**/*.elc
