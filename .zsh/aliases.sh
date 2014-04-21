@@ -264,6 +264,7 @@ alias newine="nice wine explorer /desktop=foo${RANDOM},1024x768"
 # monitors on/off
 alias don="D0 xset dpms force on"
 alias doff="D0 xset dpms force off"
+alias dstayon="D0 xset dpms 0; D0 xset -dpms; don"
 
 # ssh
 alias nyash="ssh -C amon@nyarlathotep"
