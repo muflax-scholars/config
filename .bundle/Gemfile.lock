@@ -44,7 +44,7 @@ GEM
       gnuplot
       integration
       rubystats
-    beeminder (0.2.9)
+    beeminder (0.2.10)
       activesupport (>= 3.2, < 5)
       chronic (~> 0.7)
       highline (~> 1.6)
