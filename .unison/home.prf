@@ -18,3 +18,5 @@ ignore = Path podcasts
 ignore = Path telebi
 ignore = Path txt
 ignore = Path youtube
+
+ignore = Path .config/mc/history
