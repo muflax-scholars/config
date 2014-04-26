@@ -40,3 +40,6 @@ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # haskell / cabal
 export PATH=$HOME/local/cabal/bin:$PATH
+
+# racket
+export PATH=$HOME/local/racket/bin:$PATH
