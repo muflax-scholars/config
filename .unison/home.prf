@@ -20,4 +20,4 @@ ignore = Path txt
 ignore = Path youtube
 
 ignore = Path .config/mc/history
-ignore = Path .local/share/mc
+ignore = Path local/share/mc
