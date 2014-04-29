@@ -274,6 +274,14 @@ alias scash="ssh -C amon@scabeiathrax"
 alias scab="scash"  # more elegant
 alias plesh="ssh -C amon@pleonasty"
 
+# executing stuff over ssh
+alias nyashc="ssh -C amon@nyarlathotep -- zsh -l -c --"
+alias tyshc="ssh  -C amon@typhus       -- zsh -l -c --"
+alias nashc="ssh  -C amon@pleonasty    -- zsh -l -c --"
+alias scashc="ssh -C amon@scabeiathrax -- zsh -l -c --"
+alias scabc="scashc"
+alias pleshc="ssh -C amon@pleonasty    -- zsh -l -c --"
+
 # lolshell
 alias cya='sudo reboot'
 alias kthxbai='sudo shutdown -h now'
