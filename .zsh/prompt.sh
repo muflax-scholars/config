@@ -111,7 +111,17 @@ local smiley="%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3%{$reset_col
 # last command, used in PS2
 local cur_cmd="${op}%_${cp}"
 
-PROMPT="${date}${path_p}${vcs}${user_host}${arch}${bell}
+if [ $timer_duration ]; then
+  echo "?"
+  if [[ $timer_duration -gt 1 ]]; then
+    echo $timer_duration
+  fi
+fi
+
+# show runtime of last command
+local cmd_time='$timer_show'
+
+PROMPT="${date}${path_p}${vcs}${user_host}${arch}${bell}${cmd_time}
 ${smiley}${mc} "
 PROMPT2="${cur_cmd}> "
 
@@ -137,6 +147,32 @@ function title() {
 function precmd() {
   prompt_git_cached=$(_prompt_git)
   title "zsh" "%m"
+
+  # how long did the command run?
+  if [ $timer ]; then
+    timer_duration=$(($SECONDS - $timer))
+    unset timer
+
+    if [[ $timer_duration -gt 0 ]]; then
+      if [[ $timer_duration -ge 3600 ]]; then
+        let "timer_hours = $timer_duration / 3600"
+        let "remainder = $timer_duration % 3600"
+        let "timer_minutes = $remainder / 60"
+        let "timer_seconds = $remainder % 60"
+        fancy_time="${timer_hours}h${timer_minutes}m${timer_seconds}s"
+      elif [[ $timer_duration -ge 60 ]]; then
+        let "timer_minutes = $timer_duration / 60"
+        let "timer_seconds = $timer_duration % 60"
+        fancy_time="${timer_minutes}m${timer_seconds}s"
+      else
+        fancy_time="${timer_duration}s"
+      fi
+
+      timer_show="${op}%{$fg[cyan]%}${fancy_time}%{$reset_color%}${cp}"
+    else
+      timer_show=""
+    fi
+  fi
 }
 
 # set simple screen title just before program is executed
@@ -148,4 +184,7 @@ function preexec() {
       echo -ne "\ek$CMD\e\\"
       ;;
   esac
+
+  # keep track of how long a command runs
+  timer=${timer:-$SECONDS}
 }
