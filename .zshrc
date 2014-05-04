@@ -4,7 +4,6 @@ source ~/.zsh/path.sh
 source ~/.zsh/env.sh
 source ~/.zsh/prompt.sh
 source ~/.zsh/ls_colors.sh
-source ~/.zsh/title.sh
 source ~/.zsh/completion.sh
 source ~/.zsh/keys.sh
 source ~/.zsh/aliases.sh

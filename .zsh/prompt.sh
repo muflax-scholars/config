@@ -114,3 +114,38 @@ local cur_cmd="${op}%_${cp}"
 PROMPT="${date}${path_p}${vcs}${user_host}${arch}${bell}
 ${smiley}${mc} "
 PROMPT2="${cur_cmd}> "
+
+# title handling
+function title() {
+  # escape '%' chars in $1, make nonprintables visible
+  local a=${(V)1//\%/\%\%}
+
+  # Truncate command, and join lines.
+  a=$(print -Pn "%40>...>$a" | tr -d "\n")
+
+  case $TERM in
+    screen*)
+      print -Pn "\e]2;$a @$2\a"  # plain xterm title
+      print -Pn "\ek$a\e\\"      # screen title (in ^A")
+      ;;
+    rxvt*|xterm*)
+      print -Pn "\e]2;$a @$2\a" # plain xterm title
+      ;;
+  esac
+}
+
+function precmd() {
+  _prompt_git_cached=$(_prompt_git)
+  title "zsh" "%m"
+}
+
+# set simple screen title just before program is executed
+function preexec() {
+  case $TERM in
+    screen*)
+      local CMD=${1[(wr)^(*=*|sudo|-*)]}
+      CMD=$(print -Pn "%15>~>$CMD" | tr -d "\n")
+      echo -ne "\ek$CMD\e\\"
+      ;;
+  esac
+}
