@@ -28,6 +28,11 @@ function _prompt_git_ahead() {
     echo "(^)"
   fi
 }
+function _prompt_git_behind() {
+  if $(echo "$(command git log HEAD..origin/$(git_branch) 2> /dev/null)" | command grep '^commit' &> /dev/null); then
+    echo "(v)"
+  fi
+}
 function _prompt_git_annex() {
   echo "$(command git config --get annex.uuid 2> /dev/null)" || return
 }
@@ -53,9 +58,10 @@ function _prompt_git() {
   # legit repo, so let's get its status
   local git_d=$(_prompt_git_dirty)
   local git_a=$(_prompt_git_ahead)
+  local git_v=$(_prompt_git_behind)
   local git_b=$(git_branch)
 
-  echo "${op}%{$fg[cyan]%}${git_d}${git_a}${git_b}${git_p}%{$reset_color%}${cp}"
+  echo "${op}%{$fg[cyan]%}${git_d}${git_a}${git_v}${git_b}${git_p}%{$reset_color%}${cp}"
 }
 
 # current git status (set via precmd in title.sh)
