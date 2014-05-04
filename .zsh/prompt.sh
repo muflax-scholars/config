@@ -153,25 +153,21 @@ function precmd() {
     timer_duration=$(($SECONDS - $timer))
     unset timer
 
-    if [[ $timer_duration -gt 0 ]]; then
-      if [[ $timer_duration -ge 3600 ]]; then
-        let "timer_hours = $timer_duration / 3600"
-        let "remainder = $timer_duration % 3600"
-        let "timer_minutes = $remainder / 60"
-        let "timer_seconds = $remainder % 60"
-        fancy_time="${timer_hours}h${timer_minutes}m${timer_seconds}s"
-      elif [[ $timer_duration -ge 60 ]]; then
-        let "timer_minutes = $timer_duration / 60"
-        let "timer_seconds = $timer_duration % 60"
-        fancy_time="${timer_minutes}m${timer_seconds}s"
-      else
-        fancy_time="${timer_duration}s"
-      fi
-
-      timer_show="${op}%{$fg[cyan]%}${fancy_time}%{$reset_color%}${cp}"
+    if [[ $timer_duration -ge 3600 ]]; then
+      let "timer_hours = $timer_duration / 3600"
+      let "remainder = $timer_duration % 3600"
+      let "timer_minutes = $remainder / 60"
+      let "timer_seconds = $remainder % 60"
+      fancy_time="${timer_hours}h${timer_minutes}m${timer_seconds}s"
+    elif [[ $timer_duration -ge 60 ]]; then
+      let "timer_minutes = $timer_duration / 60"
+      let "timer_seconds = $timer_duration % 60"
+      fancy_time="${timer_minutes}m${timer_seconds}s"
     else
-      timer_show=""
+      fancy_time="${timer_duration}s"
     fi
+
+    timer_show="${op}%{$fg[cyan]%}${fancy_time}%{$reset_color%}${cp}"
   fi
 }
 
