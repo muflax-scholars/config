@@ -65,7 +65,7 @@ function _prompt_git() {
 }
 
 # current git status (set via precmd in title.sh)
-local vcs='$_prompt_git_cached'
+local vcs='$prompt_git_cached'
 
 # current date
 local date="${op}%{$fg[cyan]%}%*%{$reset_color%}${cp}"
@@ -135,7 +135,7 @@ function title() {
 }
 
 function precmd() {
-  _prompt_git_cached=$(_prompt_git)
+  prompt_git_cached=$(_prompt_git)
   title "zsh" "%m"
 }
 
