@@ -69,11 +69,12 @@ gem "moneta"
 gem "memoist"
 
 # markups
+gem "htmlentities"
 gem "kramdown"
 gem "nokogiri"
 gem "org-ruby"
-gem "ruby-graphviz"
 gem "reverse_markdown"
+gem "ruby-graphviz"
 
 # some generically useful stuff
 gem "systemu"

@@ -83,6 +83,7 @@ GEM
     hasu (0.1.4)
       gosu
     highline (1.6.21)
+    htmlentities (4.3.1)
     httmultiparty (0.3.14)
       httparty (>= 0.7.3)
       mimemagic
@@ -197,7 +198,7 @@ GEM
       ffi (>= 0.6.3)
     ruby-audio (1.6.1)
     ruby-graphviz (1.0.9)
-    ruby-prof (0.14.2)
+    ruby-prof (0.15.0)
     rubypants (0.2.0)
     rubystats (0.2.3)
     simple_oauth (0.2.0)
@@ -242,6 +243,7 @@ DEPENDENCIES
   gem-ripper-tags
   gosu
   hasu
+  htmlentities
   kramdown
   lolcommits!
   memoist
