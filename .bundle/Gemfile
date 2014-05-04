@@ -41,7 +41,7 @@ gem "beeminder"
 gem "future_me"
 
 # lol
-gem "lolcommits", :path => File.expand_path("~/src/forks/lolcommits")
+gem "lolcommits"
 
 # used by scripts
 gem "curses"
