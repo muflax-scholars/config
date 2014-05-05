@@ -10,6 +10,3 @@ Xft.hintstyle:           hintslight
 ! disable bad font rendering (use xft to turn on blurry fonts)
 ! Emacs.FontBackend:       x
 Emacs.FontBackend:       xft
-
-! IBus support in Emacs
-Emacs*useXIM:            false
