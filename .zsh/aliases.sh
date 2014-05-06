@@ -169,7 +169,7 @@ function ga-new() {
 function shrink() {
   for pdf in $*; do
     echo "shrinking ${pdf}..."
-    pdf2ps $pdf ${pdf:r}.ps && ps2pdf ${pdf:r}.ps ${pdf:r}_shrunk.pdf && rm ${pdf:r}.ps
+    pdf2ps $pdf ${pdf:r}.ps && ps2pdf ${pdf:r}.ps ${pdf:r}_shrunk.pdf && tp ${pdf:r}.ps
   done
 }
 
@@ -339,13 +339,13 @@ alias dcst="dropbox-cli start"
 function pack-7z() {
   for dir in $*; do
     echo "packing $dir..."
-    7z -mx9 a $dir.7z $dir && rm -rf $dir
+    7z -mx9 a $dir.7z $dir && tp $dir
   done
 }
 function pack-tar() {
   for dir in $*; do
     echo "packing $dir..."
-    tar -vczf $dir.tar.gz $dir && rm -rf $dir
+    tar -vczf $dir.tar.gz $dir && tp $dir
   done
 }
 alias pack="pack-7z"
