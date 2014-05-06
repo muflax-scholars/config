@@ -38,6 +38,10 @@ tags
 .steam*
 .trc
 
+# golang code-review login
+.codereview_upload_cookies_codereview.appspot.com
+.last_codereview_email_address
+
 # monies
 .bitcoin
 .dogecoin
