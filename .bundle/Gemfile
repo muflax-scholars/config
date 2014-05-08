@@ -76,6 +76,9 @@ gem "org-ruby"
 gem "reverse_markdown"
 gem "ruby-graphviz"
 
+# gist
+gem "jist"
+
 # some generically useful stuff
 gem "systemu"
 gem "tidy_ffi"
