@@ -36,6 +36,9 @@ xsetroot -cursor_name left_ptr &
 skb.sh
 xmodmap ~/.Xmodmap
 
+# sticky keys
+xkbset sticky -twokey latchlock
+
 # wifi
 wicd-client --tray & >/dev/null
 
