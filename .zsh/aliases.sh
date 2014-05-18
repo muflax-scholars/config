@@ -253,6 +253,11 @@ function mvln() {
 alias cp="cp -i"
 alias mv="mv -i"
 
+# trash
+alias te=trash-empty
+alias tp=trash-put
+alias tl=trash-list
+
 # mplayer
 alias m="mw -l"
 alias r="mw -r"
@@ -439,11 +444,6 @@ function nighto() {
   # get mouse back
   toggle_mouse.rb
 }
-
-# trash
-alias te=trash-empty
-alias tp=trash-put
-alias tl=trash-list
 
 # reload file
 alias res="source ~/.zshrc"
