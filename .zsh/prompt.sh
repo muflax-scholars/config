@@ -112,7 +112,6 @@ local smiley="%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3%{$reset_col
 local cur_cmd="${op}%_${cp}"
 
 if [ $timer_duration ]; then
-  echo "?"
   if [[ $timer_duration -gt 1 ]]; then
     echo $timer_duration
   fi
