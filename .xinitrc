@@ -43,7 +43,7 @@ xkbset sticky -twokey latchlock
 wicd-client --tray & >/dev/null
 
 # clipboard synchronization
-klipper >/dev/null 2>/dev/null
+parcellite &
 
 # dropbox
 dropbox-cli start
