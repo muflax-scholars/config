@@ -225,3 +225,6 @@ tags
 
 # avfs to open archives
 .avfs
+
+# st terminal
+.terminfo
