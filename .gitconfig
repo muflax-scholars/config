@@ -7,6 +7,7 @@
   unt       = ls-files --other --exclude-standard
   adda      = add --all .
   wdiff     = diff --color-words
+	gca       = gc --aggressive --prune=now
 [color]
   ui = auto
 
