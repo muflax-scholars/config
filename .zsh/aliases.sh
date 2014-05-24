@@ -452,8 +452,8 @@ alias res="source ~/.zshrc"
 [[ -e $(which colorgo) ]] && alias go=colorgo
 
 # du
-alias du0="du -hs"
-alias du1="du -h -d1 | sort -h"
+alias d0="du -hs"
+alias d1="du -h -d1 | sort -h"
 
 # sum a column
 alias sum="paste -sd+ | bc"
