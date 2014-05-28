@@ -228,3 +228,7 @@ tags
 
 # st terminal
 .terminfo
+
+# fbreader
+.FBReader/**/*
+!.FBReader/*.xml
