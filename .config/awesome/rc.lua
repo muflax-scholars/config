@@ -179,6 +179,26 @@ function run_or_raise(command, rule, active_hide)
   end
 end
 
+function close_last_notification()
+  for screen = 1, screen.count() do
+    for p,pos in pairs(naughty.notifications[screen]) do
+      for i,n in pairs(naughty.notifications[screen][p]) do
+        naughty.destroy(n)
+        return true
+      end
+    end
+
+    return false
+  end
+end
+
+function close_all_notifications()
+    n = close_last_notification()
+    while n do
+      n = close_last_notification()
+    end
+end
+
 -- keybindings
 modkey = "Mod4"
 globalkeys = awful.util.table.join(
@@ -250,6 +270,10 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "m", toggleHorizontalTiling),
   awful.key({ modkey, "Control" }, "m", toggleGridTiling),
   awful.key({ modkey,           }, "f", toggleFullScreenTiling),
+
+  -- clear notifications
+  awful.key({ modkey,           }, "b", close_last_notification),
+  awful.key({ modkey, "Shift"   }, "b", close_all_notifications),
 
   -- resize winodws
   awful.key({ modkey,           }, "d", function () awful.tag.incnmaster( 1) end),
