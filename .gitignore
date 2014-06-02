@@ -87,21 +87,16 @@ tags
 .recently*
 .ri19
 .session
-.slocdata
 .smex-items
 .thumbnails
 .vim/.netrwhist
 .vim/spell/*.add*
 .vim/yankring*
-.vimfuzzy*
 .viminfo*
-.xmonad/xmonad.errors
-.xmonad/xmonad.hi
-.xmonad/xmonad.o
 .zcomp*
 
 # ignore logs
-*log
+*.log
 .xsession-errors
 
 # ignore stupid confs no one loves :)
