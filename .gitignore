@@ -23,7 +23,9 @@ tags
 
 # ignore secure shit :)
 .beeminderrc
+.config/Barracuda Networks, Inc.
 .config/MusicBrainz
+.copy
 .dropbox*
 .gem
 .git-local
