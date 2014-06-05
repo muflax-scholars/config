@@ -1,6 +1,7 @@
 .bup
 .cache
 Dropbox/.dropbox.cache
+Copy/.copy.cache
 games
 ongaku
 p2p

@@ -5,6 +5,7 @@ ignore = Path .*
 ignore = Path local/share/Trash
 
 ignore = Path Dropbox
+ignore = Path Copy
 ignore = Path anki/muflax
 ignore = Path games
 ignore = Path p2p
