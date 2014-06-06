@@ -12,8 +12,9 @@
   ui = auto
 
 [user]
-  name  = muflax
-  email = mail@muflax.com
+  name       = muflax
+  email      = mail@muflax.com
+	signingkey = CFB36312
 
 [push]
   default = matching
