@@ -421,5 +421,8 @@ alias res="source ~/.zshrc"
 alias d0="du -hs"
 alias d1="du -h -d1 | sort -h"
 
+# df
+alias dh="df -h"
+
 # sum a column
 alias sum="paste -sd+ | bc"
