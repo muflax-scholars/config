@@ -53,7 +53,6 @@ function fft() { firefox -new-tab    $* >/dev/null 2>/dev/null &! }
 function ffw() { firefox -new-window $* >/dev/null 2>/dev/null &! }
 function ge()  { geeqie              $* >/dev/null 2>/dev/null &! }
 function me()  { meld                $* >/dev/null 2>/dev/null &! }
-function d()   { dolphin             $* >/dev/null 2>/dev/null &! }
 function z()   { zathura             $* >/dev/null 2>/dev/null &! }
 function com() { mcomix              $* >/dev/null 2>/dev/null &! }
 
@@ -64,10 +63,6 @@ alias ll="ls -lhL"
 alias lh="ls -lh"
 alias lss="ls -lhS"
 alias lsr="ls -lhSr"
-
-# repo update
-alias mrr="mr register"
-alias mup="mr -j5 update"
 
 # update local gems
 function bu() {
@@ -192,7 +187,6 @@ if [[ -e $(which emacs-24) ]]; then
 else
   function em() { emacs $* &! }
 fi
-alias evil="for s in {1..3}; do echo -n 'VI! '; sleep .7; done; echo; vi"
 
 # youtube download
 function y() {
@@ -217,17 +211,11 @@ alias tagify-c="ctags -eR ."
 alias p2="python2"
 alias p3="python3"
 
-# perl
-alias pe="perl"
-
 # ruby stuff
 alias ru="ruby"
 alias i="pry"
 alias tagify-ruby="ripper-tags -R --exclude=vendor --emacs"
 alias tags="tagify-ruby"
-
-# bayescraft
-alias post="noglob posterior"
 
 # universal aliases
 alias -g DN='>/dev/null 2>/dev/null'
@@ -358,24 +346,6 @@ alias pack="pack-7z"
 alias each_line="perl -lne 'print quotemeta'"
 alias EL="each_line"
 
-function nap() {
-  mpc --no-status pause
-  echo "お休みなさい。。。"
-  if [[ $# -ge 1 ]] then
-        TIME=$(( ($(date -d "$*" +%s) - $(date +%s)) / 60 ))
-        echo "going down for $TIME minutes..."
-        read
-        doff
-        sleep ${TIME}m
-  else
-    doff
-    sleep 25m
-  fi && {
-    echo "b(・o・)dおw(・0・)wはぁで(・<>・)まよc(^・^)っちゅ"
-    wakeup.sh
-  }
-}
-
 # bundler
 bundler-installed() {
   which bundle > /dev/null 2>&1
@@ -420,9 +390,6 @@ alias n="now"
 alias na="now add"
 alias nd="now do"
 alias nrm="now rm"
-
-# dictionaries
-alias di="~/src/linguistics/german_dictionaries/our_dict/lookup.rb"
 
 # file tagging
 alias rr="tag_filename -t read"
