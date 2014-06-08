@@ -214,9 +214,8 @@ alias cop="./configure --prefix=$HOME/local"
 alias tagify-c="ctags -eR ."
 
 # python
-alias p2="python"
+alias p2="python2"
 alias p3="python3"
-alias p="python3"
 
 # perl
 alias pe="perl"
