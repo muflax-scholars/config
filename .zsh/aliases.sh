@@ -426,3 +426,18 @@ alias dh="df -h"
 
 # sum a column
 alias sum="paste -sd+ | bc"
+
+# iptables toggle
+function ipt() {
+  local ipt_status=$(sudo /etc/init.d/iptables status | grep -oP --color=never "(start|stop)")
+  case $ipt_status in
+    stop)
+      echo "shields up! go to red alert!"
+      sudo /etc/init.d/iptables start
+      ;;
+    start)
+      echo "lower your shields and surrender your ships!"
+      sudo /etc/init.d/iptables stop
+      ;;
+  esac
+}
