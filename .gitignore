@@ -114,6 +114,7 @@ tags
 .config/RStudio
 .config/Trolltech
 .config/Ulduzsoft
+.config/autostart
 .config/calibre
 .config/enchant
 .config/google-chrome
