@@ -441,3 +441,6 @@ function ipt() {
       ;;
   esac
 }
+
+# basic wget scraper
+alias scrape="wget --no-clobber --mirror --continue -e robots=off --convert-links --page-requisites --timestamping"
