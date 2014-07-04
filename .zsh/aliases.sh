@@ -443,4 +443,4 @@ function ipt() {
 }
 
 # basic wget scraper
-alias scrape="wget --no-clobber --mirror --continue -e robots=off --convert-links --page-requisites --timestamping"
+alias scrape="wget --mirror --continue -e robots=off --convert-links --page-requisites --timestamping"
