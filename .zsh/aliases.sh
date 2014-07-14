@@ -4,7 +4,7 @@
 alias angband="angband -mgcu -umuflax"
 alias avg="noglob average_damage.rb"
 alias cal="cal -m -3"
-alias less="less -iF"
+alias less="less -i"
 alias mc="mc -x"
 alias mkdir="mkdir -p"
 alias mmv="noglob zmv -W"
