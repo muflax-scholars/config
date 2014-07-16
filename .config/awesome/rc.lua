@@ -349,9 +349,9 @@ globalkeys = awful.util.table.join(
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb decrement") end),
   awful.key({                   }, "XF86MonBrightnessUp", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb increment") end),
-  awful.key({ modkey            }, "F1", function ()
+  awful.key({ modkey            }, "F11", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb decrement") end),
-  awful.key({ modkey            }, "F2", function ()
+  awful.key({ modkey            }, "F12", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb increment") end),
   awful.key({                   }, "XF86LaunchA", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb keyboard") end),
@@ -391,7 +391,7 @@ clientkeys = awful.util.table.join(
 for i = 1, 10 do
   globalkeys = awful.util.table.join(
     globalkeys,
-    awful.key({ modkey }, tostring(i % 10),
+    awful.key({ modkey }, "F" .. i,
               function ()
                 local screen = mouse.screen
                 local tag = awful.tag.gettags(screen)[i]
@@ -399,7 +399,7 @@ for i = 1, 10 do
                   awful.tag.viewonly(tag)
                 end
     end),
-    awful.key({ modkey, "Control" }, tostring(i % 10),
+    awful.key({ modkey, "Control" }, "F" .. i,
               function ()
                 local screen = mouse.screen
                 local tag = awful.tag.gettags(screen)[i]
@@ -407,14 +407,14 @@ for i = 1, 10 do
                   awful.tag.viewtoggle(tag)
                 end
     end),
-    awful.key({ modkey, "Shift" }, tostring(i % 10),
+awful.key({ modkey, "Shift" }, "F" .. i,
               function ()
                 local tag = awful.tag.gettags(client.focus.screen)[i]
                 if client.focus and tag then
                   awful.client.movetotag(tag)
                 end
     end),
-    awful.key({ modkey, "Control", "Shift" }, tostring(i % 10),
+    awful.key({ modkey, "Control", "Shift" }, "F" .. i,
               function ()
                 local tag = awful.tag.gettags(client.focus.screen)[i]
                 if client.focus and tag then
