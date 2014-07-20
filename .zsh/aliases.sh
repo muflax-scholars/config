@@ -444,3 +444,11 @@ function ipt() {
 
 # basic wget scraper
 alias scrape="wget --mirror --continue -e robots=off --convert-links --page-requisites --timestamping"
+
+# get random stuff from the internet
+function gst() {
+  pod
+  fetch_repos.sh
+
+  gass
+}
