@@ -7,7 +7,7 @@
 ----------------------------------------------------------------
 -- To use this module add:
 --   require("eminent")
--- to the top of your rc.lua. 
+-- to the top of your rc.lua.
 --
 -- That's it. Through magical monkey-patching, all you need to
 -- do to start dynamic tagging is loading it.
@@ -84,7 +84,7 @@ end
 -- View tag by relative index
 awful.tag.viewidx = function (i, screen)
   -- Hide tags
-  local s = screen and screen.index or capi.mouse.screen
+  local s = screen or capi.mouse.screen
   --local ctags = capi.screen[s]:tags()
   local ctags = awful.tag.gettags(s)
   local tags = gettags(s)
@@ -102,6 +102,7 @@ awful.tag.viewidx = function (i, screen)
     if #ctags >= tagidx+1 then
       -- Focus next
       ctags[tagidx+1].selected = true
+      awful.tag.setproperty(ctags[tagidx+1], "hide", false)
     else
       -- Create new
       local tag = capi.tag { name = ""..(tagidx+1) }
