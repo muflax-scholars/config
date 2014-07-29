@@ -111,12 +111,6 @@ local smiley="%(?,%{$fg[red]%}<3%{$reset_color%},%{$fg_bold[red]%}>3%{$reset_col
 # last command, used in PS2
 local cur_cmd="${op}%_${cp}"
 
-if [ $timer_duration ]; then
-  if [[ $timer_duration -gt 1 ]]; then
-    echo $timer_duration
-  fi
-fi
-
 # show runtime of last command
 local cmd_time='$timer_show'
 
