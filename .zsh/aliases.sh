@@ -139,6 +139,8 @@ alias gadun="git-annex dropunused"
 alias gaduna="git-annex dropunused 1-10000 --force"
 
 # common tasks
+alias c="git clone"
+alias cr="git remote add"
 alias gam="git merge synced/master"
 alias gacop="git-annex copy --to pleonasty --not --in pleonasty"
 alias gamop="git-annex move --to pleonasty"
