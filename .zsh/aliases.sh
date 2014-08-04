@@ -454,3 +454,12 @@ function gst() {
 
   gass
 }
+
+# some alternative constructions to make shell scripts less obscure
+alias and='[[ $? == 0 ]] && '
+alias or='[[ $? == 0 ]] || '
+function exists() {
+  local t=0
+  for f in $*; do [[ -e $f ]] || t=1; done
+  return $t
+}
