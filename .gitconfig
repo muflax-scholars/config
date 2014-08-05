@@ -8,6 +8,7 @@
   adda      = add --all .
   wdiff     = diff --color-words
 	gca       = gc --aggressive --prune=now
+
 [color]
   ui = auto
 
@@ -24,6 +25,7 @@
 
 [core]
 	excludesfile = .gitignore-global
+	quotepath = false
 
 [include]
    path = .git-local
