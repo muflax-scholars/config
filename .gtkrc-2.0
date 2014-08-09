@@ -1,13 +1,13 @@
 # File created by KDE Gtk Config
-# Configs for GTK2 programs 
+# Configs for GTK2 programs
 
 include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
-style "user-font" 
+style "user-font"
 {
-	font_name="Droid Sans Regular"
+	font_name="Noto Sans Regular"
 }
 widget_class "*" style "user-font"
-gtk-font-name="Droid Sans Regular 9"
+gtk-font-name="Noto Sans Regular 9"
 gtk-theme-name="Clearlooks"
 gtk-icon-theme-name="gnome"
 gtk-fallback-icon-theme="hicolor"
