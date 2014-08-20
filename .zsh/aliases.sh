@@ -77,7 +77,9 @@ alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
 alias uep="sudo unison -log=false -auto -ui=text -times portage"
 
-alias un="sync_computers.sh"
+# sync computers
+alias un="sync_computers"
+alias unm="sync_computers --fast"
 
 # git
 function git_branch() {
