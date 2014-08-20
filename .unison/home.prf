@@ -9,6 +9,7 @@ ignore = Path Copy
 ignore = Path anki/muflax
 ignore = Path games
 ignore = Path p2p
+ignore = Path stuff
 ignore = Path pigs/daily
 ignore = Path spoiler
 ignore = Path spoiler-backup
