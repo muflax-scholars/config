@@ -77,29 +77,7 @@ alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
 alias uep="sudo unison -log=false -auto -ui=text -times portage"
 
-# only sync files
-function unm() {
-  # because unison doesn't accept two remote hosts, we just figure out the partner this way
-  case $(hostname) in
-    typhus)
-      host=scabeiathrax
-      ;;
-    scabeiathrax)
-      host=typhus
-      ;;
-  esac
-
-  unison home -root ssh://$host//home/amon
-}
-
-# also sync configs etc.
-function un() {
-  (cd ~; git pum && git push)
-  ~/spoiler/sync.sh
-  unm
-  git_annex_sync.sh
-  git_annex_auto.sh
-}
+alias un="sync_computers.sh"
 
 # git
 function git_branch() {
