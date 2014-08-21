@@ -129,6 +129,7 @@ tags
 .config/meld
 .config/piorekf
 .config/ristretto
+.config/sublime*
 .config/transmission/
 .config/vmpk.sourceforge.net
 .config/xfce4
