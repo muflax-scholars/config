@@ -269,7 +269,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "m", toggleVerticalTiling),
   awful.key({ modkey, "Shift"   }, "m", toggleHorizontalTiling),
   awful.key({ modkey, "Control" }, "m", toggleGridTiling),
-  awful.key({ modkey,           }, "f", toggleFullScreenTiling),
+  awful.key({ modkey, "Shift"   }, "f", toggleFullScreenTiling),
 
   -- clear notifications
   awful.key({ modkey,           }, "b", close_last_notification),
@@ -371,7 +371,9 @@ clientkeys = awful.util.table.join(
   -- client movement
   awful.key({ modkey,           }, "Return", function (c) c:swap(awful.client.getmaster()) end),
   awful.key({ modkey, "Shift"   }, "Return", function (c) c.ontop = not c.ontop end),
-  awful.key({ modkey, "Control" }, "Return", function (c) c.fullscreen = not c.fullscreen  end),
+
+  -- fullscreen it
+  awful.key({ modkey            }, "f", function (c) c.fullscreen = not c.fullscreen  end),
 
   -- close it
   awful.key({ modkey, "Shift"   }, "w", function (c) c:kill() end),
