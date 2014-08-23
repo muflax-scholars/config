@@ -153,7 +153,7 @@ function shrink() {
 # tmux
 alias scratchpad="tm scratchpad"
 function tm() {
-  if [[ $# -ge 1 ]] then
+  if [[ $# -ge 1 ]]; then
     tmux attach -t $1 || tmux new-session -s $1 \; bind c neww -c "$(pwd)"
   else
     tmux new-session \; bind c neww -c "$(pwd)"
