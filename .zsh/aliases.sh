@@ -172,8 +172,14 @@ fi
 
 # youtube download
 function y() {
-  echo "Paste links, ^D to start the download."
-  youtube-dl --ignore-errors --max-quality 22 --continue --rate-limit 2.5m -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
+  local y_path="$HOME/youtube"
+
+  if [[ $1 != "" ]]; then
+    y_path=$1
+  fi
+
+  echo "Paste links, ^D to start the download. Saving in: ${y_path}"
+  youtube-dl --ignore-errors --max-quality 22 --continue --no-overwrites --rate-limit 2.5m -o "${y_path}/%(title)s-%(id)s.%(ext)s" -a-
 }
 
 # portage
