@@ -57,6 +57,7 @@ tags
 .cabal/setup-exe-cache
 .cache
 .calibre*
+.config/Google
 .config/ibus
 .config/gtk-3.0/bookmarks
 .darcs
