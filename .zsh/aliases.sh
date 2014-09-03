@@ -129,6 +129,8 @@ alias gdud="gdu -hs *(/)"
 alias gdudl="gdu -hsL *(/)"
 alias dropg="git-annex drop --trust-glacier"
 alias unglaciered='for file in $(ga find --not --in glacier); do echo $file | sed -e "s,/.+,,"; done | sort | uniq -c'
+alias gawd="git-annex find --want-drop --in here"
+alias gawg="git-annex find --want-get --not --in here"
 
 function ga-new() {
   echo "Label?" && read $label
