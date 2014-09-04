@@ -164,7 +164,7 @@ function tm() {
 alias tma="tmux attach-session"
 
 # emacs
-alias e="emacs"
+alias e="emacs-cli"
 alias ee="emacs-gui"
 if [[ -e $(which emacs-24) ]]; then
   function em() { emacs-24 $* &! }
