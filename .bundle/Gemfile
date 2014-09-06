@@ -24,12 +24,6 @@ gem "gem-ripper-tags"
 gem "autotest"
 gem "rspec"
 
-# games
-gem "gosu"
-gem "hasu"
-gem "opengl"
-gem "rmagick"
-
 # music stuff
 gem "narray"
 gem "fftw3"
