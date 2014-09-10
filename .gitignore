@@ -219,11 +219,6 @@ tags
 .kde4/share/kde4
 
 # emacs
-.emacs.d/packages/archives
-.emacs.d/packages/*.txt
-.emacs.d/cache
-.emacs.d/var
-!.emacs.d/**/*.elc
 .slime
 
 # avfs to open archives
