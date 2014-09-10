@@ -248,21 +248,21 @@ alias don="D0 xset dpms force on"
 alias doff="D0 xset dpms force off"
 alias dstayon="don; D0 xset s off; D0 xset -dpms"
 
-# ssh
-alias nyash="ssh -C amon@nyarlathotep"
-alias tysh="ssh  -C amon@typhus"
-alias nash="ssh  -C amon@pleonasty"
-alias scash="ssh -C amon@scabeiathrax"
-alias scab="scash"  # more elegant
-alias plesh="ssh -C amon@pleonasty"
+# remote connection
+alias nyash="mosh	amon@nyarlathotep"
+alias tysh="mosh 	amon@typhus"
+alias nash="mosh 	amon@pleonasty"
+alias scash="mosh	amon@scabeiathrax"
+alias plesh="mosh	amon@pleonasty"
+alias scab="scash" # more elegant
 
 # executing stuff over ssh
-alias nyashc="ssh -C amon@nyarlathotep -- zsh -l -c --"
-alias tyshc="ssh  -C amon@typhus       -- zsh -l -c --"
-alias nashc="ssh  -C amon@pleonasty    -- zsh -l -c --"
-alias scashc="ssh -C amon@scabeiathrax -- zsh -l -c --"
+alias nyashc="ssh	-C amon@nyarlathotep	-- zsh -l -c --"
+alias tyshc="ssh 	-C amon@typhus      	-- zsh -l -c --"
+alias nashc="ssh 	-C amon@pleonasty   	-- zsh -l -c --"
+alias scashc="ssh	-C amon@scabeiathrax	-- zsh -l -c --"
+alias pleshc="ssh	-C amon@pleonasty   	-- zsh -l -c --"
 alias scabc="scashc"
-alias pleshc="ssh -C amon@pleonasty    -- zsh -l -c --"
 
 # lolshell
 alias cya='sudo reboot'
