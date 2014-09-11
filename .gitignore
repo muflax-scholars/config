@@ -22,6 +22,7 @@ tags
 .zsh/local.sh
 
 # ignore secure shit :)
+.authinfo
 .beeminderrc
 .config/Barracuda Networks, Inc.
 .config/MusicBrainz
@@ -33,6 +34,7 @@ tags
 .heroku
 .laspyt.cfg
 .ncftp
+.netrc
 .offlineimap*
 .pki
 .s3cfg

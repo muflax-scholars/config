@@ -15,6 +15,8 @@ export VISUAL=$EDITOR
 export MPD_HOST="localhost"
 export BROWSER="firefox -new-tab %s"
 
+export MAILDIR="$HOME/mail"
+
 # ruby
 unset RUBYOPT # gentoo sucks
 RIPPER_TAGS_EMACS=1
