@@ -275,7 +275,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "b", close_last_notification),
   awful.key({ modkey, "Shift"   }, "b", close_all_notifications),
 
-  -- resize winodws
+  -- resize windows
   awful.key({ modkey,           }, "d", function () awful.tag.incnmaster( 1) end),
   awful.key({ modkey, "Shift"   }, "d", function () awful.tag.incnmaster(-1) end),
   awful.key({ modkey, "Control" }, "r", function () awful.tag.incmwfact( 0.05) end),
