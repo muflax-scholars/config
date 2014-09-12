@@ -284,13 +284,6 @@ globalkeys = awful.util.table.join(
   -- launch scratchpad
   awful.key({ modkey,           }, "i", function () scratchpad_term:toggle() end),
 
-  -- anking / anki
-  awful.key({ modkey,           }, "a", function () scratchpad_anking:toggle() end),
-  awful.key({ modkey, "Shift"   }, "a", function () run_or_raise("anki", {class = "Runanki"}) end),
-
-  -- pidgin
-  awful.key({ modkey, "Shift"   }, "p", function () run_or_raise("pidgin", {role = "buddy_list"}) end),
-
   -- launch terminal
   awful.key({ modkey,           }, "u", function () awful.util.spawn("konsole") end),
 
