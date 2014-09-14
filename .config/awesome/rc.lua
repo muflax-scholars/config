@@ -477,8 +477,8 @@ tag_names = {
   "六",
   "七",
   "八",
-  "暗記",
-  "toile",
+  "九",
+  "十",
 }
 for s = 1, screen.count() do
   -- each screen has its own tag table for now
