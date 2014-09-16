@@ -4,3 +4,6 @@
                                        (user-homedir-pathname))))
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
+
+;; more readable output
+(setf *print-case* :downcase)
