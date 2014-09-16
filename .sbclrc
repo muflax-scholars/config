@@ -1,6 +1,2 @@
-;; load quicklisp
-#-quicklisp
-(let ((quicklisp-init (merge-pathnames "local/quicklisp/setup.lisp"
-                                       (user-homedir-pathname))))
-  (when (probe-file quicklisp-init)
-    (load quicklisp-init)))
+;; load common lisp config
+(load (merge-pathnames ".init.lisp" (user-homedir-pathname)))
