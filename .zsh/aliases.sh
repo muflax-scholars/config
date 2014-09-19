@@ -181,7 +181,7 @@ function y() {
   fi
 
   echo "Paste links, ^D to start the download. Saving in: ${y_path}"
-  youtube-dl --ignore-errors --max-quality 22 --continue --no-overwrites --rate-limit 2.5m -o "${y_path}/%(title)s-%(id)s.%(ext)s" -a-
+  youtube-dl -o "${y_path}/%(title)s-%(playlist)s-%(playlist_index)s-%(id)s.%(ext)s" -a-
 }
 
 # portage
