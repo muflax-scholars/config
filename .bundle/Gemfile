@@ -12,7 +12,6 @@ gem "pry-docmore"
 gem "pry-nav"
 gem "pry-rails"
 gem "pry-rescue"
-gem "pry-stack_explorer"
 gem "pry-theme"
 gem "pry-vterm_aliases"
 
