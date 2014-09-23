@@ -451,3 +451,7 @@ function exists() {
   for f in $*; do [[ -e $f ]] || t=1; done
   return $t
 }
+
+# nix
+alias nix-env="noglob nix-env"
+alias ne="nix-env"
