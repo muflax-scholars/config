@@ -128,7 +128,7 @@ tags
 .config/hexchat
 .config/htop/
 .config/inkscape
-.config/libreoffice
+.config/libreoffice*
 .config/mcomix
 .config/meld
 .config/piorekf
