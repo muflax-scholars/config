@@ -2,6 +2,7 @@
 export PATH="$HOME/local/bin:$PATH"
 export MANPATH="$HOME/local/share/man:$MANPATH"
 export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # local scripts; consider merging with config?
 SCRIPTS="$HOME/src/scripts"
@@ -15,6 +16,8 @@ local nix_profile=$HOME/.nix-profile/etc/profile.d/nix.sh
 if [[ -e $nix_profile ]]; then
   source $nix_profile
   export MANPATH="$HOME/.nix-profile/share/man:$MANPATH"
+  export LD_LIBRARY_PATH="$HOME/.nix-profile/lib:$LD_LIBRARY_PATH"
+  export PKG_CONFIG_PATH="$HOME/.nix-profile/lib/pkgconfig:$PKG_CONFIG_PATH"
 fi
 unset nix_profile
 
