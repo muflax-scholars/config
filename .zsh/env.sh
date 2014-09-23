@@ -41,3 +41,6 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # R
 export R_LIBS="$HOME/local/R"
+
+# guile
+unset GUILE_LOAD_PATH # gentoo sucks
