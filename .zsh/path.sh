@@ -10,8 +10,6 @@ for dir in $(find $SCRIPTS -type d -not -path "*/.git*"); do
   export PATH="$dir:$PATH"
 done
 
-# R
-export R_LIBS="$HOME/local/R"
 
 # unroll rbenv code for speedup
 if [[ -s ~/.rbenv ]]; then
@@ -37,3 +35,14 @@ if [[ -s ~/.rbenv ]]; then
   # rbenv loads most gems, but prefer bundler's version if it exists
   export PATH="$HOME/.bundle/bin:$PATH"
 fi
+
+# go
+export GOPATH=$HOME/local/go
+export GOROOT=$HOME/src/go/golang
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+
+# haskell / cabal
+export PATH=$HOME/local/cabal/bin:$PATH
+
+# racket
+export PATH=$HOME/local/racket/bin:$PATH

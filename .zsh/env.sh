@@ -43,13 +43,5 @@ RIPPER_TAGS_EMACS=1
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
-# go
-export GOPATH=$HOME/local/go
-export GOROOT=$HOME/src/go/golang
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-
-# haskell / cabal
-export PATH=$HOME/local/cabal/bin:$PATH
-
-# racket
-export PATH=$HOME/local/racket/bin:$PATH
+# R
+export R_LIBS="$HOME/local/R"
