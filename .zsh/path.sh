@@ -16,6 +16,7 @@ if [[ -e $nix_profile ]]; then
   source $nix_profile
   export MANPATH="$HOME/.nix-profile/share/man:$MANPATH"
 fi
+unset nix_profile
 
 # unroll rbenv code for speedup
 if [[ -s ~/.rbenv ]]; then
