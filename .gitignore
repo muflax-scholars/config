@@ -233,3 +233,7 @@ tags
 # fbreader
 .FBReader/**/*
 !.FBReader/*.xml
+
+# nix
+.nix-defexpr
+.nix-profile
