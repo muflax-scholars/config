@@ -166,11 +166,7 @@ alias tma="tmux attach-session"
 # emacs
 alias e="emacs-cli"
 alias ee="emacs-gui"
-if [[ -e $(which emacs-24) ]]; then
-  function em() { emacs-24 $* &! }
-else
-  function em() { emacs $* &! }
-fi
+function em() { emacs $* &! }
 
 # youtube download
 function y() {
