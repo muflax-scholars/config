@@ -26,10 +26,6 @@ case ${TERM} in
     ;;
 esac
 
-# nix
-local nix_profile=$HOME/.nix-profile/etc/profile.d/nix.sh
-[[ -e $nix_profile ]] && source $nix_profile
-
 # mpd
 export MPD_HOST="localhost"
 
