@@ -12,17 +12,8 @@ fi
 export EDITOR=$(which $EDITOR)
 export VISUAL=$EDITOR
 
-export MPD_HOST="localhost"
+# browser
 export BROWSER="firefox -new-tab %s"
-
-export MAILDIR="$HOME/mail"
-
-# ruby
-unset RUBYOPT # gentoo sucks
-RIPPER_TAGS_EMACS=1
-
-# python
-export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # don't use complex locales on TTY
 case ${TERM} in
@@ -34,6 +25,23 @@ case ${TERM} in
     export LANG=en_US.UTF-8
     ;;
 esac
+
+# nix
+local nix_profile=$HOME/.nix-profile/etc/profile.d/nix.sh
+[[ -e $nix_profile ]] && source $nix_profile
+
+# mpd
+export MPD_HOST="localhost"
+
+# maildir
+export MAILDIR="$HOME/mail"
+
+# ruby
+unset RUBYOPT # gentoo sucks
+RIPPER_TAGS_EMACS=1
+
+# python
+export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # go
 export GOPATH=$HOME/local/go
