@@ -455,3 +455,9 @@ function exists() {
 # nix
 alias nix-env="noglob nix-env"
 alias ne="nix-env"
+
+function nix-update() {
+  nix-channel --update
+  nix-env -u '*' --always
+}
+alias nup="nix-update"
