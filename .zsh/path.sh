@@ -12,7 +12,7 @@ for dir in $(find $SCRIPTS -type d -not -path "*/.git*"); do
 done
 
 # nix
-local nix_profile=$HOME/.nix-profile/etc/profile.d/nix.sh
+nix_profile=$HOME/.nix-profile/etc/profile.d/nix.sh
 if [[ -e $nix_profile ]]; then
   source $nix_profile
   export MANPATH="$HOME/.nix-profile/share/man:$MANPATH"
