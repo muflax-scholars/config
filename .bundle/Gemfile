@@ -37,6 +37,7 @@ gem "future_me"
 gem "lolcommits"
 
 # used by scripts
+gem "cinch"
 gem "curses"
 gem "rake"
 gem "rb-inotify"

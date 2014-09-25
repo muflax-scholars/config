@@ -34,6 +34,7 @@ GEM
       tzinfo
     choice (0.1.6)
     chronic (0.10.2)
+    cinch (2.1.0)
     coderay (1.1.0)
     colored (1.2)
     cri (2.6.1)
@@ -200,6 +201,7 @@ DEPENDENCIES
   backup-urls!
   bayescraft
   beeminder
+  cinch
   curses
   fftw3
   future_me
