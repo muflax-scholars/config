@@ -309,9 +309,8 @@ function upm() {
 }
 
 # dropbox
-alias dcs="dropbox-cli status"
-alias dcfs="dropbox-cli filestatus"
-alias dcst="dropbox-cli start"
+alias dcs="dropbox status"
+alias dc="dropbox"
 
 # pack folder
 function pack-7z() {
