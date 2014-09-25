@@ -33,7 +33,8 @@ source ~/.xinitrc_local
 
 # daemons
 ibus-daemon -x -d &
-eval "$(gpg-agent --daemon)" &
+killall gpg-agent
+eval "$(gpg-agent --daemon)"
 
 # load xdefault data
 xrdb $HOME/.Xdefaults &
