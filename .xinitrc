@@ -25,6 +25,9 @@ export SDL_AUDIODRIVER="alsa"
 export OPENSSL_X509_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 export GIT_SSL_CAINFO=$OPENSSL_X509_CERT_FILE
 
+# gtk themes
+export GTK_PATH=$HOME/.nix-profile/lib/gtk-2.0
+
 # machine specific configs
 source ~/.xinitrc_local
 
