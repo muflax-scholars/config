@@ -75,7 +75,7 @@ function bui() {
 # unison
 alias unison="unison -log=false -auto -ui=text -times"
 alias uk='unison -fat kindle'
-alias uep="sudo unison -log=false -auto -ui=text -times portage"
+alias uep="sudo $(which -p unison) -log=false -auto -ui=text -times portage"
 
 # sync computers
 alias un="sync_computers"
