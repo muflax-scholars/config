@@ -28,7 +28,7 @@ KeyBindings=default
 
 [Scrolling]
 HistoryMode=2
-ScrollBarPosition=1
+ScrollBarPosition=2
 
 [Terminal Features]
 BidiRenderingEnabled=true
