@@ -121,7 +121,6 @@ tags
 .config/autostart
 .config/calibre
 .config/chromium
-.config/enchant
 .config/google-chrome
 .config/google-googletalkplugin
 .config/gtk-2.0
