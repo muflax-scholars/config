@@ -44,3 +44,14 @@ export R_LIBS="$HOME/local/R"
 
 # guile
 unset GUILE_LOAD_PATH # gentoo sucks
+
+# openoffice stuff
+export OOO_FORCE_DESKTOP="gnome"
+export SAL_USE_VCLPLUGIN="gen"
+
+# steam audio
+export SDL_AUDIODRIVER="alsa"
+
+# explicitly set ssl certs so Nix and Gentoo interact peacefully
+export OPENSSL_X509_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+export GIT_SSL_CAINFO=$OPENSSL_X509_CERT_FILE

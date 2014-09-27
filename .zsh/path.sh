@@ -56,3 +56,6 @@ export PATH=$HOME/local/cabal/bin:$PATH
 
 # racket
 export PATH=$HOME/local/racket/bin:$PATH
+
+# gtk themes
+export GTK_PATH=$HOME/.nix-profile/lib/gtk-2.0

@@ -11,23 +11,6 @@ export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export XMODIFIERS="@im=ibus"
 
-# export LANG="ja_JP.UTF8"
-export LANG="en_US.UTF8"
-
-# openoffice stuff
-export OOO_FORCE_DESKTOP="gnome"
-export SAL_USE_VCLPLUGIN="gen"
-
-# steam audio
-export SDL_AUDIODRIVER="alsa"
-
-# explicitly set ssl certs so Nix and Gentoo interact peacefully
-export OPENSSL_X509_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-export GIT_SSL_CAINFO=$OPENSSL_X509_CERT_FILE
-
-# gtk themes
-export GTK_PATH=$HOME/.nix-profile/lib/gtk-2.0
-
 # machine specific configs
 source ~/.xinitrc_local
 
