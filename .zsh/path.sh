@@ -59,3 +59,6 @@ export PATH=$HOME/local/racket/bin:$PATH
 
 # gtk themes
 export GTK_PATH=$HOME/.nix-profile/lib/gtk-2.0
+
+# timezone data for non-NixOS compatibility
+export TZDIR=$HOME/.nix-profile/share/zoneinfo
