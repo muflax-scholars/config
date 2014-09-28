@@ -155,10 +155,16 @@ function shrink() {
 # tmux
 alias scratchpad="tm scratchpad"
 function tm() {
+  local shell="PWD=$(pwd) zsh"
+
   if [[ $# -ge 1 ]]; then
-    tmux attach -t $1 || tmux new-session -s $1 \; bind c neww -c "$(pwd)"
+    tmux attach -t $1 || tmux new-session -s $1 "$shell" \; \
+      bind c   neww "$shell" \; \
+      bind C-c neww "$shell"
   else
-    tmux new-session \; bind c neww -c "$(pwd)"
+    tmux new-session "$shell" \; \
+      bind c   neww "$shell" \; \
+      bind C-c neww "$shell"
   fi
 }
 alias tma="tmux attach-session"
