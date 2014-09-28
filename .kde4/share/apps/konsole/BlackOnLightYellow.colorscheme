@@ -1,5 +1,5 @@
 [Background]
-Color=255,255,221
+Color=236,236,205
 
 [BackgroundIntense]
 Color=255,255,221
@@ -41,10 +41,10 @@ Color=178,24,178
 Color=255,84,255
 
 [Color6]
-Color=24,178,178
+Color=15,114,114
 
 [Color6Intense]
-Color=84,255,255
+Color=51,156,156
 
 [Color7]
 Color=178,178,178
