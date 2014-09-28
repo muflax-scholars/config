@@ -1,8 +1,8 @@
 [Appearance]
-AntiAliasFonts=false
+AntiAliasFonts=true
 BoldIntense=false
-ColorScheme=Linux
-Font=Fixed [Efont],9,-1,5,50,0,0,0,0,0
+ColorScheme=BlackOnLightYellow
+Font=Monospace,8,-1,5,50,0,0,0,0,0
 LineSpacing=0
 
 [Cursor Options]
