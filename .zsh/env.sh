@@ -108,6 +108,10 @@ fi
 export GOPATH=$HOME/local/go
 export GOROOT=$HOME/src/go/golang
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+# make compiles work
+export CGO_CFLAGS="-I$HOME/.nix-profile/include"
+export CGO_CXXFLAGS=$CGO_CFLAGS
+export CGO_LDFLAGS="-L$HOME/.nix-profile/lib"
 
 # haskell / cabal
 export PATH=$HOME/local/cabal/bin:$PATH
