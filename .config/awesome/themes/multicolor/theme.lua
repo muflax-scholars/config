@@ -1,6 +1,6 @@
 --[[
-     Multicolor Awesome WM config 2.0 
-     github.com/copycat-killer        
+     Multicolor Awesome WM config 2.0
+     github.com/copycat-killer
 --]]
 
 
@@ -9,7 +9,7 @@ theme                               = {}
 theme.confdir                       = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                     = theme.confdir .. "/wall.png"
 
-theme.font                          = "Neep 8"
+theme.font                          = "Fantasque Sans Mono 9"
 --theme.taglist_font                =
 theme.menu_bg_normal                = "#000000"
 theme.menu_bg_focus                 = "#000000"
