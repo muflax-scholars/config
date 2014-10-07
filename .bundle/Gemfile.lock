@@ -97,7 +97,7 @@ GEM
     mini_portile (0.6.0)
     minitest (5.4.2)
     moneta (0.8.0)
-    muflax (0.1.26)
+    muflax (0.1.27)
       activesupport (~> 4)
       awesome_print
       chronic
@@ -155,7 +155,7 @@ GEM
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
       rspec-mocks (~> 3.1.0)
-    rspec-core (3.1.4)
+    rspec-core (3.1.5)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
       diff-lcs (>= 1.2.0, < 2.0)
