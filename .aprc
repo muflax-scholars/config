@@ -1,3 +1,5 @@
 AwesomePrint.defaults = {
   :indent => 2,
 }
+
+AwesomePrint.force_colors = true
