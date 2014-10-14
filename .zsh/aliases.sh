@@ -459,6 +459,9 @@ alias ne="nix-env"
 
 function nix-update() {
   nix-channel --update
+  nix-env -u '*' --always --dry-run
+  echo "update? [RET/^C]"; read
   nix-env -u '*' --always
+
 }
 alias nup="nix-update"
