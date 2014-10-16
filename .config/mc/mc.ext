@@ -508,7 +508,7 @@ include/exe
 
 # Postscript
 type/^PostScript
-	Open=(gv %f &)
+  Open=(zathura %f >/dev/null 2>/dev/null &)
 	View=%view{ascii} ps2ascii %f
 
 # PDF
