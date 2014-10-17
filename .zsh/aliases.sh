@@ -465,3 +465,7 @@ function nix-update() {
 
 }
 alias nup="nix-update"
+
+# racket
+alias ra="racket"
+alias gra="gracket"
