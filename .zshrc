@@ -1,6 +1,5 @@
 # load all zsh components (each independent from the others)
 source ~/.zsh/options.sh
-source ~/.zsh/path.sh
 source ~/.zsh/env.sh
 source ~/.zsh/prompt.sh
 source ~/.zsh/ls_colors.sh

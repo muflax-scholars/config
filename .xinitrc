@@ -1,6 +1,5 @@
 # load relevant zsh settings
 source $HOME/.zsh/env.sh
-source $HOME/.zsh/path.sh
 
 # don't blank monitor
 # setterm -blank 0 -powersave off -powerdown 0

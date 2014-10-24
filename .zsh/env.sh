@@ -15,16 +15,8 @@ export VISUAL=$EDITOR
 # browser
 export BROWSER="firefox -new-tab %s"
 
-# don't use complex locales on TTY
-case ${TERM} in
-  linux)
-    export LANG=C
-    ;;
-  *)
-    # export LANG=ja_JP.UTF-8
-    export LANG=en_US.UTF-8
-    ;;
-esac
+# locale
+export LANG=en_US.UTF-8
 
 # ~/local dir
 export PATH="$HOME/local/bin:$PATH"
