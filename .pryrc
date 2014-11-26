@@ -14,7 +14,6 @@ end
 
 # useful gems you want loaded by default
 gems = [
-        "bayescraft",
         "chronic",
         "json",
         "muflax",
