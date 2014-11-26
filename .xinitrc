@@ -14,7 +14,7 @@ export XMODIFIERS="@im=ibus"
 source ~/.xinitrc_local
 
 # daemons
-ibus-daemon -x -d &
+# ibus-daemon -x -d &
 killall gpg-agent
 eval "$(gpg-agent --daemon)"
 
