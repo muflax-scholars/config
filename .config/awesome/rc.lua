@@ -744,19 +744,6 @@ for s = 1, screen.count() do
   awesome_wibox[s]:set_widget(layout)
 end
 
--- autostart scratchpad
-function run_once(prg, args)
-  if not prg then
-    do return nil end
-  end
-  if not args then
-    args=""
-  end
-  awful.util.spawn_with_shell('pgrep -u $USER -x ' .. prg .. ' >/dev/null || ' .. prg .. ' ' .. args)
-end
-
-run_once("konsole", "--name scratchpad -e zsh -l -c 'scratchpad'")
-
 io.stderr:write("========\n")
 io.stderr:write("...DARY!\n")
 io.stderr:write("========\n")
