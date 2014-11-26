@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # my own stuff
 gem "backup-urls", :path => File.expand_path("~/src/backup/backup-urls")
-gem "bayescraft"
 gem "muflax"
 
 # pry
@@ -30,6 +29,7 @@ gem "ruby-alsa"
 gem "ruby-audio"
 
 # gtd
+gem "ascii_charts"
 gem "beeminder"
 gem "future_me"
 
@@ -58,8 +58,8 @@ gem "treetop"
 gem "ruby-prof"
 
 # memoization
-gem "moneta"
 gem "memoist"
+gem "moneta"
 
 # markups
 gem "htmlentities"
@@ -73,6 +73,7 @@ gem "ruby-graphviz"
 gem "jist"
 
 # some generically useful stuff
+gem "adt"
 gem "systemu"
 gem "tidy_ffi"
 gem "units"
