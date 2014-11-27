@@ -470,3 +470,6 @@ alias nup="nix-update"
 # racket
 alias ra="racket"
 alias gra="gracket"
+
+# clisp
+alias ccl="lx86cl64"
