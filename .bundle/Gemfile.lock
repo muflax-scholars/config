@@ -86,8 +86,9 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.3)
     moneta (0.8.0)
-    muflax (0.1.27)
+    muflax (0.1.28)
       activesupport (~> 4)
+      adt
       awesome_print
       chronic
       debug_inspector
@@ -128,7 +129,7 @@ GEM
       json (~> 1.8)
     pry-vterm_aliases (1.2.0)
       pry (~> 0.10.1)
-    rake (10.4.0)
+    rake (10.4.2)
     range_math (0.8.0)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
