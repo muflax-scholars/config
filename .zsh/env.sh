@@ -111,7 +111,9 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 export R_LIBS="$HOME/local/R"
 
 # guile
-unset GUILE_LOAD_PATH # gentoo sucks
+unset GUILE_LOAD_PATH # don't use gentoo modules
+export GUILE_LOAD_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site"
+export GUILE_LOAD_COMPILED_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site"
 
 # openoffice stuff
 export OOO_FORCE_DESKTOP="gnome"
