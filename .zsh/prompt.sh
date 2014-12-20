@@ -12,7 +12,7 @@ local cp="%{$fg_bold[black]%}]%{$reset_color%}"
 # git config
 function _prompt_git_dirty() {
   if [[ "$(command git config --get zsh.hide-dirty)" != "1" ]]; then
-    # skip git_annexslow repos because they're super slow
+    # skip git_annex repos because they're super slow
     if [[ "$(_prompt_git_annex)" != "" ]]; then
       return
     fi
