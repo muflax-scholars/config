@@ -1,45 +1,46 @@
 [alias]
-  ci        = commit -a
-  co        = checkout
-  st        = status
-  pum       = pull origin master
-  untracked = ls-files --other --exclude-standard
-  unt       = ls-files --other --exclude-standard
-  adda      = add --all .
-  wdiff     = diff --color-words
-	gca       = gc --aggressive --prune=now
+ci       	= commit -a
+co       	= checkout
+st       	= status
+pum      	= pull origin master
+untracked	= ls-files --other --exclude-standard
+unt      	= ls-files --other --exclude-standard
+adda     	= add --all .
+wdiff    	= diff --color-words
+gca      	= gc --aggressive --prune=now
+pur      	= pull --rebase
 
 [color]
-  ui = auto
+ui = auto
 
 [user]
-  name       = muflax
-  email      = mail@muflax.com
-	signingkey = CFB36312
+name      	= muflax
+email     	= mail@muflax.com
+signingkey	= CFB36312
 
 [push]
-  default = matching
+default = matching
 
 [github]
-  user = muflax
+user = muflax
 
 [core]
-	excludesfile = .gitignore-global
-	quotepath = false
+excludesfile	= .gitignore-global
+quotepath   	= false
 
 [include]
-   path = .git-local
+path = .git-local
 
 [merge]
-  tool          = meld3
-  conflictsytle = diff3
+tool         	= meld3
+conflictsytle	= diff3
 
 [mergetool "meld3"]
-  cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $MERGED $REMOTE
+cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $MERGED $REMOTE
 
 [gui]
-	encoding           = utf-8
-	spellingdictionary = none
+encoding          	= utf-8
+spellingdictionary	= none
 
 [difftool]
-  prompt = false
+prompt = false
