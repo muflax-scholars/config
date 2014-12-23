@@ -17,6 +17,10 @@ if [[ -e $nix_profile && -z $NO_NIX ]]; then
   export CGO_CFLAGS="-I$HOME/.nix-profile/include"
   export CGO_CXXFLAGS=$CGO_CFLAGS
   export CGO_LDFLAGS="-L$HOME/.nix-profile/lib"
+
+  # guile
+  export GUILE_LOAD_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site:$GUILE_LOAD_PATH"
+  export GUILE_LOAD_COMPILED_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site:$GUILE_LOAD_COMPILED_PATH"
 fi
 unset nix_profile
 
@@ -109,11 +113,6 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # R
 export R_LIBS="$HOME/local/R"
-
-# guile
-unset GUILE_LOAD_PATH # don't use gentoo modules
-export GUILE_LOAD_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site"
-export GUILE_LOAD_COMPILED_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site"
 
 # openoffice stuff
 export OOO_FORCE_DESKTOP="gnome"
