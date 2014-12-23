@@ -2,7 +2,7 @@
 
 # nix
 nix_profile=$HOME/.nix-profile/etc/profile.d/nix.sh
-if [[ -e $nix_profile ]]; then
+if [[ -e $nix_profile && -z $NO_NIX ]]; then
   source $nix_profile
   export MANPATH="$HOME/.nix-profile/share/man:$MANPATH"
   export PKG_CONFIG_PATH="$HOME/.nix-profile/lib/pkgconfig:$PKG_CONFIG_PATH"
