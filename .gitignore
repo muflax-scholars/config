@@ -23,6 +23,7 @@ tags
 
 # ignore secure shit :)
 .authinfo
+.aws
 .beeminderrc
 .config/Barracuda Networks, Inc.
 .config/MusicBrainz
