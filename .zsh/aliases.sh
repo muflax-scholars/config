@@ -31,9 +31,8 @@ alias ng="ngrep"
 # watch
 alias watch="watch -c"
 alias w="watch.rb"
-function wi() {
-  watch.rb --changes . $*
-}
+alias wi="watch.rb --changes ."
+alias wil="watch.rb --changes . --no-recursive"
 
 function u() {
   echo $* | "normalize"
