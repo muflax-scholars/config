@@ -20,7 +20,7 @@ ShowTerminalSizeHint=false
 [Interaction Options]
 AutoCopySelectedText=true
 MiddleClickPasteMode=0
-OpenLinksByDirectClickEnabled=true
+OpenLinksByDirectClickEnabled=false
 TrimTrailingSpacesInSelectedText=true
 TripleClickMode=0
 
