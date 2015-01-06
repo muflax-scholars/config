@@ -434,7 +434,7 @@ function ipt() {
 }
 
 # basic wget scraper
-alias scrape="wget --mirror --continue -e robots=off --convert-links --page-requisites --timestamping"
+alias scrape="wget --mirror --continue -e robots=off --convert-links --page-requisites --timestamping --no-parent"
 
 # get random stuff from the internet
 function gst() {
