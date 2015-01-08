@@ -386,7 +386,8 @@ clientkeys = awful.util.table.join(
 for i = 1, 10 do
   globalkeys = awful.util.table.join(
     globalkeys,
-    awful.key({ modkey }, "F" .. i,
+    awful.key({ modkey }, tostring(i % 10),
+
               function ()
                 local screen = mouse.screen
                 local tag = awful.tag.gettags(screen)[i]
@@ -394,7 +395,8 @@ for i = 1, 10 do
                   awful.tag.viewonly(tag)
                 end
     end),
-    awful.key({ modkey, "Control" }, "F" .. i,
+    awful.key({ modkey, "Control" }, tostring(i % 10),
+
               function ()
                 local screen = mouse.screen
                 local tag = awful.tag.gettags(screen)[i]
@@ -402,14 +404,16 @@ for i = 1, 10 do
                   awful.tag.viewtoggle(tag)
                 end
     end),
-awful.key({ modkey, "Shift" }, "F" .. i,
+    awful.key({ modkey, "Shift" }, tostring(i % 10),
+
               function ()
                 local tag = awful.tag.gettags(client.focus.screen)[i]
                 if client.focus and tag then
                   awful.client.movetotag(tag)
                 end
     end),
-    awful.key({ modkey, "Control", "Shift" }, "F" .. i,
+    awful.key({ modkey, "Control", "Shift" }, tostring(i % 10),
+
               function ()
                 local tag = awful.tag.gettags(client.focus.screen)[i]
                 if client.focus and tag then
