@@ -52,6 +52,7 @@ fi
 # go
 export GOPATH=$HOME/local/go
 export GOROOT=$HOME/src/go/golang
+export GOROOT_BOOTSTRAP=$HOME/src/go/golang-1.4
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # haskell / cabal
