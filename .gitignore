@@ -100,6 +100,7 @@ tags
 .vim/spell/*.add*
 .vim/yankring*
 .viminfo*
+.w3m
 .zcomp*
 
 # ignore logs
