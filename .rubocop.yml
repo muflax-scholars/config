@@ -1,0 +1,5 @@
+Lint/EndAlignment:
+  Enabled: false
+
+Lint/DefEndAlignment:
+  Enabled: false
