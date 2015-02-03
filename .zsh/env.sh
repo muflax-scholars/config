@@ -10,6 +10,9 @@ if [[ -e $nix_profile && -z $NO_NIX ]]; then
   # gtk themes
   export GTK_PATH=$HOME/.nix-profile/lib/gtk-2.0
 
+  # uim
+  export GTK_IM_MODULE_FILE=$HOME/.nix-profile/lib/gtk-2.0/2.10.0/immodules.cache
+
   # timezone data for non-NixOS compatibility
   export TZDIR=$HOME/.nix-profile/share/zoneinfo
 
