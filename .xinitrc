@@ -6,15 +6,18 @@ source $HOME/.zsh/env.sh
 # xset s off
 
 # ibus
-export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="ibus"
-export XMODIFIERS="@im=ibus"
+export GTK_IM_MODULE="uim"
+export QT_IM_MODULE="uim"
+export XMODIFIERS="@im=uim"
 
 # machine specific configs
 source ~/.xinitrc_local
 
-# daemons
-# ibus-daemon -x -d &
+# input method
+uim-xim &
+uim-toolbar-gtk-systray &
+
+# gpg
 killall gpg-agent
 eval "$(gpg-agent --daemon)"
 
