@@ -1,0 +1,46 @@
+(require-module "elatin")
+
+(define uim-pref-suppress-dot-uim-warning-dialog? #t)
+
+(elatin-define-rules
+ elatin-rules-latin-prefix
+ ("·a"	("ä"))
+ ("·A"	("Ä"))
+ ("·o"	("ö"))
+ ("·O"	("Ö"))
+ ("·u"	("ü"))
+ ("·U"	("Ü"))
+
+ ;; conlangs
+ ("·d"	("ð"))
+ ("·D"	("Ð"))
+ ("·l"	("ł"))
+ ("·L"	("Ł"))
+ ("·n"	("ŋ"))
+ ("·N"	("Ŋ"))
+ ("·r"	("ř"))
+ ("·R"	("Ř"))
+ ("·s"	("š"))
+ ("·S"	("Š"))
+ ("·t"	("θ"))
+ ("·T"	("Θ"))
+ ("·z"	("ž"))
+ ("·Z"	("Ž"))
+
+ ;; borrowings in German
+ ("·e"	("é"))
+ ("·E"	("É"))
+
+ ;; better quotes
+ ("·<"	("«"))
+ ("·>"	("»"))
+
+ ;; make the · typable by itself
+ ("··"	("·"))
+ ("· "	("·"))
+)
+
+;; Local Variables:
+;; mode: scheme
+;; coding: utf-8
+;; End:
