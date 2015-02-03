@@ -3,7 +3,7 @@
 (define uim-pref-suppress-dot-uim-warning-dialog? #t)
 
 (elatin-define-rules
- elatin-rules-latin-prefix
+ elatin-rules-muflax-latin
  ("·a"	("ä"))
  ("·A"	("Ä"))
  ("·o"	("ö"))
@@ -39,6 +39,8 @@
  ("··"	("·"))
  ("· "	("·"))
 )
+
+;; (define elatin-rules 'elatin-rules-muflax-latin)
 
 ;; Local Variables:
 ;; mode: scheme
