@@ -2,45 +2,51 @@
 
 (define uim-pref-suppress-dot-uim-warning-dialog? #t)
 
-(elatin-define-rules
+(define-macro (elatin-define-rules-manually name . rules)
+  `(define ,name
+     (map (lambda (elt)
+            (list (list (car elt)) (cadr elt)))
+          ',rules)))
+
+(elatin-define-rules-manually
  elatin-rules-muflax-latin
- ("·a"	("ä"))
- ("·A"	("Ä"))
- ("·o"	("ö"))
- ("·O"	("Ö"))
- ("·u"	("ü"))
- ("·U"	("Ü"))
+ (("middle-dot"	"a")	("ä"))
+ (("middle-dot"	"A")	("Ä"))
+ (("middle-dot"	"o")	("ö"))
+ (("middle-dot"	"O")	("Ö"))
+ (("middle-dot"	"u")	("ü"))
+ (("middle-dot"	"U")	("Ü"))
 
  ;; conlangs
- ("·d"	("ð"))
- ("·D"	("Ð"))
- ("·l"	("ł"))
- ("·L"	("Ł"))
- ("·n"	("ŋ"))
- ("·N"	("Ŋ"))
- ("·r"	("ř"))
- ("·R"	("Ř"))
- ("·s"	("š"))
- ("·S"	("Š"))
- ("·t"	("θ"))
- ("·T"	("Θ"))
- ("·z"	("ž"))
- ("·Z"	("Ž"))
+ (("middle-dot"	"d")	("ð"))
+ (("middle-dot"	"D")	("Ð"))
+ (("middle-dot"	"l")	("ł"))
+ (("middle-dot"	"L")	("Ł"))
+ (("middle-dot"	"n")	("ŋ"))
+ (("middle-dot"	"N")	("Ŋ"))
+ (("middle-dot"	"r")	("ř"))
+ (("middle-dot"	"R")	("Ř"))
+ (("middle-dot"	"s")	("š"))
+ (("middle-dot"	"S")	("Š"))
+ (("middle-dot"	"t")	("θ"))
+ (("middle-dot"	"T")	("Θ"))
+ (("middle-dot"	"z")	("ž"))
+ (("middle-dot"	"Z")	("Ž"))
 
  ;; borrowings in German
- ("·e"	("é"))
- ("·E"	("É"))
+ (("middle-dot"	"e")	("é"))
+ (("middle-dot"	"E")	("É"))
 
  ;; better quotes
- ("·<"	("«"))
- ("·>"	("»"))
+ (("middle-dot"	"<")	("«"))
+ (("middle-dot"	">")	("»"))
 
  ;; make the · typable by itself
- ("··"	("·"))
- ("· "	("·"))
+ (("middle-dot"	"middle-dot")	("·"))
+ (("middle-dot"	" ")         	("·"))
 )
 
-;; (define elatin-rules 'elatin-rules-muflax-latin)
+(define elatin-rules 'elatin-rules-muflax-latin)
 
 ;; Local Variables:
 ;; mode: scheme
