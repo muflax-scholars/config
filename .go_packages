@@ -7,8 +7,13 @@ golang.org/x/tools/cmd/goimports
 golang.org/x/tools/cmd/oracle
 golang.org/x/tools/cmd/vet
 
+# linting
+github.com/kisielk/errcheck
+github.com/golang/lint/golint
+
 # better profiling
 github.com/davecheney/profile
+github.com/davecheney/gcvis
 
 # emacs
 github.com/nsf/gocode
