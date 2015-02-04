@@ -2,10 +2,10 @@
 
 # build tools
 github.com/songgao/colorgo
-code.google.com/p/go.tools/cmd/godoc
-code.google.com/p/go.tools/cmd/goimports
-code.google.com/p/go.tools/cmd/oracle
-code.google.com/p/go.tools/cmd/vet
+golang.org/x/tools/cmd/godoc
+golang.org/x/tools/cmd/goimports
+golang.org/x/tools/cmd/oracle
+golang.org/x/tools/cmd/vet
 
 # better profiling
 github.com/davecheney/profile
@@ -14,11 +14,5 @@ github.com/davecheney/profile
 github.com/nsf/gocode
 code.google.com/p/rog-go/exp/cmd/godef
 
-# databases
-github.com/mattn/go-sqlite3
-
 # gaps in stdlib
 github.com/fatih/set
-
-# regex
-github.com/moovweb/rubex

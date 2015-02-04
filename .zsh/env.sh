@@ -17,6 +17,7 @@ if [[ -e $nix_profile && -z $NO_NIX ]]; then
   export TZDIR=$HOME/.nix-profile/share/zoneinfo
 
   # make go compiler work
+  export GOROOT=$HOME/.nix-profile/share/go
   export CGO_CFLAGS="-I$HOME/.nix-profile/include"
   export CGO_CXXFLAGS=$CGO_CFLAGS
   export CGO_LDFLAGS="-L$HOME/.nix-profile/lib"
@@ -54,9 +55,7 @@ fi
 
 # go
 export GOPATH=$HOME/local/go
-export GOROOT=$HOME/src/go/golang
-export GOROOT_BOOTSTRAP=$HOME/src/go/golang-1.4
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # haskell / cabal
 export PATH=$HOME/local/cabal/bin:$PATH
