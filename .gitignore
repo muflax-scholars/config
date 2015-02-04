@@ -101,6 +101,7 @@ tags
 .vim/yankring*
 .viminfo*
 .w3m
+.wicd
 .zcomp*
 
 # ignore logs
