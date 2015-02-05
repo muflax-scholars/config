@@ -24,6 +24,10 @@ if [[ -e $nix_profile && -z $NO_NIX ]]; then
   # guile
   export GUILE_LOAD_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site:$GUILE_LOAD_PATH"
   export GUILE_LOAD_COMPILED_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site:$GUILE_LOAD_COMPILED_PATH"
+
+  # xdg
+  export XDG_CONFIG_DIRS=$HOME/.nix-profile/etc/xdg:$XDG_CONFIG_DIRS
+  export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 fi
 unset nix_profile
 
