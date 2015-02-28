@@ -136,10 +136,12 @@
 /.config/libreoffice*
 /.config/mcomix
 /.config/meld
+/.config/nomacs
 /.config/piorekf
 /.config/ristretto
 /.config/sublime*
 /.config/transmission/
+/.config/transmission-daemon/
 /.config/vmpk.sourceforge.net
 /.config/xfce4
 /.config/yarpen.cz
