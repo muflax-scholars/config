@@ -10,7 +10,7 @@ CursorShape=0
 UseCustomCursorColor=false
 
 [General]
-Command=~/.nix-profile/bin/zsh
+Command=/bin/zsh
 Directory=~/
 Name=Shell
 Parent=FALLBACK/
