@@ -299,7 +299,7 @@ function up() {
   (cd ~plocal; git pum && git push)
 
   # sync external repos
-  layman -S
+  sudo layman -S
   sudo emerge --sync
 
   # eix
