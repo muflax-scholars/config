@@ -7,24 +7,6 @@ if [[ -e $nix_profile && -z $NO_NIX ]]; then
   export MANPATH="$HOME/.nix-profile/share/man:$MANPATH"
   export PKG_CONFIG_PATH="$HOME/.nix-profile/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-  # gtk themes
-  export GTK_PATH=$HOME/.nix-profile/lib/gtk-2.0
-
-  # uim
-  export GTK_IM_MODULE_FILE=$HOME/.nix-profile/lib/gtk-2.0/2.10.0/immodules.cache
-
-  # timezone data for non-NixOS compatibility
-  export TZDIR=$HOME/.nix-profile/share/zoneinfo
-
-  # make go compiler work
-  export CGO_CFLAGS="-I$HOME/.nix-profile/include"
-  export CGO_CXXFLAGS=$CGO_CFLAGS
-  export CGO_LDFLAGS="-L$HOME/.nix-profile/lib"
-
-  # guile
-  export GUILE_LOAD_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site:$GUILE_LOAD_PATH"
-  export GUILE_LOAD_COMPILED_PATH="$HOME/.nix-profile/share/guile/site/2.0:$HOME/.nix-profile/share/guile/site:$GUILE_LOAD_COMPILED_PATH"
-
   # xdg
   export XDG_CONFIG_DIRS=$HOME/.nix-profile/etc/xdg:$XDG_CONFIG_DIRS
   export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
