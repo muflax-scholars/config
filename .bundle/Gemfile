@@ -73,7 +73,9 @@ gem "ruby-graphviz"
 gem "jist"
 
 # some generically useful stuff
+gem "diff-lcs"
 gem "levenshtein-ffi"
+gem "ruby-lzma"
 gem "systemu"
 gem "tidy_ffi"
 gem "units"
