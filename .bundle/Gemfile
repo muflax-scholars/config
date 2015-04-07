@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # my own stuff
-gem "backup-urls", :path => File.expand_path("~/src/backup/backup-urls")
+gem "backup-urls", path: File.expand_path("~/src/backup/backup-urls")
 gem "muflax"
 
 # pry
