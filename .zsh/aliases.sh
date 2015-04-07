@@ -410,8 +410,8 @@ alias res="source ~/.zshrc"
 [[ -e $(which colorgo) ]] && alias go=colorgo
 
 # du
-alias d0="du -hs"
-alias d1="du -h -d1 | sort -h"
+alias d0="du -hs -x"
+alias d1="du -h -d1 -x | sort -h"
 
 # df
 alias dh="df -h"
