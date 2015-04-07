@@ -5,6 +5,14 @@ PATH
       mechanize
       parallel
 
+PATH
+  remote: /home/amon/src/backup/tumblr-sync
+  specs:
+    tumblr-sync (0.2.0)
+      mechanize (~> 2.7.0)
+      nokogiri (~> 1.6.0)
+      ruby-progressbar (~> 1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -204,6 +212,7 @@ GEM
     ruby-graphviz (1.2.1)
     ruby-lzma (0.4.3)
     ruby-prof (0.15.6)
+    ruby-progressbar (1.2.0)
     rubypants (0.2.0)
     simple_oauth (0.3.1)
     slop (3.6.0)
@@ -295,6 +304,7 @@ DEPENDENCIES
   systemu
   tidy_ffi
   treetop
+  tumblr-sync!
   unicode_utils
   units
   uuid

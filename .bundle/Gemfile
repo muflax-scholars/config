@@ -72,6 +72,9 @@ gem "ruby-graphviz"
 # gist
 gem "jist"
 
+# backup
+gem "tumblr-sync", path: File.expand_path("~/src/backup/tumblr-sync")
+
 # some generically useful stuff
 gem "diff-lcs"
 gem "levenshtein-ffi"
