@@ -4,8 +4,8 @@
 nix_profile=$HOME/.nix-profile/etc/profile.d/nix.sh
 if [[ -e $nix_profile && -z $NO_NIX ]]; then
   source $nix_profile
-  export MANPATH="$HOME/.nix-profile/share/man:$MANPATH"
-  export PKG_CONFIG_PATH="$HOME/.nix-profile/lib/pkgconfig:$PKG_CONFIG_PATH"
+  export MANPATH=$HOME/.nix-profile/share/man:$MANPATH
+  export PKG_CONFIG_PATH=$HOME/.nix-profile/lib/pkgconfig:$PKG_CONFIG_PATH
 
   # xdg
   export XDG_CONFIG_DIRS=$HOME/.nix-profile/etc/xdg:$XDG_CONFIG_DIRS
@@ -15,8 +15,8 @@ unset nix_profile
 
 # unroll rbenv code for speedup
 if [[ -s ~/.rbenv ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  export PATH="$HOME/.rbenv/shims:$PATH"
+  export PATH=$HOME/.rbenv/bin:$PATH
+  export PATH=$HOME/.rbenv/shims:$PATH
   export RBENV_SHELL=zsh
   source '/home/amon/.rbenv/completions/rbenv.zsh'
   rbenv() {
@@ -35,7 +35,7 @@ if [[ -s ~/.rbenv ]]; then
   }
 
   # rbenv loads most gems, but prefer bundler's version if it exists
-  export PATH="$HOME/.bundle/bin:$PATH"
+  export PATH=$HOME/.bundle/bin:$PATH
 fi
 
 # go
