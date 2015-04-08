@@ -245,3 +245,7 @@
 # nix
 /.nix-defexpr
 /.nix-profile
+
+# rust
+/.cargo
+!/.cargo/config
