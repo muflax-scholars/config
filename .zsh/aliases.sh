@@ -371,13 +371,7 @@ for cmd in $bundled_commands; do
 done
 
 # full todo list
-alias t="noglob todo.sh -d ~/.todo.cfg"
-alias ta="t add"
-alias td="t do"
-alias trm="t rm"
-
-# only what is relevant today
-alias now="noglob todo.sh -d ~/.todo-today.cfg"
+alias now="noglob todo.sh -d ~/.todo.cfg"
 alias n="now"
 alias na="now add"
 alias nd="now do"
