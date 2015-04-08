@@ -39,6 +39,7 @@ if [[ -s ~/.rbenv ]]; then
 fi
 
 # go
+export GOROOT_BOOTSTRAP=$HOME/src/go/golang/go-1.4
 export GOPATH=$HOME/local/go
 export PATH=$GOPATH/bin:$PATH
 
