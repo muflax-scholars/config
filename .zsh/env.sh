@@ -47,11 +47,16 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 # haskell / cabal
 export PATH=$HOME/local/cabal/bin:$PATH
 
+# rust
+export PATH=$HOME/local/rust/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/local/rust/lib:$LD_LIBRARY_PATH
+export MANPATH=$HOME/local/rust/share/man:$MANPATH
+
 # ~/local dir (should be last so we can overwrite stuff in PATH)
-export PATH="$HOME/local/bin:$PATH"
-export LD_LIBRARY_PATH="$HOME/local/lib:$LD_LIBRARY_PATH"
-export MANPATH="$HOME/local/share/man:$MANPATH"
-export PKG_CONFIG_PATH="$HOME/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PATH=$HOME/local/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
+export MANPATH=$HOME/local/share/man:$MANPATH
+export PKG_CONFIG_PATH=$HOME/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # local scripts; consider merging with config?
 SCRIPTS="$HOME/src/scripts"
