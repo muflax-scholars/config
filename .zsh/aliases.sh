@@ -464,3 +464,6 @@ alias nup="nix-update"
 # racket
 alias ra="racket"
 alias gra="gracket"
+
+# output
+alias fig="figlet -t"
