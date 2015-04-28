@@ -1,5 +1,8 @@
 # completion
 
+# custom completions
+autoload -U compinit && compinit
+
 # allow approximate
 zstyle ':completion:*' completer _complete _match _approximate
 zstyle ':completion:*:match:*' original only

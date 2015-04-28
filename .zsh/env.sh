@@ -48,9 +48,14 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH=$HOME/local/cabal/bin:$PATH
 
 # rust
-export PATH=$HOME/local/rust/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/local/rust/lib:$LD_LIBRARY_PATH
-export MANPATH=$HOME/local/rust/share/man:$MANPATH
+if [[ -s ~/.multirust ]]; then
+  toolchain=$(cat ~/.multirust/default)
+  if [[ -n $toolchain ]]; then
+    export MANPATH=$HOME/.multirust/toolchains/$toolchain/share/man:$MANPATH
+    fpath=($HOME/.multirust/toolchains/$toolchain/share/zsh/site-functions $fpath)
+  fi
+  unset toolchain
+fi
 
 # ~/local dir (should be last so we can overwrite stuff in PATH)
 export PATH=$HOME/local/bin:$PATH
