@@ -13,4 +13,4 @@ pigs/daily
 .bitcoin
 .dogecoin
 
-.multirust
+local/multirust
