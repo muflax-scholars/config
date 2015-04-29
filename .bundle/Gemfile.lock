@@ -53,8 +53,6 @@ GEM
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
-    fftw3 (0.3)
-      narray
     future_me (0.17.0)
       awesome_print
       beeminder (~> 0.2)
@@ -140,7 +138,6 @@ GEM
     multi_json (1.11.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    narray (0.6.1.1)
     naught (1.0.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
@@ -206,9 +203,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    ruby-alsa (0.8)
-      ffi (>= 0.6.3)
-    ruby-audio (1.6.1)
     ruby-graphviz (1.2.1)
     ruby-lzma (0.4.3)
     ruby-prof (0.15.6)
@@ -266,7 +260,6 @@ DEPENDENCIES
   cinch
   curses
   diff-lcs
-  fftw3
   future_me
   gem-ripper-tags
   htmlentities
@@ -277,7 +270,6 @@ DEPENDENCIES
   memoist
   moneta
   muflax
-  narray
   nokogiri
   org-ruby
   pru
@@ -295,8 +287,6 @@ DEPENDENCIES
   reverse_markdown
   ripper-tags
   rspec
-  ruby-alsa
-  ruby-audio
   ruby-graphviz
   ruby-lzma
   ruby-prof

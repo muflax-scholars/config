@@ -22,12 +22,6 @@ gem "gem-ripper-tags"
 gem "autotest"
 gem "rspec"
 
-# music stuff
-gem "narray"
-gem "fftw3"
-gem "ruby-alsa"
-gem "ruby-audio"
-
 # gtd
 gem "ascii_charts"
 gem "beeminder"
