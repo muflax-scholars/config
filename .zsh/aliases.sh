@@ -466,4 +466,4 @@ alias ra="racket"
 alias gra="gracket"
 
 # output
-alias fig="figlet -t"
+alias big="toilet -f smblock -t"
