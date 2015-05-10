@@ -448,19 +448,6 @@ function exists() {
   return $t
 }
 
-# nix
-alias nix-env="noglob nix-env"
-alias ne="nix-env"
-
-function nix-update() {
-  nix-channel --update
-  nix-env -u '*' --always --dry-run
-  echo "update? [RET/^C]"; read
-  nix-env -u '*' --always --keep-going
-
-}
-alias nup="nix-update"
-
 # racket
 alias ra="racket"
 alias gra="gracket"
