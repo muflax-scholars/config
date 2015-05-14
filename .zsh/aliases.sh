@@ -113,7 +113,6 @@ alias get="git-annex get"
 alias geta="git-annex get --auto"
 alias gets="git_annex_auto.sh"
 alias drop="git-annex drop"
-alias dropa="git-annex drop --auto"
 alias gadu="git-annex unused"
 alias gadun="git-annex dropunused"
 alias gaduna="git-annex dropunused 1-10000 --force"
@@ -121,17 +120,14 @@ alias gaduna="git-annex dropunused 1-10000 --force"
 # common tasks
 alias c="git clone --recursive"
 alias cr="git remote add"
-alias gam="git merge synced/master"
 alias gacop="git-annex copy --to pleonasty --not --in pleonasty"
 alias gamop="git-annex move --to pleonasty"
 alias gaco-glacier="git-annex copy --to glacier --not --in glacier"
 alias gamo-glacier="git-annex move --to glacier"
 alias gdud="gdu -hs *(/)"
 alias gdudl="gdu -hsL *(/)"
-alias dropg="git-annex drop --trust-glacier"
 alias unglaciered='for file in $(ga find --not --in glacier); do echo $file | sed -e "s,/.+,,"; done | sort | uniq -c'
-alias gawd="git-annex find --want-drop --in here"
-alias gawg="git-annex find --want-get --not --in here"
+alias ggg="gaco-glacier .; gacop .; gas"
 
 function ga-new() {
   echo "Label?" && read $label
