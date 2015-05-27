@@ -291,6 +291,9 @@ function up() {
   # sync etc
   uep
 
+  # sync local repo
+  (cd ~plocal; git pum && git push)
+
   # sync external repos
   sudo layman -S
   sudo emerge --sync
