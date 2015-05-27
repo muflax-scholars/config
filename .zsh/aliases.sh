@@ -446,4 +446,4 @@ alias ra="racket"
 alias gra="gracket"
 
 # output
-alias big="toilet -f smblock -t"
+alias big="toilet -f standard -t"
