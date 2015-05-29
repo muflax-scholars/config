@@ -175,6 +175,7 @@
 /.jd
 /.mozilla
 /.purple
+/.Skype
 
 # ignore wine (has its own backups)
 /.wine*
