@@ -36,6 +36,7 @@ gem "curses"
 gem "rake"
 gem "rb-inotify"
 gem "sqlite3"
+gem "t"
 gem "unicode_utils"
 gem "uuid"
 
