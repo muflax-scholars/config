@@ -20,9 +20,6 @@ if [[ -s ~/.rbenv ]]; then
         command rbenv "$command" "$@";;
     esac
   }
-
-  # rbenv loads most gems, but prefer bundler's version if it exists
-  export PATH=$HOME/.bundle/bin:$PATH
 fi
 
 # go

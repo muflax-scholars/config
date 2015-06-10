@@ -69,7 +69,7 @@ function bu() {
   (cd ~/.bundle; bundle update && bundle clean --force)
 }
 function bui() {
-  (cd ~/.bundle; bundle install --binstubs)
+  (cd ~/.bundle; bundle install)
 }
 
 # unison
