@@ -9,6 +9,12 @@ xy=400
 fs="yes"
 stop-xscreensaver="yes"
 
+# reset color
+brightness=0
+contrast=0
+hue=0
+saturation=0
+
 # language
 alang="jpn"
 slang="jpn"
