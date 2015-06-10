@@ -129,17 +129,17 @@ alias gdudl="gdu -hsL *(/)"
 alias unglaciered='for file in $(ga find --not --in glacier); do echo $file | sed -e "s,/.+,,"; done | sort | uniq -c'
 alias ggg="gaco-glacier .; gacop .; gas"
 
-function ga-new() {
-  echo "Label?" && read $label
-  git init
-  git-annex init "$label"
-  echo "defaulting to direct mode, semitrust, 2 copies (see .gitattributes) and 100m reserve..."
-  git-annex direct
-  git config add annex.diskreserve "100m"
-  echo "* annex.numcopies=2" > .gitattributes
-  git add .gitattributes
-  git commit -m "init repo"
+function c-org() {
+  for org in $*; do
+    for repo in $(curl -s "https://api.github.com/orgs/$org/repos?per_page=200" \
+                     | ruby -r json -e 'JSON.load(STDIN.read).each { |repo| puts repo["ssh_url"] }' \
+                     | sort -u)
+    do
+      c $repo
+    done
+  done
 }
+
 
 # shrink pdfs
 function shrink() {
