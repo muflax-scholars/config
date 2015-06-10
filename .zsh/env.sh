@@ -1,8 +1,8 @@
 # PATH-y
 
 # ruby
-if [[ -s ~/local/rubies ]] && [[ -e $(which ~/local/bin/rubies) ]]; then
-  eval "$(~/local/bin/rubies activate default $HOME)"
+if [[ -s ~/local/rubies ]] && [[ -e $(which ~/local/bin/rubin) ]]; then
+  eval "$(~/local/bin/rubin --ruby default --gems $HOME --no-rehash)"
 fi
 
 # go
