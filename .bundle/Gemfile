@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 # my own stuff
-gem "backup-urls", path: File.expand_path("~/src/backup/backup-urls")
 gem "muflax"
 
 # pry
@@ -13,10 +12,6 @@ gem "pry-rails"
 gem "pry-rescue"
 gem "pry-theme"
 gem "pry-vterm_aliases"
-
-# TAGS
-gem "ripper-tags"
-gem "gem-ripper-tags"
 
 # rspec
 gem "autotest"
@@ -38,29 +33,18 @@ gem "t"
 gem "unicode_utils"
 gem "uuid"
 
-# rbenv
-gem "rbenv-rehash"
-
 # profiling
 gem "ruby-prof"
 
 # memoization
-gem "memoist"
 gem "moneta"
 
 # markups
 gem "htmlentities"
 gem "kramdown"
 gem "nokogiri"
-gem "org-ruby"
 gem "reverse_markdown"
 gem "ruby-graphviz"
-
-# gist
-gem "jist"
-
-# backup
-gem "tumblr-sync", path: File.expand_path("~/src/backup/tumblr-sync")
 
 # some generically useful stuff
 gem "diff-lcs"
@@ -68,4 +52,3 @@ gem "levenshtein-ffi"
 gem "ruby-lzma"
 gem "systemu"
 gem "tidy_ffi"
-gem "units"
