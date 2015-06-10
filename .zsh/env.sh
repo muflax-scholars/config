@@ -1,9 +1,7 @@
 # PATH-y
 
 # ruby
-if [[ -s ~/local/rubies ]] && [[ -e $(which ~/local/bin/rubin) ]]; then
-  eval "$(~/local/bin/rubin --ruby default --gems $HOME --no-rehash)"
-fi
+export PATH=$HOME/local/rubies/default/bin:$PATH
 
 # go
 export GOROOT_BOOTSTRAP=$HOME/src/go/golang/go-1.4
