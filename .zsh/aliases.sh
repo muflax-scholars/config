@@ -421,3 +421,8 @@ alias gra="gracket"
 
 # output
 alias big="toilet -f standard -t"
+
+# Local Variables:
+# mode: sh
+# eval: (sh-set-shell "zsh")
+# End:
