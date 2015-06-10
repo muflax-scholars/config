@@ -1,25 +1,8 @@
 # PATH-y
 
-# unroll rbenv code for speedup
-if [[ -s ~/.rbenv ]]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-  export PATH=$HOME/.rbenv/shims:$PATH
-  export RBENV_SHELL=zsh
-  source '/home/amon/.rbenv/completions/rbenv.zsh'
-  rbenv() {
-    local command
-    command="$1"
-    if [ "$#" -gt 0 ]; then
-      shift
-    fi
-
-    case "$command" in
-      rehash|shell)
-        eval "`rbenv "sh-$command" "$@"`";;
-      *)
-        command rbenv "$command" "$@";;
-    esac
-  }
+# ruby
+if [[ -s ~/local/rubies ]] && [[ -e $(which ~/local/bin/rubies) ]]; then
+  eval "$(~/local/bin/rubies activate default $HOME)"
 fi
 
 # go
