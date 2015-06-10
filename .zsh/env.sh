@@ -90,7 +90,6 @@ export MAILDIR="$HOME/mail"
 
 # ruby
 unset RUBYOPT # gentoo sucks
-RIPPER_TAGS_EMACS=1
 
 # python
 export PYTHONSTARTUP="$HOME/.pythonrc"
