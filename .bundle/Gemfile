@@ -13,9 +13,9 @@ gem "pry-rescue"
 gem "pry-theme"
 gem "pry-vterm_aliases"
 
-# rspec
-gem "autotest"
-gem "rspec"
+# testing
+gem "minitest"
+gem "minitest-reporters"
 
 # gtd
 gem "ascii_charts"
