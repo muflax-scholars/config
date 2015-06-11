@@ -15,7 +15,7 @@ gem "pry-vterm_aliases"
 
 # testing
 gem "minitest"
-gem "minitest-reporters"
+gem "maxitest"
 
 # gtd
 gem "ascii_charts"
