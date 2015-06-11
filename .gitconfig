@@ -1,10 +1,15 @@
 [alias]
 ci       	= commit -a
+cia      	= commit -a
+ca       	= commit --amend
 co       	= checkout
 st       	= status
+di       	= diff
+dc       	= diff --cached
 pum      	= pull origin master
 untracked	= ls-files --other --exclude-standard
 unt      	= ls-files --other --exclude-standard
+aa       	= add --all
 adda     	= add --all .
 wdiff    	= diff --color-words
 gca      	= gc --aggressive --prune=now
