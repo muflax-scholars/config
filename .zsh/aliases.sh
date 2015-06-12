@@ -129,6 +129,17 @@ alias gdudl="gdu -hsL *(/)"
 alias unglaciered='for file in $(ga find --not --in glacier); do echo $file | sed -e "s,/.+,,"; done | sort | uniq -c'
 alias ggg="gaco-glacier .; gacop .; gas"
 
+function ginit() {
+  if [[ -e .git || -e .gitignore ]]; then
+    return
+  fi
+
+  git init \
+    && touch .gitignore \
+    && git add .gitignore \
+    && git commit -m "init"
+}
+
 function c-org() {
   for org in $*; do
     for repo in $(curl -s "https://api.github.com/orgs/$org/repos?per_page=200" \
