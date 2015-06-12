@@ -86,6 +86,7 @@
 /.netx
 /.npm
 /.nv
+/.nviminfo*
 /.plover-lock*
 /.pulse*
 /.python-eggs
