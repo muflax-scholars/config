@@ -127,6 +127,7 @@
 /.config/autostart
 /.config/calibre
 /.config/chromium
+/.config/fish
 /.config/google-chrome
 /.config/google-googletalkplugin
 /.config/gtk-2.0
