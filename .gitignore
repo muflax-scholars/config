@@ -57,6 +57,7 @@
 /.cache
 /.calibre*
 /.config/Google
+/.config/dconf
 /.config/ibus
 /.config/gtk-3.0/bookmarks
 /.darcs
