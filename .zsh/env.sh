@@ -4,8 +4,8 @@
 export PATH=$HOME/local/rubies/default/bin:$PATH
 
 # go
-export GOROOT_BOOTSTRAP=$HOME/src/go/golang/go-1.4
-export GOROOT=$HOME/src/go/golang/go
+# export GOROOT_BOOTSTRAP=$HOME/src/go/golang/go-1.4
+# export GOROOT=$HOME/src/go/golang/go
 export GOPATH=$HOME/local/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
