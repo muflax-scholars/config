@@ -2,4 +2,6 @@ DISPLAY=:0.0 redshift -l 52.26:7.13 -t 6503:5000 -m randr &
 
 export VDPAU_NVIDIA_NO_OVERLAY=1
 
+$HOME/src/misc/apple/light/light.rb set 42 &
+
 # killall synergys; synergys --config /etc/synergy.conf
