@@ -12,7 +12,8 @@ unt      	= ls-files --other --exclude-standard
 aa       	= add --all
 adda     	= add --all .
 wdiff    	= diff --color-words
-gca      	= gc --aggressive --prune=now
+gca      	= gc --aggressive
+purge    	= gc --aggressive --prune=now
 pur      	= pull --rebase
 
 [color]
