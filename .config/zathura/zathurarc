@@ -10,6 +10,10 @@ map \> goto bottom
 map <C-a> scroll full-left
 map <C-e> scroll full-right
 set scroll-step 80
+map g scroll up
+map r scroll down
+map n scroll left
+map t scroll right
 
 # zoom
 map <C-+> zoom in
