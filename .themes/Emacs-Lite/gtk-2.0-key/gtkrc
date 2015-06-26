@@ -5,7 +5,7 @@
 #
 binding "gtk-emacs-text-entry"
 {
-  bind "<ctrl>b" { "move-cursor" (words, -1, 1) }
+  bind "<ctrl>b" { "move-cursor" (words, -1, 0) }
   bind "<shift><ctrl>b" { "move-cursor" (words, -1, 1) }
   bind "<ctrl>f" { "move-cursor" (words, 1, 0) }
   bind "<shift><ctrl>f" { "move-cursor" (words, 1, 1) }
