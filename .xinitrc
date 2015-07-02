@@ -1,21 +1,15 @@
 # load relevant zsh settings
 source $HOME/.zsh/env.sh
 
-# don't blank monitor
-# setterm -blank 0 -powersave off -powerdown 0
-# xset s off
-
-# ibus
-export GTK_IM_MODULE="uim"
-export QT_IM_MODULE="uim"
-export XMODIFIERS="@im=uim"
-
 # machine specific configs
 source ~/.xinitrc_local
 
 # input method
-uim-xim &
-uim-toolbar-gtk-systray &
+# export GTK_IM_MODULE="uim"
+# export QT_IM_MODULE="uim"
+# export XMODIFIERS="@im=uim"
+# uim-xim &
+# uim-toolbar-gtk-systray &
 
 # gpg
 killall gpg-agent
