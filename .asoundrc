@@ -1,0 +1,15 @@
+pcm.snoopy {
+	type dsnoop
+	ipc_key 5978292
+	slave {
+		pcm "hw:1,0"
+		channels 2
+	}
+}
+ctl.equal {
+ type equal;
+}
+pcm.asymed{
+  type asym	
+  capture.pcm snoopy
+}
