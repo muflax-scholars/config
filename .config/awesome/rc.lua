@@ -261,10 +261,6 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "n", function () awful.client.swap.byidx(-1) end),
   awful.key({ modkey, "Shift"   }, "r", function () awful.client.swap.byidx(1) end),
 
-  -- layouts
-  awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
-  awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
-
   -- fast toggling of layouts
   awful.key({ modkey,           }, "m", toggleVerticalTiling),
   awful.key({ modkey, "Shift"   }, "m", toggleHorizontalTiling),
@@ -276,25 +272,15 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "b", close_all_notifications),
 
   -- resize windows
-  awful.key({ modkey,           }, "d", function () awful.tag.incnmaster( 1) end),
-  awful.key({ modkey, "Shift"   }, "d", function () awful.tag.incnmaster(-1) end),
   awful.key({ modkey, "Control" }, "r", function () awful.tag.incmwfact( 0.05) end),
   awful.key({ modkey, "Control" }, "n", function () awful.tag.incmwfact(-0.05) end),
 
   -- launch scratchpad
   awful.key({ modkey,           }, "i", function () scratchpad_term:toggle() end),
 
-  -- launch terminal
-  awful.key({ modkey,           }, "u", function () awful.util.spawn("konsole") end),
-
   -- launch dmenu
   awful.key({ modkey,           }, "e", function () awful.util.spawn_with_shell(dmenu_quick) end),
   awful.key({ modkey,           }, "o", function () awful.util.spawn(dmenu_all) end),
-
-  -- rotate screen
-  awful.key({ modkey,           }, "j", function () awful.util.spawn("rotate_screen normal") end),
-  awful.key({ modkey, "Shift"   }, "j", function () awful.util.spawn("rotate_screen left") end),
-  awful.key({ modkey, "Control" }, "j", function () awful.util.spawn("rotate_screen right") end),
 
   -- lock screen
   awful.key({ modkey            }, "Escape", function () awful.util.spawn("slock") end),
@@ -316,26 +302,9 @@ globalkeys = awful.util.table.join(
   -- mpc
   awful.key({ modkey,           }, "c", function ()
               awful.util.spawn_with_shell("MPD_HOST=localhost mpc --no-status toggle") end),
-  -- awful.key({ modkey, "Shift"   }, "c", function () awful.util.spawn("remember_song.sh") end),
-  awful.key({ modkey, "Control" }, "c", function ()
-              awful.util.spawn_with_shell("MPD_HOST=localhost mpc del 1") end),
-
-  -- screenshots
-  awful.key({ modkey, "Shift"   }, "o", function ()
-              awful.util.spawn("$HOME/src/scripts/selection >/dev/null") end),
-
-  -- switch to different machine
-  -- awful.key({ modkey, "Control" }, "1", function () awful.util.spawn("scabeiathrax_display") end),
-  -- awful.key({ modkey, "Control" }, "2", function () awful.util.spawn("typhus_display") end),
 
   -- change keyboard settings
-  awful.key({ modkey,           }, "k", function () awful.util.spawn("skb.sh") end),
   awful.key({                   }, "Scroll_Lock", function () awful.util.spawn("skb.sh") end),
-  awful.key({ modkey, "Shift"   }, "k", function () awful.util.spawn("setxkbmap us") end),
-  awful.key({ modkey, "Control" }, "k", function () awful.util.spawn("toggle_repeat.rb") end),
-
-  -- send keyboard events to other computer
-  -- awful.key({ modkey,           }, "w", function () awful.util.spawn_with_shell("keyboard-send.rb") end),
 
   -- backlights
   awful.key({                   }, "XF86MonBrightnessDown", function ()
@@ -347,16 +316,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey            }, "F12", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb increment") end),
   awful.key({                   }, "XF86LaunchA", function ()
-              awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb keyboard") end),
-
-  -- pipe selection through command
-  awful.key({ modkey,           }, "|", function () awful.util.spawn("clipboard-pipe --paste") end),
-  awful.key({ modkey, "Shift"   }, "|", function () awful.util.spawn("clipboard-pipe") end),
-  awful.key({ modkey, "Control" }, "|", function () awful.util.spawn("clipboard-pipe --paste --command 'normalize'") end),
-
-
-  -- restart awesome
-  awful.key({ modkey, "Shift"   }, "q", awesome.restart)
+              awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb keyboard") end)
 )
 
 -- client-specific keys
@@ -373,9 +333,6 @@ clientkeys = awful.util.table.join(
 
   -- minimize window
   awful.key({ modkey,           }, "v", function (c) c.minimized = true end),
-
-  -- mark client
-  awful.key({ modkey,           }, "l", function (c) awful.client.togglemarked(c) end),
 
   -- float it
   awful.key({ modkey,           }, "t", awful.client.floating.toggle),
