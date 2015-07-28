@@ -87,3 +87,4 @@ export SDL_AUDIODRIVER="alsa"
 
 # chicken scheme
 export CHICKEN_REPOSITORY=$HOME/local/chicken-eggs/lib/chicken/7
+export CHICKEN_DOC_REPOSITORY=$HOME/local/chicken-eggs/chicken-doc
