@@ -22,6 +22,11 @@ if [[ -s ~/.multirust ]]; then
   unset toolchain
 fi
 
+# chicken scheme
+export CHICKEN_REPOSITORY=$HOME/local/chicken-eggs/lib/chicken/7
+export PATH=$HOME/local/chicken-eggs/bin:$PATH
+export CHICKEN_DOC_REPOSITORY=$HOME/local/chicken-eggs/chicken-doc
+
 # ~/local dir (should be last so we can overwrite stuff in PATH)
 export PATH=$HOME/local/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
@@ -84,7 +89,3 @@ export SAL_USE_VCLPLUGIN="gen"
 
 # steam audio
 export SDL_AUDIODRIVER="alsa"
-
-# chicken scheme
-export CHICKEN_REPOSITORY=$HOME/local/chicken-eggs/lib/chicken/7
-export CHICKEN_DOC_REPOSITORY=$HOME/local/chicken-eggs/chicken-doc
