@@ -84,3 +84,6 @@ export SAL_USE_VCLPLUGIN="gen"
 
 # steam audio
 export SDL_AUDIODRIVER="alsa"
+
+# chicken scheme
+export CHICKEN_REPOSITORY=$HOME/local/chicken-eggs/lib/chicken/7
