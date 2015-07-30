@@ -316,7 +316,11 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey            }, "F12", function ()
               awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb increment") end),
   awful.key({                   }, "XF86LaunchA", function ()
-              awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb keyboard") end)
+              awful.util.spawn_with_shell("$HOME/src/misc/apple/light/light.rb keyboard") end),
+
+  -- konsole
+  awful.key({ modkey            }, "k", function () awful.util.spawn("konsole") end)
+
 )
 
 -- client-specific keys
