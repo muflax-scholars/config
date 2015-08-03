@@ -25,6 +25,7 @@ SidebarShowText=false
 
 [PageView]
 CenterFirstPageInRow=true
+ScrollOverlap=20
 
 [Zoom]
 ZoomMode=2
