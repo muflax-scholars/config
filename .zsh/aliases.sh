@@ -325,6 +325,11 @@ function upm() {
 # dropbox
 alias dcs="dropbox status"
 alias dc="dropbox"
+function dcr() {
+  dropbox stop
+  pidof dropbox && wait_on_pid $(pidof dropbox)
+  dropbox start
+}
 
 # pack folder
 function pack-7z() {
