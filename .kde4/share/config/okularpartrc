@@ -16,6 +16,7 @@ UseKTTSD=false
 IdentityAuthor=muflax
 
 [Main View]
+ShowBottomBar=false
 ShowLeftPanel=false
 SplitterSizes=290,944
 
@@ -26,6 +27,8 @@ SidebarShowText=false
 [PageView]
 CenterFirstPageInRow=true
 ScrollOverlap=20
+ViewContinuous=false
+ViewMode=Facing
 
 [Zoom]
 ZoomMode=2
