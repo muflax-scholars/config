@@ -113,7 +113,7 @@ alias get="git-annex get"
 alias geta="git-annex get --auto"
 alias gets="git_annex_auto.sh"
 alias drop="git-annex drop"
-alias gadu="git-annex unused --used-refspec '-refs/remotes/*'"
+alias gadu="git-annex unused --unused-refspec '-refs/remotes/*'"
 alias gadun="git-annex dropunused"
 alias gaduna="git-annex dropunused 1-10000 --force"
 
