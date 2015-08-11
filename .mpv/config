@@ -1,0 +1,24 @@
+# Write your default config options here!
+ao="alsa"
+mc=0
+
+# fullscreen
+autofit=400
+fs="yes"
+stop-screensaver="yes"
+
+# reset color
+brightness=0
+contrast=0
+hue=0
+saturation=0
+
+# language
+alang="jpn"
+slang="jpn"
+
+# subtitles
+sub-auto="no"
+
+# show osd
+osd-level=3
