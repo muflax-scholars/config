@@ -60,18 +60,6 @@ local hostname = chomp_read("hostname")
 local theme = "multicolor"
 beautiful.init(awful.util.getdir("config") .. "/themes/"..theme.."/theme.lua")
 
--- if hostname == "scabeiathrax" then
---   gears.wallpaper.maximized(
---     awful.util.getdir("config") .. "/themes/wallpaper_scabeiathrax.jpg", nil, false)
--- elseif hostname == "typhus" then
---   gears.wallpaper.maximized(
---     awful.util.getdir("config") .. "/themes/wallpaper_typhus.jpg", nil, false)
--- else
---   if beautiful.wallpaper then
---     gears.wallpaper.maximized(beautiful.wallpaper, nil, true)
---   end
--- end
-
 -- layouts
 local layouts = {
   awful.layout.suit.tile,
@@ -526,14 +514,6 @@ awful.rules.rules = {
 
 -- signals
 client.connect_signal("manage", function (c, startup)
-                        -- -- enable mouse focus
-                        -- c:connect_signal("mouse::enter", function(c)
-                        --                    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-                        --                    and awful.client.focus.filter then
-                        --                      client.focus = c
-                        --                    end
-                        -- end)
-
                         if not startup then
                           -- make new windows slaves
                           if not c.size_hints.user_position and not c.size_hints.program_position then
