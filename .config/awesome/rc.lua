@@ -486,7 +486,9 @@ awful.rules.rules = {
 
   -- float these by default
   { rule_any = { class = {
+                   "mplayer",
                    "mplayer2",
+                   "mpv",
                    "pinentry",
                    "Wine",
                    "Gxmessage",
@@ -498,7 +500,9 @@ awful.rules.rules = {
 
   -- keep them on top
   { rule_any = { class = {
+                   "mplayer",
                    "mplayer2",
+                   "mpv",
                    "Plover",
                }},
     properties = { ontop  = true,
