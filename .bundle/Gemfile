@@ -55,3 +55,6 @@ gem "ruby-lzma"
 gem "systemu"
 gem "tidy_ffi"
 gem "values"
+
+# need to debug stuff later
+gem "highline", "< 1.7"
