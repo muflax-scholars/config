@@ -1,5 +1,6 @@
 # Write your default config options here!
 ao="alsa"
+softvol-max=1000
 mc=0
 
 # fullscreen
