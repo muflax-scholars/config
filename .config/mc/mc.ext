@@ -434,6 +434,9 @@ regex/\.([wW][mM][aA])$
 regex/\.([fF][lL][aA][cC])$
     Include=audio
 
+regex/\.([oO][pP][uU][sS])$
+    Include=audio
+
 ### Play lists ###
 
 regex/\.([mM]3[uU]|[pP][lL][sS])$
